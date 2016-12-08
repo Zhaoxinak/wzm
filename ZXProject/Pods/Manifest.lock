@@ -1,0 +1,58 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
+  - IQKeyboardManager (3.3.7)
+  - JSONModel (1.7.0)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TOWebViewController (2.2.6):
+    - TOWebViewController/Core (= 2.2.6)
+  - TOWebViewController/Core (2.2.6)
+  - ZYQAssetPickerController (1.0.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DZNEmptyDataSet
+  - IQKeyboardManager
+  - JSONModel
+  - MBProgressHUD
+  - MJRefresh
+  - SDCycleScrollView
+  - SDWebImage
+  - TOWebViewController
+  - ZYQAssetPickerController
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
+  ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
+
+PODFILE CHECKSUM: 6807e66ddacb461f5f7fe9136c88933fb99f0056
+
+COCOAPODS: 1.1.1

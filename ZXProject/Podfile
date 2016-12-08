@@ -1,0 +1,16 @@
+platform :ios, '7.0'
+
+target 'ZXProject' do
+   pod 'AFNetworking'
+   pod 'JSONModel'
+   pod 'MBProgressHUD'
+   pod 'MJRefresh'
+   pod 'SDWebImage'
+   pod 'TOWebViewController'
+   pod 'SDCycleScrollView'
+   pod 'ZYQAssetPickerController'
+   pod 'IQKeyboardManager'
+   pod 'DZNEmptyDataSet'
+   
+   
+end
