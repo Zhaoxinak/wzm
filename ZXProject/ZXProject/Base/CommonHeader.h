@@ -15,6 +15,7 @@
 
 /********************自己工具引用*********************/
 #import "GlobalURL.h" //网络地址
+#import "NSString+Common.h" //字符串处理
 #import "NSDate+CH.h"   //日期
 #import "UIButton+Response.h" //按钮点击间隔
 #import "UIButton+Extension.h" //按钮扩展

@@ -32,6 +32,7 @@
 		9E8232F71DE2941100BAE227 /* UIResponder+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8232F21DE2941100BAE227 /* UIResponder+FirstResponder.m */; };
 		9E8232F81DE2941100BAE227 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8232F41DE2941100BAE227 /* UIView+Common.m */; };
 		9E8232FB1DE2945900BAE227 /* UIButton+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8232FA1DE2945900BAE227 /* UIButton+Response.m */; };
+		9EFAD5EC1DFA9009009C2324 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5EB1DFA9009009C2324 /* NSString+Common.m */; };
 		F8DA35112D083BE0C307F588 /* libPods-ZXProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D918681604A15EE2101F31A /* libPods-ZXProject.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		9E8232F41DE2941100BAE227 /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
 		9E8232F91DE2945900BAE227 /* UIButton+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Response.h"; sourceTree = "<group>"; };
 		9E8232FA1DE2945900BAE227 /* UIButton+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Response.m"; sourceTree = "<group>"; };
+		9EFAD5EA1DFA9009009C2324 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		9EFAD5EB1DFA9009009C2324 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		CE575A49239C8D0151047A64 /* Pods-ZXProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXProject/Pods-ZXProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +255,8 @@
 		9E8232EC1DE2941100BAE227 /* EXtension-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9EFAD5EA1DFA9009009C2324 /* NSString+Common.h */,
+				9EFAD5EB1DFA9009009C2324 /* NSString+Common.m */,
 				9E8232ED1DE2941100BAE227 /* NSDate+CH.h */,
 				9E8232EE1DE2941100BAE227 /* NSDate+CH.m */,
 				9E8232EF1DE2941100BAE227 /* UIButton+Extension.h */,
@@ -409,6 +414,7 @@
 				9E8232F71DE2941100BAE227 /* UIResponder+FirstResponder.m in Sources */,
 				9E8232F51DE2941100BAE227 /* NSDate+CH.m in Sources */,
 				9E54588A1DDD8440002CA99D /* BaseViewController.m in Sources */,
+				9EFAD5EC1DFA9009009C2324 /* NSString+Common.m in Sources */,
 				9E8232F81DE2941100BAE227 /* UIView+Common.m in Sources */,
 				9E54588B1DDD8440002CA99D /* CustomNaviController.m in Sources */,
 				9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */,
