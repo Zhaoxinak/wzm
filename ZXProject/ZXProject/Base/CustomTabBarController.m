@@ -13,7 +13,7 @@
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
 
-@interface CustomTabBarController ()
+@interface CustomTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.delegate = self;
     [self setUpChildController];
     
     // Do any additional setup after loading the view.
@@ -37,9 +38,9 @@
 - (void)setUpChildController {
     
     // 添加子控制器
-    [self addChildVc:[[OneViewController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_home_selected"];
-    [self addChildVc:[[TwoViewController alloc] init] title:@"消息" image:@"tabbar_message_center" selectedImage:@"tabbar_message_center_selected"];
-    [self addChildVc:[[ThreeViewController alloc] init] title:@"发现" image:@"tabbar_discover" selectedImage:@"tabbar_discover_selected"];
+    [self addChildVC:[[OneViewController alloc] init] titleName:@"首页" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:1];
+    [self addChildVC:[[TwoViewController alloc] init] titleName:@"喵圈" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:2];
+    [self addChildVC:[[ThreeViewController alloc] init] titleName:@"喵窝" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:3];
     
     CustomTabBar *customTabBar = [CustomTabBar new];
     
@@ -49,22 +50,44 @@
 /**
  *  添加一个子控制器
  *
- *  @param childVc       子控制器
- *  @param title         标题
- *  @param image         图片
- *  @param selectedImage 选中的图片
+ *  @param childVC       子控制器
+ *  @param titleName         标题
+ *  @param imageName         图片
+ *  @param selectedImageName 选中的图片
  */
-- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
-    // 设置子控制器的文字(可以设置tabBar和navigationBar的文字)
-    childVc.title = title;
-    // 设置子控制器的tabBarItem图片
-    childVc.tabBarItem.image = [UIImage imageNamed:image];
-    // 禁用图片渲染
-    childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+- (void)addChildVC:(UIViewController *)childVC titleName:(NSString *)titleName imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName tag:(NSInteger)tag{
+    //设置标题
+    NSString *title =titleName;
+    //设置图标
+    UIImage *image = [UIImage imageNamed:imageName];
+    //设置选中图标
+    UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
+    
+    //声明这张图用原图
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    childVC.title = title;
+    childVC.tabBarItem.title = title;
+    childVC.tabBarItem.image = image;
+    childVC.tabBarItem.selectedImage = selectedImage;
+    childVC.tabBarItem.tag =tag;
+    
+    //title向上偏移
+    [childVC.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -3)];
     // 为子控制器包装导航控制器
-    CustomNaviController *navigationVc = [[CustomNaviController alloc] initWithRootViewController:childVc];
+    CustomNaviController *navigationVC = [[CustomNaviController alloc] initWithRootViewController:childVC];
     // 添加子控制器
-    [self addChildViewController:navigationVc];
+    [self addChildViewController:navigationVC];
+}
+
+//点击tab 判断
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    NSLog(@"--tabbaritem.tag--%ld",(long)viewController.tabBarItem.tag);
+
+    return YES;
 }
 
 

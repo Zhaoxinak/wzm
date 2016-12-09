@@ -20,6 +20,7 @@
 #import "UIButton+Response.h" //按钮点击间隔
 #import "UIButton+Extension.h" //按钮扩展
 #import "UIResponder+FirstResponder.h"  //第一响应
+#import "UIView+Frame.h"
 #import "UIView+Common.h" //坐标
 #import "ZXTools.h"  //赵昕的工具
 #import "NetworkHelper.h" //网络请求

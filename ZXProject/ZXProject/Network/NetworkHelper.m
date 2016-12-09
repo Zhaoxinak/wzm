@@ -33,6 +33,10 @@ typedef enum : NSUInteger {
     
 }
 
+
+
+
+
 #pragma mark图片上传
 -(void)dataWithImgupload:(BOOL)progress viewpointId:(NSString *_Nonnull)viewpointId imageDatas:(NSMutableArray *_Nonnull)imageDatas completion:(void (^ _Nonnull)(BOOL finish))completion {
     if ([ZXTools getCurrentWindow] == nil) {

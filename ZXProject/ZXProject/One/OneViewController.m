@@ -5,12 +5,17 @@
 //  Created by Mr.X on 2016/11/17.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
+#import "TestModel.h" //测试model
 
 #import "OneViewController.h"
-#import "TestModel.h"
+#import "OneHeadView.h"
+
 
 
 @interface OneViewController ()<UITextFieldDelegate>
+
+@property (nonatomic, strong) OneHeadView *oneHeadView;
+
 
 @property (nonatomic, strong) NSArray *dataArray;
 
@@ -18,69 +23,122 @@
 
 @implementation OneViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化数据
+    [self setData];
+    //初始试图
+    [self setView];
     
-    [self dataWithDiscover:YES requestId:1];
+}
+
+#pragma mark --初始化数据
+-(void)setData{
     
-    //在需要使用的界面设置
-    IQKeyboardReturnKeyHandler *retuenKeyHandler = [[IQKeyboardReturnKeyHandler alloc]initWithViewController:self];
-    retuenKeyHandler.lastTextFieldReturnKeyType =UIReturnKeyDone; // 设置最后一个输入框
+    //设置tabViewHeader
+    _oneHeadView = [[OneHeadView alloc]init];
     
+}
+
+-(void)setView{
     
-    UITextField *textField = [UITextField new];
-    textField.delegate = self;
-    textField.frame = CGRectMake(10, 400, kScreen_Width-20, 30);
-    textField.backgroundColor = [UIColor whiteColor];
-    textField.tag = 1;
-    [self.view addSubview:textField];
+    //设置tableView
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
+    [self.view insertSubview:self.tableView atIndex:1];
+    self.tableView.tableHeaderView = _oneHeadView;
     
-    
-    UITextField *textField1 = [UITextField new];
-    textField1.delegate = self;
-    textField1.frame = CGRectMake(10, 440, kScreen_Width-20, 30);
-    textField1.backgroundColor = [UIColor whiteColor];
-    textField1.tag = 2;
-    [self.view addSubview:textField1];
-    
+    //设置tabViewHeader
+    _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/3*2);
     
 }
 
 #pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
-    if (requestId == 1) {
-        TestModel *model = [[TestModel alloc] initWithData:data error:nil];
-        
-        if ([model.code isEqualToString:@"1"]) {
-            self.dataArray = [model.data.projects copy];
-            NSLog(@"%@", self.dataArray);
-        }else{
-            NSString *msg = model.msg;
-            [self showServerMsg:msg];
-        }
-    }
+  
     
 }
 
 - (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId{
  
+}
+
+#pragma mark - UITableViewDelegate，UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 0;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 0.5;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    return 0.5;
+    
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
+    headerView.backgroundColor = BGColor;
+    
+    return headerView;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
+    footerView.backgroundColor = BGColor;
+    
+    return footerView;
+}
+
+
+
+#pragma mark - UITableView展示
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellIdentifier=@"cell";
+    
+    //首先根据标示去缓存池取
+    UITableViewCell *cell=nil;
+    //如果缓存池没有取到则重新创建并放到缓存池中
+    if(!cell){
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    UITextField *textField = [UITextField new];
+    textField.frame = CGRectMake(10, 0, kScreen_Width-20, 44);
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.tag = 1;
+    [cell.contentView addSubview:textField];
+    
+    
+    return cell;
     
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 44;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
