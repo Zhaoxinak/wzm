@@ -17,7 +17,7 @@
 @property (nonatomic, strong) OneHeadView *oneHeadView;
 
 
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -43,12 +43,41 @@
     
 }
 
+
+#pragma mark - 初加载数据
+-(void)loadNewData{
+    
+    [self endRefresh];
+}
+
+
+#pragma mark - 加载数据
+-(void)didlaodDataButton{
+    
+    
+    self.loading = YES;
+    //模拟加载延迟
+    WEAK_SELF;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF;
+        //初始化数据
+        _dataArray = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", nil];
+        [self.tableView reloadData];
+        [self endRefresh];
+        self.loading = NO;
+        
+    });
+
+    
+}
+
+
+#pragma mark --初始化数据视图
 -(void)setView{
     
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
-    self.tableView.tableHeaderView = _oneHeadView;
     
     //设置tabViewHeader
     _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/3*2);
@@ -73,18 +102,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 0;
+    return _dataArray.count;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 0.5;
+    return 1;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return 0.5;
+    return 1;
     
 }
 
@@ -119,12 +148,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    UITextField *textField = [UITextField new];
-    textField.frame = CGRectMake(10, 0, kScreen_Width-20, 44);
-    textField.backgroundColor = [UIColor whiteColor];
-    textField.tag = 1;
-    [cell.contentView addSubview:textField];
-    
+    cell.textLabel.text = _dataArray[indexPath.row];
     
     return cell;
     

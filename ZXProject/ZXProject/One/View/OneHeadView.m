@@ -25,7 +25,7 @@
     
     //广告轮播图
     adView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/2)];
-    adView.backgroundColor = [UIColor whiteColor];
+    adView.backgroundColor = [UIColor redColor];
     [self insertSubview:adView atIndex:1];
     
     //按钮图

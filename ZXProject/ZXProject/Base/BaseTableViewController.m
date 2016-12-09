@@ -10,7 +10,7 @@
 
 @interface BaseTableViewController ()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate,UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, getter=isLoading) BOOL loading;
+
 
 @end
 
@@ -161,22 +161,25 @@
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
 {
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
+    [self didlaodDataButton];
 }
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
 {
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
+    [self didlaodDataButton];
 }
 
+
+#pragma mark - 点击加载数据的按钮
+-(void)didlaodDataButton{
+    
+    self.loading = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.loading = NO;
+        [self endRefresh];
+    });
+
+}
 #pragma mark - 刷新系统
 -(void)setHeaderRefresh{
     
@@ -196,13 +199,13 @@
 #pragma mark - 重置数据
 -(void)loadNewData{
     
-    [self setDelayEndRefreshing];
+    [self didlaodDataButton];
 }
 
 #pragma mark - 加载数据
 -(void)loadMoreData{
     
-    [self setDelayEndRefreshing];
+    [self didlaodDataButton];
 }
 
 #pragma mark - 结束刷新

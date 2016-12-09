@@ -129,10 +129,11 @@ return _instance; \
  *  重要颜色
  */
 
-#define OneColor   RGBColor(40, 205, 251, 1)
-#define TwoColor   RGBColor(40, 205, 251, 1)
-#define ThreeColor RGBColor(40, 205, 251, 1)
-#define BGColor    RGBColor(241, 241, 241, 1)
+#define OneColor           RGBColor(40, 205, 251, 1)
+#define TwoColor           RGBColor(40, 205, 251, 1)
+#define ThreeColor         RGBColor(40, 205, 251, 1)
+#define BGColor            RGBColor(241, 241, 241, 1)
+#define KNavigationColor   RGBColor(40, 205, 251, 1)
 /**
  *  nav字体大小
  */
