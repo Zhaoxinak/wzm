@@ -161,25 +161,14 @@
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
 {
-    [self didlaodDataButton];
+    [self loadNewData];
 }
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
 {
-    [self didlaodDataButton];
+    [self loadNewData];
 }
 
-
-#pragma mark - 点击加载数据的按钮
--(void)didlaodDataButton{
-    
-    self.loading = YES;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-        [self endRefresh];
-    });
-
-}
 #pragma mark - 刷新系统
 -(void)setHeaderRefresh{
     
@@ -199,13 +188,13 @@
 #pragma mark - 重置数据
 -(void)loadNewData{
     
-    [self didlaodDataButton];
+   
 }
 
 #pragma mark - 加载数据
 -(void)loadMoreData{
     
-    [self didlaodDataButton];
+   
 }
 
 #pragma mark - 结束刷新

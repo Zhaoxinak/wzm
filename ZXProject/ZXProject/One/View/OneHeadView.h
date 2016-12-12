@@ -11,6 +11,7 @@
 #import "UIView+Common.h"
 @protocol OneHeadViewDelegate <NSObject>
 
+#pragma mark -- 实现轮播图与按钮 同时跳转 低于100为轮播， 高于100为按钮
 @optional
 -(void)didSelect2go:(NSInteger)tag;
 
@@ -25,7 +26,7 @@
 }
 
 @property(nonatomic, assign) id<OneHeadViewDelegate> delegate;
--(void)setcycleScrollView:(NSArray *)imageArray;
+@property(nonatomic, strong) NSMutableArray *imageArray;
 
 
 @end

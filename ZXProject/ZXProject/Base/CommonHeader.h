@@ -134,6 +134,10 @@ return _instance; \
 #define ThreeColor         RGBColor(40, 205, 251, 1)
 #define BGColor            RGBColor(241, 241, 241, 1)
 #define KNavigationColor   RGBColor(40, 205, 251, 1)
+
+#define OneTextColor           RGBColor(40, 205, 251, 1)
+#define TwoTextColor           RGBColor(40, 205, 251, 1)
+#define ThreeTextColor         RGBColor(40, 205, 251, 1)
 /**
  *  nav字体大小
  */

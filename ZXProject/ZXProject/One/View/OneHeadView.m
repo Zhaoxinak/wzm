@@ -21,6 +21,8 @@
     
 }
 
+
+#pragma mark --- 打底图
 -(void)setTopBottomView{
     
     //广告轮播图
@@ -36,6 +38,7 @@
     
 }
 
+#pragma mark --- 顶部轮播图
 -(void)topADView{
     
     
@@ -55,9 +58,9 @@
     
 }
 
+#pragma mark --- 设置轮播图的图片
+-(void)setImageArray:(NSMutableArray *)imageArray{
 
--(void)setcycleScrollView:(NSArray *)imageArray{
-    
     NSArray *imagesURLStrings = imageArray;
     
     //模拟加载延迟
@@ -65,10 +68,10 @@
         cycleScrollView.imageURLStringsGroup = imagesURLStrings;
     });
     
+    
 }
 
-
-
+#pragma mark --- 底部按钮图
 -(void)BtnView{
     
     NSArray *btnNames = [NSArray arrayWithObjects:@"参与活动", @"加入喵圈", @"喵问专家", @"改装心得", @"案例展示", @"改装百科",nil];
@@ -104,22 +107,25 @@
 
 }
 
+#pragma mark --- 顶部轮播点击实现
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    //轮播跳转
+    NSLog(@"index%ld",(long)index);
+    [self.delegate didSelect2go: index];
+    
+}
+
+
+#pragma mark --- 底部按钮点击实现
 -(void)btnAct:(UIButton *)button{
     
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);
     
-    [self.delegate didSelect2go: tag];
+    [self.delegate didSelect2go: tag+100];
     
 }
 
 
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    
-    //轮播跳转
-    NSLog(@"index%ld",(long)index);
-    [self.delegate didSelect2go: index+100];
-    
-    
-}
 @end

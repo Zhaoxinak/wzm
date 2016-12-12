@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */; };
+		9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */; };
+		9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C321DFE74BB00E2CE45 /* HomePageModel.m */; };
 		9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED261DDEEF2600259FDE /* NetworkHelper.m */; };
 		9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED2B1DDEF73E00259FDE /* ZXTools.m */; };
 		9E4CED2F1DDEF7CA00259FDE /* ZXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED2E1DDEF7CA00259FDE /* ZXScrollView.m */; };
@@ -43,6 +45,10 @@
 		4D918681604A15EE2101F31A /* libPods-ZXProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E16A5FD1DEED11E00D09DDD /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		9E319C2C1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedEncyclopediaTableViewCell.h; sourceTree = "<group>"; };
+		9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedEncyclopediaTableViewCell.m; sourceTree = "<group>"; };
+		9E319C311DFE74BB00E2CE45 /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
+		9E319C321DFE74BB00E2CE45 /* HomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModel.m; sourceTree = "<group>"; };
 		9E4CED251DDEEF2600259FDE /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		9E4CED261DDEEF2600259FDE /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		9E4CED281DDEEFD100259FDE /* GlobalURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalURL.h; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 				CE575A49239C8D0151047A64 /* Pods-ZXProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E319C301DFE740C00E2CE45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E319C311DFE74BB00E2CE45 /* HomePageModel.h */,
+				9E319C321DFE74BB00E2CE45 /* HomePageModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9E4CED211DDEEEEE00259FDE /* Network */ = {
@@ -218,6 +233,7 @@
 		9E54587A1DDD8408002CA99D /* One */ = {
 			isa = PBXGroup;
 			children = (
+				9E319C301DFE740C00E2CE45 /* Model */,
 				9EFAD5EE1DFAA114009C2324 /* View */,
 				9E54587B1DDD8408002CA99D /* OneViewController.h */,
 				9E54587C1DDD8408002CA99D /* OneViewController.m */,
@@ -285,6 +301,8 @@
 			children = (
 				9EFAD5EF1DFAA1B9009C2324 /* OneHeadView.h */,
 				9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */,
+				9E319C2C1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.h */,
+				9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +441,7 @@
 				9E4CED351DDEF82300259FDE /* ZXSegmentedControl.m in Sources */,
 				9E54587F1DDD8408002CA99D /* OneViewController.m in Sources */,
 				9E54584C1DDD7BF8002CA99D /* ViewController.m in Sources */,
+				9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
@@ -432,6 +451,7 @@
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
 				9E5458461DDD7BF8002CA99D /* main.m in Sources */,
 				9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */,
+				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
 				9E54588C1DDD8440002CA99D /* CustomTabBar.m in Sources */,
 				9E54588A1DDD8440002CA99D /* BaseViewController.m in Sources */,
 				9E54588B1DDD8440002CA99D /* CustomNaviController.m in Sources */,

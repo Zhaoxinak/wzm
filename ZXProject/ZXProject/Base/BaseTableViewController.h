@@ -22,6 +22,5 @@
 -(void)endRefresh;
 #pragma mark - 模拟加载延迟 结束刷新
 -(void)setDelayEndRefreshing;
-#pragma mark - 点击加载数据的按钮
--(void)didlaodDataButton;
+
 @end
