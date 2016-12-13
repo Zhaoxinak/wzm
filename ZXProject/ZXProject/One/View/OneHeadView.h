@@ -11,9 +11,9 @@
 #import "UIView+Common.h"
 @protocol OneHeadViewDelegate <NSObject>
 
-#pragma mark -- 实现轮播图与按钮 同时跳转 低于100为轮播， 高于100为按钮
+#pragma mark -- 实现轮播图与按钮 同时跳转 低于100为轮播， 高于等于100为按钮
 @optional
--(void)didSelect2go:(NSInteger)tag;
+-(void)oneHeadViewSelect2go:(NSInteger)tag;
 
 @end
 

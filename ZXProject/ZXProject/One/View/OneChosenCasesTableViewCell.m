@@ -1,14 +1,14 @@
 //
-//  OneModifiedEncyclopediaTableViewCell.m
+//  OneChosenCasesTableViewCell.m
 //  ZXProject
 //
-//  Created by Mr.X on 2016/12/12.
+//  Created by Mr.X on 2016/12/13.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "OneModifiedEncyclopediaTableViewCell.h"
+#import "OneChosenCasesTableViewCell.h"
 
-@implementation OneModifiedEncyclopediaTableViewCell
+@implementation OneChosenCasesTableViewCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -34,7 +34,7 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT)];
+    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-10*WIDTH_NIT, (kScreen_Width-10*WIDTH_NIT)/2)];
     avatarView.backgroundColor = [UIColor redColor];
     [self addSubview:avatarView];
     
@@ -43,16 +43,15 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT), 20*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, OneChosenCasesCell_Height-60*WIDTH_NIT, kScreen_Width-5*WIDTH_NIT, 20*WIDTH_NIT)];
     name.font = OneFont;
     name.textColor = OneTextColor;
-    name.text = @"标题标题标题标题标题标题标题标题";
+    name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT), 40*WIDTH_NIT)];
-    subName.numberOfLines = 2;
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, kScreen_Width/2, 20*WIDTH_NIT)];
     subName.font = TwoFont;
     subName.textColor = TwoTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
@@ -60,20 +59,20 @@
     
     
     //浏览者
-    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
+    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [scanBtn setTitle:@"0"];
     [scanBtn setImage:@"scan"];
     [scanBtn setTitleColor:ThreeTextColor];
     [self addSubview:scanBtn];
     
     //赞
-    zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
+    zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [zanBtn setTitle:@"0"];
     [zanBtn setImage:@"zan"];
     [zanBtn setTitleColor:ThreeTextColor];
     [self addSubview:zanBtn];
     
-  
+    
 }
 
 
@@ -89,8 +88,9 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
+
 
 @end

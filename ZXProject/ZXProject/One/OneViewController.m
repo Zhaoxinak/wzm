@@ -9,14 +9,16 @@
 
 /************C************/
 #import "OneViewController.h"
+#import "OneJoinPartyViewController.h" //参与活动
 /************V************/
-#import "OneHeadView.h"
-#import "OneModifiedEncyclopediaTableViewCell.h"
+#import "OneHeadView.h" //顶部视图
+#import "OneModifiedEncyclopediaTableViewCell.h"  //改装百科
+#import "OneChosenCasesTableViewCell.h"  //精选案例
 /************M************/
 #import "HomePageModel.h"
 
 
-@interface OneViewController ()<UITextFieldDelegate>
+@interface OneViewController ()<OneHeadViewDelegate>
 
 @property (nonatomic, strong) OneHeadView *oneHeadView;
 
@@ -36,6 +38,7 @@
     
 }
 
+#pragma mark -执行数据
 #pragma mark --初始化数据
 -(void)setData{
     
@@ -61,6 +64,18 @@
 }
 
 
+#pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
+- (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
+    
+    
+}
+
+- (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId{
+    
+}
+
+
+#pragma mark -执行视图
 #pragma mark --初始化数据视图
 -(void)setView{
     
@@ -72,18 +87,11 @@
     
     //设置tabViewHeader
     _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/3*2);
+    _oneHeadView.delegate = self;
     self.tableView.tableHeaderView = _oneHeadView;
 }
 
-#pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
-- (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
-  
-    
-}
 
-- (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId{
- 
-}
 
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -141,6 +149,20 @@
         return cell;
     }
     
+    //精选案例
+    if (indexPath.section == 1) {
+        static NSString *cellIdentifier=@"OneChosenCasesTableViewCell";
+        
+        //首先根据标示去缓存池取
+        OneChosenCasesTableViewCell *cell=nil;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[OneChosenCasesTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        return cell;
+    }
+   
+    
     static NSString *cellIdentifier=@"cell";
     //首先根据标示去缓存池取
     UITableViewCell *cell=nil;
@@ -158,13 +180,40 @@
     if (indexPath.section == 0) {
         return OneModifiedCell_Height;
     }
+    if (indexPath.section == 1) {
+        return OneChosenCasesCell_Height;
+    }
     return 44;
 }
 
 
+#pragma mark -执行功能
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+}
 
 
-
+#pragma mark -- 实现轮播图与按钮 同时跳转 低于100为轮播， 高于等于100为按钮
+-(void)oneHeadViewSelect2go:(NSInteger)tag{
+    
+    
+    
+    
+    
+    //实现按钮跳转
+    if (tag>= 100) {
+        //参与活动
+        if (tag == 100) {
+            OneJoinPartyViewController *jpVC = [[OneJoinPartyViewController alloc]init];
+            [self.navigationController pushViewController:jpVC animated:YES];
+        }
+        
+        
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

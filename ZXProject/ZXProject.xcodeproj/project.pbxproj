@@ -29,6 +29,10 @@
 		9E54588C1DDD8440002CA99D /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458871DDD8440002CA99D /* CustomTabBar.m */; };
 		9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458891DDD8440002CA99D /* CustomTabBarController.m */; };
 		9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458D31DDD96E4002CA99D /* TestModel.m */; };
+		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
+		9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */; };
+		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
+		9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */; };
 		9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */; };
 		9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5F91DFAB2D6009C2324 /* NSDate+CH.m */; };
 		9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5FB1DFAB2D6009C2324 /* NSString+Common.m */; };
@@ -87,6 +91,14 @@
 		9E5458891DDD8440002CA99D /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		9E5458D21DDD96E4002CA99D /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		9E5458D31DDD96E4002CA99D /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
+		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
+		9EC6D4FD1DFFD61F00F63C11 /* OneJoinPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyViewController.h; sourceTree = "<group>"; };
+		9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneJoinPartyViewController.m; sourceTree = "<group>"; };
+		9EC6D5001DFFDC0600F63C11 /* OneJoinPartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyTableViewCell.h; sourceTree = "<group>"; };
+		9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneJoinPartyTableViewCell.m; sourceTree = "<group>"; };
+		9EC6D5031DFFDC6E00F63C11 /* OneJoinPartyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyModel.h; sourceTree = "<group>"; };
+		9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneJoinPartyModel.m; sourceTree = "<group>"; };
 		9EFAD5EF1DFAA1B9009C2324 /* OneHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneHeadView.h; sourceTree = "<group>"; };
 		9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneHeadView.m; sourceTree = "<group>"; };
 		9EFAD5F81DFAB2D6009C2324 /* NSDate+CH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CH.h"; sourceTree = "<group>"; };
@@ -132,6 +144,8 @@
 			children = (
 				9E319C311DFE74BB00E2CE45 /* HomePageModel.h */,
 				9E319C321DFE74BB00E2CE45 /* HomePageModel.m */,
+				9EC6D5031DFFDC6E00F63C11 /* OneJoinPartyModel.h */,
+				9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +251,8 @@
 				9EFAD5EE1DFAA114009C2324 /* View */,
 				9E54587B1DDD8408002CA99D /* OneViewController.h */,
 				9E54587C1DDD8408002CA99D /* OneViewController.m */,
+				9EC6D4FD1DFFD61F00F63C11 /* OneJoinPartyViewController.h */,
+				9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */,
 			);
 			path = One;
 			sourceTree = "<group>";
@@ -303,6 +319,10 @@
 				9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */,
 				9E319C2C1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.h */,
 				9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */,
+				9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */,
+				9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */,
+				9EC6D5001DFFDC0600F63C11 /* OneJoinPartyTableViewCell.h */,
+				9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,10 +462,13 @@
 				9E54587F1DDD8408002CA99D /* OneViewController.m in Sources */,
 				9E54584C1DDD7BF8002CA99D /* ViewController.m in Sources */,
 				9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */,
+				9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
+				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
+				9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */,
 				9EFAD60B1DFAB2D6009C2324 /* UIView+Common.m in Sources */,
 				9EFAD60C1DFAB2D6009C2324 /* UIView+Frame.m in Sources */,
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
@@ -458,6 +481,7 @@
 				9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */,
 				9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */,
 				9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */,
+				9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */,
 				9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,

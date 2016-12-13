@@ -112,7 +112,7 @@
     
     //轮播跳转
     NSLog(@"index%ld",(long)index);
-    [self.delegate didSelect2go: index];
+    [self.delegate oneHeadViewSelect2go: index];
     
 }
 
@@ -123,7 +123,7 @@
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);
     
-    [self.delegate didSelect2go: tag+100];
+    [self.delegate oneHeadViewSelect2go: tag+100];
     
 }
 

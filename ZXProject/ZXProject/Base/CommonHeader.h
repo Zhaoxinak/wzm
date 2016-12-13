@@ -141,13 +141,13 @@ return _instance; \
 /**
  *  nav字体大小
  */
-#define KNavigationFont [UIFont systemFontOfSize:18]
+#define KNavigationFont [UIFont systemFontOfSize:18*WIDTH_NIT]
 /**
  *  nav字体大小
  */
-#define OneFont   [UIFont systemFontOfSize:18]
-#define TwoFont   [UIFont systemFontOfSize:18]
-#define ThreeFont [UIFont systemFontOfSize:18]
-#define FourFont  [UIFont systemFontOfSize:18]
+#define OneFont   [UIFont systemFontOfSize:17*WIDTH_NIT]
+#define TwoFont   [UIFont systemFontOfSize:15*WIDTH_NIT]
+#define ThreeFont [UIFont systemFontOfSize:13*WIDTH_NIT]
+#define FourFont  [UIFont systemFontOfSize:11*WIDTH_NIT]
 
 #endif /* CommonHeader_h */
