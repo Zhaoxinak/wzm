@@ -34,16 +34,16 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width-OneJoinPartyCell_Height, 5*WIDTH_NIT, OneJoinPartyCell_Height-10*WIDTH_NIT, OneJoinPartyCell_Height-10*WIDTH_NIT)];
-    avatarView.backgroundColor = [UIColor redColor];
-    [self addSubview:avatarView];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width-OneJoinPartyCell_Height, 5*WIDTH_NIT, OneJoinPartyCell_Height-10*WIDTH_NIT, OneJoinPartyCell_Height-10*WIDTH_NIT)];
+    picView.backgroundColor = [UIColor redColor];
+    [self addSubview:picView];
     
     //图片点击
     
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-avatarView.width-15*WIDTH_NIT, 60*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 60*WIDTH_NIT)];
     name.numberOfLines = 3;
     name.font = OneFont;
     name.textColor = OneTextColor;
@@ -52,7 +52,7 @@
     
     
     //内容
-    addrName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-avatarView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
+    addrName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
     addrName.font = TwoFont;
     addrName.textColor = TwoTextColor;
     addrName.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";
@@ -66,7 +66,7 @@
     [self addSubview:timeName];
 
     //价格
-    priceName = [[UILabel alloc]initWithFrame:CGRectMake(timeName.right+5*WIDTH_NIT, addrName.bottom+5*WIDTH_NIT, kScreen_Width-timeName.width-avatarView.width-25*WIDTH_NIT, 20*WIDTH_NIT)];
+    priceName = [[UILabel alloc]initWithFrame:CGRectMake(timeName.right+5*WIDTH_NIT, addrName.bottom+5*WIDTH_NIT, kScreen_Width-timeName.width-picView.width-25*WIDTH_NIT, 20*WIDTH_NIT)];
     priceName.textAlignment = NSTextAlignmentRight;
     priceName.font = TwoFont;
     priceName.textColor = TwoTextColor;
@@ -74,12 +74,12 @@
     [self addSubview:priceName];
     
     //活动类型
-    typeName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.width-40*WIDTH_NIT, 0, 40*WIDTH_NIT, 20*WIDTH_NIT)];
+    typeName = [[UILabel alloc]initWithFrame:CGRectMake(picView.width-40*WIDTH_NIT, 0, 40*WIDTH_NIT, 20*WIDTH_NIT)];
     typeName.textAlignment = NSTextAlignmentCenter;
     typeName.font = TwoFont;
     typeName.textColor = TwoTextColor;
     typeName.text = @"比赛";
-    [avatarView addSubview:typeName];
+    [picView addSubview:typeName];
     
     
 }

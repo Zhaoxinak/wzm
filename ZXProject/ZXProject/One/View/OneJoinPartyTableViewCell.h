@@ -16,8 +16,8 @@
 @interface OneJoinPartyTableViewCell : UITableViewCell
 {
     UIView *topLine; //顶部分割线
-    UIImageView *avatarView; //图片
-    UIButton *avatarBtn; //图片点击
+    UIImageView *picView; //图片
+    UIButton *picBtn; //图片点击
     UILabel *name; //标题
     UILabel *addrName; //地址
     UILabel *timeName; //时间

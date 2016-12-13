@@ -18,8 +18,8 @@
 @interface OneChosenCasesTableViewCell : UITableViewCell{
     
     UIView *topLine; //顶部分割线
-    UIImageView *avatarView; //图片
-    UIButton *avatarBtn; //图片点击
+    UIImageView *picView; //图片
+    UIButton *picBtn; //图片点击
     UILabel *name; //标题
     UILabel *subName; //内容
     UIButton *scanBtn; //浏览者

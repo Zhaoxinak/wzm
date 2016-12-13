@@ -34,9 +34,9 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-10*WIDTH_NIT, (kScreen_Width-10*WIDTH_NIT)/2)];
-    avatarView.backgroundColor = [UIColor redColor];
-    [self addSubview:avatarView];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-10*WIDTH_NIT, (kScreen_Width-10*WIDTH_NIT)/2)];
+    picView.backgroundColor = [UIColor redColor];
+    [self addSubview:picView];
     
     //图片点击
     

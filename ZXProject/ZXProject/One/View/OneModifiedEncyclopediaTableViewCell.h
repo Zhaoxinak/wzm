@@ -18,8 +18,8 @@
 @interface OneModifiedEncyclopediaTableViewCell : UITableViewCell{
     
     UIView *topLine; //顶部分割线
-    UIImageView *avatarView; //图片
-    UIButton *avatarBtn; //图片点击
+    UIImageView *picView; //图片
+    UIButton *picBtn; //图片点击
     UILabel *name; //标题
     UILabel *subName; //内容
     UIButton *scanBtn; //浏览者
@@ -27,11 +27,6 @@
     
 }
 
-@property (nonatomic, strong) NSString *avatarUrl; //图片地址
-@property (nonatomic, strong) NSString *nameStr; //标题
-@property (nonatomic, strong) NSString *subNameStr; //内容
-@property (nonatomic, strong) NSString *scanStr; //浏览者
-@property (nonatomic, strong) NSString *zanStr; //赞
 @property (nonatomic, strong) HomePageModel *model; //模型
 
 @end

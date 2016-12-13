@@ -34,16 +34,16 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT)];
-    avatarView.backgroundColor = [UIColor redColor];
-    [self addSubview:avatarView];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT, OneModifiedCell_Height-10*WIDTH_NIT)];
+    picView.backgroundColor = [UIColor redColor];
+    [self addSubview:picView];
     
     //图片点击
     
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT), 20*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-(picView.right+20*WIDTH_NIT), 20*WIDTH_NIT)];
     name.font = OneFont;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题";
@@ -51,7 +51,7 @@
     
     
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT), 40*WIDTH_NIT)];
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(picView.right+20*WIDTH_NIT), 40*WIDTH_NIT)];
     subName.numberOfLines = 2;
     subName.font = TwoFont;
     subName.textColor = TwoTextColor;
@@ -60,7 +60,7 @@
     
     
     //浏览者
-    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
+    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
     [scanBtn setTitle:@"0"];
     [scanBtn setImage:@"scan"];
     [scanBtn setTitleColor:ThreeTextColor];
