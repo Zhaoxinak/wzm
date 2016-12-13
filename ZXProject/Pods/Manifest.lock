@@ -28,6 +28,7 @@ PODS:
     - TOWebViewController/Core (= 2.2.6)
   - TOWebViewController/Core (2.2.6)
   - ZYQAssetPickerController (1.0.0)
+  - ZYSideSlipFilter (0.5.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - SDWebImage
   - TOWebViewController
   - ZYQAssetPickerController
+  - ZYSideSlipFilter
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -52,7 +54,8 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
   ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
+  ZYSideSlipFilter: 6946b221476c25a5e2d4acff44f1748349d01f62
 
-PODFILE CHECKSUM: 6807e66ddacb461f5f7fe9136c88933fb99f0056
+PODFILE CHECKSUM: e3373bbb6b39681f6de8194d56cd346547d53113
 
 COCOAPODS: 1.1.1

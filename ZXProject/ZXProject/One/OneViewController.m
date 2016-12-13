@@ -10,6 +10,7 @@
 /************C************/
 #import "OneViewController.h"
 #import "OneJoinPartyViewController.h" //参与活动
+#import "OneJoinMiaoCircleViewController.h" //加入喵圈
 /************V************/
 #import "OneHeadView.h" //顶部视图
 #import "OneModifiedEncyclopediaTableViewCell.h"  //改装百科
@@ -204,12 +205,18 @@
     
     //实现按钮跳转
     if (tag>= 100) {
-        //参与活动
         if (tag == 100) {
+            //参与活动
             OneJoinPartyViewController *jpVC = [[OneJoinPartyViewController alloc]init];
             [self.navigationController pushViewController:jpVC animated:YES];
+        }else
+        if (tag == 101) {
+            //加入喵圈
+            OneJoinMiaoCircleViewController *jmVC = [[OneJoinMiaoCircleViewController alloc]init];
+            [self.navigationController pushViewController:jmVC animated:YES];
         }
         
+    
         
     }
     

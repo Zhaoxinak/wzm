@@ -13,9 +13,18 @@
 #import "OneJoinPartyTableViewCell.h"  //活动
 /************M************/
 #import "OneJoinPartyModel.h"
+/************侧边栏************/
+#import "ZYSideSlipFilterController.h"
+#import "ZYSideSlipFilterRegionModel.h"
+#import "SideSlipBaseTableViewCell.h"
+#import "SideSlipCommonTableViewCell.h"
+#import "CommonItemModel.h"
+#import "PriceRangeModel.h"
 
 
 @interface OneJoinPartyViewController ()
+
+@property (strong, nonatomic) ZYSideSlipFilterController *filterController;
 
 @end
 
@@ -75,10 +84,175 @@
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
-
+    //右边侧边栏按钮
+    UIButton* sideBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    sideBtn.frame = CGRectMake(0, 0, 44, 44);
+    [sideBtn setTitle:@"侧边栏"];
+    [sideBtn addTarget:self action:@selector(sideBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:sideBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    [self setFilterController];
 }
 
+#pragma mark --设置右边侧边栏按钮
+-(void)setFilterController{
+    
+    self.filterController = [[ZYSideSlipFilterController alloc] initWithSponsor:self
+                                                                     resetBlock:^(NSArray *dataList) {
+                                                                         for (ZYSideSlipFilterRegionModel *model in dataList) {
+                                                                             //selectedStatus
+                                                                             for (CommonItemModel *itemModel in model.itemList) {
+                                                                                 [itemModel setSelected:NO];
+                                                                             }
+                                                                             //selectedItem
+                                                                             model.selectedItemList = nil;
+                                                                         }
+                                                                     }                                                               commitBlock:^(NSArray *dataList) {
+                                                                         
+                                                                         //价格区间
+                                                                         ZYSideSlipFilterRegionModel *priceRegionModel = dataList[2];
+                                                                         PriceRangeModel *priceRangeModel = [priceRegionModel.customDict objectForKey:PRICE_RANGE_MODEL];
+                                                                         NSMutableString *priceRangeString = [NSMutableString stringWithString:@"\n价格区间: "];
+                                                                         if (priceRangeModel) {
+                                                                             [priceRangeString appendFormat:@"%@ - %@", priceRangeModel.minPrice, priceRangeModel.maxPrice];
+                                                                         }
+                                                                         NSLog(@"%@", priceRangeString);
+                                                                         
+                                                                         //人数区间
+                                                                         ZYSideSlipFilterRegionModel *personRegionModel = dataList[4];
+                                                                         PriceRangeModel *personRangeModel = [personRegionModel.customDict objectForKey:PRICE_RANGE_MODEL];
+                                                                         NSMutableString *personRangeString = [NSMutableString stringWithString:@"\n人数区间: "];
+                                                                         if (personRangeModel) {
+                                                                             [personRangeString appendFormat:@"%@ - %@", personRangeModel.minPrice, personRangeModel.maxPrice];
+                                                                         }
+                                                                         NSLog(@"%@", personRangeString);
+                                                                         
+                                                                         //Common Region
+                                                                         NSMutableString *commonRegionString = [NSMutableString string];
+                                                                         for (int i = 4; i < dataList.count; i ++) {
+                                                                             ZYSideSlipFilterRegionModel *commonRegionModel = dataList[i];
+                                                                             [commonRegionString appendFormat:@"\n%@:", commonRegionModel.regionTitle];
+                                                                             NSMutableArray *commonItemSelectedArray = [NSMutableArray array];
+                                                                             for (CommonItemModel *itemModel in commonRegionModel.itemList) {
+                                                                                 if (itemModel.selected) {
+                                                                                     [commonItemSelectedArray addObject:[NSString stringWithFormat:@"%@-%@", itemModel.itemId, itemModel.itemName]];
+                                                                                 }
+                                                                             }
+                                                                             [commonRegionString appendString:[commonItemSelectedArray componentsJoinedByString:@", "]];
+                                                                         }
+                                                                         NSLog(@"%@", commonRegionString);
+                                                                         
+                                                                         [self.filterController dismiss];
+                                                                         
+                                                                     }];
+    _filterController.animationDuration = .3f;
+    _filterController.sideSlipLeading = 0.15*[UIScreen mainScreen].bounds.size.width;
+    _filterController.dataList = [self packageDataList];
 
+    
+}
+
+#pragma mark - 模拟侧边栏数据源
+- (NSArray *)packageDataList {
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
+    [dataArray addObject:[self typeFilterRegionModel]];
+    [dataArray addObject:[self timeFilterRegionModel]];
+    [dataArray addObject:[self priceMMFilterRegionModel]];
+    [dataArray addObject:[self priceFilterRegionModel]];
+    [dataArray addObject:[self personMMFilterRegionModel]];
+    [dataArray addObject:[self personFilterRegionModel]];
+   
+    return [dataArray mutableCopy];
+}
+
+//活动类型
+-(ZYSideSlipFilterRegionModel *)typeFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipCommonTableViewCell";
+    model.regionTitle = @"活动类型";
+    model.customDict = @{REGION_SELECTION_TYPE:@(1)};;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"四"] itemId:@"0003" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"五"] itemId:@"0004" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"六"] itemId:@"0005" selected:NO],
+                       ];
+    
+    return model;
+    
+}
+//活动日期
+-(ZYSideSlipFilterRegionModel *)timeFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipCommonTableViewCell";
+    model.regionTitle = @"活动日期";
+    model.customDict = @{REGION_SELECTION_TYPE:@(1)};;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"四"] itemId:@"0003" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"五"] itemId:@"0004" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"六"] itemId:@"0005" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"七"] itemId:@"0006" selected:NO],
+                       ];
+    
+    return model;
+    
+}
+//费用区间
+-(ZYSideSlipFilterRegionModel *)priceMMFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipPriceTableViewCell";
+    model.regionTitle = @"费用区间";
+    return model;
+    
+}
+//活动费用
+-(ZYSideSlipFilterRegionModel *)priceFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipCommonTableViewCell";
+    model.customDict = @{REGION_SELECTION_TYPE:@(0)};;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+                       ];
+    
+    return model;
+    
+}
+//人数区间
+-(ZYSideSlipFilterRegionModel *)personMMFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipPriceTableViewCell";
+    model.regionTitle = @"参加人数";
+    return model;
+    
+}
+//活动人数
+-(ZYSideSlipFilterRegionModel *)personFilterRegionModel{
+    ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
+    model.containerCellClass = @"SideSlipCommonTableViewCell";
+    model.customDict = @{REGION_SELECTION_TYPE:@(0)};;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+                       ];
+    return model;
+}
+
+//设置model
+- (CommonItemModel *)createItemModelWithTitle:(NSString *)itemTitle
+                                       itemId:(NSString *)itemId
+                                     selected:(BOOL)selected {
+    CommonItemModel *model = [[CommonItemModel alloc] init];
+    model.itemId = itemId;
+    model.itemName = itemTitle;
+    model.selected = selected;
+    return model;
+}
 
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -148,7 +322,11 @@
     
 }
 
-
+#pragma mark -侧边栏显示
+-(void)sideBtn{
+    
+    [_filterController show];
+}
 
 
 @end

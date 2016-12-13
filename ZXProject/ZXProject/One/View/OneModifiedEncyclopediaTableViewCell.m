@@ -63,14 +63,14 @@
     scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
     [scanBtn setTitle:@"0"];
     [scanBtn setImage:@"scan"];
-    [scanBtn setTitleColor:ThreeTextColor];
+    [scanBtn setTitleColor:OneButtonColor];
     [self addSubview:scanBtn];
     
     //赞
     zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneModifiedCell_Height-50*WIDTH_NIT, 80*WIDTH_NIT, 40*WIDTH_NIT)];
     [zanBtn setTitle:@"0"];
     [zanBtn setImage:@"zan"];
-    [zanBtn setTitleColor:ThreeTextColor];
+    [zanBtn setTitleColor:OneButtonColor];
     [self addSubview:zanBtn];
     
   

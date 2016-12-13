@@ -96,8 +96,8 @@
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
-        btn.backgroundColor = [UIColor yellowColor];
-        btn.titleColor = [UIColor blackColor];
+        btn.backgroundColor = BGButtonColor;
+        btn.titleColor = OneButtonColor;
         btn.title = btnNames[index];
         [btn addTarget:self action:@selector(btnAct:)];
         [appView addSubview:btn];

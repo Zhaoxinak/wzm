@@ -11,6 +11,6 @@ target 'ZXProject' do
    pod 'ZYQAssetPickerController'
    pod 'IQKeyboardManager'
    pod 'DZNEmptyDataSet'
-   
-   
+   pod 'ZYSideSlipFilter'
+
 end

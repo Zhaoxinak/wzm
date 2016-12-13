@@ -39,6 +39,7 @@
 #import <UIScrollView+EmptyDataSet.h> //tableView为空时数据为空
 
 
+
 /**
  *  屏幕宽高比例（以6为基准）
  */
@@ -138,6 +139,11 @@ return _instance; \
 #define OneTextColor           RGBColor(40, 205, 251, 1)
 #define TwoTextColor           RGBColor(40, 205, 251, 1)
 #define ThreeTextColor         RGBColor(40, 205, 251, 1)
+
+#define OneButtonColor         RGBColor(40, 205, 251, 1)
+#define TwoButtonColor         RGBColor(40, 205, 251, 1)
+#define ThreeButtonColor       RGBColor(40, 205, 251, 1)
+#define BGButtonColor          RGBColor(241, 241, 241, 1)
 /**
  *  nav字体大小
  */
