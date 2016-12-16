@@ -60,7 +60,7 @@
     
     joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, OneJoinMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
-    [joinBtn setTitleColor:OneButtonColor];
+    [joinBtn setTitleColor:OneTextColor];
     joinBtn.layer.borderWidth = 1;
     [joinBtn addTarget:self action:@selector(joinTap:)];
     [self addSubview:joinBtn];

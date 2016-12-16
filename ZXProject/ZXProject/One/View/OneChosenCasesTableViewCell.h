@@ -12,7 +12,7 @@
 #import "HomePageModel.h"
 
 //cell高度
-#define OneChosenCasesCell_Height kScreen_Width/4*3
+#define OneChosenCasesCell_Height kScreen_Width/750*530
 
 
 @interface OneChosenCasesTableViewCell : UITableViewCell{

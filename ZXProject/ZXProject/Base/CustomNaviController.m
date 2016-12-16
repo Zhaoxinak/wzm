@@ -32,13 +32,14 @@
     UINavigationBar *appearance = [UINavigationBar appearance];
     //设置文字属性
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = KNavigationColor;
+    textAttrs[NSForegroundColorAttributeName] = KNavigationTitleColor;
+//    textAttrs[NSBackgroundColorAttributeName] = KNavigationBGColor;
     textAttrs[NSFontAttributeName] = KNavigationFont;
     textAttrs[NSShadowAttributeName] = [[NSShadow alloc] init];
     
     [appearance setTitleTextAttributes:textAttrs];
-    [appearance setBackgroundImage:[ZXTools createImageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
-    [appearance setTintColor:[UIColor blueColor]];
+    [appearance setBackgroundImage:[ZXTools createImageWithColor:KNavigationBGColor] forBarMetrics:UIBarMetricsDefault];
+    [appearance setTintColor:KNavigationTitleColor];
     
 }
 

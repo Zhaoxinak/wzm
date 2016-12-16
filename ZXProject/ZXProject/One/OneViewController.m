@@ -7,6 +7,9 @@
 //
 #import "TestModel.h" //测试model
 
+//cellheader的高度   280   70
+#define OneCell_Header_Height 10*WIDTH_NIT+35*WIDTH_NIT
+
 /************C************/
 #import "OneViewController.h"
 #import "OneJoinPartyViewController.h" //参与活动
@@ -66,6 +69,12 @@
 
 
 #pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
+
+-(void)ZXsuccessData:(id)data byRequestId:(NSInteger)requestId{
+    
+}
+
+
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
     
     
@@ -74,6 +83,7 @@
 - (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId{
     
 }
+
 
 
 #pragma mark -执行视图
@@ -87,7 +97,8 @@
     [self.view insertSubview:self.tableView atIndex:1];
     
     //设置tabViewHeader
-    _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/3*2);
+    _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470);
+    _oneHeadView.backgroundColor = BGColor;
     _oneHeadView.delegate = self;
     self.tableView.tableHeaderView = _oneHeadView;
 }
@@ -108,7 +119,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 1;
+    return OneCell_Header_Height;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -120,6 +131,30 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     headerView.backgroundColor = BGColor;
+    //cell的标题
+    UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
+    cellTitle.font = TwoFont;
+    cellTitle.textColor = OneTextColor;
+    cellTitle.backgroundColor = [UIColor whiteColor];
+    [headerView addSubview:cellTitle];
+    //cell的按钮
+    UIButton * cellMoreBtn = [[UIButton alloc]initWithFrame:CGRectMake(headerView.width-75*WIDTH_NIT, 10*WIDTH_NIT, 70*WIDTH_NIT, 35*WIDTH_NIT)];
+    [cellMoreBtn setBackgroundColor:[UIColor whiteColor]];
+    [cellMoreBtn setTitle:@"更多>>"];
+    cellMoreBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+    [cellMoreBtn setTitleColor:ThreeTextColor];
+    cellMoreBtn.titleLabel.font = FourFont;
+    [cellMoreBtn addTarget:self action:@selector(cellMoreTap:)];
+    [headerView addSubview:cellMoreBtn];
+    
+    if (section == 0) {
+        cellTitle.text = @"    改装百科";
+        cellMoreBtn.tag = 0;
+    }
+    if (section == 1) {
+        cellTitle.text = @"    精选案例";
+        cellMoreBtn.tag = 1;
+    }
     
     return headerView;
 }
@@ -198,11 +233,7 @@
 
 #pragma mark -- 实现轮播图与按钮 同时跳转 低于100为轮播， 高于等于100为按钮
 -(void)oneHeadViewSelect2go:(NSInteger)tag{
-    
-    
-    
-    
-    
+   
     //实现按钮跳转
     if (tag>= 100) {
         if (tag == 100) {
@@ -216,9 +247,14 @@
             [self.navigationController pushViewController:jmVC animated:YES];
         }
         
-    
-        
     }
+    
+}
+
+#pragma mark -cell头部功能执行（更多）
+-(void)cellMoreTap:(UIButton *)button{
+    
+    NSLog(@"更多:%ld",(long)button.tag);
     
 }
 

@@ -34,7 +34,7 @@
     [self addSubview:topLine];
     
     //图片
-    picView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-10*WIDTH_NIT, (kScreen_Width-10*WIDTH_NIT)/2)];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, (kScreen_Width-20*WIDTH_NIT)/490*270)];
     picView.backgroundColor = [UIColor redColor];
     [self addSubview:picView];
     
@@ -43,16 +43,16 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, OneChosenCasesCell_Height-60*WIDTH_NIT, kScreen_Width-5*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = OneFont;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, OneChosenCasesCell_Height-60*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    name.font = ThreeFont;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, kScreen_Width/2, 20*WIDTH_NIT)];
-    subName.font = TwoFont;
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, kScreen_Width/2-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    subName.font = FourFont;
     subName.textColor = TwoTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
@@ -62,14 +62,16 @@
     scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [scanBtn setTitle:@"0"];
     [scanBtn setImage:@"scan"];
-    [scanBtn setTitleColor:OneButtonColor];
+    [scanBtn setTitleColor:ThreeTextColor];
+    scanBtn.titleLabel.font = FiveFont;
     [self addSubview:scanBtn];
     
     //赞
     zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [zanBtn setTitle:@"0"];
     [zanBtn setImage:@"zan"];
-    [zanBtn setTitleColor:OneButtonColor];
+    [zanBtn setTitleColor:ThreeTextColor];
+    zanBtn.titleLabel.font = FiveFont;
     [self addSubview:zanBtn];
     
     

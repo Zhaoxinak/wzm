@@ -71,9 +71,17 @@ typedef enum : NSUInteger {
 }
 
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId {
+    
+    [self ZXsuccessData:data byRequestId:requestId];
 }
 
 - (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId {
+    
+}
+
+- (void)ZXsuccessData:(id _Nullable)data byRequestId:(NSInteger)requestId {
+    
+    
 }
 
 #pragma mark工具类

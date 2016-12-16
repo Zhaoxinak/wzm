@@ -26,12 +26,12 @@
 -(void)setTopBottomView{
     
     //广告轮播图
-    adView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/2)];
+    adView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/470*270)];
     adView.backgroundColor = [UIColor redColor];
     [self insertSubview:adView atIndex:1];
     
     //按钮图
-    btnView = [[UIView alloc]initWithFrame:CGRectMake(0, adView.bottom, self.width, self.height/2)];
+    btnView = [[UIView alloc]initWithFrame:CGRectMake(0, self.height-(self.height/470*180), self.width, self.height/470*180)];
     btnView.backgroundColor = [UIColor whiteColor];
     [self insertSubview:btnView atIndex:1];
     
@@ -47,13 +47,12 @@
     //轮播是否循环
     cycleScrollView.infiniteLoop = YES;
     //设置页码样式
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
     cycleScrollView.autoScrollTimeInterval = 3.0; // 轮播时间间隔，默认1.0秒，可自定义
-    cycleScrollView.pageDotColor = [UIColor whiteColor];
-    cycleScrollView.currentPageDotColor = [UIColor redColor];
+    cycleScrollView.pageDotColor = [UIColor clearColor];
+    cycleScrollView.currentPageDotColor = [UIColor whiteColor];
     cycleScrollView.backgroundColor = [UIColor clearColor];
-    
-    
     [adView insertSubview:cycleScrollView atIndex:2];
     
 }
@@ -89,15 +88,15 @@
         int col=index%totalColumns;
         //创建UIView
         UIView *appView=[[UIView alloc]init];
-        appView.backgroundColor = [UIColor redColor];
         //根据一些计算，确定不同UIView的位置
         appView.frame=CGRectMake(col*+appW, row*appH, appW, appH);
-        appView.backgroundColor=[UIColor whiteColor];
+        appView.backgroundColor= [UIColor whiteColor];
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
-        btn.backgroundColor = BGButtonColor;
-        btn.titleColor = OneButtonColor;
+        btn.backgroundColor = [UIColor whiteColor];
+        btn.titleLabel.font = ThreeFont;
+        btn.titleColor = OneTextColor;
         btn.title = btnNames[index];
         [btn addTarget:self action:@selector(btnAct:)];
         [appView addSubview:btn];

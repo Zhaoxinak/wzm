@@ -134,15 +134,14 @@ return _instance; \
 #define TwoColor           RGBColor(40, 205, 251, 1)
 #define ThreeColor         RGBColor(40, 205, 251, 1)
 #define BGColor            RGBColor(241, 241, 241, 1)
-#define KNavigationColor   RGBColor(40, 205, 251, 1)
+#define KNavigationTitleColor   RGBColor(255, 255, 255, 1)
+#define KNavigationBGColor   RGBColor(0, 0, 0, 1)
 
-#define OneTextColor           RGBColor(40, 205, 251, 1)
-#define TwoTextColor           RGBColor(40, 205, 251, 1)
-#define ThreeTextColor         RGBColor(40, 205, 251, 1)
+#define OneTextColor           RGBColor(0, 0, 0, 1)
+#define TwoTextColor           RGBColor(34, 34, 34, 1)
+#define ThreeTextColor         RGBColor(31, 32, 33, 1)
 
-#define OneButtonColor         RGBColor(40, 205, 251, 1)
-#define TwoButtonColor         RGBColor(40, 205, 251, 1)
-#define ThreeButtonColor       RGBColor(40, 205, 251, 1)
+
 #define BGButtonColor          RGBColor(241, 241, 241, 1)
 /**
  *  nav字体大小
@@ -155,5 +154,7 @@ return _instance; \
 #define TwoFont   [UIFont systemFontOfSize:15*WIDTH_NIT]
 #define ThreeFont [UIFont systemFontOfSize:13*WIDTH_NIT]
 #define FourFont  [UIFont systemFontOfSize:11*WIDTH_NIT]
+#define FiveFont  [UIFont systemFontOfSize:8*WIDTH_NIT]
+
 
 #endif /* CommonHeader_h */

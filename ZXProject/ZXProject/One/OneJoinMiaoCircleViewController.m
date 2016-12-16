@@ -55,6 +55,11 @@
 }
 
 #pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
+
+-(void)ZXsuccessData:(id)data byRequestId:(NSInteger)requestId{
+    
+}
+
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
     
     
