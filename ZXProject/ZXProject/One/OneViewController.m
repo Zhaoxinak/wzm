@@ -18,6 +18,8 @@
 #import "OneHeadView.h" //顶部视图
 #import "OneModifiedEncyclopediaTableViewCell.h"  //改装百科
 #import "OneChosenCasesTableViewCell.h"  //精选案例
+
+#import "OneModifiedUnderstandingViewController.h" //改装心得
 /************M************/
 #import "HomePageModel.h"
 
@@ -247,6 +249,13 @@
             [self.navigationController pushViewController:jmVC animated:YES];
         }
         
+        
+        else
+        if (tag == 103) {
+            //改装心得
+            OneModifiedUnderstandingViewController *muVC = [[OneModifiedUnderstandingViewController alloc]init];
+            [self.navigationController pushViewController:muVC animated:YES];
+        }
     }
     
 }

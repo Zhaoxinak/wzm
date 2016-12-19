@@ -56,6 +56,9 @@
 		9EC6D57C1E00066F00F63C11 /* SideSlipServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5671E00066F00F63C11 /* SideSlipServiceTableViewCell.m */; };
 		9EC6D57D1E00066F00F63C11 /* SideSlipServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC6D5681E00066F00F63C11 /* SideSlipServiceTableViewCell.xib */; };
 		9EC6D57E1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D56A1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m */; };
+		9EE4904D1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */; };
+		9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */; };
+		9EE490531E07ED2500799F8A /* OneModifiedUnderstandingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */; };
 		9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */; };
 		9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5F91DFAB2D6009C2324 /* NSDate+CH.m */; };
 		9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5FB1DFAB2D6009C2324 /* NSString+Common.m */; };
@@ -161,6 +164,12 @@
 		9EC6D5681E00066F00F63C11 /* SideSlipServiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideSlipServiceTableViewCell.xib; sourceTree = "<group>"; };
 		9EC6D5691E00066F00F63C11 /* SideSlipSpaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideSlipSpaceTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D56A1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideSlipSpaceTableViewCell.m; sourceTree = "<group>"; };
+		9EE4904B1E07EC2300799F8A /* OneModifiedUnderstandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingViewController.h; sourceTree = "<group>"; };
+		9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedUnderstandingViewController.m; sourceTree = "<group>"; };
+		9EE4904E1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingTableViewCell.h; sourceTree = "<group>"; };
+		9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedUnderstandingTableViewCell.m; sourceTree = "<group>"; };
+		9EE490511E07ED2500799F8A /* OneModifiedUnderstandingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingModel.h; sourceTree = "<group>"; };
+		9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedUnderstandingModel.m; sourceTree = "<group>"; };
 		9EFAD5EF1DFAA1B9009C2324 /* OneHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneHeadView.h; sourceTree = "<group>"; };
 		9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneHeadView.m; sourceTree = "<group>"; };
 		9EFAD5F81DFAB2D6009C2324 /* NSDate+CH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CH.h"; sourceTree = "<group>"; };
@@ -210,6 +219,8 @@
 				9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */,
 				9EC6D50F1DFFE93D00F63C11 /* OneJoinMiaoCircleModel.h */,
 				9EC6D5101DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m */,
+				9EE490511E07ED2500799F8A /* OneModifiedUnderstandingModel.h */,
+				9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +331,8 @@
 				9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */,
 				9EC6D5091DFFE85100F63C11 /* OneJoinMiaoCircleViewController.h */,
 				9EC6D50A1DFFE85100F63C11 /* OneJoinMiaoCircleViewController.m */,
+				9EE4904B1E07EC2300799F8A /* OneModifiedUnderstandingViewController.h */,
+				9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */,
 			);
 			path = One;
 			sourceTree = "<group>";
@@ -472,6 +485,8 @@
 				9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */,
 				9EC6D50C1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.h */,
 				9EC6D50D1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m */,
+				9EE4904E1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.h */,
+				9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -616,6 +631,7 @@
 			files = (
 				9EC6D56F1E00066F00F63C11 /* CommonItemModel.m in Sources */,
 				9E4CED351DDEF82300259FDE /* ZXSegmentedControl.m in Sources */,
+				9EE490531E07ED2500799F8A /* OneModifiedUnderstandingModel.m in Sources */,
 				9EC6D56B1E00066F00F63C11 /* FilterAddressController.m in Sources */,
 				9E54587F1DDD8408002CA99D /* OneViewController.m in Sources */,
 				9E54584C1DDD7BF8002CA99D /* ViewController.m in Sources */,
@@ -625,6 +641,7 @@
 				9EC6D57C1E00066F00F63C11 /* SideSlipServiceTableViewCell.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9EC6D57E1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m in Sources */,
+				9EE4904D1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m in Sources */,
 				9EC6D56D1E00066F00F63C11 /* FilterAllCategoryViewController.m in Sources */,
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
@@ -653,6 +670,7 @@
 				9EC6D5701E00066F00F63C11 /* PriceRangeModel.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9EC6D5721E00066F00F63C11 /* FilterCommonCollectionViewCell.m in Sources */,
+				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
 				9EC6D57A1E00066F00F63C11 /* SideSlipPriceTableViewCell.m in Sources */,

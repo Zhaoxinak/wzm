@@ -83,6 +83,9 @@ id (*objc_msgSendCreateCellWithIndexPath)(id self, SEL _cmd, NSIndexPath *) = (v
     [_sponsor.navigationController.view addSubview:self.backCover];
     [_sponsor.navigationController addChildViewController:self.navigationController];
     [_sponsor.navigationController.view addSubview:self.navigationController.view];
+    _sponsor.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
+    _sponsor.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    _sponsor.automaticallyAdjustsScrollViewInsets = NO;
     
     [_backCover setHidden:YES];
     [UIView animateWithDuration:_animationDuration animations:^{
@@ -97,6 +100,9 @@ id (*objc_msgSendCreateCellWithIndexPath)(id self, SEL _cmd, NSIndexPath *) = (v
         [self.navigationController.view setFrame:SLIP_ORIGIN_FRAME];
     } completion:^(BOOL finished) {
         [_backCover removeFromSuperview];
+        _sponsor.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
+        _sponsor.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        _sponsor.automaticallyAdjustsScrollViewInsets = NO;
         [self.navigationController.view removeFromSuperview];
         [self.navigationController removeFromParentViewController];
     }];
@@ -113,7 +119,7 @@ id (*objc_msgSendCreateCellWithIndexPath)(id self, SEL _cmd, NSIndexPath *) = (v
     [resetButton setTitleColor:[UIColor hexColor:FILTER_BLACK_STRING] forState:UIControlStateNormal];
     NSString *resetString = LocalString(@"sZYFilterReset");
     if ([resetString isEqualToString:@"sZYFilterReset"]) {
-        resetString = @"Reset";
+        resetString = @"重置";
     }
     [resetButton setTitle:resetString forState:UIControlStateNormal];
     [resetButton setBackgroundColor:[UIColor whiteColor]];
@@ -126,7 +132,7 @@ id (*objc_msgSendCreateCellWithIndexPath)(id self, SEL _cmd, NSIndexPath *) = (v
     [commitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     NSString *commitString = LocalString(@"sZYFilterCommit");
     if ([commitString isEqualToString:@"sZYFilterCommit"]) {
-        commitString = @"Commit";
+        commitString = @"完成";
     }
     [commitButton setTitle:commitString forState:UIControlStateNormal];
     [commitButton setBackgroundColor:[UIColor hexColor:FILTER_RED_STRING]];

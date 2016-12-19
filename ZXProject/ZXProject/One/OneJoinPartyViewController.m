@@ -91,7 +91,7 @@
     
     //右边侧边栏按钮
     UIButton* sideBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    sideBtn.frame = CGRectMake(0, 0, 44, 44);
+    sideBtn.frame = CGRectMake(0, 0, 80, 44);
     [sideBtn setTitle:@"侧边栏"];
     [sideBtn addTarget:self action:@selector(sideBtn) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:sideBtn];
@@ -177,13 +177,14 @@
     ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
     model.containerCellClass = @"SideSlipCommonTableViewCell";
     model.regionTitle = @"活动类型";
-    model.customDict = @{REGION_SELECTION_TYPE:@(1)};;
-    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"四"] itemId:@"0003" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"五"] itemId:@"0004" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"六"] itemId:@"0005" selected:NO],
+    model.customDict = @{REGION_SELECTION_TYPE:@(1)};
+    model.isShowAll = YES;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"类型1"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"类型2"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"类型3"] itemId:@"0002" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"类型4"] itemId:@"0003" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"类型5"] itemId:@"0004" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"类型6"] itemId:@"0005" selected:NO],
                        ];
     
     return model;
@@ -194,14 +195,15 @@
     ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
     model.containerCellClass = @"SideSlipCommonTableViewCell";
     model.regionTitle = @"活动日期";
-    model.customDict = @{REGION_SELECTION_TYPE:@(1)};;
-    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"四"] itemId:@"0003" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"五"] itemId:@"0004" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"六"] itemId:@"0005" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"七"] itemId:@"0006" selected:NO],
+    model.customDict = @{REGION_SELECTION_TYPE:@(1)};
+    model.isShowAll = YES;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"周一"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周二"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周三"] itemId:@"0002" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周四"] itemId:@"0003" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周五"] itemId:@"0004" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周六"] itemId:@"0005" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"周日"] itemId:@"0006" selected:NO],
                        ];
     
     return model;
@@ -219,10 +221,11 @@
 -(ZYSideSlipFilterRegionModel *)priceFilterRegionModel{
     ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
     model.containerCellClass = @"SideSlipCommonTableViewCell";
-    model.customDict = @{REGION_SELECTION_TYPE:@(0)};;
-    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+    model.customDict = @{REGION_SELECTION_TYPE:@(0)};
+    model.isShowAll = YES;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"免费"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"0-100"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"100-200"] itemId:@"0002" selected:NO],
                        ];
     
     return model;
@@ -240,10 +243,11 @@
 -(ZYSideSlipFilterRegionModel *)personFilterRegionModel{
     ZYSideSlipFilterRegionModel *model = [[ZYSideSlipFilterRegionModel alloc] init];
     model.containerCellClass = @"SideSlipCommonTableViewCell";
-    model.customDict = @{REGION_SELECTION_TYPE:@(0)};;
-    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"一"] itemId:@"0000" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"二"] itemId:@"0001" selected:NO],
-                       [self createItemModelWithTitle:[NSString stringWithFormat:@"三"] itemId:@"0002" selected:NO],
+    model.customDict = @{REGION_SELECTION_TYPE:@(0)};
+    model.isShowAll = YES;
+    model.itemList = @[[self createItemModelWithTitle:[NSString stringWithFormat:@"10"] itemId:@"0000" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"10-20"] itemId:@"0001" selected:NO],
+                       [self createItemModelWithTitle:[NSString stringWithFormat:@"20以上"] itemId:@"0002" selected:NO],
                        ];
     return model;
 }

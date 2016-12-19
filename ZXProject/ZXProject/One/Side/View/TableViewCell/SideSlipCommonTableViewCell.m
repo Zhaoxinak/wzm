@@ -154,7 +154,7 @@ const int BRIEF_ROW = 2;
         labelContent = _selectedItemString;
         textColor = [UIColor hexColor:FILTER_RED_STRING];
     } else {
-        labelContent = @"全部";
+        labelContent = @"";
         textColor = [UIColor hexColor:@"999999"];
     }
     [_controlLabel setText:labelContent];
@@ -192,16 +192,16 @@ const int BRIEF_ROW = 2;
 }
 
 - (IBAction)clickShowMoreButton:(id)sender {
-    _regionModel.isShowAll = !_regionModel.isShowAll;
-    [self fitCollectonViewHeight];
-    //reload
-    if ([self.delegate respondsToSelector:@selector(sideSlipTableViewCellNeedsReload:)]) {
-        [self.delegate sideSlipTableViewCellNeedsReload:_indexPath];
-    }
-    //scroll
-    if (_regionModel.isShowAll && [self.delegate respondsToSelector:@selector(sideSlipTableViewCellNeedsScrollToCell:atScrollPosition:animated:)]) {
-        [self.delegate sideSlipTableViewCellNeedsScrollToCell:self atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    }
+//    _regionModel.isShowAll = !_regionModel.isShowAll;
+//    [self fitCollectonViewHeight];
+//    //reload
+//    if ([self.delegate respondsToSelector:@selector(sideSlipTableViewCellNeedsReload:)]) {
+//        [self.delegate sideSlipTableViewCellNeedsReload:_indexPath];
+//    }
+//    //scroll
+//    if (_regionModel.isShowAll && [self.delegate respondsToSelector:@selector(sideSlipTableViewCellNeedsScrollToCell:atScrollPosition:animated:)]) {
+//        [self.delegate sideSlipTableViewCellNeedsScrollToCell:self atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+//    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
