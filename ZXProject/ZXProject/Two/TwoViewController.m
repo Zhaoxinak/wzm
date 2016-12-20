@@ -36,6 +36,16 @@
 }
 
 #pragma mark -执行数据
+#pragma mark -分享数据
+- (ZXShareModel *)setupShareModel {
+    ZXShareModel *shareModel = [[ZXShareModel alloc] init];
+    shareModel.shareTitle = @"五爪猫";
+    shareModel.shareContent = @"五爪猫";
+    shareModel.shareImage = @"五爪猫";
+    shareModel.shareUrl = @"www.baidu.com";
+    return shareModel;
+}
+
 #pragma mark --初始化数据
 -(void)setData{
     
@@ -89,6 +99,13 @@
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
+    //分享按钮
+    UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(0, 0, 80, 44);
+    [shareBtn setTitle:@"分享"];
+    [shareBtn addTarget:self action:@selector(shareBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
 }
 
@@ -254,6 +271,13 @@
 
     }
     
+    
+}
+
+#pragma mark -- 分享
+-(void)shareBtn{
+    
+    [[ZXShareHelper shareInstance] shareWithShareModel:[self setupShareModel]];
     
 }
 

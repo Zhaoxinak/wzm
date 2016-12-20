@@ -12,7 +12,7 @@
 /********************系统工具引用*********************/
 #import <Foundation/Foundation.h> //框架
 #import <UIKit/UIKit.h> //UI
-
+#import <MessageUI/MessageUI.h> //短信
 /********************自己工具引用*********************/
 #import "GlobalURL.h" //网络地址
 #import "NSString+Common.h" //字符串处理
@@ -38,8 +38,12 @@
 #import <IQKeyboardManager.h> //键盘弹出
 #import <IQKeyboardReturnKeyHandler.h> //键盘弹出
 #import <UIScrollView+EmptyDataSet.h> //tableView为空时数据为空
-
-
+#import <UMSocialCore/UMSocialCore.h> //友盟分享
+/********************分享*********************/
+#import <WXApi.h>
+#import "ZXShareHelper.h"
+#import "ZXShareViewCell.h"
+#import "ZXShareModel.h"
 
 /**
  *  屏幕宽高比例（以6为基准）
@@ -157,6 +161,13 @@ return _instance; \
 #define ThreeFont [UIFont systemFontOfSize:13*WIDTH_NIT]
 #define FourFont  [UIFont systemFontOfSize:11*WIDTH_NIT]
 #define FiveFont  [UIFont systemFontOfSize:8*WIDTH_NIT]
+
+/**
+ *  提示
+ */
+#define ALERTTK(__T__, __M__) UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:(__T__) message:(__M__) delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles: nil];[alertView show];
+#define ALERTTM(__T__, __M__) UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:(__T__) message:(__M__) delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];[alertView show];
+
 
 
 #endif /* CommonHeader_h */

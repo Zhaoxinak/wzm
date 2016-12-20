@@ -10,6 +10,10 @@
 #import "CommonHeader.h"
 #import "CustomTabBarController.h"
 
+//微信
+static NSString *const WXAppKey = @"wxd984510cc0a8dfd6";
+static NSString *const WXAppSecret = @"35a92db0f67e613012fcbf5eaa9bba43";
+
 
 @interface AppDelegate ()
 
@@ -21,14 +25,60 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //友盟配置
+    [self setupUMConfig];
+    [WXApi registerApp:WXAppKey];
+    
+    
     // 设置键盘监听管理
     [self setKeyboardManager];
    
+    
     // 设置tabBar
     CustomTabBarController *customTabBar = [CustomTabBarController new];
     self.window.rootViewController = customTabBar;
 
     return YES;
+}
+
+//初始化友盟配置
+- (void)setupUMConfig {
+    //打开调试日志
+    [[UMSocialManager defaultManager] openLog:YES];
+    
+    //设置友盟appkey
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@"57e8c11ce0f55a569a00348f"];
+    
+    //设置微信的appKey和appSecret
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
+                                          appKey:@"wxd984510cc0a8dfd6"
+                                       appSecret:@"35a92db0f67e613012fcbf5eaa9bba43"
+                                     redirectURL:@"http://mobile.umeng.com/social"];
+    //设置分享到QQ互联的appKey和appSecret
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+                                          appKey:@"1105646739"
+                                       appSecret:nil
+                                     redirectURL:@"http://mobile.umeng.com/social"];
+    
+    //设置新浪的appKey和appSecret
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina
+                                          appKey:@"583983328"
+                                       appSecret:@"ddc5c1c766b0791dff4b013a60868c3f"
+                                     redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
+    
+//    //友盟统计
+//    UMConfigInstance.appKey = @"57e8c11ce0f55a569a00348f";
+//    UMConfigInstance.channelId = @"App Store";
+//    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+//    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+//    [MobClick setAppVersion:version];
+//    
+//    PLLoginModel *loginModel = [PLLoginModel shareLoginModel];
+//    NSNumber *userId = loginModel.userId;
+//    NSString *userID = [NSString stringWithFormat:@"userId:%@", userId];
+//    [MobClick profileSignInWithPUID:userID];
+    
 }
 
 
