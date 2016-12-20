@@ -1,16 +1,19 @@
 platform :ios, '7.0'
 
 target 'ZXProject' do
-   pod 'AFNetworking'
-   pod 'JSONModel'
-   pod 'MBProgressHUD'
-   pod 'MJRefresh'
-   pod 'SDWebImage'
-   pod 'TOWebViewController'
-   pod 'SDCycleScrollView'
-   pod 'ZYQAssetPickerController'
-   pod 'IQKeyboardManager'
-   pod 'DZNEmptyDataSet'
-   pod 'ZYSideSlipFilter'
-
+   pod 'AFNetworking'               # 网络请求
+   pod 'JSONModel'                  # 数据模型
+   pod 'MBProgressHUD'              # 提示框
+   pod 'MJRefresh'                  # 刷新
+   pod 'SDWebImage'                 # 网络图片
+   pod 'TOWebViewController'        # 网页
+   pod 'SDCycleScrollView'          # banner
+   pod 'ZYQAssetPickerController'   # 图片选取
+   pod 'IQKeyboardManager'          # 智能键盘
+   pod 'DZNEmptyDataSet'            # 空数据
+   pod 'ZYSideSlipFilter'           # 侧边栏选择
+   pod 'UMengUShare/UI'	            # U-Share SDK UI模块（分享面板，建议添加）
+   pod 'UMengUShare/Social/Sina'	# 集成新浪微博
+   pod 'UMengUShare/Social/WeChat'	# 集成微信
+   pod 'UMengUShare/Social/QQ'		# 集成QQ
 end

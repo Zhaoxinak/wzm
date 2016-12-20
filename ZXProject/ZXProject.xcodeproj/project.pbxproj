@@ -286,6 +286,7 @@
 				9E5458D11DDD96E4002CA99D /* Model */,
 				9E5458901DDD95F6002CA99D /* LibThree */,
 				9E5458801DDD843F002CA99D /* Base */,
+				9ECB71851E09390A00A68CD6 /* Share */,
 				9E5458741DDD8408002CA99D /* Three */,
 				9E5458771DDD8408002CA99D /* Two */,
 				9E54587A1DDD8408002CA99D /* One */,
@@ -501,6 +502,13 @@
 				9ECB717F1E08CCBB00A68CD6 /* TwoMiaoCircleModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9ECB71851E09390A00A68CD6 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		9EFAD5EE1DFAA114009C2324 /* View */ = {
