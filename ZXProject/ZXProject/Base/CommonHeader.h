@@ -20,7 +20,8 @@
 #import "UIButton+Response.h" //按钮点击间隔
 #import "UIButton+Extension.h" //按钮扩展
 #import "UIResponder+FirstResponder.h"  //第一响应
-#import "UIView+Frame.h"
+#import "UIView+Frame.h" 
+#import "UIColor+expanded.h" //颜色
 #import "UIView+Common.h" //坐标
 #import "ZXTools.h"  //赵昕的工具
 #import "NetworkHelper.h" //网络请求
@@ -55,7 +56,7 @@
 /**
  *	HexString颜色
  */
-#define HexStringColor(hex) [UIColor colorWithHexString:(hex)]
+#define HexStringColor(hex, a) [UIColor colorWithHexString:(hex) andAlpha:(a)]
 
 /**
  *  获取当前设备
@@ -137,10 +138,11 @@ return _instance; \
 #define KNavigationTitleColor   RGBColor(255, 255, 255, 1)
 #define KNavigationBGColor   RGBColor(0, 0, 0, 1)
 
-#define OneTextColor           RGBColor(0, 0, 0, 1)
-#define TwoTextColor           RGBColor(34, 34, 34, 1)
-#define ThreeTextColor         RGBColor(31, 32, 33, 1)
-
+#define OneTextColor           HexStringColor(@"#000000", 1)  //#000000
+#define TwoTextColor           HexStringColor(@"#222222", 1)  //#222222
+#define ThreeTextColor         HexStringColor(@"#1f2021", 1)  //#1f2021
+#define FourTextColor          HexStringColor(@"#cba162", 1)  //#cba162
+#define FiveTextColor          HexStringColor(@"#777777", 1)  //#777777
 
 #define BGButtonColor          RGBColor(241, 241, 241, 1)
 /**

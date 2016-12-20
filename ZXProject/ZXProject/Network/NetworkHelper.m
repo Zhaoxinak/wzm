@@ -8,16 +8,17 @@
 
 #import "NetworkHelper.h"
 
-typedef enum : NSUInteger {
+//请求方法
+typedef NS_ENUM(NSUInteger, HTTPMethod) {
     GETMethod, //GET请求方法
     POSTMethod //POST请求方法
-} HTTPMethod; //请求方法
+};
 
-typedef enum : NSUInteger {
+//请求头方法
+typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     NormalHTTPHeader, //正常请求头方法
     SpecialHTTPHeader //特殊请求头方法
-} HTTPHeaderMethod; //请求方法
-
+};
 
 @implementation NSObject (FetchData)
 
@@ -32,8 +33,6 @@ typedef enum : NSUInteger {
     [self data:progress requestId:requestId url:str params:@"" type:NormalHTTPHeader Method:GETMethod];
     
 }
-
-
 
 
 

@@ -56,6 +56,9 @@
 		9EC6D57C1E00066F00F63C11 /* SideSlipServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5671E00066F00F63C11 /* SideSlipServiceTableViewCell.m */; };
 		9EC6D57D1E00066F00F63C11 /* SideSlipServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC6D5681E00066F00F63C11 /* SideSlipServiceTableViewCell.xib */; };
 		9EC6D57E1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D56A1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m */; };
+		9ECB717D1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB717C1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m */; };
+		9ECB71801E08CCBB00A68CD6 /* TwoMiaoCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB717F1E08CCBB00A68CD6 /* TwoMiaoCircleModel.m */; };
+		9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB71821E09018A00A68CD6 /* UIColor+expanded.m */; };
 		9EE4904D1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */; };
 		9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */; };
 		9EE490531E07ED2500799F8A /* OneModifiedUnderstandingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */; };
@@ -164,6 +167,12 @@
 		9EC6D5681E00066F00F63C11 /* SideSlipServiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideSlipServiceTableViewCell.xib; sourceTree = "<group>"; };
 		9EC6D5691E00066F00F63C11 /* SideSlipSpaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideSlipSpaceTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D56A1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideSlipSpaceTableViewCell.m; sourceTree = "<group>"; };
+		9ECB717B1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoMiaoCircleTableViewCell.h; sourceTree = "<group>"; };
+		9ECB717C1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoMiaoCircleTableViewCell.m; sourceTree = "<group>"; };
+		9ECB717E1E08CCBB00A68CD6 /* TwoMiaoCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoMiaoCircleModel.h; sourceTree = "<group>"; };
+		9ECB717F1E08CCBB00A68CD6 /* TwoMiaoCircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoMiaoCircleModel.m; sourceTree = "<group>"; };
+		9ECB71811E09018A00A68CD6 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		9ECB71821E09018A00A68CD6 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
 		9EE4904B1E07EC2300799F8A /* OneModifiedUnderstandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingViewController.h; sourceTree = "<group>"; };
 		9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedUnderstandingViewController.m; sourceTree = "<group>"; };
 		9EE4904E1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingTableViewCell.h; sourceTree = "<group>"; };
@@ -313,6 +322,8 @@
 		9E5458771DDD8408002CA99D /* Two */ = {
 			isa = PBXGroup;
 			children = (
+				9ECB717A1E08CC6700A68CD6 /* Model */,
+				9ECB71791E08CC5E00A68CD6 /* View */,
 				9E5458781DDD8408002CA99D /* TwoViewController.h */,
 				9E5458791DDD8408002CA99D /* TwoViewController.m */,
 			);
@@ -388,6 +399,8 @@
 				9EFAD6031DFAB2D6009C2324 /* UIView+Common.m */,
 				9EFAD6041DFAB2D6009C2324 /* UIView+Frame.h */,
 				9EFAD6051DFAB2D6009C2324 /* UIView+Frame.m */,
+				9ECB71811E09018A00A68CD6 /* UIColor+expanded.h */,
+				9ECB71821E09018A00A68CD6 /* UIColor+expanded.m */,
 			);
 			path = "EXtension-Tools";
 			sourceTree = "<group>";
@@ -470,6 +483,24 @@
 				9EC6D56A1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		9ECB71791E08CC5E00A68CD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9ECB717B1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.h */,
+				9ECB717C1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9ECB717A1E08CC6700A68CD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9ECB717E1E08CCBB00A68CD6 /* TwoMiaoCircleModel.h */,
+				9ECB717F1E08CCBB00A68CD6 /* TwoMiaoCircleModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9EFAD5EE1DFAA114009C2324 /* View */ = {
@@ -655,6 +686,7 @@
 				9EFAD60C1DFAB2D6009C2324 /* UIView+Frame.m in Sources */,
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
 				9E5458461DDD7BF8002CA99D /* main.m in Sources */,
+				9ECB71801E08CCBB00A68CD6 /* TwoMiaoCircleModel.m in Sources */,
 				9EC6D50B1DFFE85100F63C11 /* OneJoinMiaoCircleViewController.m in Sources */,
 				9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */,
 				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
@@ -667,10 +699,12 @@
 				9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */,
 				9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */,
 				9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */,
+				9ECB717D1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m in Sources */,
 				9EC6D5701E00066F00F63C11 /* PriceRangeModel.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9EC6D5721E00066F00F63C11 /* FilterCommonCollectionViewCell.m in Sources */,
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
+				9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */,
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
 				9EC6D57A1E00066F00F63C11 /* SideSlipPriceTableViewCell.m in Sources */,

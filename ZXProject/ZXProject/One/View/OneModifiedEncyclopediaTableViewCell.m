@@ -78,7 +78,7 @@
   
 }
 
-
+#pragma mark --- 对接数据
 -(void)setModel:(HomePageModel *)model{
     
     

@@ -110,9 +110,11 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
     //轮播跳转
-    NSLog(@"index%ld",(long)index);
     [self.delegate oneHeadViewSelect2go: index];
-    
+    if ([self.delegate respondsToSelector:@selector(oneHeadViewSelect2go:)]) {
+        [self.delegate oneHeadViewSelect2go:index];
+        NSLog(@"index%ld",(long)index);
+    }
 }
 
 
@@ -120,10 +122,10 @@
 -(void)btnAct:(UIButton *)button{
     
     NSInteger tag = button.tag;
-    NSLog(@">>>>>>>tag:%ld",(long)tag);
-    
-    [self.delegate oneHeadViewSelect2go: tag+100];
-    
+    if ([self.delegate respondsToSelector:@selector(oneHeadViewSelect2go:)]) {
+        [self.delegate oneHeadViewSelect2go:tag+100];
+        NSLog(@">>>>>>>tag:%ld",(long)tag);
+    }
 }
 
 
