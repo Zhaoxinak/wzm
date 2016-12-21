@@ -129,9 +129,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifier=@"OneJoinMiaoCircleTableViewCell";
+    NSString *cellIdentifier = [NSString stringWithFormat:@"OneJoinMiaoCircleTableViewCell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    OneJoinMiaoCircleTableViewCell *cell=nil;
+    OneJoinMiaoCircleTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
         cell=[[OneJoinMiaoCircleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];

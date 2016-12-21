@@ -39,6 +39,7 @@
 #import <IQKeyboardReturnKeyHandler.h> //键盘弹出
 #import <UIScrollView+EmptyDataSet.h> //tableView为空时数据为空
 #import <UMSocialCore/UMSocialCore.h> //友盟分享
+#import <YYKit.h> //yykit
 /********************分享*********************/
 #import <WXApi.h>
 #import "ZXShareHelper.h"

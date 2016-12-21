@@ -136,9 +136,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifier=@"OneModifiedUnderstandingTableViewCell";
+    NSString *cellIdentifier = [NSString stringWithFormat:@"OneModifiedUnderstandingTableViewCell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    OneModifiedUnderstandingTableViewCell *cell=nil;
+    OneModifiedUnderstandingTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
         cell=[[OneModifiedUnderstandingTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];

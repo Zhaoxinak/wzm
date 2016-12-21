@@ -176,10 +176,9 @@
     
     //改装百科
     if (indexPath.section == 0) {
-        static NSString *cellIdentifier=@"OneModifiedEncyclopediaTableViewCell";
-        
+        NSString *cellIdentifier = [NSString stringWithFormat:@"OneModifiedEncyclopediaTableViewCell%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        OneModifiedEncyclopediaTableViewCell *cell=nil;
+        OneModifiedEncyclopediaTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[OneModifiedEncyclopediaTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -189,10 +188,10 @@
     
     //精选案例
     if (indexPath.section == 1) {
-        static NSString *cellIdentifier=@"OneChosenCasesTableViewCell";
         
+        NSString *cellIdentifier = [NSString stringWithFormat:@"OneChosenCasesTableViewCell%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        OneChosenCasesTableViewCell *cell=nil;
+        OneChosenCasesTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[OneChosenCasesTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -203,7 +202,7 @@
     
     static NSString *cellIdentifier=@"cell";
     //首先根据标示去缓存池取
-    UITableViewCell *cell=nil;
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];

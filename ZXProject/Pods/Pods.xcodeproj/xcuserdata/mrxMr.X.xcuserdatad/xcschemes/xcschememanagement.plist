@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZYQAssetPickerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,12 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13E05F459F461988DAF2B21AA3A1D13C</key>
+		<key>1E79459519449D3441410402916917A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4139FDA36FB8F046F5FA3409DD822CFC</key>
+		<key>22DAC89756621E808F41FB8EA4E8D49A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40A7712C7D293510B81EE28B449F4E28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,17 +117,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>683A5EB8ED89CA7754F84BE7D3B6EB60</key>
+		<key>5DA1D6428A1B514D7F7D01AE431EF730</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83E99484DC98045DE77ED113A1EC3D04</key>
+		<key>76CBC8B9F5580ABF9467F2FE386DB0E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99413450415D50FDF70F20C49FCCB39F</key>
+		<key>7EF42AE110D3CBB6F72815AA4F4B1E57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EACD86BF539DB7DC6A9E18FCD58BF75E</key>
+		<key>D4F8C21E1F9D81AC4CAAA0CE10E973F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F21B1040DD153A04B84491272CED7F3C</key>
+		<key>EFDA1FE0BECE2ACA347026CDE64E3B87</key>
 		<dict>
 			<key>primary</key>
 			<true/>

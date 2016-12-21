@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel.h> //模型
 
-@interface OneModifiedUnderstandingModel : NSObject
+@interface OneModifiedUnderstandingModel : JSONModel
 
 @end

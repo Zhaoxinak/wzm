@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel.h> //模型
 
-@interface OneJoinPartyModel : NSObject
+
+@interface OneJoinPartyModel : JSONModel
 
 @end

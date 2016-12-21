@@ -306,9 +306,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
  
-    static NSString *cellIdentifier=@"OneJoinPartyTableViewCell";
+    NSString *cellIdentifier = [NSString stringWithFormat:@"OneJoinPartyTableViewCell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    OneJoinPartyTableViewCell *cell=nil;
+    OneJoinPartyTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
         cell=[[OneJoinPartyTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];

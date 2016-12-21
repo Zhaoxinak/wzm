@@ -16,4 +16,6 @@ target 'ZXProject' do
    pod 'UMengUShare/Social/Sina'	# 集成新浪微博
    pod 'UMengUShare/Social/WeChat'	# 集成微信
    pod 'UMengUShare/Social/QQ'		# 集成QQ
+   pod 'YYKit'                      # YYKit
+   
 end

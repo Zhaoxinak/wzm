@@ -38,6 +38,9 @@ PODS:
     - UMengUShare/Core
   - UMengUShare/UI (6.1):
     - UMengUShare/Core
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
   - ZYQAssetPickerController (1.0.0)
   - ZYSideSlipFilter (0.5.0)
 
@@ -55,6 +58,7 @@ DEPENDENCIES:
   - UMengUShare/Social/Sina
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
+  - YYKit
   - ZYQAssetPickerController
   - ZYSideSlipFilter
 
@@ -69,9 +73,10 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
   UMengUShare: 6c3902a68a06d01031bed6f426e97b89d4fc504f
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
   ZYSideSlipFilter: 6946b221476c25a5e2d4acff44f1748349d01f62
 
-PODFILE CHECKSUM: 4d45c4b720f61547d3205679b79075d4e67aaebb
+PODFILE CHECKSUM: 50c883657746219edf366cd3c1bccbb7730fa268
 
 COCOAPODS: 1.1.1

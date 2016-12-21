@@ -29,6 +29,7 @@
 		9E54588C1DDD8440002CA99D /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458871DDD8440002CA99D /* CustomTabBar.m */; };
 		9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458891DDD8440002CA99D /* CustomTabBarController.m */; };
 		9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458D31DDD96E4002CA99D /* TestModel.m */; };
+		9E746D861E0A6AF600E97244 /* TwoHotNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E746D851E0A6AF600E97244 /* TwoHotNoteTableViewCell.m */; };
 		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
 		9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */; };
 		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
@@ -136,6 +137,8 @@
 		9E5458891DDD8440002CA99D /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		9E5458D21DDD96E4002CA99D /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		9E5458D31DDD96E4002CA99D /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		9E746D841E0A6AF600E97244 /* TwoHotNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoHotNoteTableViewCell.h; sourceTree = "<group>"; };
+		9E746D851E0A6AF600E97244 /* TwoHotNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoHotNoteTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D4FD1DFFD61F00F63C11 /* OneJoinPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyViewController.h; sourceTree = "<group>"; };
@@ -527,6 +530,8 @@
 			children = (
 				9ECB717B1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.h */,
 				9ECB717C1E08CC8800A68CD6 /* TwoMiaoCircleTableViewCell.m */,
+				9E746D841E0A6AF600E97244 /* TwoHotNoteTableViewCell.h */,
+				9E746D851E0A6AF600E97244 /* TwoHotNoteTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
+				9E746D861E0A6AF600E97244 /* TwoHotNoteTableViewCell.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EC6D56E1E00066F00F63C11 /* AddressModel.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
