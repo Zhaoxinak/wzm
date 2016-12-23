@@ -264,6 +264,9 @@
             
         };
         
+        TwoHotNoteFrameModel *note = [[TwoHotNoteFrameModel alloc]init];
+        [note setModel:nil];
+        [cell setFrameModel:note];
 //        TwoHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
 //        cell.frameModel = frameModel;
         

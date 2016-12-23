@@ -35,79 +35,44 @@
 }
 
 - (void)initSubViews {
+    
+    self.titleNameLabel = [UILabel new];
+    self.titleNameLabel.textColor = OneTextColor;
+    self.titleNameLabel.font = ThreeFont;
+    
     self.headImageView = [UIImageView new];
-    self.userNameLabel = [UILabel new];
-
-    self.timeLabel = [UILabel new];
-    self.commentBtn = [UIButton new];
-    
-    
-    self.imageView1 = [UIImageView new];
-    self.imageView2 = [UIImageView new];
-    self.imageView3 = [UIImageView new];
-    
-    
-    [self.imageView1 setContentScaleFactor:1];
-    self.imageView1.contentMode =  UIViewContentModeScaleAspectFill;
-    self.imageView1.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.imageView1.clipsToBounds  = YES;
-    
-    [self.imageView2 setContentScaleFactor:1];
-    self.imageView2.contentMode =  UIViewContentModeScaleAspectFill;
-    self.imageView2.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.imageView2.clipsToBounds  = YES;
-    
-    [self.imageView3 setContentScaleFactor:1];
-    self.imageView3.contentMode =  UIViewContentModeScaleAspectFill;
-    self.imageView3.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.imageView3.clipsToBounds  = YES;
-    
-    
     self.headImageView.clipsToBounds = YES;
+    
+    self.userNameLabel = [UILabel new];
+    self.userNameLabel.textColor = OneTextColor;
+    self.userNameLabel.font = ThreeFont;
+    
+    self.levelLabel = [UILabel new];
+    self.levelLabel.textColor = OneTextColor;
+    self.levelLabel.font = ThreeFont;
+    
+    self.sexImageView = [UIImageView new];
+    
+    self.timeLabel = [UILabel new];
+    self.timeLabel.textColor = OneTextColor;
+    self.timeLabel.font = ThreeFont;
+    
+    self.commentBtn = [UIButton new];
+    [self.commentBtn setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapAction:)];
     self.headImageView.userInteractionEnabled = YES;
     [self.headImageView addGestureRecognizer:tap];
     
-    self.userNameLabel.textColor = HexStringColor(@"#3a3a3a", 1);
-    self.userNameLabel.font = [UIFont systemFontOfSize:13*WIDTH_NIT];
     
-    self.trustLabel.textColor = self.userNameLabel.textColor;
-    self.trustLabel.font = self.userNameLabel.font;
-    
-    self.tastLabel.textColor = HexStringColor(@"#999999", 1);
-    self.tastLabel.font = [UIFont systemFontOfSize:13*WIDTH_NIT];
-    
-    self.envirLabel.textColor = self.tastLabel.textColor;
-    self.envirLabel.font = self.tastLabel.font;
-    
-    self.serverLabel.textColor = self.tastLabel.textColor;
-    self.serverLabel.font = self.tastLabel.font;
-    
-    self.contentLabel.textColor = HexStringColor(@"#3a3a3a", 1);
-    self.contentLabel.font = [UIFont systemFontOfSize:14*WIDTH_NIT];
-    self.contentLabel.numberOfLines = 0;
-    
-    self.timeLabel.textColor = HexStringColor(@"#999999", 1);
-    self.timeLabel.font = [UIFont systemFontOfSize:12*WIDTH_NIT];
-    
-    self.pingFenLabel.textColor = self.userNameLabel.textColor;
-    self.pingFenLabel.font = self.userNameLabel.font;
-    
-    self.vipImageView.image = [UIImage imageNamed:@"icon_vip"];
-    
+    [self.contentView addSubview:self.titleNameLabel];
     [self.contentView addSubview:self.headImageView];
     [self.contentView addSubview:self.userNameLabel];
-    [self.contentView addSubview:self.trustLabel];
-    [self.contentView addSubview:self.pingFenLabel];
-    [self.contentView addSubview:self.tastLabel];
-    [self.contentView addSubview:self.envirLabel];
-    [self.contentView addSubview:self.serverLabel];
-    [self.contentView addSubview:self.contentLabel];
+    [self.contentView addSubview:self.levelLabel];
+    [self.contentView addSubview:self.sexImageView];
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.commentBtn];
-    [self.contentView addSubview:self.vipImageView];
 }
 
 - (void)headTapAction:(UITapGestureRecognizer *)tap {
@@ -125,45 +90,18 @@
     [self removeAllImages];
     _frameModel = frameModel;
     
-    if (self.isCommentDetail) {
-        self.commentBtn.layer.borderColor = HexStringColor(@"#cccccc", 1).CGColor;
-        self.commentBtn.layer.borderWidth = 1;
-        self.commentBtn.layer.cornerRadius = 4*WIDTH_NIT;
-        [self.commentBtn setTitle:@"评论" forState:UIControlStateNormal];
-        [self.commentBtn setTitleColor:HexStringColor(@"#3a3a3a", 1)];
-        self.commentBtn.titleLabel.font = [UIFont systemFontOfSize:14*WIDTH_NIT];
-    } else {
-        self.tastLabel.hidden = YES;
-        self.envirLabel.hidden = YES;
-        self.serverLabel.hidden = YES;
-        [self.commentBtn setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
-    }
+    self.titleNameLabel.text = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
     
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:_frameModel.model.userPic] placeholderImage:[UIImage imageNamed:@"heard_img"]];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
+    self.userId = @"111";
+    
+    self.userNameLabel.text = @"打发打发";
    
-    self.userId = [_frameModel.model.comment[@"userid"] stringValue];
+    self.levelLabel.text = @"12";
     
+    [self.sexImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
     
-    self.userNameLabel.text = _frameModel.model.userName;
-    if ([_frameModel.model.comment[@"istrust"] isEqualToString:@"true"]) {
-        self.trustLabel.text = @"信任商家";
-    } else {
-        self.trustLabel.text = @"";
-    }
-    
-    self.pingFenLabel.text = [NSString stringWithFormat:@"总评：%@", _frameModel.model.comment[@"overallrating"]];
-    self.contentLabel.text = _frameModel.model.comment[@"comment"];
-    if (_frameModel.model.taste) {
-        self.tastLabel.text = [NSString stringWithFormat:@"口味：%@", _frameModel.model.taste];
-    }
-    if (_frameModel.model.environment) {
-        self.envirLabel.text = [NSString stringWithFormat:@"环境：%@", _frameModel.model.environment];
-    }
-    if (_frameModel.model.service) {
-        self.serverLabel.text = [NSString stringWithFormat:@"服务：%@", _frameModel.model.service];
-    }
-    
-    self.timeLabel.text = [self TimeStamp:_frameModel.model.comment[@"createtime"]];
+    self.timeLabel.text = [self TimeStamp:@""];
     
     NSArray *picImages = _frameModel.model.pics[@"pics"];
     NSInteger i = 0;
@@ -186,7 +124,7 @@
         [cellimageView setImageWithURL:[NSURL URLWithString:url] placeholder:[UIImage imageNamed:@"餐厅占位"] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             
         } transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
-            image = [image imageByResizeToSize:CGSizeMake(110*WIDTH_NIT * 3, 87*WIDTH_NIT * 3) contentMode:UIViewContentModeScaleAspectFill];
+            image = [image imageByResizeToSize:CGSizeMake(100*WIDTH_NIT * 3, 100*WIDTH_NIT * 3) contentMode:UIViewContentModeScaleAspectFill];
             return image;
         } completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
             
@@ -214,32 +152,17 @@
     }
     
     
-    
-
-    
+    self.titleNameLabel.frame = _frameModel.titleNameLabelFrame;
     self.headImageView.frame = _frameModel.headImageViewFrame;
     self.userNameLabel.frame = _frameModel.userNameLabelFrame;
-    self.trustLabel.frame = _frameModel.trustLabelFrame;
-    self.pingFenLabel.frame = _frameModel.pingFenLabelFrame;
-    self.tastLabel.frame = _frameModel.tastLabelFrame;
-    self.envirLabel.frame = _frameModel.envirLabelFrame;
-    self.serverLabel.frame = _frameModel.serverLabelFrame;
-    self.contentLabel.frame = _frameModel.contentLabelFrame;
+    self.levelLabel.frame = _frameModel.levelLabelFrame;
+    self.sexImageView.frame = _frameModel.sexImageViewFrame;
+    self.timeLabel.frame = _frameModel.timeLabelFrame;
+    self.commentBtn.frame = _frameModel.commentBtnFrame;
     
-    if (self.isCommentDetail) {
-        self.timeLabel.frame = _frameModel.timeLabelFrame;
-        self.commentBtn.frame = _frameModel.commentBtnFrame;
-//        [self.commentBtn addTarget:self action:@selector(commentBtnAction) forControlEvents:UIControlEventTouchUpInside];
-    } else {
-        self.timeLabel.frame = CGRectMake(_frameModel.tastLabelFrame.origin.x, _frameModel.tastLabelFrame.origin.y, _frameModel.timeLabelFrame.size.width, _frameModel.timeLabelFrame.size.height);
-        self.commentBtn.frame = CGRectMake(kScreen_Width - 20*WIDTH_NIT - 13*WIDTH_NIT, _frameModel.commentBtnFrame.origin.y, 20*WIDTH_NIT, 16*WIDTH_NIT);
-    }
     self.headImageView.layer.cornerRadius = _frameModel.headImageViewFrame.size.width / 2;
     
-    self.vipImageView.frame = CGRectMake(CGRectGetMaxX(self.headImageView.frame)-13*WIDTH_NIT-5*WIDTH_NIT, CGRectGetMaxY(self.headImageView.frame)-13*WIDTH_NIT, 13*WIDTH_NIT, 13*WIDTH_NIT);
-    
-    self.vipImageView.hidden = YES;
-    
+   
 }
 
 

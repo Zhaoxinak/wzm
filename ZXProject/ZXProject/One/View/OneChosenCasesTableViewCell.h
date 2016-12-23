@@ -26,11 +26,11 @@
     UIButton *zanBtn; //赞
 }
 
-@property (nonatomic, strong) NSString *avatarUrl; //图片地址
-@property (nonatomic, strong) NSString *nameStr; //标题
-@property (nonatomic, strong) NSString *subNameStr; //内容
-@property (nonatomic, strong) NSString *scanStr; //浏览者
-@property (nonatomic, strong) NSString *zanStr; //赞
+@property (nonatomic, copy) NSString *avatarUrl; //图片地址
+@property (nonatomic, copy) NSString *nameStr; //标题
+@property (nonatomic, copy) NSString *subNameStr; //内容
+@property (nonatomic, copy) NSString *scanStr; //浏览者
+@property (nonatomic, copy) NSString *zanStr; //赞
 @property (nonatomic, strong) HomePageModel *model; //模型
 
 

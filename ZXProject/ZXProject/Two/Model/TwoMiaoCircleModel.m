@@ -20,7 +20,7 @@
     _model = model;
     
     //标题
-    NSString *comment = _model.comment[@"comment"];
+    NSString *comment = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
     if (comment.length >0) {
         CGSize contentSize = [self sizeWithString:comment font:TwoFont maxSize:CGSizeMake(kScreen_Width-30*WIDTH_NIT, MAXFLOAT)];
         
@@ -31,9 +31,9 @@
     
     //图组
     if ([_model.pics[@"picCount"] integerValue] > 0) {
-        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 110*WIDTH_NIT, 87*WIDTH_NIT);
+        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 100*WIDTH_NIT);
     } else {
-        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 110*WIDTH_NIT, 0);
+        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 0);
     }
     
     

@@ -22,10 +22,6 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, strong) NSMutableArray *xl_imageArray;
 @property (nonatomic, assign) NSInteger showIndex;
 
-@property (nonatomic, strong) UIImageView *imageView1;
-@property (nonatomic, strong) UIImageView *imageView2;
-@property (nonatomic, strong) UIImageView *imageView3;
-
 @property (nonatomic, strong) UILabel *titleNameLabel;
 @property (nonatomic, strong) NSMutableArray *imageArray;
 @property (nonatomic, strong) UIImageView *headImageView;
@@ -36,6 +32,7 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, strong) UIButton *commentBtn;
 
 @property (nonatomic, strong) TwoHotNoteFrameModel *frameModel;
+@property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) UserHeadClickBlock headClickBlock;
 
 
