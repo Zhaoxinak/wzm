@@ -14,14 +14,16 @@
 #import "OneViewController.h"
 #import "OneJoinPartyViewController.h" //参与活动
 #import "OneJoinMiaoCircleViewController.h" //加入喵圈
+#import "OneMiaoQuestionSquareViewController.h" //喵问专家
+#import "OneModifiedUnderstandingViewController.h" //改装心得
+#import "OneCasesShowViewController.h" //案例展示
+#import "OneModifiedWikiViewController.h" //改装百科
 /************V************/
 #import "OneHeadView.h" //顶部视图
 #import "OneModifiedEncyclopediaTableViewCell.h"  //改装百科
 #import "OneChosenCasesTableViewCell.h"  //精选案例
 
-#import "OneModifiedUnderstandingViewController.h" //改装心得
-#import "OneCasesShowViewController.h" //案例展示
-#import "OneModifiedWikiViewController.h" //改装百科
+
 
 /************M************/
 #import "HomePageModel.h"
@@ -249,38 +251,44 @@
             //加入喵圈
             OneJoinMiaoCircleViewController *jmVC = [[OneJoinMiaoCircleViewController alloc]init];
             [self.navigationController pushViewController:jmVC animated:YES];
-        }
-        
-        
-        else
+        }else
+        if (tag == 102) {
+            //喵问专家
+            OneMiaoQuestionSquareViewController *mqVC = [[OneMiaoQuestionSquareViewController alloc]init];
+            [self.navigationController pushViewController:mqVC animated:YES];
+        }else
         if (tag == 103) {
             //改装心得
             OneModifiedUnderstandingViewController *muVC = [[OneModifiedUnderstandingViewController alloc]init];
             [self.navigationController pushViewController:muVC animated:YES];
         }else
-        
         if (tag == 104) {
             //案例展示
             OneCasesShowViewController *chVC = [[OneCasesShowViewController alloc]init];
             [self.navigationController pushViewController:chVC animated:YES];
         }else
-        
         if (tag == 105) {
             //改装百科
             OneModifiedWikiViewController *mwVC = [[OneModifiedWikiViewController alloc]init];
             [self.navigationController pushViewController:mwVC animated:YES];
         }
-
     }
-    
-    
 }
 
 #pragma mark -cell头部功能执行（更多）
 -(void)cellMoreTap:(UIButton *)button{
     
     NSLog(@"更多:%ld",(long)button.tag);
-    
+    //tag = 0 改装百科   tag = 1 精选案例
+    if (button.tag == 0) {
+        //改装百科
+        OneModifiedWikiViewController *mwVC = [[OneModifiedWikiViewController alloc]init];
+        [self.navigationController pushViewController:mwVC animated:YES];
+    }else if (button.tag == 1){
+        //案例展示
+        OneCasesShowViewController *chVC = [[OneCasesShowViewController alloc]init];
+        [self.navigationController pushViewController:chVC animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

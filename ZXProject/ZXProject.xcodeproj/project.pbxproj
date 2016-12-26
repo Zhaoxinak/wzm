@@ -36,6 +36,9 @@
 		9E813CF11E10FEC4004292E7 /* OneModifiedWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CF01E10FEC4004292E7 /* OneModifiedWikiViewController.m */; };
 		9E813CF41E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CF31E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m */; };
 		9E813CF71E10FEF2004292E7 /* OneModifiedWikiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CF61E10FEF2004292E7 /* OneModifiedWikiModel.m */; };
+		9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CF91E110B9A004292E7 /* OneMiaoQuestionSquareModel.m */; };
+		9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CFC1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m */; };
+		9E813D001E110F29004292E7 /* OneMiaoQuestionSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E813CFF1E110F29004292E7 /* OneMiaoQuestionSquareViewController.m */; };
 		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
 		9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */; };
 		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
@@ -157,6 +160,12 @@
 		9E813CF31E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedWikiTableViewCell.m; sourceTree = "<group>"; };
 		9E813CF51E10FEF2004292E7 /* OneModifiedWikiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedWikiModel.h; sourceTree = "<group>"; };
 		9E813CF61E10FEF2004292E7 /* OneModifiedWikiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedWikiModel.m; sourceTree = "<group>"; };
+		9E813CF81E110B9A004292E7 /* OneMiaoQuestionSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneMiaoQuestionSquareModel.h; sourceTree = "<group>"; };
+		9E813CF91E110B9A004292E7 /* OneMiaoQuestionSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneMiaoQuestionSquareModel.m; sourceTree = "<group>"; };
+		9E813CFB1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneMiaoQuestionSquareTableViewCell.h; sourceTree = "<group>"; };
+		9E813CFC1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneMiaoQuestionSquareTableViewCell.m; sourceTree = "<group>"; };
+		9E813CFE1E110F29004292E7 /* OneMiaoQuestionSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneMiaoQuestionSquareViewController.h; sourceTree = "<group>"; };
+		9E813CFF1E110F29004292E7 /* OneMiaoQuestionSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneMiaoQuestionSquareViewController.m; sourceTree = "<group>"; };
 		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D4FD1DFFD61F00F63C11 /* OneJoinPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyViewController.h; sourceTree = "<group>"; };
@@ -285,6 +294,8 @@
 				9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */,
 				9EC6D50F1DFFE93D00F63C11 /* OneJoinMiaoCircleModel.h */,
 				9EC6D5101DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m */,
+				9E813CF81E110B9A004292E7 /* OneMiaoQuestionSquareModel.h */,
+				9E813CF91E110B9A004292E7 /* OneMiaoQuestionSquareModel.m */,
 				9EE490511E07ED2500799F8A /* OneModifiedUnderstandingModel.h */,
 				9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */,
 				9E813CEC1E10C16C004292E7 /* OneCasesShowModel.h */,
@@ -404,6 +415,8 @@
 				9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */,
 				9EC6D5091DFFE85100F63C11 /* OneJoinMiaoCircleViewController.h */,
 				9EC6D50A1DFFE85100F63C11 /* OneJoinMiaoCircleViewController.m */,
+				9E813CFE1E110F29004292E7 /* OneMiaoQuestionSquareViewController.h */,
+				9E813CFF1E110F29004292E7 /* OneMiaoQuestionSquareViewController.m */,
 				9EE4904B1E07EC2300799F8A /* OneModifiedUnderstandingViewController.h */,
 				9EE4904C1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m */,
 				9E813CE61E10B538004292E7 /* OneCasesShowViewController.h */,
@@ -635,6 +648,8 @@
 				9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */,
 				9EC6D50C1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.h */,
 				9EC6D50D1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m */,
+				9E813CFB1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.h */,
+				9E813CFC1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m */,
 				9EE4904E1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.h */,
 				9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */,
 				9E813CE91E10C157004292E7 /* OneCasesShowTableViewCell.h */,
@@ -808,6 +823,7 @@
 				9ECB718C1E09437900A68CD6 /* ZXShareModel.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9E813CF41E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m in Sources */,
+				9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */,
 				9EC6D57E1E00066F00F63C11 /* SideSlipSpaceTableViewCell.m in Sources */,
 				9EE4904D1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m in Sources */,
 				9EC6D56D1E00066F00F63C11 /* FilterAllCategoryViewController.m in Sources */,
@@ -818,6 +834,7 @@
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EC6D56E1E00066F00F63C11 /* AddressModel.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
+				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
 				9E813CF11E10FEC4004292E7 /* OneModifiedWikiViewController.m in Sources */,
 				9EC6D5741E00066F00F63C11 /* AddressTableViewCell.m in Sources */,
 				9E813CEB1E10C157004292E7 /* OneCasesShowTableViewCell.m in Sources */,
@@ -851,6 +868,7 @@
 				9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */,
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
+				9E813D001E110F29004292E7 /* OneMiaoQuestionSquareViewController.m in Sources */,
 				9EC6D57A1E00066F00F63C11 /* SideSlipPriceTableViewCell.m in Sources */,
 				9E813CF71E10FEF2004292E7 /* OneModifiedWikiModel.m in Sources */,
 				9ECB71881E09432E00A68CD6 /* ZXShareViewController.m in Sources */,

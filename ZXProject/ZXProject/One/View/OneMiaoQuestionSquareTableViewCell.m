@@ -1,14 +1,14 @@
 //
-//  TwoHotNoteTableViewCell.m
+//  OneMiaoQuestionSquareTableViewCell.m
 //  ZXProject
 //
-//  Created by Mr.X on 2016/12/21.
+//  Created by Mr.X on 2016/12/26.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "TwoHotNoteTableViewCell.h"
+#import "OneMiaoQuestionSquareTableViewCell.h"
 
-@implementation TwoHotNoteTableViewCell
+@implementation OneMiaoQuestionSquareTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -61,6 +61,11 @@
     self.timeLabel.textColor = OneTextColor;
     self.timeLabel.font = ThreeFont;
     
+    self.commentNum = [UIButton new];
+    [self.commentNum setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
+    [self.commentNum setTitleColor:OneTextColor];
+    
+    
     self.commentBtn = [UIButton new];
     [self.commentBtn setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
     [self.commentBtn setTitleColor:OneTextColor];
@@ -76,6 +81,7 @@
     [self.contentView addSubview:self.levelLabel];
     [self.contentView addSubview:self.sexImageView];
     [self.contentView addSubview:self.timeLabel];
+    [self.contentView addSubview:self.commentNum];
     [self.contentView addSubview:self.commentBtn];
 }
 
@@ -89,7 +95,7 @@
     [super layoutSubviews];
 }
 
-- (void)setFrameModel:(TwoHotNoteFrameModel *)frameModel {
+- (void)setFrameModel:(OneMiaoQuestionSquareFrameModel *)frameModel {
     
     [self removeAllImages];
     _frameModel = frameModel;
@@ -100,14 +106,16 @@
     self.userId = @"111";
     
     self.userNameLabel.text = @"水冰月";
-   
+    
     self.levelLabel.text = @"12";
     
     [self.sexImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
     
     self.timeLabel.text = [self TimeStamp:@""];
     
-    [self.commentBtn setTitle:@"11"];
+    [self.commentNum setTitle:@"11"];
+    
+    [self.commentBtn setTitle:@"回答"];
     
     NSArray *picImages = _frameModel.model.pics[@"pics"];
     NSInteger i = 0;
@@ -126,7 +134,7 @@
         if ([url isKindOfClass:[NSNull class]]) {
             url = @"";
         }
-       
+        
         [cellimageView setImageWithURL:[NSURL URLWithString:url] placeholder:[UIImage imageNamed:@"餐厅占位"] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             
         } transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
@@ -164,11 +172,12 @@
     self.levelLabel.frame = _frameModel.levelLabelFrame;
     self.sexImageView.frame = _frameModel.sexImageViewFrame;
     self.timeLabel.frame = _frameModel.timeLabelFrame;
+    self.commentNum.frame = _frameModel.commentNumFrame;
     self.commentBtn.frame = _frameModel.commentBtnFrame;
     
     self.headImageView.layer.cornerRadius = _frameModel.headImageViewFrame.size.width / 2;
     
-   
+    
 }
 
 
@@ -373,5 +382,6 @@
     
     // Configure the view for the selected state
 }
+
 
 @end
