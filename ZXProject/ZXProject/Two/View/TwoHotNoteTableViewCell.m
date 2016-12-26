@@ -42,6 +42,7 @@
     
     self.headImageView = [UIImageView new];
     self.headImageView.clipsToBounds = YES;
+    self.headImageView.backgroundColor = [UIColor redColor];
     
     self.userNameLabel = [UILabel new];
     self.userNameLabel.textColor = OneTextColor;
@@ -52,6 +53,8 @@
     self.levelLabel.font = ThreeFont;
     
     self.sexImageView = [UIImageView new];
+    self.sexImageView.backgroundColor = [UIColor redColor];
+    
     
     self.timeLabel = [UILabel new];
     self.timeLabel.textColor = OneTextColor;
@@ -95,7 +98,7 @@
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
     self.userId = @"111";
     
-    self.userNameLabel.text = @"打发打发";
+    self.userNameLabel.text = @"水冰月";
    
     self.levelLabel.text = @"12";
     

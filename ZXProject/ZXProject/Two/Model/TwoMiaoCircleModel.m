@@ -38,13 +38,13 @@
     
     
     //头像
-    self.headImageViewFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 42*WIDTH_NIT, 42*WIDTH_NIT);
+    self.headImageViewFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT);
     
     //用户名
     self.userNameLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
     
     //等级
-    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
+    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT);
   
     //性别
     self.sexImageViewFrame = CGRectMake(CGRectGetMaxX(self.levelLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT);

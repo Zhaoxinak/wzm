@@ -20,6 +20,9 @@
 #import "OneChosenCasesTableViewCell.h"  //精选案例
 
 #import "OneModifiedUnderstandingViewController.h" //改装心得
+#import "OneCasesShowViewController.h" //案例展示
+#import "OneModifiedWikiViewController.h" //改装百科
+
 /************M************/
 #import "HomePageModel.h"
 
@@ -254,8 +257,22 @@
             //改装心得
             OneModifiedUnderstandingViewController *muVC = [[OneModifiedUnderstandingViewController alloc]init];
             [self.navigationController pushViewController:muVC animated:YES];
+        }else
+        
+        if (tag == 104) {
+            //案例展示
+            OneCasesShowViewController *chVC = [[OneCasesShowViewController alloc]init];
+            [self.navigationController pushViewController:chVC animated:YES];
+        }else
+        
+        if (tag == 105) {
+            //改装百科
+            OneModifiedWikiViewController *mwVC = [[OneModifiedWikiViewController alloc]init];
+            [self.navigationController pushViewController:mwVC animated:YES];
         }
+
     }
+    
     
 }
 

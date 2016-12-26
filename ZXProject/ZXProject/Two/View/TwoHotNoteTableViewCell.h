@@ -35,6 +35,4 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) UserHeadClickBlock headClickBlock;
 
-
-
 @end

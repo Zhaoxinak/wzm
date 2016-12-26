@@ -42,44 +42,62 @@
     
     
     
+    
+    
+    //头像
+    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT)];
+    headImageView.backgroundColor = [UIColor redColor];
+    headImageView.clipsToBounds = YES;
+    headImageView.layer.cornerRadius = headImageView.size.width / 2;
+    [self addSubview:headImageView];
+    
+    //头像点击
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapAction:)];
+    headImageView.userInteractionEnabled = YES;
+    [headImageView addGestureRecognizer:tap];
+    
+    //用户名
+    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
+    userNameLabel.textColor = OneTextColor;
+    userNameLabel.font = ThreeFont;
+    userNameLabel.text = @"水冰月";
+    [self addSubview:userNameLabel];
+    
+    //等级
+    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
+    levelLabel.textColor = OneTextColor;
+    levelLabel.font = ThreeFont;
+    levelLabel.text = @"12";
+    [self addSubview:levelLabel];
+    
+    //性别
+    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(levelLabel.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT)];
+    sexImageView.backgroundColor = [UIColor redColor];
+    [self addSubview:sexImageView];
+    
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 60*WIDTH_NIT)];
-    name.numberOfLines = 3;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, headImageView.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 50*WIDTH_NIT)];
+    name.numberOfLines = 2;
     name.font = OneFont;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
+    //浏览者
+    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
+    [scanBtn setTitle:@"0"];
+    [scanBtn setImage:@"scan"];
+    [scanBtn setTitleColor:ThreeTextColor];
+    scanBtn.titleLabel.font = FiveFont;
+    [self addSubview:scanBtn];
     
-    //内容
-    addrName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
-    addrName.font = TwoFont;
-    addrName.textColor = TwoTextColor;
-    addrName.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";
-    [self addSubview:addrName];
-    
-    //时间
-    timeName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, addrName.bottom+5*WIDTH_NIT, kScreen_Width/4, 20*WIDTH_NIT)];
-    timeName.font = ThreeFont;
-    timeName.textColor = ThreeTextColor;
-    timeName.text = @"时间时间时间时间时间时间";
-    [self addSubview:timeName];
-    
-    //价格
-    priceName = [[UILabel alloc]initWithFrame:CGRectMake(timeName.right+5*WIDTH_NIT, addrName.bottom+5*WIDTH_NIT, kScreen_Width-timeName.width-picView.width-25*WIDTH_NIT, 20*WIDTH_NIT)];
-    priceName.textAlignment = NSTextAlignmentRight;
-    priceName.font = TwoFont;
-    priceName.textColor = TwoTextColor;
-    priceName.text = @"价格价格价格";
-    [self addSubview:priceName];
-    
-    //活动类型
-    typeName = [[UILabel alloc]initWithFrame:CGRectMake(picView.width-40*WIDTH_NIT, 0, 40*WIDTH_NIT, 20*WIDTH_NIT)];
-    typeName.textAlignment = NSTextAlignmentCenter;
-    typeName.font = TwoFont;
-    typeName.textColor = TwoTextColor;
-    typeName.text = @"比赛";
-    [picView addSubview:typeName];
+    //赞
+    zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
+    [zanBtn setTitle:@"0"];
+    [zanBtn setImage:@"zan"];
+    [zanBtn setTitleColor:ThreeTextColor];
+    zanBtn.titleLabel.font = FiveFont;
+    [self addSubview:zanBtn];
     
     
 }

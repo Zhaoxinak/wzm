@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CommonHeader.h"
 #import "OneModifiedUnderstandingModel.h"
+typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
 #define OneModifiedUnderstandCell_Height kScreen_Width/3
@@ -18,13 +19,19 @@
     UIView *topLine; //顶部分割线
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
+    UIImageView *headImageView; //头像
+    UILabel *userNameLabel; //用户名
+    UILabel *levelLabel; //等级
+    UIImageView *sexImageView; //性别～
     UILabel *name; //标题
-    UILabel *addrName; //地址
+    UIButton *scanBtn; //浏览者
+    UIButton *zanBtn; //赞
     UILabel *timeName; //时间
-    UILabel *priceName; //价格
-    UILabel *typeName; //活动类型
+
 }
 
 @property (nonatomic, strong) OneModifiedUnderstandingModel *model; //模型
+@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) UserHeadClickBlock headClickBlock;
 
 @end
