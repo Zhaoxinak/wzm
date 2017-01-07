@@ -1,20 +1,20 @@
 //
-//  TwoMiaoCircleTableViewCell.m
+//  ThreeMiaoCircleTableViewCell.m
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/20.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "TwoMiaoCircleTableViewCell.h"
+#import "ThreeMiaoCircleTableViewCell.h"
 
-@implementation TwoMiaoCircleTableViewCell
+@implementation ThreeMiaoCircleTableViewCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        [self setView];
+        [self setupView];
     }
     return self;
 }
@@ -26,7 +26,7 @@
 }
 
 
--(void)setView{
+-(void)setupView{
     
     //顶部分割线
     topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 1)];
@@ -34,7 +34,7 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, TwoMiaoCircleCell_Height-10*WIDTH_NIT, TwoMiaoCircleCell_Height-10*WIDTH_NIT)];
+    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, ThreeMiaoCircleCell_Height-10*WIDTH_NIT, ThreeMiaoCircleCell_Height-10*WIDTH_NIT)];
     avatarView.backgroundColor = [UIColor redColor];
     [self addSubview:avatarView];
     
@@ -65,7 +65,7 @@
     [self addSubview:subName];
     
     //加入按钮
-    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, TwoMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, ThreeMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
     joinBtn.titleLabel.font = TwoFont;
     [joinBtn setTitleColor:FourTextColor];
@@ -84,7 +84,7 @@
 }
 
 #pragma mark --- 对接数据
--(void)setModel:(TwoMiaoCircleModel *)model{
+-(void)setModel:(ThreeMiaoCircleModel *)model{
     
     
     
@@ -121,8 +121,8 @@
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);
     
-    if ([self.delegate respondsToSelector:@selector(twoMiaoCircleCellSelect2go:)]) {
-        [self.delegate twoMiaoCircleCellSelect2go:tag];
+    if ([self.delegate respondsToSelector:@selector(ThreeMiaoCircleCellSelect2go:)]) {
+        [self.delegate ThreeMiaoCircleCellSelect2go:tag];
         NSLog(@"点击加入");
     }
     

@@ -1,5 +1,5 @@
 //
-//  TwoMiaoCircleModel.h
+//  ThreeMiaoCircleModel.h
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/20.
@@ -11,7 +11,7 @@
 #import <JSONModel.h> //模型
 
 
-@interface TwoMiaoCircleModel : JSONModel
+@interface ThreeMiaoCircleModel : JSONModel
 
 @property (copy, nonatomic) NSDictionary *comment;
 @property (copy, nonatomic) NSDictionary *pics;
@@ -23,7 +23,7 @@
 @end
 
 
-@interface TwoHotNoteFrameModel : NSObject
+@interface ThreeHotNoteFrameModel : NSObject
 @property (nonatomic, assign) CGRect titleNameLabelFrame;  //标题
 @property (nonatomic, assign) CGRect imageArrayFrame;  //图组
 @property (nonatomic, assign) CGRect headImageViewFrame; //头像
@@ -34,6 +34,6 @@
 @property (nonatomic, assign) CGRect commentBtnFrame; //评论
 @property (nonatomic, assign) CGFloat cellHeight;
 
-@property (nonatomic, strong) TwoMiaoCircleModel *model;
+@property (nonatomic, strong) ThreeMiaoCircleModel *model;
 
 @end

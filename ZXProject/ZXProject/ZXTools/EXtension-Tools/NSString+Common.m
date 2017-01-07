@@ -230,4 +230,43 @@ NSString * MD5Hash(NSString *aString) {
     CGSize sz = [str sizeWithFont:font constrainedToSize:CGSizeMake(MAXFLOAT, 40)];
     return sz;
 }
+
+
++ (BOOL)isEmpty:(id)object {
+    if(object) {
+        if([object isKindOfClass:[NSString class]]) { // 只用于判断NSString
+            NSString *temp = [(NSString *)object trim];
+            if(![temp isBlank] && ![temp isEqual:[NSNull null]]) { // 字符串不为空
+                return NO;
+            } else { // 字符串为空
+                return YES;
+            }
+        } else {
+            return YES;
+        }
+    } else {
+        return YES;
+    }
+}
+
+- (BOOL) isBlank
+{
+    //去掉空白符
+    NSString *noBlankChar = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    noBlankChar = [noBlankChar stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    noBlankChar = [noBlankChar stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    noBlankChar = [noBlankChar stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+    return [noBlankChar isEmpty];
+}
+
+- (BOOL) isEmpty
+{
+    return self.length < 1;
+}
+
+- (NSString*) trim
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end

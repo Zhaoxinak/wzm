@@ -41,10 +41,15 @@
 #import <UMSocialCore/UMSocialCore.h> //友盟分享
 #import <YYKit.h> //yykit
 /********************分享*********************/
-#import <WXApi.h>
-#import "ZXShareHelper.h"
-#import "ZXShareViewCell.h"
-#import "ZXShareModel.h"
+#import <WXApi.h> //微信
+#import "ZXShareHelper.h" //分享
+#import "ZXShareViewCell.h" //分享cell
+#import "ZXShareModel.h"  //分享model
+
+/********************通用*********************/
+#import "ZXLoginModel.h" //登录信息
+
+
 
 /**
  *  屏幕宽高比例（以6为基准）
@@ -103,7 +108,7 @@
 /**
  *  单例
  */
-#define XLSingletonM(name) \
+#define ZXSingletonM(name) \
 static id _instance = nil; \
 + (id)allocWithZone:(struct _NSZone *)zone \
 { \
@@ -169,6 +174,10 @@ return _instance; \
 #define ALERTTK(__T__, __M__) UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:(__T__) message:(__M__) delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles: nil];[alertView show];
 #define ALERTTM(__T__, __M__) UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:(__T__) message:(__M__) delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];[alertView show];
 
+
+
+//用户登录数据
+static NSString  *kUserLoginInfo            = @"kUserLoginInfo";
 
 
 #endif /* CommonHeader_h */

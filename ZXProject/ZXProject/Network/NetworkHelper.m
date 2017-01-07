@@ -8,12 +8,6 @@
 
 #import "NetworkHelper.h"
 
-//请求方法
-typedef NS_ENUM(NSUInteger, HTTPMethod) {
-    GETMethod, //GET请求方法
-    POSTMethod //POST请求方法
-};
-
 //请求头方法
 typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     NormalHTTPHeader, //正常请求头方法
@@ -35,6 +29,67 @@ typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
 }
 
 
+-(void)sendRequestId:(RequestName)requestId rMethod:(HTTPMethod)rMethod params:(id  _Nonnull)params{
+    
+    NSString *url = @"";
+    url = [self setupUrl:url RequestId:requestId];
+    if (url.length >0 && rMethod == GETMethod) {
+        
+        NSString *str = @"";
+        for (NSString *key in [params allKeys]) {
+            if ([str length] == 0) {
+                str = [NSString stringWithFormat:@"?%@=%@", key, [params objectForKey:key]];
+            }
+            else
+            {
+                str = [NSString stringWithFormat:@"%@&%@=%@", str, key, [params objectForKey:key]];
+            }
+        }
+        // 网址不能有空格和汉字
+        url = [NSString stringWithFormat:@"%@%@", url, str];
+        url = [url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSLog(@"%@", str);
+    }
+    
+    
+    if (url.length >0) {
+        if (rMethod == GETMethod) {
+            [self data:YES requestId:requestId url:url params:@"" type:NormalHTTPHeader Method:GETMethod];
+        }else{
+            [self data:YES requestId:requestId url:url params:params type:NormalHTTPHeader Method:POSTMethod];
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+-(NSString *)setupUrl:(NSString *)url RequestId:(RequestName)requestId{
+    
+    NSString *tempUrl = url;
+    switch (requestId) {
+        case ZXInterfaceDiscover:{
+            tempUrl = [NSString stringWithFormat:@"%@%@", BASEURL, URL_DISCOVER];
+        }
+            break;
+        case ZXInterfaceLogin:{
+            
+        }
+            break;
+        case ZXInterfaceWeWeChatAdvance:{
+            
+        }
+            break;
+        default:
+            break;
+    }
+
+    
+    return tempUrl;
+    
+}
 
 #pragma mark图片上传
 -(void)dataWithImgupload:(BOOL)progress viewpointId:(NSString *_Nonnull)viewpointId imageDatas:(NSMutableArray *_Nonnull)imageDatas completion:(void (^ _Nonnull)(BOOL finish))completion {
@@ -100,7 +155,7 @@ typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
 }
 
 #pragma mark通用数据请求
--(void)data:(BOOL)progress requestId:(NSInteger)requestId url:(NSString *)url params:(NSString *)params type:(HTTPHeaderMethod)type Method:(HTTPMethod)Method{
+-(void)data:(BOOL)progress requestId:(NSInteger)requestId url:(NSString *)url params:(id)params type:(HTTPHeaderMethod)type Method:(HTTPMethod)Method{
     [self fetchingDidStartWithRequestId:requestId];
     
     if (progress) {

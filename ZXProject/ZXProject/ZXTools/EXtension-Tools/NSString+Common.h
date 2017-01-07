@@ -27,5 +27,6 @@ NSString * MD5Hash(NSString *aString);
 
 - (NSString *)intervalSinceNow: (NSString *) theDate;
 
++ (BOOL)isEmpty:(id)object;
 
 @end

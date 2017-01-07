@@ -1,5 +1,5 @@
 //
-//  TwoMiaoCircleTableViewCell.h
+//  ThreeMiaoCircleTableViewCell.h
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/20.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonHeader.h"
-#import "TwoMiaoCircleModel.h"
+#import "ThreeMiaoCircleModel.h"
 
 //喵圈类型
 typedef NS_ENUM(NSUInteger, MiaoCircleType) {
@@ -16,18 +16,18 @@ typedef NS_ENUM(NSUInteger, MiaoCircleType) {
     OtherMiaoCircleMode, //其他喵圈
 };
 
-@protocol TwoMiaoCircleCellDelegate <NSObject>
+@protocol ThreeMiaoCircleCellDelegate <NSObject>
 #pragma mark -- 实现加入按钮点击
 @optional
--(void)twoMiaoCircleCellSelect2go:(NSInteger)tag;
+-(void)ThreeMiaoCircleCellSelect2go:(NSInteger)tag;
 
 @end
 
 
 //cell高度
-#define TwoMiaoCircleCell_Height kScreen_Width/4
+#define ThreeMiaoCircleCell_Height kScreen_Width/4
 
-@interface TwoMiaoCircleTableViewCell : UITableViewCell{
+@interface ThreeMiaoCircleTableViewCell : UITableViewCell{
     
     UIView *topLine; //顶部分割线
     UIImageView *avatarView; //头像
@@ -39,8 +39,8 @@ typedef NS_ENUM(NSUInteger, MiaoCircleType) {
     
 }
 
-@property(nonatomic, assign) id<TwoMiaoCircleCellDelegate> delegate;
-@property (nonatomic, strong) TwoMiaoCircleModel *model; //模型
+@property(nonatomic, assign) id<ThreeMiaoCircleCellDelegate> delegate;
+@property (nonatomic, strong) ThreeMiaoCircleModel *model; //模型
 @property (nonatomic, assign) MiaoCircleType miaoCircleType; //喵圈类型
 
 

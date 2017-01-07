@@ -1,5 +1,5 @@
 //
-//  TwoHotNoteTableViewCell.h
+//  ThreeHotNoteTableViewCell.h
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/21.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonHeader.h"
-#import "TwoMiaoCircleModel.h"
+#import "ThreeMiaoCircleModel.h"
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
-@interface TwoHotNoteTableViewCell : UITableViewCell<UIScrollViewDelegate>
+@interface ThreeHotNoteTableViewCell : UITableViewCell<UIScrollViewDelegate>
 
 @property (nonatomic, assign) CGRect lastFrame;
 @property (nonatomic, weak) UIImageView *imagView;
@@ -31,7 +31,7 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIButton *commentBtn;
 
-@property (nonatomic, strong) TwoHotNoteFrameModel *frameModel;
+@property (nonatomic, strong) ThreeHotNoteFrameModel *frameModel;
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) UserHeadClickBlock headClickBlock;
 

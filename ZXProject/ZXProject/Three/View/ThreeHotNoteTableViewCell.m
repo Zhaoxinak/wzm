@@ -1,14 +1,14 @@
 //
-//  TwoHotNoteTableViewCell.m
+//  ThreeHotNoteTableViewCell.m
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/21.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "TwoHotNoteTableViewCell.h"
+#import "ThreeHotNoteTableViewCell.h"
 
-@implementation TwoHotNoteTableViewCell
+@implementation ThreeHotNoteTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -89,7 +89,7 @@
     [super layoutSubviews];
 }
 
-- (void)setFrameModel:(TwoHotNoteFrameModel *)frameModel {
+- (void)setFrameModel:(ThreeHotNoteFrameModel *)frameModel {
     
     [self removeAllImages];
     _frameModel = frameModel;
@@ -146,7 +146,7 @@
         if (picImages.count > 3 && i == 2) {
             UILabel *countLabel = [UILabel new];
             countLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
-            countLabel.font = [UIFont systemFontOfSize:14*WIDTH_NIT];
+            countLabel.font = TwoFont;
             countLabel.textColor = [UIColor whiteColor];
             countLabel.textAlignment = NSTextAlignmentCenter;
             countLabel.frame = CGRectMake(cellimageView.bounds.size.width - 30, cellimageView.bounds.size.height - 30, 30, 30);

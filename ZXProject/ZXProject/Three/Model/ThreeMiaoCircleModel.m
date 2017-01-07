@@ -1,22 +1,22 @@
 //
-//  TwoMiaoCircleModel.m
+//  ThreeMiaoCircleModel.m
 //  ZXProject
 //
 //  Created by Mr.X on 2016/12/20.
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "TwoMiaoCircleModel.h"
+#import "ThreeMiaoCircleModel.h"
 
-@implementation TwoMiaoCircleModel
+@implementation ThreeMiaoCircleModel
 
 
 @end
 
 
-@implementation TwoHotNoteFrameModel
+@implementation ThreeHotNoteFrameModel
 
-- (void)setModel:(TwoMiaoCircleModel *)model {
+- (void)setModel:(ThreeMiaoCircleModel *)model {
     _model = model;
     
     //标题

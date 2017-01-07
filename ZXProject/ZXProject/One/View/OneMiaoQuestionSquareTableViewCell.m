@@ -154,7 +154,7 @@
         if (picImages.count > 3 && i == 2) {
             UILabel *countLabel = [UILabel new];
             countLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
-            countLabel.font = [UIFont systemFontOfSize:14*WIDTH_NIT];
+            countLabel.font = TwoFont;
             countLabel.textColor = [UIColor whiteColor];
             countLabel.textAlignment = NSTextAlignmentCenter;
             countLabel.frame = CGRectMake(cellimageView.bounds.size.width - 30, cellimageView.bounds.size.height - 30, 30, 30);

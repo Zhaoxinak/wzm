@@ -9,6 +9,26 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CommonHeader.h"
+typedef NS_ENUM(NSUInteger, RequestName) {
+    ZXInterfaceDiscover, //发现 （测试）
+    ZXInterfaceLogin,    //登录
+    ZXInterfaceWeChatLogin,  //微信登录
+    ZXInterfaceWeWeChatAdvance,  //高级授权
+    ZXInterfaceUserInfo, //获取用户信息
+    ZXInterfaceWeChatBind, //绑定微信电话
+    ZXInterfaceMobileValidationSms, //验证手机
+    ZXInterfaceModifyUserInfo, //修改用户信息
+    ZXInterfaceSmsCode,  //获取短信
+    ZXInterfaceRegister, //注册
+    ZXInterfaceUserFindPassword //忘记密码
+    
+};
+
+//请求方法
+typedef NS_ENUM(NSUInteger, HTTPMethod) {
+    GETMethod, //GET请求方法
+    POSTMethod //POST请求方法
+};
 
 
 @interface NSObject (FetchData)
@@ -20,6 +40,9 @@
  *  @param progress   <#progress description#>
  */
 -(void)dataWithDiscover:(BOOL)progress requestId:(NSInteger)requestId;
+
+
+-(void)sendRequestId:(RequestName)requestId rMethod:(HTTPMethod)rMethod params:(id _Nonnull)params;
 
 
 #pragma mark当网络请求开始或结束时，下面两个方法将会被调到。

@@ -23,14 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //初始化数据
-    [self setData];
+    [self setupData];
     //初始试图
-    [self setView];
+    [self setupView];
 }
 
 #pragma mark -执行数据
 #pragma mark --初始化数据
--(void)setData{
+-(void)setupData{
     
     
 }
@@ -71,7 +71,7 @@
 
 #pragma mark -执行视图
 #pragma mark --初始化数据视图
--(void)setView{
+-(void)setupView{
     
     //设置标题
     self.navigationItem.title = @"改装百科";

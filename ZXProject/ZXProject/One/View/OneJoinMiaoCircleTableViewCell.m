@@ -14,7 +14,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        [self setView];
+        [self setupView];
     }
     return self;
 }
@@ -26,7 +26,7 @@
 }
 
 
--(void)setView{
+-(void)setupView{
     
     //顶部分割线
     topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 1)];

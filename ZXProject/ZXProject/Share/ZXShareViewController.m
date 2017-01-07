@@ -106,15 +106,15 @@
     [self.view addSubview:_shareView];
     
     UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 16)];
-    shareLabel.font = [UIFont systemFontOfSize:14];
+    shareLabel.font = TwoFont;
     shareLabel.text = @"分享";
     [_shareView addSubview:shareLabel];
     
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(kScreen_Width - 50, 10, 40, 16)];
-    cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [cancelButton addTarget:self action:@selector(hideSelf) forControlEvents:UIControlEventTouchUpInside];
+    cancelButton.titleLabel.font = TwoFont;
+    [cancelButton setTitle:@"取消"];
+    [cancelButton setTitleColor:[UIColor lightGrayColor]];
+    [cancelButton addTarget:self action:@selector(hideSelf)];
     [_shareView addSubview:cancelButton];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];

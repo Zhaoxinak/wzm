@@ -15,12 +15,12 @@
 #import "ZXSegmentedControl.h"  //选择器
 
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, TextFieldLimit){
     PhoneLimit,  //手机限制
     IDCardLimit, //身份证限制
     TelLimit,    //固话限制
     NumberLimit  //数字限制
-} TextFieldLimit;
+};
 
 @interface ZXTools : NSObject
 

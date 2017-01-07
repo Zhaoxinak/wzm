@@ -53,11 +53,11 @@
     
     
     // 设置可用状态(able)的文字属性
-    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:17],NSFontAttributeName,nil] forState:UIControlStateNormal];
+    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,KNavigationFont,NSFontAttributeName,nil] forState:UIControlStateNormal];
     
     
     // 设置不可用状态(disable)的文字属性
-    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:17],NSFontAttributeName,nil] forState:UIControlStateDisabled];
+    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,KNavigationFont,NSFontAttributeName,nil] forState:UIControlStateDisabled];
     /**自定义导航控制器返回按钮设置背景**/
     // 技巧: 为了让某个按钮的背景消失, 可以设置一张完全透明的背景图片
     [appearance setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
@@ -105,7 +105,6 @@
 - (void)back
 {
     [self popViewControllerAnimated:YES];
-    
 }
 
 

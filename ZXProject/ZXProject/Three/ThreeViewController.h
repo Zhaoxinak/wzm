@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface ThreeViewController : BaseViewController
+@interface ThreeViewController : BaseTableViewController
 
 @end
