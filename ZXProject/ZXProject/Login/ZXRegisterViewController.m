@@ -26,7 +26,7 @@
     ZXLoginTextField *phoneView;
     ZXLoginTextField *verifyView;
     ZXLoginTextField *setPwView;
-    ZXLoginTextField *confirmPwView;
+//    ZXLoginTextField *confirmPwView;
     ZXLoginTextField *inviteView;
 }
 
@@ -36,7 +36,7 @@
     [phoneView.inputTextField resignFirstResponder];
     [verifyView.inputTextField resignFirstResponder];
     [setPwView.inputTextField resignFirstResponder];
-    [confirmPwView.inputTextField resignFirstResponder];
+//    [confirmPwView.inputTextField resignFirstResponder];
     [inviteView.inputTextField resignFirstResponder];
     
 }
@@ -54,44 +54,43 @@
 - (void)setupView {
 
     
-    phoneView = [[ZXLoginTextField alloc] init];
+    phoneView = [[ZXLoginTextField alloc] initWithType:NormalType];
     phoneView.frame = CGRectMake(20*WIDTH_NIT, 100*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    phoneView.leftLabel.text = @"手机号：";
+    phoneView.leftLabel.text = @"  手机号";
     phoneView.inputTextField.delegate = self;
     phoneView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:phoneView];
  
-    verifyView = [[ZXLoginTextField alloc] init];
+    verifyView = [[ZXLoginTextField alloc] initWithType:SmsType];
     verifyView.frame = CGRectMake(20*WIDTH_NIT, phoneView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    verifyView.type = SmsType;
-    verifyView.leftLabel.text = @"验证码：";
+    verifyView.leftLabel.text = @"  验证码";
     verifyView.inputTextField.delegate = self;
     [verifyView.smsCodeBtn addTarget:self action:@selector(verifyAction)];
     verifyView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:verifyView];
   
     
-    setPwView = [[ZXLoginTextField alloc] init];
+    setPwView = [[ZXLoginTextField alloc] initWithType:PwdType];
     setPwView.frame = CGRectMake(20*WIDTH_NIT, verifyView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    setPwView.leftLabel.text = @"设置密码：";
+    setPwView.leftLabel.text = @"  密码(最少6位)";
     setPwView.inputTextField.secureTextEntry = YES;
     setPwView.inputTextField.delegate = self;
     [self.view addSubview:setPwView];
   
     
-    confirmPwView = [[ZXLoginTextField alloc] init];
-    confirmPwView.frame = CGRectMake(20*WIDTH_NIT, setPwView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    confirmPwView.leftLabel.text = @"确认密码：";
-    confirmPwView.inputTextField.secureTextEntry = YES;
-    confirmPwView.inputTextField.delegate = self;
-    [self.view addSubview:confirmPwView];
+//    confirmPwView = [[ZXLoginTextField alloc] initWithType:NormalType];
+//    confirmPwView.frame = CGRectMake(20*WIDTH_NIT, setPwView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+//    confirmPwView.leftLabel.text = @"  确认密码：";
+//    confirmPwView.inputTextField.secureTextEntry = YES;
+//    confirmPwView.inputTextField.delegate = self;
+//    [self.view addSubview:confirmPwView];
   
     
-    inviteView = [[ZXLoginTextField alloc] init];
+    inviteView = [[ZXLoginTextField alloc] initWithType:NormalType];
     NSInteger inviteViewHeight = _registerType == Register ? 50*WIDTH_NIT : 0;
     inviteView.hidden = _registerType == ForgetPassWord;
-    inviteView.frame = CGRectMake(20*WIDTH_NIT, confirmPwView.bottom, kScreenWidth-40*WIDTH_NIT, inviteViewHeight);
-    inviteView.leftLabel.text = @"邀请码：";
+    inviteView.frame = CGRectMake(20*WIDTH_NIT, setPwView.bottom, kScreenWidth-40*WIDTH_NIT, inviteViewHeight);
+    inviteView.leftLabel.text = @"  昵称";
     inviteView.inputTextField.delegate = self;
     [self.view addSubview:inviteView];
     
@@ -173,8 +172,8 @@
         ALERTTK(nil, @"验证码不能为空");
     } else if ([NSString isEmpty:_registerModel.passWord]) {
         ALERTTK(nil, @"密码不能为空");
-    } else if ([NSString isEmpty:confirmPwView.inputTextField.text] || ![_registerModel.passWord isEqualToString:confirmPwView.inputTextField.text]) {
-        ALERTTK(nil, @"两次密码不一致");
+//    } else if ([NSString isEmpty:confirmPwView.inputTextField.text] || ![_registerModel.passWord isEqualToString:confirmPwView.inputTextField.text]) {
+//        ALERTTK(nil, @"两次密码不一致");
     } else if ([NSString isEmpty:_registerModel.invitCode]) {
         dic = @{@"mobilPhone" : _registerModel.mobilPhone, @"smsCode" : _registerModel.smsCode, @"passWord" : _registerModel.passWord,};
         NSInteger requestID = _registerType == Register ?

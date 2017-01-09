@@ -42,7 +42,7 @@
 - (void)setupView {
    
     
-    //分享按钮
+    //返回按钮
     UIButton* backActBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backActBtn.frame = CGRectMake(0, 0, 80, 44);
     [backActBtn setImage:@"fanhui"];
@@ -51,44 +51,20 @@
     self.navigationItem.leftBarButtonItem = leftButton;
     
     
-    
-    phoneView = [[ZXLoginTextField alloc] init];
+    phoneView = [[ZXLoginTextField alloc] initWithType:NormalType];
     phoneView.frame = CGRectMake(20*WIDTH_NIT, 100*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    phoneView.leftLabel.text = @"手机号";
+    phoneView.leftLabel.text = @"  手机号";
     [self.view addSubview:phoneView];
     
   
-
-    passwordView = [[ZXLoginTextField alloc] init];
+    passwordView = [[ZXLoginTextField alloc] initWithType:PwdType];
     passwordView.frame = CGRectMake(20*WIDTH_NIT, phoneView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    passwordView.leftLabel.text = @"密码";
-    passwordView.inputTextField.secureTextEntry = YES;
+    passwordView.leftLabel.text = @"  密码";
     [self.view addSubview:passwordView];
 
     
-    UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    registerBtn.frame = CGRectMake(20*WIDTH_NIT, passwordView.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
-    [registerBtn setTitle:@"注册" forState:UIControlStateNormal];
-    [registerBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    registerBtn.titleLabel.font = TwoFont;
-    registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [registerBtn addTarget:self action:@selector(registerAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:registerBtn];
-    
-    
-    
-    UIButton *forgetPwBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    forgetPwBtn.frame = CGRectMake(kScreenWidth-120*WIDTH_NIT, passwordView.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
-    [forgetPwBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [forgetPwBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    forgetPwBtn.titleLabel.font = TwoFont;
-    forgetPwBtn.titleLabel.textAlignment = NSTextAlignmentRight;
-    [forgetPwBtn addTarget:self action:@selector(forgetPassWordAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:forgetPwBtn];
-   
-    
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginBtn.frame = CGRectMake(20*WIDTH_NIT, registerBtn.bottom+30*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+    loginBtn.frame = CGRectMake(20*WIDTH_NIT, passwordView.bottom+30*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
     [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [loginBtn setTitleColor:RGBColor(255, 255, 255, 1) forState:UIControlStateNormal];
     [loginBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
@@ -99,15 +75,31 @@
     [self.view addSubview:loginBtn];
  
     
+    UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    registerBtn.frame = CGRectMake(kScreenWidth/2-120*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
+    [registerBtn setTitle:@"注册账号" forState:UIControlStateNormal];
+    [registerBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
+    registerBtn.titleLabel.font = TwoFont;
+    registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [registerBtn addTarget:self action:@selector(registerAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:registerBtn];
+    
+    
+    UIButton *forgetPwBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    forgetPwBtn.frame = CGRectMake(kScreenWidth/2+20*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
+    [forgetPwBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
+    [forgetPwBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
+    forgetPwBtn.titleLabel.font = TwoFont;
+    forgetPwBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+    [forgetPwBtn addTarget:self action:@selector(forgetPassWordAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:forgetPwBtn];
+    
+    
     UIButton *wechatLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    wechatLoginBtn.frame = CGRectMake(20*WIDTH_NIT, loginBtn.bottom+30*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    [wechatLoginBtn setTitle:@"微信登录" forState:UIControlStateNormal];
-    [wechatLoginBtn setTitleColor:RGBColor(58, 58, 58, 1) forState:UIControlStateNormal];
-    wechatLoginBtn.titleLabel.font = TwoFont;
-    wechatLoginBtn.layer.cornerRadius = 4.0;
+    wechatLoginBtn.frame = CGRectMake(kScreenWidth/3-20*WIDTH_NIT, kScreenHeight-120*WIDTH_NIT, 40*WIDTH_NIT, 40*WIDTH_NIT);
+    wechatLoginBtn.backgroundColor = [UIColor redColor];
+    wechatLoginBtn.layer.cornerRadius = 20*WIDTH_NIT;
     wechatLoginBtn.layer.masksToBounds = YES;
-    wechatLoginBtn.layer.borderWidth = 1.0;
-    wechatLoginBtn.layer.borderColor = RGBColor(151, 151, 151, 1).CGColor;
     [wechatLoginBtn addTarget:self action:@selector(weChatLoginAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:wechatLoginBtn];
 

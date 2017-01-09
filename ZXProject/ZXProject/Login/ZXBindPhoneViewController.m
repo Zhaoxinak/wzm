@@ -38,19 +38,16 @@
     alertTitle.font = ThreeFont;
     [self.view addSubview:alertTitle];
  
-
     
-    
-    phoneView = [[ZXLoginTextField alloc] init];
+    phoneView = [[ZXLoginTextField alloc] initWithType:NormalType];
     phoneView.frame = CGRectMake(20*WIDTH_NIT, 100*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    phoneView.leftLabel.text = @"手机号：";
+    phoneView.leftLabel.text = @"  手机号：";
     [self.view addSubview:phoneView];
     
     
-    verifyView = [[ZXLoginTextField alloc] init];
+    verifyView = [[ZXLoginTextField alloc] initWithType:SmsType];
     verifyView.frame = CGRectMake(20*WIDTH_NIT, phoneView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    verifyView.type = SmsType;
-    verifyView.leftLabel.text = @"验证码：";
+    verifyView.leftLabel.text = @"  验证码：";
     verifyView.inputTextField.delegate = self;
     [verifyView.smsCodeBtn addTarget:self action:@selector(verifyAction) forControlEvents:UIControlEventTouchUpInside];
     verifyView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
