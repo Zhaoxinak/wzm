@@ -19,6 +19,7 @@
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
     UILabel *name; //标题
+    UILabel *time; //时间
     UILabel *subName; //内容
 }
 

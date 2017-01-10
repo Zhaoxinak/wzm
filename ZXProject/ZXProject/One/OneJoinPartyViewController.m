@@ -99,12 +99,12 @@
     [self.view insertSubview:self.tableView atIndex:1];
     
     //发布按钮
-    UIButton* fabuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    fabuBtn.frame = CGRectMake(0, 0, 80, 44);
-    [fabuBtn setTitle:@"发布"];
-    [fabuBtn setTitleColor:OneTextColor];
-    [fabuBtn addTarget:self action:@selector(fabuAct) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:fabuBtn];
+    UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    publishBtn.frame = CGRectMake(0, 0, 80, 44);
+    [publishBtn setTitle:@"发布"];
+    [publishBtn setTitleColor:OneTextColor];
+    [publishBtn addTarget:self action:@selector(publishAct) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     //设置标题选择器
@@ -206,7 +206,7 @@
 }
 
 #pragma mark -发起活动
--(void)fabuAct{
+-(void)publishAct{
     
     NSLog(@"发起活动");
 }

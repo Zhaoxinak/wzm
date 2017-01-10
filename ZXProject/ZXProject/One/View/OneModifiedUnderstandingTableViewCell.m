@@ -110,8 +110,12 @@
     
 }
 
-
-
+//点击头像
+- (void)headTapAction:(UITapGestureRecognizer *)tap {
+    if (self.userId && self.headClickBlock) {
+        self.headClickBlock(self.userId);
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

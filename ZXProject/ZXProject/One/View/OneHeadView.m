@@ -7,6 +7,17 @@
 //
 
 #import "OneHeadView.h"
+#import "CommonHeader.h"
+
+@interface OneHeadView()<SDCycleScrollViewDelegate>{
+    
+    UIView *adView;
+    UIView *btnView;
+    SDCycleScrollView *cycleScrollView; //广告
+}
+
+
+@end
 
 @implementation OneHeadView
 
@@ -16,7 +27,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         //设置广告轮播和按钮打底图
-        [self setTopBottomView];
+        [self setupTopBottomView];
         //设置广告轮播
         [self topADView];
         //设置按钮
@@ -26,7 +37,7 @@
 }
 
 #pragma mark --- 打底图
--(void)setTopBottomView{
+-(void)setupTopBottomView{
     
     //广告轮播图
     adView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/470*270)];

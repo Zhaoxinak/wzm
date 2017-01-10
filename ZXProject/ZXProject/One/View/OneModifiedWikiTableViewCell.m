@@ -43,18 +43,24 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 50*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = OneFont;
+    name.font = TwoFont;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
+    //标题
+    time = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
+    time.font = ThreeFont;
+    time.textColor = OneTextColor;
+    time.text = @"时间时间";
+    [self addSubview:time];
     
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 60*WIDTH_NIT)];
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 50*WIDTH_NIT)];
     subName.numberOfLines = 3;
-    subName.font = TwoFont;
+    subName.font = ThreeFont;
     subName.textColor = TwoTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];

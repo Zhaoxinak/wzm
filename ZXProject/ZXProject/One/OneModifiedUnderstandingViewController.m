@@ -84,7 +84,8 @@
     UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     publishBtn.frame = CGRectMake(0, 0, 80, 44);
     [publishBtn setTitle:@"发布"];
-    [publishBtn addTarget:self action:@selector(publishBtn) forControlEvents:UIControlEventTouchUpInside];
+    [publishBtn setTitleColor:OneTextColor];
+    [publishBtn addTarget:self action:@selector(publishAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
     
@@ -162,9 +163,9 @@
 }
 
 #pragma mark -侧边栏显示
--(void)publishBtn{
+-(void)publishAct{
     
-   
+    NSLog(@"发布心得");
 }
 
 

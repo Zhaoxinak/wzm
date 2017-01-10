@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0862771E24B4A300C5B71F /* ZXSelectTableView.m */; };
+		9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E08627C1E24E9D900C5B71F /* FourHeadView.m */; };
 		9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */; };
 		9E1B70A91E1C9A4C00600777 /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70A81E1C9A4C00600777 /* ZXLoginViewController.m */; };
 		9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70AB1E1C9D1100600777 /* ZXRegisterViewController.m */; };
@@ -143,6 +144,8 @@
 		4D918681604A15EE2101F31A /* libPods-ZXProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0862761E24B4A300C5B71F /* ZXSelectTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSelectTableView.h; sourceTree = "<group>"; };
 		9E0862771E24B4A300C5B71F /* ZXSelectTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSelectTableView.m; sourceTree = "<group>"; };
+		9E08627B1E24E9D900C5B71F /* FourHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourHeadView.h; sourceTree = "<group>"; };
+		9E08627C1E24E9D900C5B71F /* FourHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourHeadView.m; sourceTree = "<group>"; };
 		9E16A5FD1DEED11E00D09DDD /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		9E1B70A71E1C9A4C00600777 /* ZXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXLoginViewController.h; sourceTree = "<group>"; };
@@ -366,6 +369,15 @@
 				9E0862771E24B4A300C5B71F /* ZXSelectTableView.m */,
 			);
 			path = ZXSelectTableView;
+			sourceTree = "<group>";
+		};
+		9E08627A1E24E9CA00C5B71F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E08627B1E24E9D900C5B71F /* FourHeadView.h */,
+				9E08627C1E24E9D900C5B71F /* FourHeadView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9E1B70A61E1C96A500600777 /* Login */ = {
@@ -667,6 +679,7 @@
 		9E8EE5C81E20F04B002187DB /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				9E08627A1E24E9CA00C5B71F /* View */,
 				9E8EE5C91E20F078002187DB /* FourViewController.h */,
 				9E8EE5CA1E20F078002187DB /* FourViewController.m */,
 			);
@@ -980,6 +993,7 @@
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
+				9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
 				9E813CF11E10FEC4004292E7 /* OneModifiedWikiViewController.m in Sources */,
 				9E813CEB1E10C157004292E7 /* OneCasesShowTableViewCell.m in Sources */,

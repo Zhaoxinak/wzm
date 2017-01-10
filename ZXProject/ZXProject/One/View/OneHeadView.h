@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
-#import "UIView+Common.h"
 
 @protocol OneHeadViewDelegate <NSObject>
 
@@ -18,14 +16,7 @@
 
 @end
 
-@interface OneHeadView : UIView<SDCycleScrollViewDelegate>{
-    
-    UIView *adView;
-    UIView *btnView;
-    SDCycleScrollView *cycleScrollView; //广告
-    
-}
-
+@interface OneHeadView : UIView
 @property(nonatomic, assign) id<OneHeadViewDelegate> delegate;
 @property(nonatomic, strong) NSMutableArray *imageArray;
 
