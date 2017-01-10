@@ -41,18 +41,25 @@
     //图片点击
     
     
-    
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 50*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = OneFont;
+    name.font = TwoFont;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
+    //活动状态
+
+    status = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
+    status.font = TwoFont;
+    status.textColor = TwoTextColor;
+    status.text = @"即将开始";
+    [self addSubview:status];
+    
     
     //地址
-    addrName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
+    addrName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, status.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
     addrName.font = TwoFont;
     addrName.textColor = TwoTextColor;
     addrName.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";

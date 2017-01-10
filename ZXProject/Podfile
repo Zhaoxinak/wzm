@@ -11,7 +11,6 @@ target 'ZXProject' do
    pod 'ZYQAssetPickerController'   # 图片选取
    pod 'IQKeyboardManager'          # 智能键盘
    pod 'DZNEmptyDataSet'            # 空数据
-   pod 'ZYSideSlipFilter'           # 侧边栏选择
    pod 'UMengUShare/UI'	            # U-Share SDK UI模块（分享面板，建议添加）
    pod 'UMengUShare/Social/Sina'	# 集成新浪微博
    pod 'UMengUShare/Social/WeChat'	# 集成微信

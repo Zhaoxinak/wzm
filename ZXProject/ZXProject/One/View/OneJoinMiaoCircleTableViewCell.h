@@ -28,6 +28,7 @@
     UIButton *avatarBtn; //头像点击
     UILabel *name; //标题
     UILabel *subName; //内容
+    UILabel *allowName; //能加入的种类
     UIButton *joinBtn; //加入按钮
   
 }

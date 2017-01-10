@@ -11,8 +11,8 @@
 #import "CustomTabBarController.h"
 
 //微信
-static NSString *const WXAppKey = @"wxd984510cc0a8dfd6";
-static NSString *const WXAppSecret = @"35a92db0f67e613012fcbf5eaa9bba43";
+static NSString *const WXAppKey = @"";
+static NSString *const WXAppSecret = @"";
 
 
 @interface AppDelegate ()
@@ -29,11 +29,9 @@ static NSString *const WXAppSecret = @"35a92db0f67e613012fcbf5eaa9bba43";
     [self setupUMConfig];
     [WXApi registerApp:WXAppKey];
     
-    
     // 设置键盘监听管理
     [self setKeyboardManager];
    
-    
     // 设置tabBar
     CustomTabBarController *customTabBar = [CustomTabBarController new];
     self.window.rootViewController = customTabBar;
@@ -47,24 +45,24 @@ static NSString *const WXAppSecret = @"35a92db0f67e613012fcbf5eaa9bba43";
     [[UMSocialManager defaultManager] openLog:YES];
     
     //设置友盟appkey
-    [[UMSocialManager defaultManager] setUmSocialAppkey:@"57e8c11ce0f55a569a00348f"];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@""];
     
     //设置微信的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
-                                          appKey:@"wxd984510cc0a8dfd6"
-                                       appSecret:@"35a92db0f67e613012fcbf5eaa9bba43"
-                                     redirectURL:@"http://mobile.umeng.com/social"];
+                                          appKey:@""
+                                       appSecret:@""
+                                     redirectURL:@""];
     //设置分享到QQ互联的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
-                                          appKey:@"1105646739"
+                                          appKey:@""
                                        appSecret:nil
-                                     redirectURL:@"http://mobile.umeng.com/social"];
+                                     redirectURL:@""];
     
     //设置新浪的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina
-                                          appKey:@"583983328"
-                                       appSecret:@"ddc5c1c766b0791dff4b013a60868c3f"
-                                     redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+                                          appKey:@""
+                                       appSecret:@""
+                                     redirectURL:@""];
     
     
 //    //友盟统计

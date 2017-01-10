@@ -145,8 +145,8 @@ return _instance; \
 #define TwoColor           RGBColor(40, 205, 251, 1)
 #define ThreeColor         RGBColor(40, 205, 251, 1)
 #define BGColor            RGBColor(241, 241, 241, 1)
-#define KNavigationTitleColor   RGBColor(255, 255, 255, 1)
-#define KNavigationBGColor   RGBColor(0, 0, 0, 1)
+#define KNavigationTitleColor   RGBColor(0, 0, 0, 1)
+#define KNavigationBGColor   RGBColor(255, 255, 255, 1)
 
 #define OneTextColor           HexStringColor(@"#000000", 1)  //#000000
 #define TwoTextColor           HexStringColor(@"#222222", 1)  //#222222
@@ -158,7 +158,7 @@ return _instance; \
 /**
  *  nav字体大小
  */
-#define KNavigationFont [UIFont systemFontOfSize:18*WIDTH_NIT]
+#define KNavigationFont [UIFont systemFontOfSize:20*WIDTH_NIT]
 /**
  *  nav字体大小
  */

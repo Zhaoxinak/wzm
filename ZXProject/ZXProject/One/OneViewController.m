@@ -54,8 +54,7 @@
 -(void)setupData{
     
     //设置tabViewHeader
-    _oneHeadView = [[OneHeadView alloc]init];
-    
+    _oneHeadView = [[OneHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470)];
 }
 
 
@@ -104,7 +103,6 @@
     [self.view insertSubview:self.tableView atIndex:1];
     
     //设置tabViewHeader
-    _oneHeadView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470);
     _oneHeadView.backgroundColor = BGColor;
     _oneHeadView.delegate = self;
     self.tableView.tableHeaderView = _oneHeadView;

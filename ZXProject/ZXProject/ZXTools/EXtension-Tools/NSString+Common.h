@@ -29,4 +29,6 @@ NSString * MD5Hash(NSString *aString);
 
 + (BOOL)isEmpty:(id)object;
 
+-(CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
+
 @end

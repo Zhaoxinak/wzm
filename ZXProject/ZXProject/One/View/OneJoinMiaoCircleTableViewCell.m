@@ -57,6 +57,16 @@
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
     
+    //能加入的种类
+    allowName = [[UILabel alloc]initWithFrame:CGRectMake(self.width- 80*WIDTH_NIT, 0, 70*WIDTH_NIT, 20*WIDTH_NIT)];
+    allowName.backgroundColor = [UIColor orangeColor];
+    allowName.textAlignment = NSTextAlignmentCenter;
+    allowName.font = TwoFont;
+    allowName.textColor = FiveTextColor;
+    allowName.text = @"仅工程师";
+    [self addSubview:allowName];
+    
+    
     //加入按钮
     joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, OneJoinMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];

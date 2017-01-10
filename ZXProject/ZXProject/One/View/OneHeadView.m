@@ -10,17 +10,20 @@
 
 @implementation OneHeadView
 
-- (void)drawRect:(CGRect)rect {
-    
-    //设置广告轮播和按钮打底图
-    [self setTopBottomView];
-    //设置广告轮播
-    [self topADView];
-    //设置按钮
-    [self BtnView];
-    
-}
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        //设置广告轮播和按钮打底图
+        [self setTopBottomView];
+        //设置广告轮播
+        [self topADView];
+        //设置按钮
+        [self BtnView];
+    }
+    return self;
+}
 
 #pragma mark --- 打底图
 -(void)setTopBottomView{
@@ -34,6 +37,12 @@
     btnView = [[UIView alloc]initWithFrame:CGRectMake(0, self.height-(self.height/470*180), self.width, self.height/470*180)];
     btnView.backgroundColor = [UIColor whiteColor];
     [self insertSubview:btnView atIndex:1];
+    
+    
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
     
     
 }
