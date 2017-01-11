@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "OneJoinMiaoCircleModel.h"
 
 @protocol OneJoinMiaoCircleCellDelegate <NSObject>

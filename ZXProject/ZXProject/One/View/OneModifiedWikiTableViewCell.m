@@ -7,6 +7,7 @@
 //
 
 #import "OneModifiedWikiTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneModifiedWikiTableViewCell
 

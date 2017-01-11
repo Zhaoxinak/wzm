@@ -16,5 +16,7 @@ target 'ZXProject' do
    pod 'UMengUShare/Social/WeChat'	# 集成微信
    pod 'UMengUShare/Social/QQ'		# 集成QQ
    pod 'YYKit'                      # YYKit
+   pod 'Masonry'                    # 自动布局
+   
    
 end

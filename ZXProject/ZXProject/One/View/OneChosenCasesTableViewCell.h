@@ -8,7 +8,6 @@
 //改装百科
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "HomePageModel.h"
 
 //cell高度

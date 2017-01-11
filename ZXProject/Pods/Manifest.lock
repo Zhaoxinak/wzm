@@ -17,6 +17,7 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - IQKeyboardManager (3.3.7)
   - JSONModel (1.7.0)
+  - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - SDCycleScrollView (1.65):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - IQKeyboardManager
   - JSONModel
+  - Masonry
   - MBProgressHUD
   - MJRefresh
   - SDCycleScrollView
@@ -65,6 +67,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
@@ -74,6 +77,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
 
-PODFILE CHECKSUM: dc216efc4bed0df5c3a5e1034cb3cce1fd5d5237
+PODFILE CHECKSUM: 085fa6d1240f64b252b1ab0fb2574374e32b6ab7
 
 COCOAPODS: 1.1.1

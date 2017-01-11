@@ -12,7 +12,7 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 
 
 @protocol FourHeadViewDelegate <NSObject>
-#pragma mark -- 0 为更换头像  1为跳转用户详情 234分别跳转 喵币、余额、喵友
+#pragma mark -- 0 为跳转用户详情 123分别跳转 喵币、余额、喵友
 @optional
 -(void)fourHeadViewSelect2go:(NSInteger)tag;
 

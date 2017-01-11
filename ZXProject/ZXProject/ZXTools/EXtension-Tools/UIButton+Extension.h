@@ -26,4 +26,8 @@
 @property (copy, nonatomic) NSString *selectedBgImage;
 
 - (void)addTarget:(id)target action:(SEL)action;
+
++ (void)ImageUptoLabelDown:(UIButton *)button margin:(CGFloat)margin;
+
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "OneModifiedEncyclopediaTableViewCell.h"
+#import "CommonHeader.h"
+
 
 @implementation OneModifiedEncyclopediaTableViewCell
 

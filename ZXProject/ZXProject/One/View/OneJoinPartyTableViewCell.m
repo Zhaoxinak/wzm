@@ -7,6 +7,7 @@
 //
 
 #import "OneJoinPartyTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneJoinPartyTableViewCell
 

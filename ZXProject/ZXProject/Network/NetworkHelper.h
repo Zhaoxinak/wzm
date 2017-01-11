@@ -20,7 +20,8 @@ typedef NS_ENUM(NSUInteger, RequestName) {
     ZXInterfaceModifyUserInfo, //修改用户信息
     ZXInterfaceSmsCode,  //获取短信
     ZXInterfaceRegister, //注册
-    ZXInterfaceUserFindPassword //忘记密码
+    ZXInterfaceUserFindPassword, //忘记密码
+    ZXInterfaceAddUserFaceBack //意见反馈
     
 };
 

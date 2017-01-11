@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "OneCasesShowModel.h"
 
 //cell高度

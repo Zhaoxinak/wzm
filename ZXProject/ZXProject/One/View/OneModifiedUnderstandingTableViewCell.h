@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "OneModifiedUnderstandingModel.h"
 typedef void (^UserHeadClickBlock)(NSString *userId);
 

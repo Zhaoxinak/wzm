@@ -101,6 +101,15 @@
 		9E8EE5E01E20F281002187DB /* ThreeHotNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE5DC1E20F281002187DB /* ThreeHotNoteTableViewCell.m */; };
 		9E8EE5E11E20F281002187DB /* ThreeMiaoCircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE5DE1E20F281002187DB /* ThreeMiaoCircleTableViewCell.m */; };
 		9E8EE5E41E20FBC9002187DB /* ZXRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE5E31E20FBC9002187DB /* ZXRegisterModel.m */; };
+		9EA740161E25D76B002278F5 /* FourDailyManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */; };
+		9EA7401A1E25D845002278F5 /* FourDailyManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740191E25D845002278F5 /* FourDailyManagementModel.m */; };
+		9EA7401D1E26196C002278F5 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7401C1E26196C002278F5 /* FeedBackViewController.m */; };
+		9EA740201E261C3F002278F5 /* FourSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7401F1E261C3F002278F5 /* FourSettingViewController.m */; };
+		9EA740231E2628C2002278F5 /* FourAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740221E2628C2002278F5 /* FourAboutUsViewController.m */; };
+		9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740251E263262002278F5 /* PersonalInfoViewController.m */; };
+		9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740281E2638D4002278F5 /* PersonalInfoTableViewCell.m */; };
+		9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */; };
+		9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */; };
 		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
 		9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FE1DFFD61F00F63C11 /* OneJoinPartyViewController.m */; };
 		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
@@ -280,6 +289,24 @@
 		9E8EE5DE1E20F281002187DB /* ThreeMiaoCircleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeMiaoCircleTableViewCell.m; sourceTree = "<group>"; };
 		9E8EE5E21E20FBC9002187DB /* ZXRegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRegisterModel.h; sourceTree = "<group>"; };
 		9E8EE5E31E20FBC9002187DB /* ZXRegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXRegisterModel.m; sourceTree = "<group>"; };
+		9EA740141E25D76B002278F5 /* FourDailyManagementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourDailyManagementTableViewCell.h; sourceTree = "<group>"; };
+		9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourDailyManagementTableViewCell.m; sourceTree = "<group>"; };
+		9EA740181E25D845002278F5 /* FourDailyManagementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourDailyManagementModel.h; sourceTree = "<group>"; };
+		9EA740191E25D845002278F5 /* FourDailyManagementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourDailyManagementModel.m; sourceTree = "<group>"; };
+		9EA7401B1E26196C002278F5 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		9EA7401C1E26196C002278F5 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		9EA7401E1E261C3F002278F5 /* FourSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourSettingViewController.h; sourceTree = "<group>"; };
+		9EA7401F1E261C3F002278F5 /* FourSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourSettingViewController.m; sourceTree = "<group>"; };
+		9EA740211E2628C2002278F5 /* FourAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourAboutUsViewController.h; sourceTree = "<group>"; };
+		9EA740221E2628C2002278F5 /* FourAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourAboutUsViewController.m; sourceTree = "<group>"; };
+		9EA740241E263262002278F5 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		9EA740251E263262002278F5 /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
+		9EA740271E2638D4002278F5 /* PersonalInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableViewCell.h; sourceTree = "<group>"; };
+		9EA740281E2638D4002278F5 /* PersonalInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableViewCell.m; sourceTree = "<group>"; };
+		9EA7402A1E263C5E002278F5 /* EditPersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonalInfoViewController.h; sourceTree = "<group>"; };
+		9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonalInfoViewController.m; sourceTree = "<group>"; };
+		9EA7402D1E263D5C002278F5 /* ZXUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUserInfoModel.h; sourceTree = "<group>"; };
+		9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserInfoModel.m; sourceTree = "<group>"; };
 		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D4FD1DFFD61F00F63C11 /* OneJoinPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyViewController.h; sourceTree = "<group>"; };
@@ -376,6 +403,10 @@
 			children = (
 				9E08627B1E24E9D900C5B71F /* FourHeadView.h */,
 				9E08627C1E24E9D900C5B71F /* FourHeadView.m */,
+				9EA740271E2638D4002278F5 /* PersonalInfoTableViewCell.h */,
+				9EA740281E2638D4002278F5 /* PersonalInfoTableViewCell.m */,
+				9EA740141E25D76B002278F5 /* FourDailyManagementTableViewCell.h */,
+				9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -661,6 +692,8 @@
 				9E8EE5B61E20A869002187DB /* ZXLoginModel.m */,
 				9E8EE5E21E20FBC9002187DB /* ZXRegisterModel.h */,
 				9E8EE5E31E20FBC9002187DB /* ZXRegisterModel.m */,
+				9EA7402D1E263D5C002278F5 /* ZXUserInfoModel.h */,
+				9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -679,9 +712,20 @@
 		9E8EE5C81E20F04B002187DB /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				9EA740171E25D7B0002278F5 /* Model */,
 				9E08627A1E24E9CA00C5B71F /* View */,
 				9E8EE5C91E20F078002187DB /* FourViewController.h */,
 				9E8EE5CA1E20F078002187DB /* FourViewController.m */,
+				9EA740241E263262002278F5 /* PersonalInfoViewController.h */,
+				9EA740251E263262002278F5 /* PersonalInfoViewController.m */,
+				9EA7402A1E263C5E002278F5 /* EditPersonalInfoViewController.h */,
+				9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */,
+				9EA7401B1E26196C002278F5 /* FeedBackViewController.h */,
+				9EA7401C1E26196C002278F5 /* FeedBackViewController.m */,
+				9EA7401E1E261C3F002278F5 /* FourSettingViewController.h */,
+				9EA7401F1E261C3F002278F5 /* FourSettingViewController.m */,
+				9EA740211E2628C2002278F5 /* FourAboutUsViewController.h */,
+				9EA740221E2628C2002278F5 /* FourAboutUsViewController.m */,
 			);
 			path = Four;
 			sourceTree = "<group>";
@@ -704,6 +748,15 @@
 				9E8EE5DE1E20F281002187DB /* ThreeMiaoCircleTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9EA740171E25D7B0002278F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EA740181E25D845002278F5 /* FourDailyManagementModel.h */,
+				9EA740191E25D845002278F5 /* FourDailyManagementModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9ECB71851E09390A00A68CD6 /* Share */ = {
@@ -984,19 +1037,24 @@
 				9ECB718C1E09437900A68CD6 /* ZXShareModel.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */,
+				9EA740231E2628C2002278F5 /* FourAboutUsViewController.m in Sources */,
 				9E813CF41E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m in Sources */,
 				9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */,
 				9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */,
+				9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */,
 				9EE4904D1E07EC2300799F8A /* OneModifiedUnderstandingViewController.m in Sources */,
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
+				9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
 				9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
 				9E813CF11E10FEC4004292E7 /* OneModifiedWikiViewController.m in Sources */,
 				9E813CEB1E10C157004292E7 /* OneCasesShowTableViewCell.m in Sources */,
+				9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */,
+				9EA740161E25D76B002278F5 /* FourDailyManagementTableViewCell.m in Sources */,
 				9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */,
 				9EFAD60B1DFAB2D6009C2324 /* UIView+Common.m in Sources */,
 				9E813CEE1E10C16C004292E7 /* OneCasesShowModel.m in Sources */,
@@ -1010,6 +1068,7 @@
 				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
 				9E54588C1DDD8440002CA99D /* CustomTabBar.m in Sources */,
 				9E54588A1DDD8440002CA99D /* BaseViewController.m in Sources */,
+				9EA7401D1E26196C002278F5 /* FeedBackViewController.m in Sources */,
 				9E54588B1DDD8440002CA99D /* CustomNaviController.m in Sources */,
 				9ECB71AD1E09474000A68CD6 /* ZXShareHelper.m in Sources */,
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
@@ -1020,6 +1079,7 @@
 				9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */,
 				9E813CE81E10B538004292E7 /* OneCasesShowViewController.m in Sources */,
 				9EC6D4FF1DFFD61F00F63C11 /* OneJoinPartyViewController.m in Sources */,
+				9EA740201E261C3F002278F5 /* FourSettingViewController.m in Sources */,
 				9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9ECB71901E0944CC00A68CD6 /* ZXShareViewCell.m in Sources */,
@@ -1033,9 +1093,11 @@
 				9E813CF71E10FEF2004292E7 /* OneModifiedWikiModel.m in Sources */,
 				9ECB71881E09432E00A68CD6 /* ZXShareViewController.m in Sources */,
 				9EFAD60A1DFAB2D6009C2324 /* UIResponder+FirstResponder.m in Sources */,
+				9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */,
 				9E8EE5B71E20A869002187DB /* ZXLoginModel.m in Sources */,
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
+				9EA7401A1E25D845002278F5 /* FourDailyManagementModel.m in Sources */,
 				9E4CED2F1DDEF7CA00259FDE /* ZXScrollView.m in Sources */,
 				9E4CED321DDEF7EA00259FDE /* ZXTableView.m in Sources */,
 				9E8EE5C71E20C89C002187DB /* ZXLoginTextField.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "OneMiaoQuestionSquareTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneMiaoQuestionSquareTableViewCell
 

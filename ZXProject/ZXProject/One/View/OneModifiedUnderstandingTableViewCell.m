@@ -7,6 +7,7 @@
 //
 
 #import "OneModifiedUnderstandingTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneModifiedUnderstandingTableViewCell
 

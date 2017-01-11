@@ -75,7 +75,7 @@
 -(void)setupView{
     
     //设置标题
-    self.navigationItem.title = @"改装心得";
+    self.title = @"改装心得";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];

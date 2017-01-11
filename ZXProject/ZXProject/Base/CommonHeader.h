@@ -40,6 +40,7 @@
 #import <UIScrollView+EmptyDataSet.h> //tableView为空时数据为空
 #import <UMSocialCore/UMSocialCore.h> //友盟分享
 #import <YYKit.h> //yykit
+#import <Masonry.h> //自动布局
 /********************分享*********************/
 #import <WXApi.h> //微信
 #import "ZXShareHelper.h" //分享

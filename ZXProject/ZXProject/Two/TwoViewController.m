@@ -12,7 +12,6 @@
 
 /************C************/
 #import "TwoViewController.h"
-#import "ZXLoginViewController.h" //测试登录
 /************V************/
 
 /************M************/
@@ -80,7 +79,7 @@
 -(void)setupView{
     
     //设置标题
-    self.navigationItem.title = @"消息";
+    self.title = @"消息";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
@@ -178,10 +177,6 @@
 -(void)phoneBookAct{
     NSLog(@"通讯录");
     
-    //登录
-    ZXLoginViewController *loginVC = [[ZXLoginViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:loginVC];
-    [self presentViewController:navi animated:YES completion:nil];
     
 }
 

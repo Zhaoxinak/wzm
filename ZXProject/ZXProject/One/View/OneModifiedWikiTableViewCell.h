@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "OneModifiedWikiModel.h"
 
 //cell高度

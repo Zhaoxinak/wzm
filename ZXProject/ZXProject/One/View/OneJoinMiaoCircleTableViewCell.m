@@ -7,6 +7,7 @@
 //
 
 #import "OneJoinMiaoCircleTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneJoinMiaoCircleTableViewCell
 
@@ -74,7 +75,7 @@
     [joinBtn setTitleColor:FourTextColor];
     joinBtn.layer.borderWidth = 1;
     joinBtn.layer.borderColor = (FourTextColor).CGColor;
-    [joinBtn addTarget:self action:@selector(joinTap:)];
+    [joinBtn addTarget:self action:@selector(joinAct:)];
     [self addSubview:joinBtn];
 
     
@@ -90,7 +91,7 @@
 }
 
 #pragma mark --- 加入按钮点击实现
--(void)joinTap:(UIButton *)button{
+-(void)joinAct:(UIButton *)button{
     
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);

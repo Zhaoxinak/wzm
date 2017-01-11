@@ -7,6 +7,7 @@
 //
 
 #import "OneChosenCasesTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation OneChosenCasesTableViewCell
 
