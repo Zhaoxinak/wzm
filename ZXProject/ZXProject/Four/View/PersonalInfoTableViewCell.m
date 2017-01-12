@@ -98,7 +98,7 @@
         case HeaderCellMode:
         {
             
-            _headerImgView.left = self.contentView.width;
+            _headerImgView.left = kScreen_Width -100;
             _headerImgView.top = 15;
             _headerImgView.width = 60;
             _headerImgView.height = 60;
@@ -120,7 +120,7 @@
                 make.height.equalTo(@48);
             }];
         
-            UIButton * tapHeadView = [[UIButton alloc]initWithFrame:CGRectMake(self.contentView.width, 15, 60, 60)];
+            UIButton * tapHeadView = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width -100, 15, 60, 60)];
             [tapHeadView addTarget:self action:@selector(tapHeadAct) forControlEvents:UIControlEventTouchUpInside];
             [self.contentView addSubview:tapHeadView];
             

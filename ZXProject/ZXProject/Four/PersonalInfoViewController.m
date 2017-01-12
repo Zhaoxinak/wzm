@@ -300,43 +300,6 @@
 
 
     
-    
-    
-    
-    
-    
-    
-    
-    if (indexPath.section == 0) {
-       
-        
-        
-    } else if (indexPath.section == 1){
-        
-     
-        
-        }else if (indexPath.row == 5){
-           
-        }
-    
-        
-    else if (indexPath.section == 2) {
-        
-    
-        
-    }else if (indexPath.section == 3){
-        //绑定微信号
-        if (indexPath.row == 0) {
-            
-            
-          
-        }
-        
-        if (indexPath.row == 2) {
-            
-        }
-        
-    }
 }
 
 
