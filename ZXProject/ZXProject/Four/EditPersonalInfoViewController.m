@@ -141,7 +141,7 @@
     [self.view addSubview:textField];
     textField.frame = CGRectMake(0, 10, kScreen_Width, 49);
     
-    if (_type == 1 ||_type == 2 ||_type == 4) {
+    if (_type == VolkEdit ||_type == SexEdit ||_type == BrithCtiyEdit) {
         
         self.navigationItem.rightBarButtonItem = nil;
         textField.userInteractionEnabled = NO;
@@ -149,7 +149,7 @@
         [self setupPickerBlockView];
         [self setuptextFeildBtn];
     }
-    if (_type == 3) {
+    if (_type == BrithdayEdit) {
         self.navigationItem.rightBarButtonItem = nil;
         textField.userInteractionEnabled = NO;
         [self setupTimePicker];
@@ -240,7 +240,7 @@
 
 #pragma mark - UIPickerView data source
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    if (_type == 4){
+    if (_type == BrithCtiyEdit){
         return 3;
     }
     return 1;
@@ -248,11 +248,11 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    if (_type == 1) {
+    if (_type == SexEdit) {
         return _sexArray.count;
-    }else if (_type == 2){
+    }else if (_type == VolkEdit){
         return _nationsArray.count;
-    }else if (_type == 4){
+    }else if (_type == BrithCtiyEdit){
         if (component == 0) {
             return _allCityList.count;
         }else if (component == 1){
@@ -286,11 +286,11 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    if (_type == 1) {
+    if (_type == SexEdit) {
         textField.text = [_sexArray objectAtIndex:row];
-    }else if (_type == 2){
+    }else if (_type == VolkEdit){
         textField.text = [_nationsArray objectAtIndex:row];
-    }else if (_type == 4){
+    }else if (_type == BrithCtiyEdit){
         if (component == 0) {
             _cityArray = _allCityList[row][@"sub"];
             _areaArray = _cityArray[0][@"sub"];
@@ -326,7 +326,7 @@
 -(void)commitBtn:(UIButton *)button{
     [self hideCommonListPicker];
     
-    if (_type == 4) {
+    if (_type == BrithCtiyEdit) {
         
         NSString *provinceString = _allCityList[[commonPicker selectedRowInComponent:0]][@"name"];
         NSString *cityString = _cityArray[[commonPicker selectedRowInComponent:1]][@"name"];
@@ -348,11 +348,11 @@
     }else{
         
         NSInteger row=[commonPicker selectedRowInComponent:0];
-        if (_type == 1) {
+        if (_type == SexEdit) {
             textField.text = [_sexArray objectAtIndex:row];
-        }else if (_type == 2){
+        }else if (_type == VolkEdit){
             textField.text = [_nationsArray objectAtIndex:row];
-        }else if (_type == 3){
+        }else if (_type == BrithdayEdit){
             
             NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
             //实例化一个NSDateFormatter对象

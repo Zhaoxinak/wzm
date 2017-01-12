@@ -40,6 +40,7 @@
     bottomSeprateLine.backgroundColor = BGColor;
     [self.contentView addSubview:bottomSeprateLine];
     
+    
     _headerImgView = [[UIImageView alloc] init];
     [self.contentView addSubview:_headerImgView];
     
@@ -68,7 +69,7 @@
     
 }
 
--(void)tapHead{
+-(void)tapHeadAct{
     NSLog(@"点击头像");
     [self.delegate didPersonalHeadView2go];
 }
@@ -97,7 +98,7 @@
         case HeaderCellMode:
         {
             
-            _headerImgView.left = 20;
+            _headerImgView.left = self.contentView.width;
             _headerImgView.top = 15;
             _headerImgView.width = 60;
             _headerImgView.height = 60;
@@ -105,22 +106,22 @@
             _headerImgView.layer.masksToBounds = YES;
             _headerImgView.hidden = NO;
             
-            _arrowImgView.hidden = NO;
+            [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.contentView.mas_left).offset(14);
+                make.centerY.equalTo(@0);
+            }];
             
+            
+            _arrowImgView.hidden = NO;
             [_arrowImgView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.right.equalTo(self.contentView.mas_right).offset(-13);
                 make.centerY.equalTo(@((0+2)*WIDTH_NIT));
                 make.width.equalTo(@30);
                 make.height.equalTo(@48);
             }];
-            [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.equalTo(_arrowImgView.mas_left).offset(0);
-                
-                make.centerY.equalTo(@0);
-            }];
-            
-            UIButton * tapHeadView = [[UIButton alloc]initWithFrame:CGRectMake(20, 15, 60, 60)];
-            [tapHeadView addTarget:self action:@selector(tapHead) forControlEvents:UIControlEventTouchUpInside];
+        
+            UIButton * tapHeadView = [[UIButton alloc]initWithFrame:CGRectMake(self.contentView.width, 15, 60, 60)];
+            [tapHeadView addTarget:self action:@selector(tapHeadAct) forControlEvents:UIControlEventTouchUpInside];
             [self.contentView addSubview:tapHeadView];
             
             

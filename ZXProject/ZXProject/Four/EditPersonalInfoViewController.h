@@ -8,6 +8,19 @@
 
 #import "BaseViewController.h"
 
+typedef NS_ENUM(NSUInteger, PersonalEditType) {
+    NameEdit,       //修改名字
+    SexEdit,        //修改性别
+    VolkEdit,       //修改民族
+    BrithdayEdit,   //修改出生年月
+    BrithCtiyEdit,  //修改出生城市
+    CarsEdit,       //修改喜爱车型
+    InterestEdit,   //修改改装兴趣
+    PersonInfoEdit, //修改个人说明
+};
+
+
+
 @protocol EditPersonalInfoViewControllerDelegate <NSObject>
 
 - (void)sendBackString: (NSString *)string;
@@ -18,7 +31,7 @@
 
 @property (nonatomic, strong) NSString *userId;
 
-@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, assign) PersonalEditType type;
 
 @property (nonatomic, strong) NSString *titleString;
 

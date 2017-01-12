@@ -16,12 +16,14 @@ typedef NS_ENUM(NSUInteger, RequestName) {
     ZXInterfaceWeWeChatAdvance,  //高级授权
     ZXInterfaceUserInfo, //获取用户信息
     ZXInterfaceWeChatBind, //绑定微信电话
+    ZXInterfaceWeChatBindByMobile, //电话绑定微信
     ZXInterfaceMobileValidationSms, //验证手机
     ZXInterfaceModifyUserInfo, //修改用户信息
     ZXInterfaceSmsCode,  //获取短信
     ZXInterfaceRegister, //注册
     ZXInterfaceUserFindPassword, //忘记密码
-    ZXInterfaceAddUserFaceBack //意见反馈
+    ZXInterfaceAddUserFaceBack, //意见反馈
+    ZXInterfaceUploadPic  //上传图片
     
 };
 
@@ -54,6 +56,8 @@ typedef NS_ENUM(NSUInteger, HTTPMethod) {
 - (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId;
 #pragma mark当网络请求成功时，处理后获取到的成功数据。
 - (void)ZXsuccessData:(id _Nullable)data byRequestId:(NSInteger)requestId;
+#pragma mark-- 图片上传
+- (void)uploadImages:(NSArray *_Nonnull)imageArray;
 #pragma mark请求不成功后的处理
 -(void)showServerMsg:(NSString *_Nonnull)msg;
 @end

@@ -91,25 +91,41 @@ typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     
 }
 
-#pragma mark图片上传
--(void)dataWithImgupload:(BOOL)progress viewpointId:(NSString *_Nonnull)viewpointId imageDatas:(NSMutableArray *_Nonnull)imageDatas completion:(void (^ _Nonnull)(BOOL finish))completion {
-    if ([ZXTools getCurrentWindow] == nil) {
-        progress = NO;
-    }
+
+#pragma mark-- 图片上传
+- (void)uploadImages:(NSArray *)imageArray {
+    // http://139.129.131.20:8080/
+    // http://www.halalo2o.cn/
+    //@"http://139.129.131.20:8080/util/upload"
     
-    NSString *params = [NSString stringWithFormat:@"viewpointId=%@", viewpointId];
-    NSString *str = [NSString stringWithFormat:@"%@%@%@", BASEURL, URL_DISCOVER, params];
     
-    [self imgData:progress url:str imageDatas:imageDatas imageName:@"files" parameters:nil completion:^(BOOL finish) {
-       
-        if (finish) {
-            completion(YES);
-        }else{
-            completion(NO);
+    NSString *baseUrl = @"base_url";
+    
+    
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    __weak typeof(&*self) weakSelf = self;
+    NSURLSessionDataTask *task = [manager POST:[NSString stringWithFormat:@"%@util/upload", baseUrl] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> _Nonnull formData) {
+        
+        for (int i = 0; i < imageArray.count; i++) {
+            UIImage *image = imageArray[i];
+            NSString *fileName = [NSString stringWithFormat:@"pic%d",i];
+            NSData *imageData = [self representationDataWithImage:image];
+            [formData appendPartWithFileData:imageData
+                                        name:@"files"
+                                    fileName:fileName
+                                    mimeType:@"image/jpeg"];
         }
         
+    } progress:^(NSProgress *_Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask *_Nonnull task, id _Nullable responseObject) {
+        //上传成功
+        [weakSelf handleData:responseObject byRequestId:ZXInterfaceUploadPic];
+    } failure:^(NSURLSessionDataTask *_Nullable task, NSError * _Nonnull error) {
+        //上传失败
+        [weakSelf handleError:error byRequestId:ZXInterfaceUploadPic];
     }];
-    
 }
 
 
@@ -137,6 +153,9 @@ typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     
     
 }
+
+
+
 
 #pragma mark工具类
 //工具类
@@ -235,87 +254,17 @@ typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     
 }
 
-#pragma mark通用图片请求
--(void)imgData:(BOOL)progress url:(NSString *)url imageDatas:(NSMutableArray *_Nonnull)imageDatas imageName:(NSString *_Nonnull)imageName parameters:(NSDictionary *)parameters completion:(void (^ _Nonnull)(BOOL finish))completion{
-    if (progress) {
-        [MBProgressHUD showHUDAddedTo:[ZXTools getCurrentWindow]animated:YES];
-        
-        //模拟加载延迟
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:[ZXTools getCurrentWindow] animated:YES];
-        });
-        
-    }
-    
-    NSMutableURLRequest *request=[[AFHTTPRequestSerializer serializer]multipartFormRequestWithMethod:@"POST" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        
-        
-        NSInteger imgCount = 0;
-        for (NSData *imageData in imageDatas) {
-            
-            NSString *fileName = [NSString stringWithFormat:@"files%ld.png",(long)imgCount];
-            
-            [formData appendPartWithFileData:imageData name:imageName fileName:fileName mimeType:@"image/png"];
-            
-            imgCount++;
-            
-        }
-        
-    } error:nil];
-    
-    AFURLSessionManager *manager=[[AFURLSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    manager.responseSerializer=[AFHTTPResponseSerializer serializer];
-    AFHTTPResponseSerializer * s = [AFHTTPResponseSerializer serializer];
-    
-    s.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript", @"multipart/form-data",nil];
-    
-    [request setValue:@"XMLHttpRequest" forHTTPHeaderField:@"X-Requested-With"];
-    
-    
-    NSLog(@"%@",request.allHTTPHeaderFields);
-    
-    manager.responseSerializer = s;
-    
-    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        
-        NSLog(@"上传完成！！！");
-        
-        NSLog(@"responseObject====%@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
-        
-        if (responseObject) {
-            
-            if (progress) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [MBProgressHUD hideHUDForView:[ZXTools getCurrentWindow] animated:YES];
-                });
-            }
-            
-            NSError *error;
-            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
-            NSLog(@"responseDictionary===%@",responseDictionary);
-            
-            if ([responseDictionary[@"isValid"]integerValue]) {
-                
-            }else{
-                
-            }
-            
-            completion(YES);
-            
-        }
-        if (error) {
-            
-            completion(NO);
-            NSLog(@"%@",error);
-            [ZXTools makeTask:[error localizedDescription]];
-        }
-    }];
-    
-    
-    [uploadTask resume];
-    
-    
+
+
+#pragma mark-- 图片处理
+- (NSData *)representationDataWithImage:(UIImage *)image {
+    CGFloat multiple = 0.8;
+    NSData *imageData = UIImageJPEGRepresentation(image, multiple);
+    //    while (imageData.length > 500000) {
+    //        multiple = multiple * 0.9;
+    //        imageData = UIImageJPEGRepresentation(image, multiple);
+    //    }
+    return imageData;
 }
 
 #pragma mark通用错误数据处理

@@ -12,6 +12,7 @@
 
 /************C************/
 #import "FourViewController.h"
+#import "PersonalInfoViewController.h" //个人资料
 #import "FeedBackViewController.h" //意见反馈
 #import "FourSettingViewController.h" //设置
 /************V************/
@@ -267,7 +268,18 @@
 -(void)fourHeadViewSelect2go:(NSInteger)tag{
     
     NSLog(@"跳转 %ld",(long)tag);
-    
+    switch (tag) {
+        case 0:{
+            //个人资料
+            PersonalInfoViewController *personVC = [[PersonalInfoViewController alloc]init];
+            [self.navigationController pushViewController:personVC animated:YES];
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
    
 }
 

@@ -34,7 +34,7 @@
 #import <SDCycleScrollView.h> //轮播器
 #import <UIImageView+WebCache.h>//sdWebImage
 #import <TOWebViewController.h> // 跳转webView
-#import <ZYQAssetPickerController.h> //添加图片
+#import <QBImagePickerController.h> //添加图片
 #import <IQKeyboardManager.h> //键盘弹出
 #import <IQKeyboardReturnKeyHandler.h> //键盘弹出
 #import <UIScrollView+EmptyDataSet.h> //tableView为空时数据为空
