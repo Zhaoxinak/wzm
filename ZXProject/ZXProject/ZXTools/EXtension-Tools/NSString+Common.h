@@ -31,4 +31,7 @@ NSString * MD5Hash(NSString *aString);
 
 -(CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
 
+//判断手机号码格式是否正确
++ (BOOL)valiMobile:(NSString *)mobile;
+
 @end

@@ -25,7 +25,7 @@
 #import "UIView+Common.h" //坐标
 #import "ZXTools.h"  //赵昕的工具
 #import "NetworkHelper.h" //网络请求
-
+#import "UILabel+Common.h" //输入框
 /********************第三方引用*********************/
 #import <AFNetworking.h> //网络请求
 #import <JSONModel.h> //模型
@@ -41,6 +41,10 @@
 #import <UMSocialCore/UMSocialCore.h> //友盟分享
 #import <YYKit.h> //yykit
 #import <Masonry.h> //自动布局
+#import <AMapFoundationKit/AMapFoundationKit.h> //高德
+#import <AMapLocationKit/AMapLocationKit.h>  //高德
+#import <AMapSearchKit/AMapSearchKit.h>  //高德
+#import <MapKit/MapKit.h> //高德
 /********************分享*********************/
 #import <WXApi.h> //微信
 #import "ZXShareHelper.h" //分享

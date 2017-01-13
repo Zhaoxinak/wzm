@@ -23,7 +23,8 @@ typedef NS_ENUM(NSUInteger, RequestName) {
     ZXInterfaceRegister, //注册
     ZXInterfaceUserFindPassword, //忘记密码
     ZXInterfaceAddUserFaceBack, //意见反馈
-    ZXInterfaceUploadPic  //上传图片
+    ZXInterfaceUploadPic,  //上传图片
+    ZXInterfaceAddParty    //添加活动
     
 };
 

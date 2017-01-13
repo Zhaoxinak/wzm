@@ -14,6 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AMap3DMap (4.4.1):
+    - AMapFoundation (~> 1.3)
+  - AMapFoundation (1.3.2)
+  - AMapLocation (2.2.0):
+    - AMapFoundation (~> 1.3)
+  - AMapSearch (4.4.1):
+    - AMapFoundation (~> 1.2)
   - DZNEmptyDataSet (1.8.1)
   - IQKeyboardManager (3.3.7)
   - JSONModel (1.7.0)
@@ -46,6 +53,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AMap3DMap
+  - AMapLocation
+  - AMapSearch
   - DZNEmptyDataSet
   - IQKeyboardManager
   - JSONModel
@@ -64,6 +74,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMap3DMap: a46189dbf185d498e452294d7f600c20af0486af
+  AMapFoundation: 843dc27b2c02bc0bc2ef3346bb3dd0456cf64dbb
+  AMapLocation: 3f2005c6dec6a7a1107258d0cde43b9d7399d217
+  AMapSearch: 16a50b493ad419e8b6b81bafdeca7570db52f28e
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
@@ -77,6 +91,6 @@ SPEC CHECKSUMS:
   UMengUShare: 6c3902a68a06d01031bed6f426e97b89d4fc504f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: da08b00bf83d55fd05b137e88b950efabcdfd7b0
+PODFILE CHECKSUM: fc2257755478624f206c9b85fecea4c24268c2a6
 
 COCOAPODS: 1.1.1
