@@ -270,25 +270,24 @@
     self.isMoveByUser = NO;
     self.isSearchByBtn = NO;
     
+    self.searchResultTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, kScreen_Height / 2-64, kScreen_Width, kScreen_Height / 2) style:UITableViewStylePlain];
+    self.searchResultTableview.tableHeaderView = [UIView new];
+    self.searchResultTableview.dataSource = self;
+    self.searchResultTableview.delegate = self;
+    [self.view addSubview:self.searchResultTableview];
     
-        self.searchResultTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, kScreen_Height / 2-64, kScreen_Width, kScreen_Height / 2) style:UITableViewStylePlain];
-        self.searchResultTableview.tableHeaderView = [UIView new];
-        self.searchResultTableview.dataSource = self;
-        self.searchResultTableview.delegate = self;
-        [self.view addSubview:self.searchResultTableview];
-        
-        self.hideBtn = [UIButton new];
-        self.hideBtn.frame = self.view.bounds;
-        self.hideBtn.hidden = YES;
-        self.hideBtn.backgroundColor = [UIColor clearColor];
-        [self.hideBtn addTarget:self action:@selector(hideAction) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:self.hideBtn];
-        
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 5*WIDTH_NIT, kScreen_Width, 50*WIDTH_NIT)];
-        self.searchBar.delegate = self;
-        self.searchBar.placeholder = @"搜索周边";
-        self.searchBar.returnKeyType = UIReturnKeySearch;
-        [self.view addSubview:self.searchBar];
+    self.hideBtn = [UIButton new];
+    self.hideBtn.frame = self.view.bounds;
+    self.hideBtn.hidden = YES;
+    self.hideBtn.backgroundColor = [UIColor clearColor];
+    [self.hideBtn addTarget:self action:@selector(hideAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.hideBtn];
+    
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 5*WIDTH_NIT, kScreen_Width, 50*WIDTH_NIT)];
+    self.searchBar.delegate = self;
+    self.searchBar.placeholder = @"搜索周边";
+    self.searchBar.returnKeyType = UIReturnKeySearch;
+    [self.view addSubview:self.searchBar];
     
     
     [self setupMapView];
@@ -297,16 +296,8 @@
 
 
 - (void)mapView:(MAMapView *)mapView didTouchPois:(NSArray *)pois {
-    //    if (pois.count > 0) {
-    //        MATouchPoi *poi = pois[0];
-    //        NSLog(@"%@", poi.name);
-    //        self.searchBar.text = poi.name;
-    //        [UIView animateWithDuration:1 animations:^{
-    //            _mapView.centerCoordinate = poi.coordinate;
-    //            self.touchImageView.center = _mapView.center;
-    //        }];
-    //
-    //    }
+
+    
 }
 
 - (void)getLocationByAddress:(NSString *)oreillyAddress {

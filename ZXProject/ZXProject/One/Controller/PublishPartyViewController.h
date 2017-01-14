@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface PublishPartyViewController : BaseViewController
+@interface PublishPartyViewController : BaseTableViewController
 
 //上传图片数组
 @property (nonatomic, strong) NSMutableArray *picArray;

@@ -34,7 +34,7 @@
     _starImage.image = [UIImage imageNamed:@"star_red"];
     [self.contentView addSubview:_starImage];
     
-    CGSize titleSize = [@"" getWidth:@"所在地区：" andFont:[UIFont systemFontOfSize:16]];
+    CGSize titleSize = [@"" getWidth:@"活动主题" andFont:[UIFont systemFontOfSize:16]];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_starImage.right + 3, 14, titleSize.width + 3, 20)];
     _titleLabel.textAlignment = NSTextAlignmentLeft;
     _titleLabel.font = [UIFont systemFontOfSize:16];
@@ -78,11 +78,20 @@
     }
     
     if (_cellModel.selectType == AddPartyCellTypePhone) {
-        _bottomLine.left = 0;
-        _bottomLine.width = kScreen_Width-35*WIDTH_NIT;
-        _titleLabel.frame = CGRectMake(0, 0, 0, 0);
-        _detailText.frame = CGRectMake(0, 14, kScreen_Width - 30, 20);
+        
+        _detailText.keyboardType = UIKeyboardTypePhonePad;
     }
+    
+    if (_cellModel.selectType == AddPartyCellTypeCost) {
+        
+        _detailText.keyboardType = UIKeyboardTypeDecimalPad;
+    }
+    
+    if (_cellModel.selectType == AddPartyCellTypeNumLimit) {
+        
+        _detailText.keyboardType = UIKeyboardTypeNumberPad;
+    }
+    
     if (_cellModel.selectType == AddPartyCellTypeMap) {
         UIImageView *addressImage = [[UIImageView alloc]initWithFrame:CGRectMake(_detailText.right, 12, 16, 24)];
         addressImage.image = [UIImage imageNamed:@"icon_location_blue"];
@@ -103,7 +112,7 @@
     }
     _detailText.text = cellModel.detailText;
     
-    if ((cellModel.selectType == AddPartyCellTypeTextField) || (cellModel.selectType == AddPartyCellTypePhone)) {
+    if ((cellModel.selectType == AddPartyCellTypeTextField) || (cellModel.selectType == AddPartyCellTypePhone) ||  (cellModel.selectType == AddPartyCellTypeCost) ||  (cellModel.selectType == AddPartyCellTypeNumLimit)) {
         _detailText.enabled = YES;
     }else{
         _detailText.enabled = NO;

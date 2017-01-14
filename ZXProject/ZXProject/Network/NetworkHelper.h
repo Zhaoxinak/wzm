@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
+
 typedef NS_ENUM(NSUInteger, RequestName) {
     ZXInterfaceDiscover, //发现 （测试）
     ZXInterfaceLogin,    //登录

@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger , AddPartyCellType) {
     AddPartyCellTypeTime,
     AddPartyCellTypeMap,
     AddPartyCellTypeStyle,
-    AddPartyCellTypeCost
+    AddPartyCellTypeCost,
+    AddPartyCellTypeNumLimit
     
 };
 

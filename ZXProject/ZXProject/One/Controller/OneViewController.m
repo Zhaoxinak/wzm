@@ -23,8 +23,6 @@
 #import "OneModifiedEncyclopediaTableViewCell.h"  //改装百科
 #import "OneChosenCasesTableViewCell.h"  //精选案例
 
-
-
 /************M************/
 #import "HomePageModel.h"
 
@@ -53,8 +51,7 @@
 #pragma mark --初始化数据
 -(void)setupData{
     
-    //设置tabViewHeader
-    _oneHeadView = [[OneHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470)];
+    
 }
 
 
@@ -98,10 +95,14 @@
     
     //设置标题
     self.title = @"五爪猫";
+    
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
+    
+    //设置tabViewHeader
+    _oneHeadView = [[OneHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470)];
     //设置tabViewHeader
     _oneHeadView.backgroundColor = BGColor;
     _oneHeadView.delegate = self;

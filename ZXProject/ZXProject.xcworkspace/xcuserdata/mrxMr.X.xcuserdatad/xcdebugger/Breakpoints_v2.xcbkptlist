@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZXProject/One/Controller/PublishPartyViewController.m"
-            timestampString = "506000723.589763"
+            filePath = "ZXProject/One/Map/MapViewController.m"
+            timestampString = "506065622.398717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "811"
-            endingLineNumber = "811"
-            landmarkName = "-addButtonClick:inCell:"
+            startingLineNumber = "386"
+            endingLineNumber = "386"
+            landmarkName = "-setupMapView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

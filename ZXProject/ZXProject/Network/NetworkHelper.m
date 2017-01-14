@@ -7,7 +7,7 @@
 //
 
 #import "NetworkHelper.h"
-
+#import "CommonHeader.h"
 //请求头方法
 typedef NS_ENUM(NSUInteger, HTTPHeaderMethod) {
     NormalHTTPHeader, //正常请求头方法

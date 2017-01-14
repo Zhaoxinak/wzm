@@ -130,7 +130,6 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
     //轮播跳转
-    [self.delegate oneHeadViewSelect2go: index];
     if ([self.delegate respondsToSelector:@selector(oneHeadViewSelect2go:)]) {
         [self.delegate oneHeadViewSelect2go:index];
         NSLog(@"index%ld",(long)index);

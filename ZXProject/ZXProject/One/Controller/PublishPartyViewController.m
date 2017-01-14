@@ -20,9 +20,9 @@
 #import "AddPartyCellModel.h"  //cell数据
 #import "AddPictureModel.h"    //图片数据
 
-@interface PublishPartyViewController ()<UITableViewDelegate,UITableViewDataSource,MapViewControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource,AddPicturesCellDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,QBImagePickerControllerDelegate>
+@interface PublishPartyViewController ()<MapViewControllerDelegate,AddPicturesCellDelegate,UIImagePickerControllerDelegate,QBImagePickerControllerDelegate,UINavigationControllerDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+
 //cell数据源
 @property (nonatomic, strong) NSArray *dataArray0;
 //cell数据源
@@ -41,7 +41,7 @@
 @property (nonatomic, strong) UIButton *commitTimeBtn;
 
 @property (nonatomic, strong) AddPartyCellModel *detailModel;//清真寺详情cell model
-@property (nonatomic, assign) CGFloat detailCellHeight;
+
 
 @end
 
@@ -56,17 +56,20 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (_picArray.count) {
-        [_tableView reloadData];
-    }
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    if (_picArray.count) {
+//        [_tableView reloadData];
+//    }
+//}
+
+#pragma mark - 刷新系统
+-(void)setRefresh{
+}
+-(void)setHeaderRefresh{
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 #pragma mark - setup method
 //初始化数据源
@@ -75,7 +78,7 @@
     _picArray = [NSMutableArray array];
     
     _dateFormatter = [[NSDateFormatter alloc] init];
-    [_dateFormatter setDateFormat:@"dd:HH:mm"];
+    [_dateFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
     
     _dataModel = [[AddPartyDataModel alloc] init];
     
@@ -86,8 +89,6 @@
     [self setupAddData];
    
     [self setupCellModels];
-    
-    
     
 }
 
@@ -133,34 +134,35 @@
   
     
     AddPartyCellModel *nameCell = [[AddPartyCellModel alloc] init];
-    nameCell.showStar = YES;
-    nameCell.placeHolderLeft = YES;
-    nameCell.titleText = @"餐厅名字：";
+    nameCell.titleText = @"活动主题";
+    nameCell.placeHolderText = @"请输入活动主题";
+    nameCell.fullScreenSeperateLine = YES;
     nameCell.selectType = AddPartyCellTypeTextField;
     
     AddPartyCellModel * joinTimeCell = [[AddPartyCellModel alloc] init];
     joinTimeCell.titleText = @"报名时间";
     joinTimeCell.showDownArrow = YES;
+    joinTimeCell.fullScreenSeperateLine = YES;
     joinTimeCell.selectType = AddPartyCellTypeTime;
     
     AddPartyCellModel * partyTimeCell = [[AddPartyCellModel alloc] init];
     partyTimeCell.titleText = @"活动时间";
     partyTimeCell.showDownArrow = YES;
+    partyTimeCell.fullScreenSeperateLine = YES;
     partyTimeCell.selectType = AddPartyCellTypeTime;
     
     
     
     AddPartyCellModel *addressCell = [[AddPartyCellModel alloc] init];
-    addressCell.showStar = YES;
     addressCell.titleText = @"活动位置";
     addressCell.placeHolderText = @"请选择详细地址";
-    addressCell.placeHolderLeft = YES;
+    addressCell.showDownArrow = YES;
+    addressCell.fullScreenSeperateLine = YES;
     addressCell.selectType = AddPartyCellTypeMap;
     addressCell.detailText = _dataModel.address;
     
     
     AddPartyCellModel *typeCell = [[AddPartyCellModel alloc] init];
-    typeCell.showStar = YES;
     typeCell.titleText = @"活动类型";
     typeCell.placeHolderText = @"选择活动类型";
     typeCell.showDownArrow = YES;
@@ -168,10 +170,8 @@
     typeCell.selectType = AddPartyCellTypeStyle;
     
     AddPartyCellModel *costCell = [[AddPartyCellModel alloc] init];
-    costCell.showStar = YES;
-    costCell.titleText = @"活动类型";
-    costCell.placeHolderText = @"选择活动类型";
-    costCell.showDownArrow = YES;
+    costCell.titleText = @"活动费用";
+    costCell.placeHolderText = @"请填写活动费用";
     costCell.fullScreenSeperateLine = YES;
     costCell.selectType = AddPartyCellTypeCost;
     
@@ -179,19 +179,16 @@
     AddPartyCellModel *phoneCell = [[AddPartyCellModel alloc] init];
     phoneCell.titleText = @"联系电话";
     phoneCell.detailText = @"";
-    phoneCell.showStar = YES;
     phoneCell.placeHolderText = @"请输入电话";
-    phoneCell.placeHolderLeft = YES;
+    phoneCell.fullScreenSeperateLine = YES;
     phoneCell.selectType = AddPartyCellTypePhone;
     
     
     AddPartyCellModel *numLimitCell = [[AddPartyCellModel alloc] init];
-    numLimitCell.titleText = @"联系电话";
+    numLimitCell.titleText = @"名额限制";
     numLimitCell.detailText = @"";
-    numLimitCell.showStar = YES;
-    numLimitCell.placeHolderText = @"请输入电话";
-    numLimitCell.placeHolderLeft = YES;
-    numLimitCell.selectType = AddPartyCellTypeTextField;
+    numLimitCell.placeHolderText = @"默认无限制人数";
+    numLimitCell.selectType = AddPartyCellTypeNumLimit;
     
     
     _dataArray0 = @[nameCell];
@@ -232,20 +229,15 @@
 }
 
 - (void)setupTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height - 64) style:UITableViewStyleGrouped];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView setEditing:YES animated:YES];
-    _tableView.allowsSelectionDuringEditing = YES;
-    [self.view addSubview:_tableView];
     
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height - kScreen_NavHeight);
+    [self.view insertSubview:self.tableView atIndex:1];
 }
 
 - (void)setupDatePicker {
     _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kScreen_Height - 44, kScreen_Width, 216)];
     _datePicker.backgroundColor = [UIColor whiteColor];
-    _datePicker.datePickerMode = UIDatePickerModeTime;
+    _datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     [_datePicker addTarget:self action:@selector(datePickerValueChange:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:_datePicker];
     _datePicker.hidden = YES;
@@ -262,7 +254,7 @@
     } else {
         _dataModel.partyTime = _model.detailText;
     }
-    [_tableView reloadData];
+    [self.tableView reloadData];
     
 }
 
@@ -294,7 +286,7 @@
     return !_dataModel.name.length || !_dataModel.area.length || !_dataModel.city.length || !_dataModel.province.length || !_dataModel.address || !_dataModel.type.length || !_dataModel.phone.length;
 }
 
-- (void)setupDataForAddRestaurant {
+- (void)setupDataForAddParty {
     NSDictionary *param = [_dataModel modelToJSONObject];
     [self sendRequestId:ZXInterfaceAddParty rMethod:POSTMethod params:param];
 }
@@ -348,7 +340,7 @@
     } else {
         _dataModel.partyTime = _model.detailText;
     }
-    [_tableView reloadData];
+    [self.tableView reloadData];
     
 }
 
@@ -460,17 +452,10 @@
         }
         [self uploadImages:image];
     }else {
-        [self setupDataForAddRestaurant];
+        [self setupDataForAddParty];
     }
 }
 
-- (void)turnToEditPhotoWithImageArray:(NSArray *)imageArray {
-    PLEditPhotoViewController *editVC = [[PLEditPhotoViewController alloc] init];
-    editVC.uploadType = PLUpLoadPictureTypeAdd;
-    editVC.dishType = _selectUploadType;
-    editVC.imageArray = imageArray;
-    [self.navigationController pushViewController:editVC animated:YES];
-}
 
 #pragma mark - UIImagePicker delegate
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -480,11 +465,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (image) {
-        PLAddPictureModel *picModel = [[PLAddPictureModel alloc] init];
+        AddPictureModel *picModel = [[AddPictureModel alloc] init];
         picModel.addImage = image;
-        picModel.resType = [self pictureType];
         [picker dismissViewControllerAnimated:YES completion:^{
-            [self turnToEditPhotoWithImageArray:@[picModel]];
+        [_picArray addObjectsFromArray:@[picModel]];
+            
         }];
     }else {
         [picker dismissViewControllerAnimated:YES completion:^{
@@ -500,57 +485,54 @@
 
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didSelectAssets:(NSArray *)assets {
     NSMutableArray *selectImage = [[NSMutableArray alloc] init];
-    NSString *typeString = [self pictureType];
     for (ALAsset *asset in assets) {
         // 从asset中获得图片
         UIImage *result = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
-        PLAddPictureModel *picModel = [[PLAddPictureModel alloc] init];
+        AddPictureModel *picModel = [[AddPictureModel alloc] init];
         picModel.addImage = result;
-        picModel.resType = typeString;
         [selectImage addObject:picModel];
     }
     
     [imagePickerController dismissViewControllerAnimated:YES completion:^{
-        [self turnToEditPhotoWithImageArray:selectImage];
+       [_picArray addObjectsFromArray:selectImage];
+        [self.tableView reloadData];
     }];
 }
 
 #pragma mark - tableview datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return _dataArray0.count;
     }else
-        if (section == 1) {
-            return _dataArray1.count;
-        }else
-            if (section == 2) {
-                return _dataArray2.count;
-            }else
-                if (section == 3) {
-                    return _dataArray3.count;
-                }else
-                {
-                    return 1;
-                }
+    if (section == 2) {
+        return _dataArray2.count;
+    }else{
+        return 1;
+    }
+        
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 2) {
-        return 48.f;
+    if (indexPath.section == 0 || indexPath.section == 2) {
+        return 49.f;
     } else
-        if (indexPath.section == 3) {
-            return MAX(48.0, self.detailCellHeight);
-        }
-    
-    {
-        return [PLAddPicturesCell caculateAddPicturesCellHeightWithPictureArray:_picArray];
+    if (indexPath.section == 1) {
+        return [AddPicturesCell caculateAddPicturesCellHeightWithPictureArray:_picArray];
+    }else{
+        return 0;
     }
+    
+    
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 1;
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
@@ -559,9 +541,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        PLAddRestaurantTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addRestaurantCell0"];
+        AddPartyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddPartyTableViewCell0"];
         if (!cell) {
-            cell = [[PLAddRestaurantTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addRestaurantCell0"];
+            cell = [[AddPartyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddPartyTableViewCell0"];
             
         }
         
@@ -569,59 +551,29 @@
         cell.cellModel = _dataArray0[indexPath.row];
         return cell;
     }else
-        if (indexPath.section == 1) {
-            PLAddRestaurantTableViewCell *cell = nil;
-            if (!cell) {
-                cell = [[PLAddRestaurantTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addRestaurantCell1"];
+    if (indexPath.section == 1) {
+        AddPicturesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addPicturesCell"];
+        if (!cell) {
+            cell = [[AddPicturesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addPicturesCell"];
+            cell.delegate = self;
+        }
+        [cell setEditing:NO animated:YES];
+        cell.picArray = _picArray;
+        return cell;
+    }else
+    {
+        AddPartyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddPartyTableViewCell2"];
+        if (!cell) {
+            cell = [[AddPartyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddPartyTableViewCell2"];
+        }
                 
-            }
-            
-            cell.detailText.keyboardType = UIKeyboardTypePhonePad;
-            cell.cellModel = _dataArray1[indexPath.row];
-            return cell;
-        }else
-            if (indexPath.section == 2) {
-                PLAddRestaurantTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addRestaurantCell2"];
-                if (!cell) {
-                    cell = [[PLAddRestaurantTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addRestaurantCell2"];
-                }
-                
-                cell.detailText.keyboardType = UIKeyboardTypeDefault;
-                cell.cellModel = _dataArray2[indexPath.row];
-                return cell;
-            }else
-                if (indexPath.section == 3) {
-                    PLXLAddMosTableViewCell *cell = [tableView expandableTextCellWithId:@"reuser"];
-                    
-                    cell.cellModel = self.detailModel;
-                    
-                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                    return cell;
-                    
-                }
+        cell.detailText.keyboardType = UIKeyboardTypeDefault;
+        cell.cellModel = _dataArray2[indexPath.row];
+        return cell;
+    }
     
     
-                else {
-                    PLAddPicturesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addPicturesCell"];
-                    if (!cell) {
-                        cell = [[PLAddPicturesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addPicturesCell"];
-                        cell.type = @"添加餐厅";
-                        cell.delegate = self;
-                    }
-                    [cell setEditing:NO animated:YES];
-                    cell.picArray = _picArray;
-                    return cell;
-                }
-}
-
-- (void)tableView:(UITableView *)tableView updatedHeight:(CGFloat)height atIndexPath:(NSIndexPath *)indexPath {
     
-    self.detailCellHeight = height;
-}
-
-- (void)tableView:(UITableView *)tableView updatedText:(NSString *)text atIndexPath:(NSIndexPath *)indexPath {
-    
-    self.detailModel.detailInputText = text;
 }
 
 
@@ -630,150 +582,71 @@
     [self.view endEditing:YES];
     if (indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 2) {
         
-        PLAddRestaurantCellModel *model;
+        AddPartyCellModel *model;
         switch (indexPath.section) {
             case 0:
                 model = _dataArray0[indexPath.row];
                 break;
-            case 1:
-                model = _dataArray1[indexPath.row];
-                break;
             case 2:
                 model = _dataArray2[indexPath.row];
                 break;
-            case 3:
-                model = _dataArray3[indexPath.row];
-                break;
-                
             default:
                 break;
         }
         
         switch (model.selectType) {
-            case AddRestaurantCellTypePicker:
+            case AddPartyCellTypeTime:
             {
-                PLAddRestaurantTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-                if ([cell.cellModel.titleText isEqualToString:@"营业开始："]) {
+                AddPartyTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                if ([cell.cellModel.titleText isEqualToString:@"报名时间"]) {
                     self.isJoinTime = YES;
-                    if (![NSString isEmpty:_dataModel.opentime]) {
-                        _datePicker.date = [_dateFormatter dateFromString:_dataModel.opentime];
+                    if (![NSString isEmpty:_dataModel.joinTime]) {
+                        _datePicker.date = [_dateFormatter dateFromString:_dataModel.joinTime];
                     }
                     
                     
                 } else {
                     self.isJoinTime = NO;
-                    if (![NSString isEmpty:_dataModel.closetime]) {
-                        _datePicker.date = [_dateFormatter dateFromString:_dataModel.closetime];
+                    if (![NSString isEmpty:_dataModel.partyTime]) {
+                        _datePicker.date = [_dateFormatter dateFromString:_dataModel.partyTime];
                     }
                 }
                 _model = model;
                 [self showDatePicker];
             }
                 break;
-            case AddRestaurantCellTypeMap:
+            case AddPartyCellTypeMap:
             {
-                
-                /*
-                 _model.detailText = [NSString stringWithFormat:@"%@,%@", cityString, districtString];
-                 _dataModel.city = cityString;
-                 _dataModel.area = districtString;
-                 */
+            
                 _model = model;
-                //                if (_dataModel.city.length <= 0) {
-                //                    ALERTTK(nil, @"请先选择所在地区!");
-                //                } else {
-                PLMapViewController *mapView = [[PLMapViewController alloc] init];
-                //                    mapView.currentLocationCity = _dataModel.city;
-                //                    mapView.currentLocationAddress = _dataModel.area;
+                MapViewController *mapView = [[MapViewController alloc] init];
                 mapView.delegate = self;
                 [self.navigationController pushViewController:mapView animated:YES];
-                //                }
                 break;
             }
-            case AddRestaurantCellTypeShopType:
+                
+            case AddPartyCellTypeStyle:
             {
                 _model = model;
-                PLRestaurantTypeViewController *shopTypeVC = [[PLRestaurantTypeViewController alloc] init];
-                shopTypeVC.delegate = self;
-                [self.navigationController pushViewController:shopTypeVC animated:YES];
+               
+                
                 break;
             }
-            case AddRestaurantCellTypeProvincePicker:
-            {
-                _model = model;
-                [self showProvinceListPicker];
-                break;
-            }
+            
             default:
                 break;
         }
     }
 }
 
-#pragma mark - UIPickerView data source
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
-}
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    if (component == 0) {
-        return self.provinceArray.count;
-    }else if (component == 1) {
-        return _provinceListArray.count;
-    }else {
-        return _subProvinceListArray.count;
-    }
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (component == 0) {
-        return self.provinceArray[row][@"name"];
-    }else if (component == 1) {
-        return _provinceListArray[row][@"name"];
-    }else {
-        return _subProvinceListArray[row][@"name"];
-    }
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (component == 0) {
-        _provinceListArray = self.provinceArray[row][@"sub"];
-        _subProvinceListArray = _provinceListArray[0][@"sub"];
-        [_provincePicker reloadComponent:1];
-        [_provincePicker reloadComponent:2];
-    }else if (component == 1) {
-        _subProvinceListArray = _provinceListArray[row][@"sub"];
-        [_provincePicker reloadComponent:2];
-    }
-    NSInteger index = [_provincePicker selectedRowInComponent:1];
-    if (index > self.provinceListArray.count) {
-        index = self.provinceListArray.count - 1;
-    }
-    NSString *cityString = _provinceListArray[index][@"name"];
-    
-    NSInteger index2 = [_provincePicker selectedRowInComponent:2];
-    if (index2 > _subProvinceListArray.count) {
-        index2 = _subProvinceListArray.count - 1;
-    }
-    NSInteger index3 = [_provincePicker selectedRowInComponent:0];
-    if (index3 > self.provinceArray.count) {
-        index3 = self.provinceArray.count - 1;
-    }
-    
-    NSString *districtString = _subProvinceListArray[index2][@"name"];
-    _model.detailText = [NSString stringWithFormat:@"%@,%@", cityString, districtString];
-    _dataModel.province = self.provinceArray[index3];
-    //    _dataModel.city = cityString;
-    //    _dataModel.area = districtString;
-    [_tableView reloadData];
-}
 #pragma mark - UIScrollView delegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self hideKeyBoard];
 }
 
 #pragma mark - mapView delegate
-- (void)selectAddress:(NSString *)address andProvince:(NSString *)province andCity:(NSString *)city andArea:(NSString *)area andLocation:(CLLocationCoordinate2D)coord inView:(PLMapViewController *)view{
+- (void)selectAddress:(NSString *)address andProvince:(NSString *)province andCity:(NSString *)city andArea:(NSString *)area andLocation:(CLLocationCoordinate2D)coord inView:(MapViewController *)view{
     _model.detailText = address;
     _dataModel.longitude = [NSString stringWithFormat:@"%f", coord.longitude];
     _dataModel.latitude = [NSString stringWithFormat:@"%f", coord.latitude];
@@ -781,37 +654,12 @@
     _dataModel.city = city;
     _dataModel.area = area;
     _dataModel.address = address;
-    [_tableView reloadData];
+    [self.tableView reloadData];
     
     
 }
 
-#pragma mark - restaurant delegate
-- (void)restaurantTypeSelected:(NSMutableArray *)typeInfo {
-    
-    NSMutableArray *nameArr = [NSMutableArray array];
-    NSMutableArray *typeArr = [NSMutableArray array];
-    
-    for (int i = 0; i < typeInfo.count; i++) {
-        [nameArr addObject:typeInfo[i][@"name"]];
-        [typeArr addObject:[NSString stringWithFormat:@"%@",typeInfo[i][@"id"]]];
-    }
-    
-    NSString *nameString = @"";
-    if (nameArr.count >0) {
-        nameString = [nameArr componentsJoinedByString:@","];
-    }
-    
-    NSString *typeString = @"";
-    if (typeArr.count >0) {
-        typeString = [typeArr componentsJoinedByString:@","];
-    }
-    
-    _model.detailText = nameString;
-    _dataModel.type = typeString;
-    
-    [_tableView reloadData];
-}
+
 
 #pragma mark - PLAddPicturesCellDelegate
 - (void)addButtonClick:(UIButton *)sender inCell:(AddPicturesCell *)cell {
@@ -823,17 +671,16 @@
     
     NSLog(@"%ld",(long)sender.tag);
     [_picArray removeObjectAtIndex:sender.tag-1000];
-    [_tableView reloadData];
+    [self.tableView reloadData];
     
 }
 
 #pragma mark - network method
-- (void)handleData:(id)data byRequestId:(int)requestId {
+- (void)handleData:(id)data byRequestId:(NSInteger)requestId {
    
-    if (kPLInterfacePushPic == requestId) {
+    if (requestId == ZXInterfaceUploadPic) {
         [self handleUploadPicturesSucceedData:data];
-    }else if (kPLInterfaceAddRestaurant == requestId) {
-        [PLLoadingView dismiss];
+    }else if (requestId == ZXInterfaceAddParty) {
         
         NSString *message = data[@"message"];
         if (![NSString isEmpty:message] && [message containsString:@"已存在"]) {
@@ -841,36 +688,14 @@
             return;
         }
         
-        PLAddSucceedViewController *addSucceed = [[PLAddSucceedViewController alloc] init];
-        addSucceed.score = data[@"data"][@"integral"];
-        addSucceed.addType = PLAddSucceedTypeRestaurant;
-        addSucceed.detailId = data[@"data"][@"id"];
-        [self.navigationController pushViewController:addSucceed animated:YES];
+        
     }
 }
 
-- (void)handleError:(id)error byRequestId:(int)requestId {
-    [PLLoadingView dismiss];
+- (void)handleError:(id)error byRequestId:(NSInteger)requestId {
     ALERTTK(nil, error[@"message"]);
 }
 
-- (void)handelOpenedProvinceListData:(id)data {
-    if ([data isKindOfClass:[NSDictionary class]]) {
-        NSArray *array = data[@"data"][@"list"];
-        if (array.count) {
-            NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-            NSString *fileName = [path stringByAppendingPathComponent:[NSString
-                                                                       stringWithFormat:@"%@.plist",kOpenedProvinceList]];
-            NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
-            [data writeToFile:fileName atomically:YES];
-        }
-        
-        _provinceListArray = [self setupCityArrayWithProvinceData:array];
-    }
-    if (_provinceListArray.count) {
-        _subProvinceListArray = _provinceListArray[0][@"sub"];
-    }
-}
 
 - (void)handleUploadPicturesSucceedData:(id)data {
     if ([data isKindOfClass:[NSDictionary class]]) {
@@ -879,154 +704,19 @@
             for (int i = 0; i < urlArray.count; i++) {
                 NSString *imageName = [NSString stringWithFormat:@"pic%d", i];
                 NSString *url = urlArray[i][imageName];
-                PLAddPictureModel *model = _picArray[i];
+                AddPictureModel *model = _picArray[i];
                 model.picUrl = url;
             }
         }
     }
     NSString *picJson = [self picJsonString];
     _dataModel.restaurantPic = picJson;
-    [self setupDataForAddRestaurant];
+    [self setupDataForAddParty];
 }
 
-
-#pragma mark --- 电话增加减少
--(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return NO;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if(indexPath.section == 1)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-}
-
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if(indexPath.section == 1)
-    {
-        if (indexPath.row == _dataArray1.count -1) {
-            
-            if (_dataArray1.count >= 3) {
-                return UITableViewCellEditingStyleDelete;
-            }else{
-                return UITableViewCellEditingStyleInsert;
-            }
-            
-            
-        }else{
-            return UITableViewCellEditingStyleDelete;
-        }
-        
-        
-    }
-    
-    return UITableViewCellEditingStyleNone;
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    
-    
-    
-    
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if (indexPath.section == 1) {
-        
-        if (editingStyle == UITableViewCellEditingStyleInsert) {
-            
-            
-            if (_dataArray1.count >= 3) {
-                
-            }else{
-                
-                PLAddRestaurantCellModel *phoneNumber = [[PLAddRestaurantCellModel alloc] init];
-                phoneNumber.titleText = @"";
-                phoneNumber.detailText = @"";
-                phoneNumber.detailInputText = @"";
-                phoneNumber.showStar = NO;
-                phoneNumber.placeHolderText = @"输入商户电话";
-                phoneNumber.placeHolderLeft = YES;
-                phoneNumber.selectType = AddRestaurantCellTypePhone;
-                
-                [_dataArray1 addObject:phoneNumber];
-                
-                //                // 之后更新view
-                //                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                
-                //一个section刷新
-                NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:1];
-                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-                
-            }
-            
-            
-            
-            
-        }else if (editingStyle == UITableViewCellEditingStyleDelete){
-            
-            // 首先修改model
-            [self.dataArray1 removeObjectAtIndex:indexPath.row];
-            // 之后更新view
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //一个section刷新
-            NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:1];
-            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-        }
-        
-        
-        
-    }
-    
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return NO;
-    
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
-    if (section == 1) {
-        return 49;
-    }
-    return 0.1;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0.1)];
-    headerView.backgroundColor = [UIColor clearColor];
-    
-    if (section == 1) {
-        UIImageView *starImage = [[UIImageView alloc] initWithFrame:CGRectMake(13, 20, 8, 8)];
-        starImage.image = [UIImage imageNamed:@"star_red"];
-        [headerView addSubview:starImage];
-        
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(starImage.right + 3, 14, 120, 20)];
-        titleLabel.textAlignment = NSTextAlignmentLeft;
-        titleLabel.font = [UIFont systemFontOfSize:16];
-        titleLabel.text = @"商户电话：";
-        [headerView addSubview:titleLabel];
-        
-    }
-    
-    
-    return headerView;
-    
-}
-
 
 @end

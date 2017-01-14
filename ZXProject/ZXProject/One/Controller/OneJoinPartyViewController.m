@@ -9,6 +9,8 @@
 
 /************C************/
 #import "OneJoinPartyViewController.h"
+#import "PublishPartyViewController.h" //发布活动
+#import "PartyDetailInfoViewController.h" //活动详情
 /************V************/
 #import "OneJoinPartyTableViewCell.h"  //活动
 /************M************/
@@ -201,14 +203,17 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    PartyDetailInfoViewController *partyInfoVC = [[PartyDetailInfoViewController alloc]init];
+    [self.navigationController pushViewController:partyInfoVC animated:YES];
     
     
 }
 
 #pragma mark -发起活动
 -(void)publishAct{
-    
     NSLog(@"发起活动");
+    PublishPartyViewController *publishVC = [[PublishPartyViewController alloc]init];
+    [self.navigationController pushViewController:publishVC animated:YES];
 }
 
 
