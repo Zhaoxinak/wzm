@@ -130,7 +130,7 @@
     
     //热帖推荐
     if (section == 2) {
-        return _hotNoteMArr.count;;
+        return _hotNoteMArr.count;
     }
     
     return 0;
@@ -164,7 +164,7 @@
     if (section == 1) {
         cellTitle.text = @"    其他喵圈";
     }
-    if (section == 1) {
+    if (section == 2) {
         cellTitle.text = @"    热帖推荐";
     }
     return headerView;
@@ -273,6 +273,14 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 2) {
+//        ThreeHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
+//        return frameModel.cellHeight;
+        
+        return kScreen_Width/4;
+    }
+    
     
     return ThreeMiaoCircleCell_Height;
 }

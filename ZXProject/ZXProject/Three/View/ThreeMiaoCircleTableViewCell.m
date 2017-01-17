@@ -7,6 +7,7 @@
 //
 
 #import "ThreeMiaoCircleTableViewCell.h"
+#import "CommonHeader.h"
 
 @implementation ThreeMiaoCircleTableViewCell
 

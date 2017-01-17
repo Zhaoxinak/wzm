@@ -138,10 +138,11 @@
 + (void)ImageUptoLabelDown:(UIButton *)button margin:(CGFloat)margin{
     
     CGFloat totalHeight = (button.imageView.frame.size.height + button.titleLabel.frame.size.height);
+//    CGFloat totalHeight = button.frame.size.height;
+    
     [button setImageEdgeInsets:UIEdgeInsetsMake(-(totalHeight - button.imageView.frame.size.height), 0.0, 0.0, -button.titleLabel.frame.size.width)];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(margin, -button.imageView.frame.size.width, -(totalHeight - button.titleLabel.frame.size.height),0.0)];
-    
-    
+    button.titleLabel.textAlignment = NSTextAlignmentCenter;
     
 }
 

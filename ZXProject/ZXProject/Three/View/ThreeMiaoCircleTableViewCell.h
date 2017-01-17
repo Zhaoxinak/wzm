@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "ThreeMiaoCircleModel.h"
 
 //喵圈类型

@@ -39,6 +39,5 @@ typedef NS_ENUM(NSInteger , AddPartyCellType) {
 //点击操作类型
 @property (nonatomic, assign) AddPartyCellType selectType;
 
-@property (nonatomic, copy) NSString *detailIntroText;//详情描述
 
 @end

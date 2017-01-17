@@ -100,6 +100,12 @@
     zanBtn.titleLabel.font = FiveFont;
     [self addSubview:zanBtn];
     
+    //时间
+    timeName = [[UILabel alloc]initWithFrame:CGRectMake(picView.left - 70*WIDTH_NIT, name.bottom+5*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
+    timeName.font = FiveFont;
+    timeName.textColor = OneTextColor;
+    timeName.text = @"时间时间时间";
+    [self addSubview:timeName];
     
 }
 

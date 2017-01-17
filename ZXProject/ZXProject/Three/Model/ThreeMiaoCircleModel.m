@@ -7,6 +7,7 @@
 //
 
 #import "ThreeMiaoCircleModel.h"
+#import "CommonHeader.h"
 
 @implementation ThreeMiaoCircleModel
 

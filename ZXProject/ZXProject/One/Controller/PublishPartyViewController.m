@@ -7,8 +7,6 @@
 //
 
 
-
-
 /************C************/
 #import "PublishPartyViewController.h"
 #import "MapViewController.h" //地图
@@ -39,8 +37,6 @@
 @property (nonatomic, strong) AddPartyDataModel *dataModel;
 //时间确定按钮
 @property (nonatomic, strong) UIButton *commitTimeBtn;
-
-@property (nonatomic, strong) AddPartyCellModel *detailModel;//清真寺详情cell model
 
 
 @end
@@ -211,7 +207,7 @@
 }
 
 - (void)setupNaviItem {
-    self.title = @"添加餐厅";
+    self.title = @"发起活动";
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(0, 0, 56, 30);
@@ -221,7 +217,6 @@
     confirmButton.layer.borderWidth = 1.;
     confirmButton.layer.cornerRadius = 4;
     [confirmButton setTitle:@"提交" forState:UIControlStateNormal];
-    [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [confirmButton addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *confirmItem = [[UIBarButtonItem alloc] initWithCustomView:confirmButton];
     self.navigationItem.rightBarButtonItem = confirmItem;
@@ -442,8 +437,7 @@
         return;
     }
     
-    _dataModel.introduction = [self.detailModel.detailIntroText stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
+  
 
     NSMutableArray *image = [[NSMutableArray alloc] init];
     if (_picArray.count) {

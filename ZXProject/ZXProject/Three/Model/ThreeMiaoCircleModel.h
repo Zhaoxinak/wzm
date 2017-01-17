@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CommonHeader.h"
+#import <UIKit/UIKit.h>
 #import <JSONModel.h> //模型
 
 

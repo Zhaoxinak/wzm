@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonHeader.h"
 #import "ThreeMiaoCircleModel.h"
 typedef void (^UserHeadClickBlock)(NSString *userId);
 

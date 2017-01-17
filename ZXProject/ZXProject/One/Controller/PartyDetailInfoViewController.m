@@ -12,10 +12,13 @@
 
 /************C************/
 #import "PartyDetailInfoViewController.h"
+#import "PartyJoinedMemberViewController.h" //报名名单详情
+#import "PartyCostPayViewController.h" //报名支付
 /************V************/
 #import "ZXCycleScrollView.h" //顶部视图
 #import "PartyInfoTitleTableViewCell.h" //标题
 #import "PartyInfoOrganizerTableViewCell.h" //主办方
+#import "PartyJoinedMemberTableViewCell.h" //已报名者
 /************M************/
 #import "PartyDetailInfoModel.h"
 
@@ -47,6 +50,17 @@
 
 
 #pragma mark -执行数据
+#pragma mark -分享数据
+- (ZXShareModel *)setupShareModel {
+    ZXShareModel *shareModel = [[ZXShareModel alloc] init];
+    shareModel.shareTitle = @"五爪猫";
+    shareModel.shareContent = @"五爪猫";
+    shareModel.shareImage = @"五爪猫";
+    shareModel.shareUrl = @"www.baidu.com";
+    return shareModel;
+}
+
+
 #pragma mark --初始化数据
 -(void)setupData{
     
@@ -61,7 +75,7 @@
 - (void)refreshData {
     
  
-    _partyInfoArr = [NSArray arrayWithObjects:@{@"icon" : @"图片", @"title" : @"截止时间"},@{@"icon" : @"图片", @"title" : @"地址地址"},@{@"icon" : @"图片", @"title" : @"已经报名5人"},@{@"icon" : @"图片", @"title" : @"免费"}, nil];
+    _partyInfoArr = [NSArray arrayWithObjects:@{@"icon" : @"猫狗2", @"title" : @"截止时间"},@{@"icon" : @"猫狗2", @"title" : @"地址地址"},@{@"icon" : @"猫狗2", @"title" : @"已经报名5人"},@{@"icon" : @"猫狗2", @"title" : @"免费"}, nil];
     
     
     
@@ -92,8 +106,18 @@
     //设置标题
     self.title = @"活动详情";
     
+    //分享按钮
+    UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(0, 0, 80, 44);
+    [shareBtn setTitle:@"分享"];
+    [shareBtn setTitleColor:OneTextColor];
+    [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    
     //设置tableView
-    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-60*WIDTH_NIT);
     self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
@@ -104,6 +128,50 @@
     _zxCycleScrollView.backgroundColor = BGColor;
     _zxCycleScrollView.delegate = self;
     self.tableView.tableHeaderView = _zxCycleScrollView;
+    
+    //底部按钮
+    [self setupBottomView];
+}
+
+#pragma mark --底部按钮
+-(void)setupBottomView{
+    
+    UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, self.tableView.bottom, kScreen_Width,60*WIDTH_NIT)];
+    bottomView.backgroundColor = BGColor;
+    [self.view addSubview:bottomView];
+    
+    //和ta聊天
+    UIButton *callHerBtn = [[UIButton alloc]initWithFrame: CGRectMake(0, 0, bottomView.width/7*2-1, bottomView.height)];
+    callHerBtn.backgroundColor = [UIColor whiteColor];
+    [callHerBtn setTitle:@"和Ta聊天"];
+    [callHerBtn setImage:@"猫狗2"];
+    callHerBtn.titleLabel.font = ThreeFont;
+    callHerBtn.titleColor = OneTextColor;
+    [UIButton ImageUptoLabelDown:callHerBtn margin:5*WIDTH_NIT];
+    [callHerBtn addTarget:self action:@selector(callHerAct:)];
+    [bottomView addSubview:callHerBtn];
+    
+    //收藏
+    UIButton *collectBtn = [[UIButton alloc]initWithFrame: CGRectMake(callHerBtn.right+1, 0, bottomView.width/7*2-1, bottomView.height)];
+    collectBtn.backgroundColor = [UIColor whiteColor];
+    [collectBtn setTitle:@"收藏"];
+    [collectBtn setImage:@"猫狗2"];
+    collectBtn.titleLabel.font = ThreeFont;
+    collectBtn.titleColor = OneTextColor;
+    [UIButton ImageUptoLabelDown:collectBtn margin:5*WIDTH_NIT];
+    [collectBtn addTarget:self action:@selector(collectBtn:)];
+    [bottomView addSubview:collectBtn];
+    
+    //我要报名
+    UIButton *joinBtn = [[UIButton alloc]initWithFrame: CGRectMake(collectBtn.right+1, 0, bottomView.width/7*3, bottomView.height)];
+    joinBtn.backgroundColor = [UIColor whiteColor];
+    [joinBtn setTitle:@"我要报名"];
+    [joinBtn setImage:@"猫狗2"];
+    joinBtn.titleLabel.font = ThreeFont;
+    joinBtn.titleColor = OneTextColor;
+//    [UIButton ImageUptoLabelDown:joinBtn margin:5*WIDTH_NIT];
+    [joinBtn addTarget:self action:@selector(joinBtn:)];
+    [bottomView addSubview:joinBtn];
 }
 
 
@@ -250,6 +318,22 @@
         return cell;
     }
     
+    //已经报名
+    if (indexPath.section == 4) {
+        NSString *cellIdentifier = [NSString stringWithFormat:@"PartyJoinedMemberTableViewCell%ld", (long)indexPath.row];
+        //首先根据标示去缓存池取
+        PartyJoinedMemberTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[PartyJoinedMemberTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        
+        [cell setModel:nil];
+       
+        return cell;
+    }
+    
+    
     
     
     static NSString *cellIdentifier=@"cell";
@@ -275,6 +359,9 @@
     if (indexPath.section == 2) {
         return PartyInfoOrganizerCell_Height;
     }
+    if (indexPath.section == 4) {
+        return PartyJoinedMemberCell_Height;
+    }
     return 44;
 }
 
@@ -292,7 +379,8 @@
 -(void)allMemberAct:(UIButton *)button{
     
     NSLog(@"所有报名");
-    
+    PartyJoinedMemberViewController *memberVC = [[PartyJoinedMemberViewController alloc]init];
+    [self.navigationController pushViewController:memberVC animated:YES];
 }
 
 #pragma mark -- 实现轮播图跳转
@@ -301,6 +389,41 @@
     NSLog(@"顶部轮播---%ld", (long)tag);
 }
 
+#pragma mark -- 查看参与者头像按钮点击
+-(void)partyJoinedMemberCellSelect2go:(NSInteger)tag{
+    
+    NSLog(@"点击头像%ld", (long)tag);
+}
+
+
+#pragma mark -- 和ta聊天
+-(void)callHerAct:(UIButton *)button{
+    
+    NSLog(@"和ta聊天");
+    
+}
+
+#pragma mark -- 收藏
+-(void)collectBtn:(UIButton *)button{
+    
+    NSLog(@"收藏");
+    
+}
+
+#pragma mark -- 我要报名
+-(void)joinBtn:(UIButton *)button{
+    
+    NSLog(@"我要报名");
+    PartyCostPayViewController *partyCostVC = [[PartyCostPayViewController alloc]init];
+    [self.navigationController pushViewController:partyCostVC animated:YES];
+}
+
+#pragma mark -- 分享
+-(void)shareAct:(UIButton *)button{
+    
+    NSLog(@"分享");
+    [[ZXShareHelper shareInstance] shareWithShareModel:[self setupShareModel]];
+}
 
 
 - (void)didReceiveMemoryWarning {

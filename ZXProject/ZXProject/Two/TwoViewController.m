@@ -84,7 +84,7 @@
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
-    //分享按钮
+    //通讯录按钮
     UIButton* phoneBookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     phoneBookBtn.frame = CGRectMake(0, 0, 80, 44);
     [phoneBookBtn setTitle:@"通讯录"];

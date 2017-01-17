@@ -59,7 +59,7 @@
     [self addSubview:subName];
     
     //能加入的种类
-    allowName = [[UILabel alloc]initWithFrame:CGRectMake(self.width- 80*WIDTH_NIT, 0, 70*WIDTH_NIT, 20*WIDTH_NIT)];
+    allowName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width- 80*WIDTH_NIT, 0, 70*WIDTH_NIT, 20*WIDTH_NIT)];
     allowName.backgroundColor = [UIColor orangeColor];
     allowName.textAlignment = NSTextAlignmentCenter;
     allowName.font = TwoFont;

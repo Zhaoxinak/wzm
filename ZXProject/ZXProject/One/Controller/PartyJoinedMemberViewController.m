@@ -1,43 +1,41 @@
 //
-//  OneJoinMiaoCircleViewController.m
+//  PartyJoinedMemberViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2016/12/13.
-//  Copyright © 2016年 Mr.X. All rights reserved.
+//  Created by Mr.X on 2017/1/16.
+//  Copyright © 2017年 Mr.X. All rights reserved.
 //
-
 
 
 /************C************/
-#import "OneJoinMiaoCircleViewController.h"
-#import "MiaoCircleViewController.h" //喵圈内
+#import "PartyJoinedMemberViewController.h"
 /************V************/
-#import "OneJoinMiaoCircleTableViewCell.h"  //喵圈
+#import "PartyJoinedInfoTableViewCell.h"
 /************M************/
-#import "OneJoinMiaoCircleModel.h"
 
 
-@interface OneJoinMiaoCircleViewController ()<OneJoinMiaoCircleCellDelegate>
+@interface PartyJoinedMemberViewController ()
 
 @end
 
-@implementation OneJoinMiaoCircleViewController
+@implementation PartyJoinedMemberViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //初始化数据
+    // Do any additional setup after loading the view.
     [self setupData];
-    //初始试图
+    
     [self setupView];
 }
+
 
 #pragma mark -执行数据
 #pragma mark --初始化数据
 -(void)setupData{
     
+  
     
 }
-
 
 #pragma mark - 初加载数据
 -(void)loadNewData{
@@ -61,6 +59,7 @@
     
 }
 
+
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
     
     
@@ -70,22 +69,30 @@
     
 }
 
-
-
 #pragma mark -执行视图
 #pragma mark --初始化数据视图
 -(void)setupView{
     
     //设置标题
-    self.title = @"全部喵圈";
+    self.title = @"报名清单";
+    
+    //分享按钮
+    UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(0, 0, 80, 44);
+    [shareBtn setTitle:@"导出"];
+    [shareBtn setTitleColor:OneTextColor];
+    [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
-    
+
 }
-
-
 
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -95,11 +102,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 4;
+    
+    return 10;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
     
     return 1;
     
@@ -110,17 +119,20 @@
     
 }
 
+
+
+
+
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     headerView.backgroundColor = BGColor;
-    
     return headerView;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     footerView.backgroundColor = BGColor;
-    
     return footerView;
 }
 
@@ -130,38 +142,54 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *cellIdentifier = [NSString stringWithFormat:@"OneJoinMiaoCircleTableViewCell%ld", (long)indexPath.row];
-    //首先根据标示去缓存池取
-    OneJoinMiaoCircleTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //如果缓存池没有取到则重新创建并放到缓存池中
-    if(!cell){
-        cell=[[OneJoinMiaoCircleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.delegate = self;
-    }
+
+        NSString *cellIdentifier = [NSString stringWithFormat:@"PartyJoinedInfoTableViewCell%ld", (long)indexPath.row];
+        //首先根据标示去缓存池取
+        PartyJoinedInfoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[PartyJoinedInfoTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        return cell;
     
-    return cell;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return OneJoinMiaoCircleCell_Height;
+
+    return PartyJoinedInfoCell_Height;
 }
+
+
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MiaoCircleViewController *miaoCircleVC = [[MiaoCircleViewController alloc]init];
-    [self.navigationController pushViewController:miaoCircleVC animated:YES];
+    
     
 }
 
-#pragma mark -- 实现加入按钮点击
--(void)oneJoinMiaoCircleCellSelect2go:(NSInteger)tag{
+#pragma mark -- 分享
+-(void)shareAct:(UIButton *)button{
     
-    NSLog(@"加入");
+    NSLog(@"分享");
+   
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

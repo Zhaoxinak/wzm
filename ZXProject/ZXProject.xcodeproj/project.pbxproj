@@ -96,6 +96,14 @@
 		9E2270FF1E28CF81001A9A67 /* img_current_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2270FE1E28CF81001A9A67 /* img_current_location.png */; };
 		9E2271021E28D59D001A9A67 /* PublishPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2271011E28D59D001A9A67 /* PublishPartyViewController.m */; };
 		9E2271051E28D744001A9A67 /* AddPartyDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2271041E28D744001A9A67 /* AddPartyDataModel.m */; };
+		9E2FD4951E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4941E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m */; };
+		9E2FD49A1E2CC7C500A08543 /* PartyJoinedMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4991E2CC7C500A08543 /* PartyJoinedMemberViewController.m */; };
+		9E2FD49D1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD49C1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m */; };
+		9E2FD4A21E2DF88E00A08543 /* PartyCostPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4A11E2DF88E00A08543 /* PartyCostPayViewController.m */; };
+		9E2FD4A51E2E034A00A08543 /* MiaoCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4A41E2E034A00A08543 /* MiaoCircleViewController.m */; };
+		9E2FD4A81E2E11F200A08543 /* MiaoCircleTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4A71E2E11F200A08543 /* MiaoCircleTopView.m */; };
+		9E2FD4AB1E2E212C00A08543 /* PublishMiaoCicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4AA1E2E212C00A08543 /* PublishMiaoCicleViewController.m */; };
+		9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */; };
 		9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */; };
 		9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C321DFE74BB00E2CE45 /* HomePageModel.m */; };
 		9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED261DDEEF2600259FDE /* NetworkHelper.m */; };
@@ -292,6 +300,22 @@
 		9E2271011E28D59D001A9A67 /* PublishPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPartyViewController.m; sourceTree = "<group>"; };
 		9E2271031E28D744001A9A67 /* AddPartyDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyDataModel.h; sourceTree = "<group>"; };
 		9E2271041E28D744001A9A67 /* AddPartyDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyDataModel.m; sourceTree = "<group>"; };
+		9E2FD4931E2CA62300A08543 /* PartyJoinedMemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyJoinedMemberTableViewCell.h; sourceTree = "<group>"; };
+		9E2FD4941E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyJoinedMemberTableViewCell.m; sourceTree = "<group>"; };
+		9E2FD4981E2CC7C500A08543 /* PartyJoinedMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyJoinedMemberViewController.h; sourceTree = "<group>"; };
+		9E2FD4991E2CC7C500A08543 /* PartyJoinedMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyJoinedMemberViewController.m; sourceTree = "<group>"; };
+		9E2FD49B1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyJoinedInfoTableViewCell.h; sourceTree = "<group>"; };
+		9E2FD49C1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyJoinedInfoTableViewCell.m; sourceTree = "<group>"; };
+		9E2FD4A01E2DF88E00A08543 /* PartyCostPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyCostPayViewController.h; sourceTree = "<group>"; };
+		9E2FD4A11E2DF88E00A08543 /* PartyCostPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyCostPayViewController.m; sourceTree = "<group>"; };
+		9E2FD4A31E2E034A00A08543 /* MiaoCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaoCircleViewController.h; sourceTree = "<group>"; };
+		9E2FD4A41E2E034A00A08543 /* MiaoCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaoCircleViewController.m; sourceTree = "<group>"; };
+		9E2FD4A61E2E11F200A08543 /* MiaoCircleTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaoCircleTopView.h; sourceTree = "<group>"; };
+		9E2FD4A71E2E11F200A08543 /* MiaoCircleTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaoCircleTopView.m; sourceTree = "<group>"; };
+		9E2FD4A91E2E212C00A08543 /* PublishMiaoCicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishMiaoCicleViewController.h; sourceTree = "<group>"; };
+		9E2FD4AA1E2E212C00A08543 /* PublishMiaoCicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishMiaoCicleViewController.m; sourceTree = "<group>"; };
+		9E2FD4AC1E2E229B00A08543 /* AddNoteDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteDataModel.h; sourceTree = "<group>"; };
+		9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteDataModel.m; sourceTree = "<group>"; };
 		9E319C2C1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedEncyclopediaTableViewCell.h; sourceTree = "<group>"; };
 		9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedEncyclopediaTableViewCell.m; sourceTree = "<group>"; };
 		9E319C311DFE74BB00E2CE45 /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
@@ -587,6 +611,10 @@
 				9E2271011E28D59D001A9A67 /* PublishPartyViewController.m */,
 				9E0DB3E11E2A01F5005062E4 /* PartyDetailInfoViewController.h */,
 				9E0DB3E21E2A01F5005062E4 /* PartyDetailInfoViewController.m */,
+				9E2FD4981E2CC7C500A08543 /* PartyJoinedMemberViewController.h */,
+				9E2FD4991E2CC7C500A08543 /* PartyJoinedMemberViewController.m */,
+				9E2FD4A01E2DF88E00A08543 /* PartyCostPayViewController.h */,
+				9E2FD4A11E2DF88E00A08543 /* PartyCostPayViewController.m */,
 			);
 			name = "参与活动";
 			sourceTree = "<group>";
@@ -596,6 +624,10 @@
 			children = (
 				9E2270C01E28745B001A9A67 /* OneJoinMiaoCircleViewController.h */,
 				9E2270C11E28745B001A9A67 /* OneJoinMiaoCircleViewController.m */,
+				9E2FD4A31E2E034A00A08543 /* MiaoCircleViewController.h */,
+				9E2FD4A41E2E034A00A08543 /* MiaoCircleViewController.m */,
+				9E2FD4A91E2E212C00A08543 /* PublishMiaoCicleViewController.h */,
+				9E2FD4AA1E2E212C00A08543 /* PublishMiaoCicleViewController.m */,
 			);
 			name = "加入喵圈";
 			sourceTree = "<group>";
@@ -670,6 +702,8 @@
 				9E2270E01E28A5D5001A9A67 /* AddPictureModel.m */,
 				9E0DB3E71E2A0B1F005062E4 /* PartyDetailInfoModel.h */,
 				9E0DB3E81E2A0B1F005062E4 /* PartyDetailInfoModel.m */,
+				9E2FD4AC1E2E229B00A08543 /* AddNoteDataModel.h */,
+				9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1010,6 +1044,12 @@
 				9E0DB3EB1E2A0F70005062E4 /* PartyInfoTitleTableViewCell.m */,
 				9E0DB3ED1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.h */,
 				9E0DB3EE1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m */,
+				9E2FD4931E2CA62300A08543 /* PartyJoinedMemberTableViewCell.h */,
+				9E2FD4941E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m */,
+				9E2FD49B1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.h */,
+				9E2FD49C1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m */,
+				9E2FD4A61E2E11F200A08543 /* MiaoCircleTopView.h */,
+				9E2FD4A71E2E11F200A08543 /* MiaoCircleTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1247,6 +1287,7 @@
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
+				9E2FD4951E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m in Sources */,
 				9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */,
 				9E2270CC1E28745B001A9A67 /* OneCasesShowViewController.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
@@ -1275,8 +1316,10 @@
 				9ECB71AD1E09474000A68CD6 /* ZXShareHelper.m in Sources */,
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
 				9E2270DE1E28A4CB001A9A67 /* AddPartyCellModel.m in Sources */,
+				9E2FD4AB1E2E212C00A08543 /* PublishMiaoCicleViewController.m in Sources */,
 				9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */,
 				9E8EE5E11E20F281002187DB /* ThreeMiaoCircleTableViewCell.m in Sources */,
+				9E2FD4A21E2DF88E00A08543 /* PartyCostPayViewController.m in Sources */,
 				9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */,
 				9E1B70A91E1C9A4C00600777 /* ZXLoginViewController.m in Sources */,
 				9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */,
@@ -1289,6 +1332,7 @@
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
 				9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */,
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
+				9E2FD4A51E2E034A00A08543 /* MiaoCircleViewController.m in Sources */,
 				9E2271051E28D744001A9A67 /* AddPartyDataModel.m in Sources */,
 				9E0DB3E31E2A01F5005062E4 /* PartyDetailInfoViewController.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
@@ -1296,11 +1340,15 @@
 				9E8EE5E01E20F281002187DB /* ThreeHotNoteTableViewCell.m in Sources */,
 				9E0DB3E61E2A0852005062E4 /* ZXCycleScrollView.m in Sources */,
 				9E2270E71E28AC99001A9A67 /* AddPartyTableViewCell.m in Sources */,
+				9E2FD49A1E2CC7C500A08543 /* PartyJoinedMemberViewController.m in Sources */,
 				9E813CF71E10FEF2004292E7 /* OneModifiedWikiModel.m in Sources */,
 				9ECB71881E09432E00A68CD6 /* ZXShareViewController.m in Sources */,
 				9EFAD60A1DFAB2D6009C2324 /* UIResponder+FirstResponder.m in Sources */,
 				9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */,
+				9E2FD49D1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m in Sources */,
+				9E2FD4A81E2E11F200A08543 /* MiaoCircleTopView.m in Sources */,
 				9E8EE5B71E20A869002187DB /* ZXLoginModel.m in Sources */,
+				9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */,
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
 				9EA7401A1E25D845002278F5 /* FourDailyManagementModel.m in Sources */,
