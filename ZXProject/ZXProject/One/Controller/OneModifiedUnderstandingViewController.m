@@ -9,6 +9,7 @@
 
 /************C************/
 #import "OneModifiedUnderstandingViewController.h"
+#import "ModifiedUnderstandingInfoViewController.h" //心得详情
 /************V************/
 #import "OneModifiedUnderstandingTableViewCell.h"  //改装心得
 /************M************/
@@ -117,12 +118,14 @@
     
 }
 
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     headerView.backgroundColor = BGColor;
     
     return headerView;
 }
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
@@ -158,7 +161,8 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    ModifiedUnderstandingInfoViewController *infoVC = [[ModifiedUnderstandingInfoViewController alloc]init];
+    [self.navigationController pushViewController:infoVC animated:YES];
     
 }
 

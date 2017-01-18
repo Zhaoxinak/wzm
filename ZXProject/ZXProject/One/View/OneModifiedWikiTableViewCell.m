@@ -51,7 +51,7 @@
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
-    //标题
+    //时间
     time = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
     time.font = ThreeFont;
     time.textColor = OneTextColor;

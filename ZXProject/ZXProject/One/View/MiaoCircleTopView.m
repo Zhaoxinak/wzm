@@ -133,7 +133,6 @@
 
 
 
-
 #pragma mark --- 加入按钮点击实现
 -(void)joinTap:(UIButton *)button{
     
