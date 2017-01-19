@@ -19,12 +19,10 @@
 
 @interface UnderstandingPayTableViewCell : UITableViewCell
 {
-    
-    
+
     UIButton *payBtn; //打赏
     UILabel *paynum; //打赏人数
  
-    
 }
 
 @property(nonatomic, assign) id<UnderstandingPayDelegate> delegate;

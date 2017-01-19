@@ -9,6 +9,7 @@
 
 /************C************/
 #import "OneModifiedWikiViewController.h"
+#import "ModifiedWikiInfoViewController.h" //百科详情
 /************V************/
 #import "OneModifiedWikiTableViewCell.h"  //改装百科
 /************M************/
@@ -147,7 +148,8 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    ModifiedWikiInfoViewController *modifiedWikiInfoVC = [[ModifiedWikiInfoViewController alloc]init];
+    [self.navigationController pushViewController:modifiedWikiInfoVC animated:YES];
     
 }
 

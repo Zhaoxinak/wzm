@@ -78,7 +78,7 @@
     
     
     
-   
+    
     
     
     
@@ -87,6 +87,9 @@
 #pragma mark --- 对接数据
 -(void)setModel:(ThreeMiaoCircleModel *)model{
     
+    
+    
+ 
     
     
     [self updateFrame];

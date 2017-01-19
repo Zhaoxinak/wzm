@@ -9,6 +9,7 @@
 
 /************C************/
 #import "OneCasesShowViewController.h"
+#import "CaseInfoViewController.h" //案例详情
 /************V************/
 #import "OneCasesShowTableViewCell.h"  //案例展示
 /************M************/
@@ -148,6 +149,8 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    CaseInfoViewController *caseInfoVC = [[CaseInfoViewController alloc]init];
+    [self.navigationController pushViewController:caseInfoVC animated:YES];
     
     
 }

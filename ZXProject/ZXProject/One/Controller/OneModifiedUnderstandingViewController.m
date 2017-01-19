@@ -10,6 +10,7 @@
 /************C************/
 #import "OneModifiedUnderstandingViewController.h"
 #import "ModifiedUnderstandingInfoViewController.h" //心得详情
+#import "PublishUnderstandingViewController.h" //发布心得
 /************V************/
 #import "OneModifiedUnderstandingTableViewCell.h"  //改装心得
 /************M************/
@@ -170,6 +171,8 @@
 -(void)publishAct{
     
     NSLog(@"发布心得");
+    PublishUnderstandingViewController *publishVC = [[PublishUnderstandingViewController alloc]init];
+    [self.navigationController pushViewController:publishVC animated:YES];
 }
 
 

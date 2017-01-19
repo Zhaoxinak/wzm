@@ -106,6 +106,21 @@
 		9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */; };
 		9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */; };
 		9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C321DFE74BB00E2CE45 /* HomePageModel.m */; };
+		9E3F34EE1E30615A00E7DD27 /* PublishUnderstandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */; };
+		9E3F34F11E3061C400E7DD27 /* AddUnderstandingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F01E3061C400E7DD27 /* AddUnderstandingDataModel.m */; };
+		9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F31E30991E00E7DD27 /* CaseInfoViewController.m */; };
+		9E3F34F71E309F2300E7DD27 /* CaseTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F61E309F2300E7DD27 /* CaseTitleTableViewCell.m */; };
+		9E3F34FA1E309FDF00E7DD27 /* CasePayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F91E309FDF00E7DD27 /* CasePayTableViewCell.m */; };
+		9E3F34FD1E309FF400E7DD27 /* CaseAuthorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34FC1E309FF400E7DD27 /* CaseAuthorTableViewCell.m */; };
+		9E3F35001E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34FF1E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m */; };
+		9E3F35031E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35021E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m */; };
+		9E3F35061E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35051E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.m */; };
+		9E3F35091E30A07C00E7DD27 /* CaseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35081E30A07C00E7DD27 /* CaseInfoModel.m */; };
+		9E3F350C1E30A09500E7DD27 /* ModifiedWikiInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F350B1E30A09500E7DD27 /* ModifiedWikiInfoModel.m */; };
+		9E3F350F1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F350E1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m */; };
+		9E3F35141E30BA3200E7DD27 /* AllCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35131E30BA3200E7DD27 /* AllCommentsViewController.m */; };
+		9E3F35171E30BA6300E7DD27 /* AllCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35161E30BA6300E7DD27 /* AllCommentsModel.m */; };
+		9E3F351A1E30BA8500E7DD27 /* AllCommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F35191E30BA8500E7DD27 /* AllCommentsTableViewCell.m */; };
 		9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED261DDEEF2600259FDE /* NetworkHelper.m */; };
 		9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED2B1DDEF73E00259FDE /* ZXTools.m */; };
 		9E4CED2F1DDEF7CA00259FDE /* ZXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4CED2E1DDEF7CA00259FDE /* ZXScrollView.m */; };
@@ -325,6 +340,36 @@
 		9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedEncyclopediaTableViewCell.m; sourceTree = "<group>"; };
 		9E319C311DFE74BB00E2CE45 /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
 		9E319C321DFE74BB00E2CE45 /* HomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModel.m; sourceTree = "<group>"; };
+		9E3F34EC1E30615A00E7DD27 /* PublishUnderstandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishUnderstandingViewController.h; sourceTree = "<group>"; };
+		9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishUnderstandingViewController.m; sourceTree = "<group>"; };
+		9E3F34EF1E3061C400E7DD27 /* AddUnderstandingDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUnderstandingDataModel.h; sourceTree = "<group>"; };
+		9E3F34F01E3061C400E7DD27 /* AddUnderstandingDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUnderstandingDataModel.m; sourceTree = "<group>"; };
+		9E3F34F21E30991E00E7DD27 /* CaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseInfoViewController.h; sourceTree = "<group>"; };
+		9E3F34F31E30991E00E7DD27 /* CaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseInfoViewController.m; sourceTree = "<group>"; };
+		9E3F34F51E309F2300E7DD27 /* CaseTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseTitleTableViewCell.h; sourceTree = "<group>"; };
+		9E3F34F61E309F2300E7DD27 /* CaseTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseTitleTableViewCell.m; sourceTree = "<group>"; };
+		9E3F34F81E309FDF00E7DD27 /* CasePayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasePayTableViewCell.h; sourceTree = "<group>"; };
+		9E3F34F91E309FDF00E7DD27 /* CasePayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasePayTableViewCell.m; sourceTree = "<group>"; };
+		9E3F34FB1E309FF400E7DD27 /* CaseAuthorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseAuthorTableViewCell.h; sourceTree = "<group>"; };
+		9E3F34FC1E309FF400E7DD27 /* CaseAuthorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseAuthorTableViewCell.m; sourceTree = "<group>"; };
+		9E3F34FE1E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedWikiTitleTableViewCell.h; sourceTree = "<group>"; };
+		9E3F34FF1E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiedWikiTitleTableViewCell.m; sourceTree = "<group>"; };
+		9E3F35011E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedWikiPayTableViewCell.h; sourceTree = "<group>"; };
+		9E3F35021E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiedWikiPayTableViewCell.m; sourceTree = "<group>"; };
+		9E3F35041E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedWikiAuthorTableViewCell.h; sourceTree = "<group>"; };
+		9E3F35051E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiedWikiAuthorTableViewCell.m; sourceTree = "<group>"; };
+		9E3F35071E30A07C00E7DD27 /* CaseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseInfoModel.h; sourceTree = "<group>"; };
+		9E3F35081E30A07C00E7DD27 /* CaseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseInfoModel.m; sourceTree = "<group>"; };
+		9E3F350A1E30A09500E7DD27 /* ModifiedWikiInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedWikiInfoModel.h; sourceTree = "<group>"; };
+		9E3F350B1E30A09500E7DD27 /* ModifiedWikiInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiedWikiInfoModel.m; sourceTree = "<group>"; };
+		9E3F350D1E30A73500E7DD27 /* ModifiedWikiInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedWikiInfoViewController.h; sourceTree = "<group>"; };
+		9E3F350E1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiedWikiInfoViewController.m; sourceTree = "<group>"; };
+		9E3F35121E30BA3200E7DD27 /* AllCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCommentsViewController.h; sourceTree = "<group>"; };
+		9E3F35131E30BA3200E7DD27 /* AllCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCommentsViewController.m; sourceTree = "<group>"; };
+		9E3F35151E30BA6300E7DD27 /* AllCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCommentsModel.h; sourceTree = "<group>"; };
+		9E3F35161E30BA6300E7DD27 /* AllCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCommentsModel.m; sourceTree = "<group>"; };
+		9E3F35181E30BA8500E7DD27 /* AllCommentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCommentsTableViewCell.h; sourceTree = "<group>"; };
+		9E3F35191E30BA8500E7DD27 /* AllCommentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCommentsTableViewCell.m; sourceTree = "<group>"; };
 		9E4CED251DDEEF2600259FDE /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		9E4CED261DDEEF2600259FDE /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		9E4CED281DDEEFD100259FDE /* GlobalURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalURL.h; sourceTree = "<group>"; };
@@ -663,6 +708,8 @@
 				9E2270C71E28745B001A9A67 /* OneModifiedUnderstandingViewController.m */,
 				9E6F17621E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.h */,
 				9E6F17631E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.m */,
+				9E3F34EC1E30615A00E7DD27 /* PublishUnderstandingViewController.h */,
+				9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */,
 			);
 			name = "改装心得";
 			sourceTree = "<group>";
@@ -672,6 +719,8 @@
 			children = (
 				9E2270BE1E28745B001A9A67 /* OneCasesShowViewController.h */,
 				9E2270BF1E28745B001A9A67 /* OneCasesShowViewController.m */,
+				9E3F34F21E30991E00E7DD27 /* CaseInfoViewController.h */,
+				9E3F34F31E30991E00E7DD27 /* CaseInfoViewController.m */,
 			);
 			name = "案例展示";
 			sourceTree = "<group>";
@@ -681,6 +730,8 @@
 			children = (
 				9E2270C81E28745B001A9A67 /* OneModifiedWikiViewController.h */,
 				9E2270C91E28745B001A9A67 /* OneModifiedWikiViewController.m */,
+				9E3F350D1E30A73500E7DD27 /* ModifiedWikiInfoViewController.h */,
+				9E3F350E1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m */,
 			);
 			name = "改装百科";
 			sourceTree = "<group>";
@@ -723,6 +774,30 @@
 				9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */,
 				9E6F17681E2F0FF8005887E7 /* UnderstandingInfoModel.h */,
 				9E6F17691E2F0FF8005887E7 /* UnderstandingInfoModel.m */,
+				9E3F34EF1E3061C400E7DD27 /* AddUnderstandingDataModel.h */,
+				9E3F34F01E3061C400E7DD27 /* AddUnderstandingDataModel.m */,
+				9E3F35071E30A07C00E7DD27 /* CaseInfoModel.h */,
+				9E3F35081E30A07C00E7DD27 /* CaseInfoModel.m */,
+				9E3F350A1E30A09500E7DD27 /* ModifiedWikiInfoModel.h */,
+				9E3F350B1E30A09500E7DD27 /* ModifiedWikiInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E3F35101E30B9DE00E7DD27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E3F35181E30BA8500E7DD27 /* AllCommentsTableViewCell.h */,
+				9E3F35191E30BA8500E7DD27 /* AllCommentsTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E3F35111E30B9DE00E7DD27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E3F35151E30BA6300E7DD27 /* AllCommentsModel.h */,
+				9E3F35161E30BA6300E7DD27 /* AllCommentsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -831,8 +906,12 @@
 		9E5458771DDD8408002CA99D /* Two */ = {
 			isa = PBXGroup;
 			children = (
+				9E3F35111E30B9DE00E7DD27 /* Model */,
+				9E3F35101E30B9DE00E7DD27 /* View */,
 				9E5458781DDD8408002CA99D /* TwoViewController.h */,
 				9E5458791DDD8408002CA99D /* TwoViewController.m */,
+				9E3F35121E30BA3200E7DD27 /* AllCommentsViewController.h */,
+				9E3F35131E30BA3200E7DD27 /* AllCommentsViewController.m */,
 			);
 			path = Two;
 			sourceTree = "<group>";
@@ -964,10 +1043,10 @@
 		9E8EE5DA1E20F281002187DB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9E8EE5DB1E20F281002187DB /* ThreeHotNoteTableViewCell.h */,
-				9E8EE5DC1E20F281002187DB /* ThreeHotNoteTableViewCell.m */,
 				9E8EE5DD1E20F281002187DB /* ThreeMiaoCircleTableViewCell.h */,
 				9E8EE5DE1E20F281002187DB /* ThreeMiaoCircleTableViewCell.m */,
+				9E8EE5DB1E20F281002187DB /* ThreeHotNoteTableViewCell.h */,
+				9E8EE5DC1E20F281002187DB /* ThreeHotNoteTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1075,6 +1154,18 @@
 				9E6F176C1E2F1634005887E7 /* UnderstandingPayTableViewCell.m */,
 				9E6F176E1E2F4CEC005887E7 /* UnderstandingAuthorTableViewCell.h */,
 				9E6F176F1E2F4CEC005887E7 /* UnderstandingAuthorTableViewCell.m */,
+				9E3F34F51E309F2300E7DD27 /* CaseTitleTableViewCell.h */,
+				9E3F34F61E309F2300E7DD27 /* CaseTitleTableViewCell.m */,
+				9E3F34F81E309FDF00E7DD27 /* CasePayTableViewCell.h */,
+				9E3F34F91E309FDF00E7DD27 /* CasePayTableViewCell.m */,
+				9E3F34FB1E309FF400E7DD27 /* CaseAuthorTableViewCell.h */,
+				9E3F34FC1E309FF400E7DD27 /* CaseAuthorTableViewCell.m */,
+				9E3F34FE1E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.h */,
+				9E3F34FF1E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m */,
+				9E3F35011E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.h */,
+				9E3F35021E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m */,
+				9E3F35041E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.h */,
+				9E3F35051E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1306,14 +1397,19 @@
 				9E0DB3E91E2A0B1F005062E4 /* PartyDetailInfoModel.m in Sources */,
 				9E2270D21E28745B001A9A67 /* OneViewController.m in Sources */,
 				9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */,
+				9E3F35141E30BA3200E7DD27 /* AllCommentsViewController.m in Sources */,
+				9E3F35001E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m in Sources */,
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
+				9E3F35091E30A07C00E7DD27 /* CaseInfoModel.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
+				9E3F34F71E309F2300E7DD27 /* CaseTitleTableViewCell.m in Sources */,
 				9E2FD4951E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m in Sources */,
 				9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */,
+				9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */,
 				9E6F17641E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.m in Sources */,
 				9E2270CC1E28745B001A9A67 /* OneCasesShowViewController.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
@@ -1344,19 +1440,25 @@
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
 				9E2270DE1E28A4CB001A9A67 /* AddPartyCellModel.m in Sources */,
 				9E2FD4AB1E2E212C00A08543 /* PublishMiaoCicleViewController.m in Sources */,
+				9E3F35171E30BA6300E7DD27 /* AllCommentsModel.m in Sources */,
 				9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */,
+				9E3F34EE1E30615A00E7DD27 /* PublishUnderstandingViewController.m in Sources */,
 				9E8EE5E11E20F281002187DB /* ThreeMiaoCircleTableViewCell.m in Sources */,
 				9E2FD4A21E2DF88E00A08543 /* PartyCostPayViewController.m in Sources */,
 				9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */,
 				9E6F176A1E2F0FF8005887E7 /* UnderstandingInfoModel.m in Sources */,
 				9E1B70A91E1C9A4C00600777 /* ZXLoginViewController.m in Sources */,
+				9E3F34FD1E309FF400E7DD27 /* CaseAuthorTableViewCell.m in Sources */,
+				9E3F35061E30A06100E7DD27 /* ModifiedWikiAuthorTableViewCell.m in Sources */,
 				9E6F17701E2F4CEC005887E7 /* UnderstandingAuthorTableViewCell.m in Sources */,
+				9E3F34F11E3061C400E7DD27 /* AddUnderstandingDataModel.m in Sources */,
 				9E4CED2C1DDEF73E00259FDE /* ZXTools.m in Sources */,
 				9E0DB3EC1E2A0F70005062E4 /* PartyInfoTitleTableViewCell.m in Sources */,
 				9EA740201E261C3F002278F5 /* FourSettingViewController.m in Sources */,
 				9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9ECB71901E0944CC00A68CD6 /* ZXShareViewCell.m in Sources */,
+				9E3F351A1E30BA8500E7DD27 /* AllCommentsTableViewCell.m in Sources */,
 				9E2270E11E28A5D5001A9A67 /* AddPictureModel.m in Sources */,
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
 				9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */,
@@ -1376,10 +1478,14 @@
 				9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */,
 				9E2FD49D1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m in Sources */,
 				9E2FD4A81E2E11F200A08543 /* MiaoCircleTopView.m in Sources */,
+				9E3F350C1E30A09500E7DD27 /* ModifiedWikiInfoModel.m in Sources */,
+				9E3F35031E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m in Sources */,
 				9E8EE5B71E20A869002187DB /* ZXLoginModel.m in Sources */,
 				9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */,
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
+				9E3F350F1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m in Sources */,
+				9E3F34FA1E309FDF00E7DD27 /* CasePayTableViewCell.m in Sources */,
 				9EA7401A1E25D845002278F5 /* FourDailyManagementModel.m in Sources */,
 				9E4CED2F1DDEF7CA00259FDE /* ZXScrollView.m in Sources */,
 				9E4CED321DDEF7EA00259FDE /* ZXTableView.m in Sources */,

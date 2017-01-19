@@ -6,6 +6,8 @@
 //  Copyright © 2016年 Mr.X. All rights reserved.
 //
 
+//cell的高度
+#define TwoCell_Height 50*WIDTH_NIT
 //cellheader的高度   280   70
 #define TwoCell_Header_Height 1*WIDTH_NIT
 #define TwoCell_Footer_Height 1*WIDTH_NIT
@@ -17,6 +19,9 @@
 /************M************/
 
 @interface TwoViewController ()
+
+@property (nonatomic, strong) NSArray *listFunctionArr;
+
 
 @end
 
@@ -31,10 +36,17 @@
 }
 
 #pragma mark -执行数据
-
-
 #pragma mark --初始化数据
 -(void)setupData{
+    
+    _listFunctionArr = [NSArray arrayWithObjects:
+                        @{@"icon" : @"猫狗2", @"title" : @"评   论", @"subTitle" : @""},
+                        @{@"icon" : @"猫狗2", @"title" : @"点   赞", @"subTitle" : @""},
+                        @{@"icon" : @"猫狗2", @"title" : @"打   赏", @"subTitle" : @""},
+                        @{@"icon" : @"猫狗2", @"title" : @"问答通知", @"subTitle" : @""},
+                        @{@"icon" : @"猫狗2", @"title" : @"系统通知", @"subTitle" : @""},
+                        nil];
+
     
 
 }
@@ -100,10 +112,14 @@
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 1;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    if (section == 0) {
+        return _listFunctionArr.count;
+    }
     
     return 10;
 }
@@ -138,37 +154,82 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
-    //首先根据标示去缓存池取
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-    //如果缓存池没有取到则重新创建并放到缓存池中
-    if(!cell){
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-   
+    if (indexPath.section == 0) {
+        
+        NSString *cellIcon = _listFunctionArr[indexPath.row][@"icon"];
+        NSString *cellTitle = _listFunctionArr[indexPath.row][@"title"];
+        NSString *cellsubTitle = _listFunctionArr[indexPath.row][@"subTitle"];
+        
+        static NSString *cellIdentifier=@"cell";
+        //首先根据标示去缓存池取
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:cellIcon];
+        cell.textLabel.text =  cellTitle;
+        cell.detailTextLabel.text =  cellsubTitle;
+        return cell;
+
+        
+    }else{
+        
+        NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
+        //首先根据标示去缓存池取
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+        }
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+        return cell;
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    return cell;
+    
+    
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (indexPath.section == 0) {
+        return TwoCell_Height;
+    }
     return 44;
 }
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (indexPath.section == 0) {
+        
+        NSString *tempStr = _listFunctionArr[indexPath.row][@"title"];
+        if ([tempStr isEqualToString:@"评   论"]) {
+            NSLog(@"评   论");
+        } else if ([tempStr isEqualToString:@"点   赞"]) {
+            NSLog(@"点   赞");
+        }else if ([tempStr isEqualToString:@"打   赏"]) {
+            NSLog(@"打   赏");
+            
+        }else if ([tempStr isEqualToString:@"问答通知"]) {
+            NSLog(@"问答通知");
+            
+        }else if ([tempStr isEqualToString:@"系统通知"]) {
+            NSLog(@"系统通知");
+            
+        }
+        
+    }
     
     
-}
-
-#pragma mark -- 实现加入按钮点击
--(void)twoMiaoCircleCellSelect2go:(NSInteger)tag{
     
-    NSLog(@"加入");
 }
 
 

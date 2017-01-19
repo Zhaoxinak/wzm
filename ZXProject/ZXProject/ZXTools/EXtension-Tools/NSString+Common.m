@@ -360,6 +360,23 @@ NSString * MD5Hash(NSString *aString) {
                 return NO;
             }
         }
+        else
+            
+            if (mobile.length == 10) {
+                
+                /**
+                 * 400
+                 */
+                NSString * SPL = @"^400[0-9]{7}";
+                NSPredicate *regextestspl = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", SPL];
+                
+                if ([regextestspl evaluateWithObject:mobile] == YES) {
+                    return YES;
+                }else{
+                    return NO;
+                }
+                
+            }
     
         else{
             
