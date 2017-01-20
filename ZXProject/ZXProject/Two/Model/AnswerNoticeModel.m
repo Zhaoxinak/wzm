@@ -1,28 +1,24 @@
 //
-//  AllCommentsModel.m
+//  AnswerNoticeModel.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-#import "AllCommentsModel.h"
+#import "AnswerNoticeModel.h"
 #import "CommonHeader.h"
 
-@implementation AllCommentsModel
+@implementation AnswerNoticeModel
 
 @end
 
+@implementation AnswerNoticeFrameModel
 
-
-
-
-@implementation AllCommentsFrameModel
-
-- (void)setModel:(AllCommentsModel *)model {
+- (void)setModel:(AnswerNoticeModel *)model {
     _model = model;
     
-  
+    
     //头像
     self.headImageViewFrame = CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT);
     
@@ -41,10 +37,10 @@
     
     //回复
     self.commentBtnFrame = CGRectMake(kScreen_Width/3*2, 10*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
-   
+    
     
     //标题
-    NSString *comment = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
+    NSString *comment = @"这是路人甲的回答，只显示15个字";
     if (comment.length >0) {
         CGSize contentSize = [self sizeWithString:comment font:ThreeFont maxSize:CGSizeMake(kScreen_Width-20*WIDTH_NIT, MAXFLOAT)];
         
@@ -78,9 +74,5 @@
 - (void)configFrameByModel:(id)model {
     
 }
-
-
-
-
 
 @end

@@ -1,29 +1,30 @@
 //
-//  AllCommentsViewController.m
+//  AnswerNoticeViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
+
+
 //cellheader的高度   280   70
-#define AllCommentsCell_Header_Height 1*WIDTH_NIT
-#define AllCommentsCell_Footer_Height 1*WIDTH_NIT
+#define AnswerNoticeCell_Header_Height 1*WIDTH_NIT
+#define AnswerNoticeCell_Footer_Height 1*WIDTH_NIT
 
 
 /************C************/
-#import "AllCommentsViewController.h"
+#import "AnswerNoticeViewController.h"
 /************V************/
-#import "AllCommentsTableViewCell.h"
+#import "AnswerNoticeTableViewCell.h"
 /************M************/
-#import "AllCommentsModel.h"
+#import "AnswerNoticeModel.h"
 
-
-@interface AllCommentsViewController ()<AllCommentsCellDelegate>
+@interface AnswerNoticeViewController ()<AnswerNoticeCellDelegate>
 
 @end
 
-@implementation AllCommentsViewController
+@implementation AnswerNoticeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +37,7 @@
 #pragma mark -执行数据
 #pragma mark --初始化数据
 -(void)setupData{
-
+    
     
     
     
@@ -82,12 +83,12 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"所有评论";
+    self.title = @"问答通知";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
-
+    
     
 }
 
@@ -108,12 +109,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return AllCommentsCell_Header_Height;
+    return AnswerNoticeCell_Header_Height;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return AllCommentsCell_Footer_Height;
+    return AnswerNoticeCell_Footer_Height;
     
 }
 
@@ -137,10 +138,10 @@
     
     NSString *cellIdentifier = [NSString stringWithFormat:@"AllCommentsTableViewCell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    AllCommentsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+    AnswerNoticeTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
-        cell=[[AllCommentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[AnswerNoticeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.delegate = self;
     }
@@ -151,7 +152,7 @@
         
     };
     
-    AllCommentsFrameModel *comment = [[AllCommentsFrameModel alloc]init];
+    AnswerNoticeFrameModel *comment = [[AnswerNoticeFrameModel alloc]init];
     [comment setModel:nil];
     [cell setFrameModel:comment index:indexPath.row];
     //        ThreeHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
@@ -166,25 +167,24 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//            AllCommentsFrameModel *frameModel = _hotNoteMArr[indexPath.row];
-//            return frameModel.cellHeight;
+    //            AllCommentsFrameModel *frameModel = _hotNoteMArr[indexPath.row];
+    //            return frameModel.cellHeight;
     
     return kScreen_Width/3*2;
 }
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     
     
     
 }
 
-#pragma mark -- 实现回复按钮点击
--(void)allCommentsCellSelect2go:(NSInteger)tag{
+#pragma mark -- 实现查看按钮点击
+-(void)answerNoticeCellSelect2go:(NSInteger)tag{
     
-    NSLog(@"回复--%ld",(long)tag);
+    NSLog(@"查看--%ld",(long)tag);
 }
-
 
 @end

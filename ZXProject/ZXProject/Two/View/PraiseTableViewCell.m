@@ -1,15 +1,15 @@
 //
-//  AllCommentsTableViewCell.m
+//  PraiseTableViewCell.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-#import "AllCommentsTableViewCell.h"
+#import "PraiseTableViewCell.h"
 #import "CommonHeader.h"
 
-@implementation AllCommentsTableViewCell
+@implementation PraiseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,7 +21,6 @@
 
     // Configure the view for the selected state
 }
-
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -81,7 +80,7 @@
     self.detailView = [UIView new];
     self.detailView.backgroundColor = [UIColor redColor];
     
-
+    
     
     [self.contentView addSubview:self.headImageView];
     [self.contentView addSubview:self.userNameLabel];
@@ -103,11 +102,11 @@
     [super layoutSubviews];
 }
 
-- (void)setFrameModel:(AllCommentsFrameModel *)frameModel index:(NSInteger)index {
+- (void)setFrameModel:(PraiseFrameModel *)frameModel index:(NSInteger)index{
     
     _frameModel = frameModel;
     
-    self.titleNameLabel.text = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
+    self.titleNameLabel.text = @"赞了这篇文章";
     
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
     self.userId = @"111";
@@ -122,7 +121,7 @@
     
     [self.commentBtn setTitle:@"回复"];
     self.commentBtn.tag = index;
-  
+    
     
     
     self.headImageView.frame = _frameModel.headImageViewFrame;
@@ -144,7 +143,7 @@
 
 - (NSString *)TimeStamp:(NSString *)strTime {
     
-
+    
     // 格式化时间
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
@@ -166,14 +165,12 @@
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);
     
-    if ([self.delegate respondsToSelector:@selector(allCommentsCellSelect2go:)]) {
-        [self.delegate allCommentsCellSelect2go:tag];
+    if ([self.delegate respondsToSelector:@selector(praiseCellSelect2go:)]) {
+        [self.delegate praiseCellSelect2go:tag];
         NSLog(@"点击回复");
     }
     
 }
-
-
 
 
 @end

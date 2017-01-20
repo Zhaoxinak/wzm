@@ -1,29 +1,31 @@
 //
-//  AllCommentsViewController.m
+//  PraiseViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
+
+
 //cellheader的高度   280   70
-#define AllCommentsCell_Header_Height 1*WIDTH_NIT
-#define AllCommentsCell_Footer_Height 1*WIDTH_NIT
+#define PraiseCell_Header_Height 1*WIDTH_NIT
+#define PraiseCell_Footer_Height 1*WIDTH_NIT
 
 
 /************C************/
-#import "AllCommentsViewController.h"
+#import "PraiseViewController.h"
 /************V************/
-#import "AllCommentsTableViewCell.h"
+#import "PraiseTableViewCell.h"
 /************M************/
-#import "AllCommentsModel.h"
+#import "PraiseModel.h"
 
 
-@interface AllCommentsViewController ()<AllCommentsCellDelegate>
+@interface PraiseViewController ()<PraiseCellDelegate>
 
 @end
 
-@implementation AllCommentsViewController
+@implementation PraiseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +38,7 @@
 #pragma mark -执行数据
 #pragma mark --初始化数据
 -(void)setupData{
-
+    
     
     
     
@@ -82,12 +84,12 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"所有评论";
+    self.title = @"赞";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
-
+    
     
 }
 
@@ -108,12 +110,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return AllCommentsCell_Header_Height;
+    return PraiseCell_Header_Height;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return AllCommentsCell_Footer_Height;
+    return PraiseCell_Footer_Height;
     
 }
 
@@ -137,10 +139,10 @@
     
     NSString *cellIdentifier = [NSString stringWithFormat:@"AllCommentsTableViewCell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    AllCommentsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+    PraiseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
-        cell=[[AllCommentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[PraiseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.delegate = self;
     }
@@ -151,10 +153,10 @@
         
     };
     
-    AllCommentsFrameModel *comment = [[AllCommentsFrameModel alloc]init];
-    [comment setModel:nil];
-    [cell setFrameModel:comment index:indexPath.row];
-    //        ThreeHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
+    PraiseFrameModel *praise = [[PraiseFrameModel alloc]init];
+    [praise setModel:nil];
+    [cell setFrameModel:praise index:indexPath.row];
+    //        PraiseFrameModel *frameModel = _hotNoteMArr[indexPath.row];
     //        cell.frameModel = frameModel;
     
     return cell;
@@ -166,22 +168,22 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//            AllCommentsFrameModel *frameModel = _hotNoteMArr[indexPath.row];
-//            return frameModel.cellHeight;
+    //            PraiseFrameModel *frameModel = _hotNoteMArr[indexPath.row];
+    //            return frameModel.cellHeight;
     
     return kScreen_Width/3*2;
 }
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     
     
     
 }
 
 #pragma mark -- 实现回复按钮点击
--(void)allCommentsCellSelect2go:(NSInteger)tag{
+-(void)praiseCellSelect2go:(NSInteger)tag{
     
     NSLog(@"回复--%ld",(long)tag);
 }

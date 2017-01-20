@@ -1,25 +1,24 @@
 //
-//  AllCommentsTableViewCell.h
+//  PraiseTableViewCell.h
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "AllCommentsModel.h"
+#import "PraiseModel.h"
 
-@protocol AllCommentsCellDelegate <NSObject>
+@protocol PraiseCellDelegate <NSObject>
 #pragma mark -- 实现回复按钮点击
 @optional
--(void)allCommentsCellSelect2go:(NSInteger)tag;
+-(void)praiseCellSelect2go:(NSInteger)tag;
 
 @end
 
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
-@interface AllCommentsTableViewCell : UITableViewCell
-
+@interface PraiseTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *headImageView;
 @property (nonatomic, strong) UILabel *userNameLabel;
@@ -30,11 +29,10 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, strong) UILabel *titleNameLabel;
 @property (nonatomic, strong) UIView *detailView;
 
-@property(nonatomic, assign) id<AllCommentsCellDelegate> delegate;
-@property (nonatomic, strong) AllCommentsFrameModel *frameModel;
+@property(nonatomic, assign) id<PraiseCellDelegate> delegate;
+@property (nonatomic, strong) PraiseFrameModel *frameModel;
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) UserHeadClickBlock headClickBlock;
 
-- (void)setFrameModel:(AllCommentsFrameModel *)frameModel index:(NSInteger)index;
-    
+- (void)setFrameModel:(PraiseFrameModel *)frameModel index:(NSInteger)index;
 @end

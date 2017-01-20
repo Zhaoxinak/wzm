@@ -23,6 +23,21 @@
 		9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */; };
 		9E1B70A91E1C9A4C00600777 /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70A81E1C9A4C00600777 /* ZXLoginViewController.m */; };
 		9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70AB1E1C9D1100600777 /* ZXRegisterViewController.m */; };
+		9E1FFD631E31E4D3004C6041 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD621E31E4D3004C6041 /* PraiseViewController.m */; };
+		9E1FFD661E31E507004C6041 /* PraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD651E31E507004C6041 /* PraiseTableViewCell.m */; };
+		9E1FFD691E31E531004C6041 /* PraiseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD681E31E531004C6041 /* PraiseModel.m */; };
+		9E1FFD6C1E31F6A5004C6041 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD6B1E31F6A4004C6041 /* RewardViewController.m */; };
+		9E1FFD6F1E31FBF8004C6041 /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD6E1E31FBF8004C6041 /* SegmentedViewController.m */; };
+		9E1FFD721E320A53004C6041 /* RewardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD711E320A53004C6041 /* RewardModel.m */; };
+		9E1FFD751E320A66004C6041 /* RewardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD741E320A66004C6041 /* RewardTableViewCell.m */; };
+		9E1FFD781E321359004C6041 /* AnswerNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD771E321359004C6041 /* AnswerNoticeViewController.m */; };
+		9E1FFD7B1E321384004C6041 /* AnswerNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD7A1E321384004C6041 /* AnswerNoticeModel.m */; };
+		9E1FFD7E1E321398004C6041 /* AnswerNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD7D1E321398004C6041 /* AnswerNoticeTableViewCell.m */; };
+		9E1FFD811E32187F004C6041 /* SystemNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD801E32187F004C6041 /* SystemNoticeViewController.m */; };
+		9E1FFD841E3218A3004C6041 /* SystemNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD831E3218A3004C6041 /* SystemNoticeModel.m */; };
+		9E1FFD871E3218B2004C6041 /* SystemNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD861E3218B2004C6041 /* SystemNoticeTableViewCell.m */; };
+		9E1FFD8A1E321B8E004C6041 /* TwoNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD891E321B8E004C6041 /* TwoNoticeModel.m */; };
+		9E1FFD8D1E321BB5004C6041 /* TwoNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD8C1E321BB5004C6041 /* TwoNoticeTableViewCell.m */; };
 		9E201AF71E27513300A5B8C9 /* ))@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E201AC51E27513200A5B8C9 /* ))@2x.png */; };
 		9E201AF81E27513300A5B8C9 /* ))@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E201AC61E27513200A5B8C9 /* ))@3x.png */; };
 		9E201AF91E27513300A5B8C9 /* canyuhuodong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E201AC71E27513200A5B8C9 /* canyuhuodong@2x.png */; };
@@ -232,6 +247,36 @@
 		9E1B70A81E1C9A4C00600777 /* ZXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXLoginViewController.m; sourceTree = "<group>"; };
 		9E1B70AA1E1C9D1100600777 /* ZXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRegisterViewController.h; sourceTree = "<group>"; };
 		9E1B70AB1E1C9D1100600777 /* ZXRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXRegisterViewController.m; sourceTree = "<group>"; };
+		9E1FFD611E31E4D3004C6041 /* PraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseViewController.h; sourceTree = "<group>"; };
+		9E1FFD621E31E4D3004C6041 /* PraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseViewController.m; sourceTree = "<group>"; };
+		9E1FFD641E31E507004C6041 /* PraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseTableViewCell.h; sourceTree = "<group>"; };
+		9E1FFD651E31E507004C6041 /* PraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseTableViewCell.m; sourceTree = "<group>"; };
+		9E1FFD671E31E531004C6041 /* PraiseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseModel.h; sourceTree = "<group>"; };
+		9E1FFD681E31E531004C6041 /* PraiseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseModel.m; sourceTree = "<group>"; };
+		9E1FFD6A1E31F6A4004C6041 /* RewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
+		9E1FFD6B1E31F6A4004C6041 /* RewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
+		9E1FFD6D1E31FBF8004C6041 /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
+		9E1FFD6E1E31FBF8004C6041 /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
+		9E1FFD701E320A53004C6041 /* RewardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardModel.h; sourceTree = "<group>"; };
+		9E1FFD711E320A53004C6041 /* RewardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardModel.m; sourceTree = "<group>"; };
+		9E1FFD731E320A66004C6041 /* RewardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardTableViewCell.h; sourceTree = "<group>"; };
+		9E1FFD741E320A66004C6041 /* RewardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardTableViewCell.m; sourceTree = "<group>"; };
+		9E1FFD761E321359004C6041 /* AnswerNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerNoticeViewController.h; sourceTree = "<group>"; };
+		9E1FFD771E321359004C6041 /* AnswerNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerNoticeViewController.m; sourceTree = "<group>"; };
+		9E1FFD791E321384004C6041 /* AnswerNoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerNoticeModel.h; sourceTree = "<group>"; };
+		9E1FFD7A1E321384004C6041 /* AnswerNoticeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerNoticeModel.m; sourceTree = "<group>"; };
+		9E1FFD7C1E321398004C6041 /* AnswerNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerNoticeTableViewCell.h; sourceTree = "<group>"; };
+		9E1FFD7D1E321398004C6041 /* AnswerNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerNoticeTableViewCell.m; sourceTree = "<group>"; };
+		9E1FFD7F1E32187F004C6041 /* SystemNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemNoticeViewController.h; sourceTree = "<group>"; };
+		9E1FFD801E32187F004C6041 /* SystemNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemNoticeViewController.m; sourceTree = "<group>"; };
+		9E1FFD821E3218A3004C6041 /* SystemNoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemNoticeModel.h; sourceTree = "<group>"; };
+		9E1FFD831E3218A3004C6041 /* SystemNoticeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemNoticeModel.m; sourceTree = "<group>"; };
+		9E1FFD851E3218B2004C6041 /* SystemNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemNoticeTableViewCell.h; sourceTree = "<group>"; };
+		9E1FFD861E3218B2004C6041 /* SystemNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemNoticeTableViewCell.m; sourceTree = "<group>"; };
+		9E1FFD881E321B8E004C6041 /* TwoNoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoNoticeModel.h; sourceTree = "<group>"; };
+		9E1FFD891E321B8E004C6041 /* TwoNoticeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoNoticeModel.m; sourceTree = "<group>"; };
+		9E1FFD8B1E321BB5004C6041 /* TwoNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoNoticeTableViewCell.h; sourceTree = "<group>"; };
+		9E1FFD8C1E321BB5004C6041 /* TwoNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoNoticeTableViewCell.m; sourceTree = "<group>"; };
 		9E201AC51E27513200A5B8C9 /* ))@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "))@2x.png"; sourceTree = "<group>"; };
 		9E201AC61E27513200A5B8C9 /* ))@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "))@3x.png"; sourceTree = "<group>"; };
 		9E201AC71E27513200A5B8C9 /* canyuhuodong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyuhuodong@2x.png"; sourceTree = "<group>"; };
@@ -789,6 +834,16 @@
 			children = (
 				9E3F35181E30BA8500E7DD27 /* AllCommentsTableViewCell.h */,
 				9E3F35191E30BA8500E7DD27 /* AllCommentsTableViewCell.m */,
+				9E1FFD641E31E507004C6041 /* PraiseTableViewCell.h */,
+				9E1FFD651E31E507004C6041 /* PraiseTableViewCell.m */,
+				9E1FFD731E320A66004C6041 /* RewardTableViewCell.h */,
+				9E1FFD741E320A66004C6041 /* RewardTableViewCell.m */,
+				9E1FFD7C1E321398004C6041 /* AnswerNoticeTableViewCell.h */,
+				9E1FFD7D1E321398004C6041 /* AnswerNoticeTableViewCell.m */,
+				9E1FFD851E3218B2004C6041 /* SystemNoticeTableViewCell.h */,
+				9E1FFD861E3218B2004C6041 /* SystemNoticeTableViewCell.m */,
+				9E1FFD8B1E321BB5004C6041 /* TwoNoticeTableViewCell.h */,
+				9E1FFD8C1E321BB5004C6041 /* TwoNoticeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -798,6 +853,16 @@
 			children = (
 				9E3F35151E30BA6300E7DD27 /* AllCommentsModel.h */,
 				9E3F35161E30BA6300E7DD27 /* AllCommentsModel.m */,
+				9E1FFD671E31E531004C6041 /* PraiseModel.h */,
+				9E1FFD681E31E531004C6041 /* PraiseModel.m */,
+				9E1FFD701E320A53004C6041 /* RewardModel.h */,
+				9E1FFD711E320A53004C6041 /* RewardModel.m */,
+				9E1FFD791E321384004C6041 /* AnswerNoticeModel.h */,
+				9E1FFD7A1E321384004C6041 /* AnswerNoticeModel.m */,
+				9E1FFD821E3218A3004C6041 /* SystemNoticeModel.h */,
+				9E1FFD831E3218A3004C6041 /* SystemNoticeModel.m */,
+				9E1FFD881E321B8E004C6041 /* TwoNoticeModel.h */,
+				9E1FFD891E321B8E004C6041 /* TwoNoticeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -912,6 +977,14 @@
 				9E5458791DDD8408002CA99D /* TwoViewController.m */,
 				9E3F35121E30BA3200E7DD27 /* AllCommentsViewController.h */,
 				9E3F35131E30BA3200E7DD27 /* AllCommentsViewController.m */,
+				9E1FFD611E31E4D3004C6041 /* PraiseViewController.h */,
+				9E1FFD621E31E4D3004C6041 /* PraiseViewController.m */,
+				9E1FFD6A1E31F6A4004C6041 /* RewardViewController.h */,
+				9E1FFD6B1E31F6A4004C6041 /* RewardViewController.m */,
+				9E1FFD761E321359004C6041 /* AnswerNoticeViewController.h */,
+				9E1FFD771E321359004C6041 /* AnswerNoticeViewController.m */,
+				9E1FFD7F1E32187F004C6041 /* SystemNoticeViewController.h */,
+				9E1FFD801E32187F004C6041 /* SystemNoticeViewController.m */,
 			);
 			path = Two;
 			sourceTree = "<group>";
@@ -935,6 +1008,8 @@
 				9E5458821DDD843F002CA99D /* BaseViewController.m */,
 				9E16A5FD1DEED11E00D09DDD /* BaseTableViewController.h */,
 				9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */,
+				9E1FFD6D1E31FBF8004C6041 /* SegmentedViewController.h */,
+				9E1FFD6E1E31FBF8004C6041 /* SegmentedViewController.m */,
 				9E5458881DDD8440002CA99D /* CustomTabBarController.h */,
 				9E5458891DDD8440002CA99D /* CustomTabBarController.m */,
 				9E5458841DDD843F002CA99D /* CustomNaviController.h */,
@@ -1384,6 +1459,7 @@
 				9E2270E41E28A801001A9A67 /* AddPicturesCell.m in Sources */,
 				9E2270CE1E28745B001A9A67 /* OneJoinPartyViewController.m in Sources */,
 				9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */,
+				9E1FFD661E31E507004C6041 /* PraiseTableViewCell.m in Sources */,
 				9ECB718C1E09437900A68CD6 /* ZXShareModel.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */,
@@ -1395,9 +1471,11 @@
 				9E2270CF1E28745B001A9A67 /* OneMiaoQuestionSquareViewController.m in Sources */,
 				9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */,
 				9E0DB3E91E2A0B1F005062E4 /* PartyDetailInfoModel.m in Sources */,
+				9E1FFD751E320A66004C6041 /* RewardTableViewCell.m in Sources */,
 				9E2270D21E28745B001A9A67 /* OneViewController.m in Sources */,
 				9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */,
 				9E3F35141E30BA3200E7DD27 /* AllCommentsViewController.m in Sources */,
+				9E1FFD691E31E531004C6041 /* PraiseModel.m in Sources */,
 				9E3F35001E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m in Sources */,
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
@@ -1405,6 +1483,8 @@
 				9E3F35091E30A07C00E7DD27 /* CaseInfoModel.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */,
+				9E1FFD7E1E321398004C6041 /* AnswerNoticeTableViewCell.m in Sources */,
+				9E1FFD7B1E321384004C6041 /* AnswerNoticeModel.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
 				9E3F34F71E309F2300E7DD27 /* CaseTitleTableViewCell.m in Sources */,
 				9E2FD4951E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m in Sources */,
@@ -1413,6 +1493,7 @@
 				9E6F17641E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.m in Sources */,
 				9E2270CC1E28745B001A9A67 /* OneCasesShowViewController.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
+				9E1FFD721E320A53004C6041 /* RewardModel.m in Sources */,
 				9E813CEB1E10C157004292E7 /* OneCasesShowTableViewCell.m in Sources */,
 				9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */,
 				9EA740161E25D76B002278F5 /* FourDailyManagementTableViewCell.m in Sources */,
@@ -1422,10 +1503,13 @@
 				9E6F17671E2F0F91005887E7 /* UnderstandingTitleTableViewCell.m in Sources */,
 				9EFAD60C1DFAB2D6009C2324 /* UIView+Frame.m in Sources */,
 				9E0DB3EF1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m in Sources */,
+				9E1FFD871E3218B2004C6041 /* SystemNoticeTableViewCell.m in Sources */,
+				9E1FFD8D1E321BB5004C6041 /* TwoNoticeTableViewCell.m in Sources */,
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
 				9E5458461DDD7BF8002CA99D /* main.m in Sources */,
 				9E8EE5CB1E20F078002187DB /* FourViewController.m in Sources */,
 				9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */,
+				9E1FFD8A1E321B8E004C6041 /* TwoNoticeModel.m in Sources */,
 				9E2271021E28D59D001A9A67 /* PublishPartyViewController.m in Sources */,
 				9E8EE5E41E20FBC9002187DB /* ZXRegisterModel.m in Sources */,
 				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
@@ -1435,14 +1519,17 @@
 				9E2270D11E28745B001A9A67 /* OneModifiedWikiViewController.m in Sources */,
 				9EA7401D1E26196C002278F5 /* FeedBackViewController.m in Sources */,
 				9E54588B1DDD8440002CA99D /* CustomNaviController.m in Sources */,
+				9E1FFD811E32187F004C6041 /* SystemNoticeViewController.m in Sources */,
 				9E2270CD1E28745B001A9A67 /* OneJoinMiaoCircleViewController.m in Sources */,
 				9ECB71AD1E09474000A68CD6 /* ZXShareHelper.m in Sources */,
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
+				9E1FFD6C1E31F6A5004C6041 /* RewardViewController.m in Sources */,
 				9E2270DE1E28A4CB001A9A67 /* AddPartyCellModel.m in Sources */,
 				9E2FD4AB1E2E212C00A08543 /* PublishMiaoCicleViewController.m in Sources */,
 				9E3F35171E30BA6300E7DD27 /* AllCommentsModel.m in Sources */,
 				9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */,
 				9E3F34EE1E30615A00E7DD27 /* PublishUnderstandingViewController.m in Sources */,
+				9E1FFD841E3218A3004C6041 /* SystemNoticeModel.m in Sources */,
 				9E8EE5E11E20F281002187DB /* ThreeMiaoCircleTableViewCell.m in Sources */,
 				9E2FD4A21E2DF88E00A08543 /* PartyCostPayViewController.m in Sources */,
 				9E5458D41DDD96E4002CA99D /* TestModel.m in Sources */,
@@ -1456,8 +1543,11 @@
 				9E0DB3EC1E2A0F70005062E4 /* PartyInfoTitleTableViewCell.m in Sources */,
 				9EA740201E261C3F002278F5 /* FourSettingViewController.m in Sources */,
 				9E54588D1DDD8440002CA99D /* CustomTabBarController.m in Sources */,
+				9E1FFD631E31E4D3004C6041 /* PraiseViewController.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
+				9E1FFD781E321359004C6041 /* AnswerNoticeViewController.m in Sources */,
 				9ECB71901E0944CC00A68CD6 /* ZXShareViewCell.m in Sources */,
+				9E1FFD6F1E31FBF8004C6041 /* SegmentedViewController.m in Sources */,
 				9E3F351A1E30BA8500E7DD27 /* AllCommentsTableViewCell.m in Sources */,
 				9E2270E11E28A5D5001A9A67 /* AddPictureModel.m in Sources */,
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,

@@ -1,15 +1,15 @@
 //
-//  AllCommentsTableViewCell.m
+//  AnswerNoticeTableViewCell.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/19.
+//  Created by Mr.X on 2017/1/20.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-#import "AllCommentsTableViewCell.h"
+#import "AnswerNoticeTableViewCell.h"
 #import "CommonHeader.h"
 
-@implementation AllCommentsTableViewCell
+@implementation AnswerNoticeTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -81,7 +81,7 @@
     self.detailView = [UIView new];
     self.detailView.backgroundColor = [UIColor redColor];
     
-
+    
     
     [self.contentView addSubview:self.headImageView];
     [self.contentView addSubview:self.userNameLabel];
@@ -103,11 +103,11 @@
     [super layoutSubviews];
 }
 
-- (void)setFrameModel:(AllCommentsFrameModel *)frameModel index:(NSInteger)index {
+- (void)setFrameModel:(AnswerNoticeFrameModel *)frameModel index:(NSInteger)index {
     
     _frameModel = frameModel;
     
-    self.titleNameLabel.text = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
+    self.titleNameLabel.text = @"这是路人甲的回答，只显示15个字";
     
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
     self.userId = @"111";
@@ -120,9 +120,9 @@
     
     self.timeLabel.text = [self TimeStamp:@""];
     
-    [self.commentBtn setTitle:@"回复"];
+    [self.commentBtn setTitle:@"查看"];
     self.commentBtn.tag = index;
-  
+    
     
     
     self.headImageView.frame = _frameModel.headImageViewFrame;
@@ -144,7 +144,7 @@
 
 - (NSString *)TimeStamp:(NSString *)strTime {
     
-
+    
     // 格式化时间
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
@@ -160,19 +160,18 @@
 
 
 
-#pragma mark --- 回复按钮点击实现
+#pragma mark --- 查看按钮点击实现
 -(void)commentAct:(UIButton *)button{
     
     NSInteger tag = button.tag;
     NSLog(@">>>>>>>tag:%ld",(long)tag);
     
-    if ([self.delegate respondsToSelector:@selector(allCommentsCellSelect2go:)]) {
-        [self.delegate allCommentsCellSelect2go:tag];
+    if ([self.delegate respondsToSelector:@selector(answerNoticeCellSelect2go:)]) {
+        [self.delegate answerNoticeCellSelect2go:tag];
         NSLog(@"点击回复");
     }
     
 }
-
 
 
 

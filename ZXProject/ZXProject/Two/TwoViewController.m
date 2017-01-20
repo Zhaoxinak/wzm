@@ -14,8 +14,13 @@
 
 /************C************/
 #import "TwoViewController.h"
+#import "AllCommentsViewController.h" //所有评论
+#import "PraiseViewController.h"  //赞
+#import "RewardViewController.h" //打赏
+#import "AnswerNoticeViewController.h" //问答通知
+#import "SystemNoticeViewController.h" //系统通知
 /************V************/
-
+#import "TwoNoticeTableViewCell.h" //暂时通话内容
 /************M************/
 
 @interface TwoViewController ()
@@ -178,17 +183,23 @@
         
     }else{
         
-        NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
+        NSString *cellIdentifier = [NSString stringWithFormat:@"TwoNoticeTableViewCell%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        TwoNoticeTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[TwoNoticeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         }
         
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+        cell.userId = @"1";
+        cell.headClickBlock = ^(NSString *userId){
+            
+            NSLog(@"userId%@",userId);
+        };
+        
+//        cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
         return cell;
     }
     
@@ -202,7 +213,7 @@
     if (indexPath.section == 0) {
         return TwoCell_Height;
     }
-    return 44;
+    return TwoNoticeCell_Height;
 }
 
 #pragma mark -执行功能
@@ -213,16 +224,30 @@
         NSString *tempStr = _listFunctionArr[indexPath.row][@"title"];
         if ([tempStr isEqualToString:@"评   论"]) {
             NSLog(@"评   论");
+            AllCommentsViewController *commentsVC = [[AllCommentsViewController alloc]init];
+            [self.navigationController pushViewController:commentsVC animated:YES];
         } else if ([tempStr isEqualToString:@"点   赞"]) {
             NSLog(@"点   赞");
+            PraiseViewController *praiseVC = [[PraiseViewController alloc]init];
+            [self.navigationController pushViewController:praiseVC animated:YES];
+            
         }else if ([tempStr isEqualToString:@"打   赏"]) {
             NSLog(@"打   赏");
+            RewardViewController *rewardVC = [[RewardViewController alloc]init];
+            [self.navigationController pushViewController:rewardVC animated:YES];
+            
             
         }else if ([tempStr isEqualToString:@"问答通知"]) {
             NSLog(@"问答通知");
             
+            AnswerNoticeViewController *answerNoticeVC = [[AnswerNoticeViewController alloc]init];
+            [self.navigationController pushViewController:answerNoticeVC animated:YES];
+            
         }else if ([tempStr isEqualToString:@"系统通知"]) {
             NSLog(@"系统通知");
+            SystemNoticeViewController *systemNoticeVC = [[SystemNoticeViewController alloc]init];
+            [self.navigationController pushViewController:systemNoticeVC animated:YES];
+            
             
         }
         

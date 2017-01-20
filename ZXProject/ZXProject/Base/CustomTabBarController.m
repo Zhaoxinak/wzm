@@ -38,10 +38,10 @@
 - (void)setUpChildController {
     
     // 添加子控制器
-    [self addChildVC:[[OneViewController alloc] init] titleName:@"首页" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:1];
-    [self addChildVC:[[TwoViewController alloc] init] titleName:@"消息" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:2];
-    [self addChildVC:[[ThreeViewController alloc] init] titleName:@"喵圈" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:3];
-    [self addChildVC:[[FourViewController alloc] init] titleName:@"喵窝" imageName:@"loading_imgBlue_78x78" selectedImageName:@"loading_imgBlue_78x78" tag:4];
+    [self addChildVC:[[OneViewController alloc] init] titleName:@"首页" imageName:@"猫狗2" selectedImageName:@"猫狗2" tag:1];
+    [self addChildVC:[[TwoViewController alloc] init] titleName:@"消息" imageName:@"猫狗2" selectedImageName:@"猫狗2" tag:2];
+    [self addChildVC:[[ThreeViewController alloc] init] titleName:@"喵圈" imageName:@"猫狗2" selectedImageName:@"猫狗2" tag:3];
+    [self addChildVC:[[FourViewController alloc] init] titleName:@"喵窝" imageName:@"猫狗2" selectedImageName:@"猫狗2" tag:4];
     
     CustomTabBar *customTabBar = [CustomTabBar new];
     
