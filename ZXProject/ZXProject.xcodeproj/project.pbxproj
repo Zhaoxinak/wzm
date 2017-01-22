@@ -21,6 +21,10 @@
 		9E0DB3EC1E2A0F70005062E4 /* PartyInfoTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DB3EB1E2A0F70005062E4 /* PartyInfoTitleTableViewCell.m */; };
 		9E0DB3EF1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DB3EE1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m */; };
 		9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */; };
+		9E17A7E61E344DE5008EE395 /* PersonalMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E17A7E51E344DE5008EE395 /* PersonalMainViewController.m */; };
+		9E17A7E91E344FCB008EE395 /* PersonalSegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E17A7E81E344FCB008EE395 /* PersonalSegViewController.m */; };
+		9E17A7EF1E345F35008EE395 /* LLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E17A7EC1E345F35008EE395 /* LLSegmentedControl.m */; };
+		9E17A7F01E345F35008EE395 /* UIView+LLAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E17A7EE1E345F35008EE395 /* UIView+LLAdd.m */; };
 		9E1B70A91E1C9A4C00600777 /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70A81E1C9A4C00600777 /* ZXLoginViewController.m */; };
 		9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B70AB1E1C9D1100600777 /* ZXRegisterViewController.m */; };
 		9E1FFD631E31E4D3004C6041 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1FFD621E31E4D3004C6041 /* PraiseViewController.m */; };
@@ -243,6 +247,14 @@
 		9E0DB3EE1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyInfoOrganizerTableViewCell.m; sourceTree = "<group>"; };
 		9E16A5FD1DEED11E00D09DDD /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		9E17A7E41E344DE5008EE395 /* PersonalMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalMainViewController.h; sourceTree = "<group>"; };
+		9E17A7E51E344DE5008EE395 /* PersonalMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalMainViewController.m; sourceTree = "<group>"; };
+		9E17A7E71E344FCB008EE395 /* PersonalSegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalSegViewController.h; sourceTree = "<group>"; };
+		9E17A7E81E344FCB008EE395 /* PersonalSegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalSegViewController.m; sourceTree = "<group>"; };
+		9E17A7EB1E345F35008EE395 /* LLSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentedControl.h; sourceTree = "<group>"; };
+		9E17A7EC1E345F35008EE395 /* LLSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentedControl.m; sourceTree = "<group>"; };
+		9E17A7ED1E345F35008EE395 /* UIView+LLAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LLAdd.h"; sourceTree = "<group>"; };
+		9E17A7EE1E345F35008EE395 /* UIView+LLAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LLAdd.m"; sourceTree = "<group>"; };
 		9E1B70A71E1C9A4C00600777 /* ZXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXLoginViewController.h; sourceTree = "<group>"; };
 		9E1B70A81E1C9A4C00600777 /* ZXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXLoginViewController.m; sourceTree = "<group>"; };
 		9E1B70AA1E1C9D1100600777 /* ZXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRegisterViewController.h; sourceTree = "<group>"; };
@@ -605,6 +617,17 @@
 				9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9E17A7EA1E345F35008EE395 /* LLSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				9E17A7EB1E345F35008EE395 /* LLSegmentedControl.h */,
+				9E17A7EC1E345F35008EE395 /* LLSegmentedControl.m */,
+				9E17A7ED1E345F35008EE395 /* UIView+LLAdd.h */,
+				9E17A7EE1E345F35008EE395 /* UIView+LLAdd.m */,
+			);
+			path = LLSegmentedControl;
 			sourceTree = "<group>";
 		};
 		9E1B70A61E1C96A500600777 /* Login */ = {
@@ -1010,6 +1033,8 @@
 				9E16A5FE1DEED11E00D09DDD /* BaseTableViewController.m */,
 				9E1FFD6D1E31FBF8004C6041 /* SegmentedViewController.h */,
 				9E1FFD6E1E31FBF8004C6041 /* SegmentedViewController.m */,
+				9E17A7E71E344FCB008EE395 /* PersonalSegViewController.h */,
+				9E17A7E81E344FCB008EE395 /* PersonalSegViewController.m */,
 				9E5458881DDD8440002CA99D /* CustomTabBarController.h */,
 				9E5458891DDD8440002CA99D /* CustomTabBarController.m */,
 				9E5458841DDD843F002CA99D /* CustomNaviController.h */,
@@ -1023,6 +1048,7 @@
 		9E5458901DDD95F6002CA99D /* LibThree */ = {
 			isa = PBXGroup;
 			children = (
+				9E17A7EA1E345F35008EE395 /* LLSegmentedControl */,
 			);
 			path = LibThree;
 			sourceTree = "<group>";
@@ -1094,6 +1120,8 @@
 				9E8EE5CA1E20F078002187DB /* FourViewController.m */,
 				9EA740241E263262002278F5 /* PersonalInfoViewController.h */,
 				9EA740251E263262002278F5 /* PersonalInfoViewController.m */,
+				9E17A7E41E344DE5008EE395 /* PersonalMainViewController.h */,
+				9E17A7E51E344DE5008EE395 /* PersonalMainViewController.m */,
 				9EA7402A1E263C5E002278F5 /* EditPersonalInfoViewController.h */,
 				9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */,
 				9EA7401B1E26196C002278F5 /* FeedBackViewController.h */,
@@ -1288,7 +1316,7 @@
 					9E5458401DDD7BF7002CA99D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G6NXXX8882;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1457,6 +1485,7 @@
 				9E54584C1DDD7BF8002CA99D /* ViewController.m in Sources */,
 				9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */,
 				9E2270E41E28A801001A9A67 /* AddPicturesCell.m in Sources */,
+				9E17A7E91E344FCB008EE395 /* PersonalSegViewController.m in Sources */,
 				9E2270CE1E28745B001A9A67 /* OneJoinPartyViewController.m in Sources */,
 				9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */,
 				9E1FFD661E31E507004C6041 /* PraiseTableViewCell.m in Sources */,
@@ -1479,6 +1508,7 @@
 				9E3F35001E30A03C00E7DD27 /* ModifiedWikiTitleTableViewCell.m in Sources */,
 				9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */,
 				9EFAD6091DFAB2D6009C2324 /* UIButton+Response.m in Sources */,
+				9E17A7EF1E345F35008EE395 /* LLSegmentedControl.m in Sources */,
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
 				9E3F35091E30A07C00E7DD27 /* CaseInfoModel.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
@@ -1510,6 +1540,7 @@
 				9E8EE5CB1E20F078002187DB /* FourViewController.m in Sources */,
 				9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */,
 				9E1FFD8A1E321B8E004C6041 /* TwoNoticeModel.m in Sources */,
+				9E17A7F01E345F35008EE395 /* UIView+LLAdd.m in Sources */,
 				9E2271021E28D59D001A9A67 /* PublishPartyViewController.m in Sources */,
 				9E8EE5E41E20FBC9002187DB /* ZXRegisterModel.m in Sources */,
 				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
@@ -1521,6 +1552,7 @@
 				9E54588B1DDD8440002CA99D /* CustomNaviController.m in Sources */,
 				9E1FFD811E32187F004C6041 /* SystemNoticeViewController.m in Sources */,
 				9E2270CD1E28745B001A9A67 /* OneJoinMiaoCircleViewController.m in Sources */,
+				9E17A7E61E344DE5008EE395 /* PersonalMainViewController.m in Sources */,
 				9ECB71AD1E09474000A68CD6 /* ZXShareHelper.m in Sources */,
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
 				9E1FFD6C1E31F6A5004C6041 /* RewardViewController.m in Sources */,
@@ -1703,15 +1735,17 @@
 			baseConfigurationReference = 0C7AF1B03E3B58B642798022 /* Pods-ZXProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yunpeng Zhang (G6NXXX8882)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yunpeng Zhang (G6NXXX8882)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = G6NXXX8882;
 				INFOPLIST_FILE = ZXProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zhaoxinak-hotmail";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meloinfo.wzm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dae7f0a7-9a75-4cfb-b29c-8292f144da11";
+				PROVISIONING_PROFILE_SPECIFIER = "wzm-dev";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1721,14 +1755,16 @@
 			baseConfigurationReference = CE575A49239C8D0151047A64 /* Pods-ZXProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yunpeng Zhang (G6NXXX8882)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yunpeng Zhang (G6NXXX8882)";
 				DEVELOPMENT_TEAM = G6NXXX8882;
 				INFOPLIST_FILE = ZXProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zhaoxinak-hotmail";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meloinfo.wzm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dae7f0a7-9a75-4cfb-b29c-8292f144da11";
+				PROVISIONING_PROFILE_SPECIFIER = "wzm-dev";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

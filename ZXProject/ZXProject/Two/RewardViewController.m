@@ -21,7 +21,7 @@
 
 
 
-@interface RewardViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface RewardViewController ()
 
 
 

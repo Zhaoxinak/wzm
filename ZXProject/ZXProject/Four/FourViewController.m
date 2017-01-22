@@ -12,6 +12,7 @@
 
 /************C************/
 #import "FourViewController.h"
+#import "PersonalMainViewController.h" //个人主页
 #import "PersonalInfoViewController.h" //个人资料
 #import "FeedBackViewController.h" //意见反馈
 #import "FourSettingViewController.h" //设置
@@ -120,6 +121,17 @@
         
         NSLog(@"点击头像");
     };
+    
+    
+    //主页
+    UIButton* personalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    personalBtn.frame = CGRectMake(0, 0, 80, 44);
+    [personalBtn setTitle:@"主页"];
+    [personalBtn setTitleColor:OneTextColor];
+    [personalBtn addTarget:self action:@selector(personalAct) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:personalBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
 }
 
 
@@ -289,6 +301,13 @@
     NSLog(@"跳转 %ld",(long)tag);
 }
 
+#pragma mark -- 跳转个人主页
+-(void)personalAct{
+    
+    PersonalMainViewController *personVC = [[PersonalMainViewController alloc]init];
+    [self.navigationController pushViewController:personVC animated:YES];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
