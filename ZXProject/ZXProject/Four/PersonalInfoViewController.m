@@ -76,7 +76,7 @@
     [self refreshData]; //测试死数据
 }
 
-
+#pragma mark --刷新数据
 - (void)refreshData {
     NSString *livePlace =  @"";
     if (!_userInfoModel.province || !_userInfoModel.city || !_userInfoModel.area) {

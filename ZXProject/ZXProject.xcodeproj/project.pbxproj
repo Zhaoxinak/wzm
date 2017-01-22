@@ -125,6 +125,7 @@
 		9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FD4AD1E2E229B00A08543 /* AddNoteDataModel.m */; };
 		9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */; };
 		9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E319C321DFE74BB00E2CE45 /* HomePageModel.m */; };
+		9E3EA0571E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0561E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m */; };
 		9E3F34EE1E30615A00E7DD27 /* PublishUnderstandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */; };
 		9E3F34F11E3061C400E7DD27 /* AddUnderstandingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F01E3061C400E7DD27 /* AddUnderstandingDataModel.m */; };
 		9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F31E30991E00E7DD27 /* CaseInfoViewController.m */; };
@@ -397,6 +398,8 @@
 		9E319C2D1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedEncyclopediaTableViewCell.m; sourceTree = "<group>"; };
 		9E319C311DFE74BB00E2CE45 /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
 		9E319C321DFE74BB00E2CE45 /* HomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModel.m; sourceTree = "<group>"; };
+		9E3EA0551E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalMainOneTableViewCell.h; sourceTree = "<group>"; };
+		9E3EA0561E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalMainOneTableViewCell.m; sourceTree = "<group>"; };
 		9E3F34EC1E30615A00E7DD27 /* PublishUnderstandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishUnderstandingViewController.h; sourceTree = "<group>"; };
 		9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishUnderstandingViewController.m; sourceTree = "<group>"; };
 		9E3F34EF1E3061C400E7DD27 /* AddUnderstandingDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUnderstandingDataModel.h; sourceTree = "<group>"; };
@@ -613,6 +616,8 @@
 				9E08627C1E24E9D900C5B71F /* FourHeadView.m */,
 				9EA740271E2638D4002278F5 /* PersonalInfoTableViewCell.h */,
 				9EA740281E2638D4002278F5 /* PersonalInfoTableViewCell.m */,
+				9E3EA0551E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.h */,
+				9E3EA0561E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m */,
 				9EA740141E25D76B002278F5 /* FourDailyManagementTableViewCell.h */,
 				9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */,
 			);
@@ -1493,6 +1498,7 @@
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
 				9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */,
 				9EA740231E2628C2002278F5 /* FourAboutUsViewController.m in Sources */,
+				9E3EA0571E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m in Sources */,
 				9E813CF41E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m in Sources */,
 				9E2270FB1E28CD2A001A9A67 /* UILabel+Common.m in Sources */,
 				9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */,

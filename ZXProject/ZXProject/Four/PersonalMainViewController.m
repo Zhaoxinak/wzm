@@ -17,6 +17,16 @@
 
 
 @interface PersonalMainViewController ()
+{
+    UIButton *headerImgView; //头像
+    UIImageView *vipImageView; //vip
+    UILabel *userNameLabel; //用户名
+    UILabel *levelLabel; //等级
+    UIImageView *sexImageView; //性别～
+    UILabel *addressLabel; //地址
+}
+
+@property (nonatomic, strong) NSArray *oneTableViewArr;
 
 
 @end
@@ -38,6 +48,15 @@
 -(void)setupData{
     
     
+    
+    /***********************************/
+    [self refreshData]; //测试死数据
+}
+
+#pragma mark --刷新数据
+- (void)refreshData {
+    
+    _oneTableViewArr = [NSArray arrayWithObjects:@[@{@"title": @"地址" , @"subTitle" : @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址"}], @[@{@"title": @"简介" , @"subTitle" : @"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"}], @[@{@"title": @"说明" , @"subTitle" : @"说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"}],nil];
     
     
 }
@@ -65,6 +84,56 @@
     //设置标题
     self.title = @"个人主页";
     
+    //设置顶部
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/2)];
+    topView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:topView];
+    
+    
+    //头像
+    headerImgView = [[UIButton alloc]initWithFrame:CGRectMake(topView.width/2-30*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
+    headerImgView.backgroundColor = [UIColor yellowColor];
+    headerImgView.layer.cornerRadius = headerImgView.width/2;
+    [topView addSubview:headerImgView];
+    
+    //Vip标志
+    vipImageView = [UIImageView new];
+    vipImageView.frame = CGRectMake(CGRectGetMaxX(headerImgView.frame)-13*WIDTH_NIT-5*WIDTH_NIT, CGRectGetMaxY(headerImgView.frame)-13*WIDTH_NIT, 13*WIDTH_NIT, 13*WIDTH_NIT);
+    vipImageView.image = [UIImage imageNamed:@"icon_vip"];
+    [topView addSubview:vipImageView];
+    
+    //等级
+    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(headerImgView.right + 10*WIDTH_NIT, headerImgView.centerY-10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
+    levelLabel.textColor = OneTextColor;
+    levelLabel.font = ThreeFont;
+    levelLabel.text = @"12";
+    [topView addSubview:levelLabel];
+    
+    //用户名
+    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
+    userNameLabel.textColor = OneTextColor;
+    userNameLabel.font = ThreeFont;
+    userNameLabel.text = @"水冰月";
+    [userNameLabel sizeToFit];
+    userNameLabel.centerX = headerImgView.centerX;
+    [topView addSubview:userNameLabel];
+    
+    //性别
+    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 0, 20*WIDTH_NIT, 20*WIDTH_NIT)];
+    sexImageView.centerY = userNameLabel.centerY;
+    sexImageView.backgroundColor = [UIColor yellowColor];
+    [topView addSubview:sexImageView];
+    
+    
+    //地址
+    addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, topView.height-25*WIDTH_NIT, kScreen_Width - 20*WIDTH_NIT, 20*WIDTH_NIT)];
+    addressLabel.textColor = OneTextColor;
+    addressLabel.font = ThreeFont;
+    addressLabel.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";
+    [topView addSubview:addressLabel];
+    
+    
+    //设置选择器
     NSArray *titleArr = [NSArray arrayWithObjects:@"资料", @"圈子", @"问题", @"心得" ,nil];
     self.seg.titleArray = titleArr;
     self.seg.frame = CGRectMake(0, kScreen_Width/2, kScreen_Width, 44);
@@ -112,10 +181,23 @@
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
+    //资料
+    if (tableView == self.onetableView) {
+        
+        return 5;
+    }
+    
+    
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    //资料
+    if (tableView == self.onetableView) {
+        
+        return 1;
+    }
     
     
     return 10;
@@ -151,23 +233,68 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    //资料
     if (tableView == self.onetableView) {
-        NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
-        //首先根据标示去缓存池取
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-        //如果缓存池没有取到则重新创建并放到缓存池中
-        if(!cell){
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        //关注车型
+        if (indexPath.section == 3) {
             
+            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
+            //首先根据标示去缓存池取
+            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+            //如果缓存池没有取到则重新创建并放到缓存池中
+            if(!cell){
+                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+            }
+            
+            cell.textLabel.text = [NSString stringWithFormat:@"onetableView--%ld", (long)indexPath.row];
+            return cell;
+            
+        }else
+        //喜欢改装车型
+        if (indexPath.section == 4) {
+            
+            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
+            //首先根据标示去缓存池取
+            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+            //如果缓存池没有取到则重新创建并放到缓存池中
+            if(!cell){
+                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+            }
+            
+            cell.textLabel.text = [NSString stringWithFormat:@"onetableView--%ld", (long)indexPath.row];
+            return cell;
+            
+        }else{
+            
+            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
+            //首先根据标示去缓存池取
+            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+            //如果缓存池没有取到则重新创建并放到缓存池中
+            if(!cell){
+                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.textLabel.numberOfLines = 1;
+                cell.detailTextLabel.numberOfLines = 0;
+            }
+            
+            cell.textLabel.text = _oneTableViewArr[indexPath.section][indexPath.row][@"title"];
+            cell.detailTextLabel.text = _oneTableViewArr[indexPath.section][indexPath.row][@"subTitle"];
+            
+            return cell;
         }
         
-                cell.textLabel.text = [NSString stringWithFormat:@"onetableView--%ld", (long)indexPath.row];
-        return cell;
+        
+        
+       
         
         
     }else
+    //圈子
     if (tableView == self.twoTableView) {
         NSString *cellIdentifier = [NSString stringWithFormat:@"twoTableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
@@ -184,6 +311,7 @@
         
         
     }else
+    //问题
     if (tableView == self.threetableView) {
         NSString *cellIdentifier = [NSString stringWithFormat:@"threetableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
@@ -200,6 +328,7 @@
         
         
     }else
+    //心得
     {
         NSString *cellIdentifier = [NSString stringWithFormat:@"fourTableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
@@ -224,7 +353,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    //资料
+    if (tableView == self.onetableView) {
+        
+        return 70*WIDTH_NIT;
+    }
+    
     return 44.f;
+    
 }
 
 
