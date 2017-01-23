@@ -98,7 +98,7 @@
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(0, 0, 56, 30);
-    [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [confirmButton setTitleColor:KNavigationTitleColor forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont systemFontOfSize:14];
     confirmButton.layer.borderColor = [UIColor whiteColor].CGColor;
     confirmButton.layer.borderWidth = 1.;
@@ -115,11 +115,6 @@
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height - kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
 }
-
-
-
-
-
 
 
 #pragma mark - private

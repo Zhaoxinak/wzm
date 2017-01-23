@@ -12,9 +12,9 @@
 /************C************/
 #import "PersonalMainViewController.h"
 /************V************/
-
+#import "PersonalMainOneTableViewCell.h"
 /************M************/
-
+#import "PersonalMainModel.h"
 
 @interface PersonalMainViewController ()
 {
@@ -24,9 +24,13 @@
     UILabel *levelLabel; //等级
     UIImageView *sexImageView; //性别～
     UILabel *addressLabel; //地址
+    UIButton * pmBtn; //私聊
+    UIButton *followBtn; //关注
+    
 }
 
 @property (nonatomic, strong) NSArray *oneTableViewArr;
+@property (nonatomic, strong)PersonalMainModel * personalMainModel;
 
 
 @end
@@ -56,8 +60,7 @@
 #pragma mark --刷新数据
 - (void)refreshData {
     
-    _oneTableViewArr = [NSArray arrayWithObjects:@[@{@"title": @"地址" , @"subTitle" : @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址"}], @[@{@"title": @"简介" , @"subTitle" : @"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"}], @[@{@"title": @"说明" , @"subTitle" : @"说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"}],nil];
-    
+    _oneTableViewArr = [NSArray arrayWithObjects:@{@"title": @"地址" , @"subTitle" : @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址"}, @{@"title": @"简介" , @"subTitle" : @"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"},@{@"title": @"说明" , @"subTitle" : @"说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"},@{@"title": @"关注车型" , @"subTitle" : @""},@{@"title": @"喜欢改装车型" , @"subTitle" : @""},nil];
     
 }
 
@@ -140,7 +143,7 @@
     [self.view addSubview:self.seg];
     
     // 页面scrollView
-    self.pageScrollView.frame = CGRectMake(0, self.seg.bottom, kScreen_Width, kScreen_Height-kScreen_NavHeight-self.seg.bottom);
+    self.pageScrollView.frame = CGRectMake(0, self.seg.bottom, kScreen_Width, kScreen_Height-kScreen_NavHeight-self.seg.bottom-60*WIDTH_NIT);
     self.pageScrollView.tag = 100;
     [self.view addSubview: self.pageScrollView];
    
@@ -174,6 +177,22 @@
     self.fourTableView.frame = CGRectMake(0, 0, kScreen_Width, view4.height);
     [view4 addSubview:self.fourTableView];
     
+    
+    
+    //私聊
+    pmBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.pageScrollView.bottom, kScreen_Width/2, 60*WIDTH_NIT)];
+    [pmBtn setImage:@"猫狗2"];
+    [pmBtn setTitle:@"私聊"];
+    [pmBtn addTarget:self action:@selector(pmAct:)];
+    [self.view addSubview:pmBtn];
+    
+    
+    //关注
+    followBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, self.pageScrollView.bottom, kScreen_Width/2, 60*WIDTH_NIT)];
+    [followBtn setImage:@"猫狗2"];
+    [followBtn setTitle:@"关注"];
+    [followBtn addTarget:self action:@selector(followAct:)];
+    [self.view addSubview:followBtn];
 }
 
 
@@ -184,7 +203,7 @@
     //资料
     if (tableView == self.onetableView) {
         
-        return 5;
+        return 1;
     }
     
     
@@ -196,7 +215,7 @@
     //资料
     if (tableView == self.onetableView) {
         
-        return 1;
+        return _oneTableViewArr.count;
     }
     
     
@@ -236,77 +255,55 @@
     //资料
     if (tableView == self.onetableView) {
         
-        //关注车型
-        if (indexPath.section == 3) {
+        NSString *cellIdentifier = [NSString stringWithFormat:@"oneTableView%ld", (long)indexPath.row];
+        //首先根据标示去缓存池取
+        PersonalMainOneTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        //如果缓存池没有取到则重新创建并放到缓存池中
+        if(!cell){
+            cell=[[PersonalMainOneTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
-            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
-            //首先根据标示去缓存池取
-            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-            //如果缓存池没有取到则重新创建并放到缓存池中
-            if(!cell){
-                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                
-            }
-            
-            cell.textLabel.text = [NSString stringWithFormat:@"onetableView--%ld", (long)indexPath.row];
-            return cell;
-            
+        }
+        
+       
+        cell.titleLabel.text = _oneTableViewArr[indexPath.row][@"title"];
+        cell.detailLabel.text = _oneTableViewArr[indexPath.row][@"subTitle"];
+        
+        if (indexPath.row == 3) {
+          
+            [cell setMainCellMode:FollowCarsCellMode model:self.personalMainModel];
         }else
-        //喜欢改装车型
-        if (indexPath.section == 4) {
-            
-            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
-            //首先根据标示去缓存池取
-            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-            //如果缓存池没有取到则重新创建并放到缓存池中
-            if(!cell){
-                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                
-            }
-            
-            cell.textLabel.text = [NSString stringWithFormat:@"onetableView--%ld", (long)indexPath.row];
-            return cell;
+        if (indexPath.row == 4) {
+           
+            [cell setMainCellMode:ModifiedCarsCellMode model:self.personalMainModel];
             
         }else{
-            
-            NSString *cellIdentifier = [NSString stringWithFormat:@"onetableView%ld", (long)indexPath.row];
-            //首先根据标示去缓存池取
-            UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-            //如果缓存池没有取到则重新创建并放到缓存池中
-            if(!cell){
-                cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                cell.textLabel.numberOfLines = 1;
-                cell.detailTextLabel.numberOfLines = 0;
-            }
-            
-            cell.textLabel.text = _oneTableViewArr[indexPath.section][indexPath.row][@"title"];
-            cell.detailTextLabel.text = _oneTableViewArr[indexPath.section][indexPath.row][@"subTitle"];
-            
-            return cell;
+        
+            [cell setMainCellMode:UsualCellMode model:self.personalMainModel];
         }
         
         
+        return cell;
         
-       
-        
+      
         
     }else
     //圈子
     if (tableView == self.twoTableView) {
         NSString *cellIdentifier = [NSString stringWithFormat:@"twoTableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        PersonalMainOneTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[PersonalMainOneTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         }
+        cell.titleLabel.text = @"圈子名称1";
+        cell.detailLabel.text = @"成员：2351";
         
-        cell.textLabel.text = [NSString stringWithFormat:@"twoTableView--%ld", (long)indexPath.row];
+        [cell setMainCellMode:UsualCellMode model:self.personalMainModel];
+        
         return cell;
         
         
@@ -315,15 +312,19 @@
     if (tableView == self.threetableView) {
         NSString *cellIdentifier = [NSString stringWithFormat:@"threetableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        PersonalMainOneTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[PersonalMainOneTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         }
         
-        cell.textLabel.text = [NSString stringWithFormat:@"threetableView--%ld", (long)indexPath.row];
+        cell.titleLabel.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
+        cell.detailLabel.text = @"内容内容内容内容内容内容内容内容内容";
+        
+        [cell setMainCellMode:UsualCellMode model:self.personalMainModel];
+        
         return cell;
         
         
@@ -332,15 +333,19 @@
     {
         NSString *cellIdentifier = [NSString stringWithFormat:@"fourTableView%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        PersonalMainOneTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[PersonalMainOneTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         }
         
-        cell.textLabel.text = [NSString stringWithFormat:@"fourTableView--%ld", (long)indexPath.row];
+        cell.titleLabel.text = @"标题标题标题标题标题标题标题标题标题标题标题标题";
+        cell.detailLabel.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
+        
+        [cell setMainCellMode:UsualCellMode model:self.personalMainModel];
+        
         return cell;
         
         
@@ -357,10 +362,39 @@
     //资料
     if (tableView == self.onetableView) {
         
-        return 70*WIDTH_NIT;
+        NSString *title = _oneTableViewArr[indexPath.row][@"title"];
+        NSString *subTitle = _oneTableViewArr[indexPath.row][@"subTitle"];
+        
+        if (indexPath.row == 3) {
+            
+            return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:title SubTitle:subTitle PictureArrayNum:6 MainCellMode:FollowCarsCellMode];
+        }else
+        if (indexPath.row == 4) {
+            
+            return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:title SubTitle:subTitle PictureArrayNum:3 MainCellMode:ModifiedCarsCellMode];
+                
+        }else{
+         
+            return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:title SubTitle:subTitle PictureArrayNum:0 MainCellMode:UsualCellMode];
+        }
+   
+    }else
+    //圈子
+    if (tableView == self.twoTableView) {
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"圈子名称1" SubTitle:@"成员：2351" PictureArrayNum:0 MainCellMode:UsualCellMode];
+    }else
+    //问题
+    if (tableView == self.threetableView) {
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容" PictureArrayNum:0 MainCellMode:UsualCellMode];
+    }else
+    //心得
+    {
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容" PictureArrayNum:0 MainCellMode:UsualCellMode];
     }
     
-    return 44.f;
+   
+    
+    
     
 }
 
@@ -399,6 +433,17 @@
     NSLog(@"加载FourTableView数据");
 }
 
+#pragma mark -私聊
+-(void)pmAct:(UIButton *)button{
+    
+    NSLog(@"私聊");
+}
+
+#pragma mark -关注
+-(void)followAct:(UIButton *)button{
+    
+    NSLog(@"关注");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

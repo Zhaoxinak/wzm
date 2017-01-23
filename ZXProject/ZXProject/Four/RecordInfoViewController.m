@@ -1,55 +1,53 @@
 //
-//  PartyJoinedMemberViewController.m
+//  RecordInfoViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/16.
+//  Created by Mr.X on 2017/1/23.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
+//cell的高度   280   70
+#define RecordInfoCell_Height 50*WIDTH_NIT
 
-/************C************/
-#import "PartyJoinedMemberViewController.h"
-/************V************/
-#import "PartyJoinedInfoTableViewCell.h"
-/************M************/
+#import "RecordInfoViewController.h"
 
+@interface RecordInfoViewController ()
 
-@interface PartyJoinedMemberViewController ()
+@property (nonatomic, strong) NSArray *listFunctionArr;
 
 @end
 
-@implementation PartyJoinedMemberViewController
+@implementation RecordInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self setupData];
     
+    //初始化数据
+    [self setupData];
+    //初始试图
     [self setupView];
 }
 
+
+#pragma mark - 刷新系统
+-(void)setRefresh{
+}
+-(void)setHeaderRefresh{
+}
 
 #pragma mark -执行数据
 #pragma mark --初始化数据
 -(void)setupData{
     
-  
+    _listFunctionArr = [NSArray arrayWithObjects:
+                        @{@"icon" : @"", @"title" : @"提现金额", @"subTitle" : @"100.00"},
+                        @{@"icon" : @"", @"title" : @"交易状态", @"subTitle" : @"失败"},
+                        @{@"icon" : @"", @"title" : @"失败原因", @"subTitle" : @"失败原因失败原因失败原因失败原因失败原因失败原因失败原因"},
+                        @{@"icon" : @"", @"title" : @"交易时间", @"subTitle" : @"2017.1.1 12:12:12"},
+                        @{@"icon" : @"", @"title" : @"交易单号", @"subTitle" : @"23452345234234324"},
+                        @{@"icon" : @"", @"title" : @"剩余零钱", @"subTitle" : @"2345.00"},
+                        nil];
     
-}
-
-#pragma mark - 初加载数据
--(void)loadNewData{
-    
-    self.loading = YES;
-    self.loading = NO;
-    [self endRefresh];
-}
-
-
-#pragma mark - 加载数据
--(void)loadMoreData{
-    
-    [self endRefresh];
     
 }
 
@@ -58,7 +56,6 @@
 -(void)ZXsuccessData:(id)data byRequestId:(NSInteger)requestId{
     
 }
-
 
 - (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
     
@@ -74,23 +71,12 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"报名清单";
-    
-    //分享按钮
-    UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareBtn.frame = CGRectMake(0, 0, 80, 44);
-    [shareBtn setTitle:@"导出"];
-    [shareBtn setTitleColor:KNavigationTitleColor];
-    [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
-    self.navigationItem.rightBarButtonItem = rightButton;
-    
+    self.title = @"提现明细";
     
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
-    
 
 }
 
@@ -103,12 +89,11 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 10;
+    return _listFunctionArr.count;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
     
     return 1;
     
@@ -118,11 +103,6 @@
     return 1;
     
 }
-
-
-
-
-
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
@@ -142,22 +122,42 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-
-        NSString *cellIdentifier = [NSString stringWithFormat:@"PartyJoinedInfoTableViewCell%ld", (long)indexPath.row];
-        //首先根据标示去缓存池取
-        PartyJoinedInfoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-        //如果缓存池没有取到则重新创建并放到缓存池中
-        if(!cell){
-            cell=[[PartyJoinedInfoTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        return cell;
+    NSString *cellTitle = _listFunctionArr[indexPath.row][@"title"];
+    NSString *cellsubTitle = _listFunctionArr[indexPath.row][@"subTitle"];
+    
+    static NSString *cellIdentifier=@"cell";
+    //首先根据标示去缓存池取
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+    //如果缓存池没有取到则重新创建并放到缓存池中
+    if(!cell){
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.detailTextLabel.numberOfLines = 0;
+        
+    }
+    
+    cell.textLabel.text =  cellTitle;
+    cell.detailTextLabel.text =  cellsubTitle;
+    return cell;
+    
+    
+    
     
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    return PartyJoinedInfoCell_Height;
+    
+    NSString *cellsubTitle = _listFunctionArr[indexPath.row][@"subTitle"];
+    
+    CGSize tipSize = [cellsubTitle boundingRectWithSize:CGSizeMake(kScreen_Width - 100*WIDTH_NIT, MAXFLOAT)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                            attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}
+                                               context:nil].size;
+    
+    return MAX(RecordInfoCell_Height, tipSize.height+20*WIDTH_NIT);
+    
+    
 }
 
 
@@ -167,14 +167,10 @@
     
     
     
+    
 }
 
-#pragma mark -- 分享
--(void)shareAct:(UIButton *)button{
-    
-    NSLog(@"分享");
-   
-}
+
 
 
 - (void)didReceiveMemoryWarning {

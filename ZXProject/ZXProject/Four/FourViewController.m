@@ -16,6 +16,8 @@
 #import "PersonalInfoViewController.h" //个人资料
 #import "FeedBackViewController.h" //意见反馈
 #import "FourSettingViewController.h" //设置
+#import "MaoCoinInfoTableViewController.h" //猫币明细
+#import "BalanceViewController.h"  //余额
 /************V************/
 #import "FourHeadView.h" //顶部视图
 #import "FourDailyManagementTableViewCell.h" //日常管理
@@ -127,7 +129,7 @@
     UIButton* personalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     personalBtn.frame = CGRectMake(0, 0, 80, 44);
     [personalBtn setTitle:@"主页"];
-    [personalBtn setTitleColor:OneTextColor];
+    [personalBtn setTitleColor:KNavigationTitleColor];
     [personalBtn addTarget:self action:@selector(personalAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:personalBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -288,7 +290,21 @@
             
         }
             break;
+        case 1:{
+            //喵币
+            MaoCoinInfoTableViewController *maoCoinVC = [[MaoCoinInfoTableViewController alloc]init];
+            [self.navigationController pushViewController:maoCoinVC animated:YES];
             
+        }
+            break;
+            
+        case 2:{
+            //余额
+            BalanceViewController *balanceVC = [[BalanceViewController alloc]init];
+            [self.navigationController pushViewController:balanceVC animated:YES];
+            
+        }
+            break;
         default:
             break;
     }

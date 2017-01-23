@@ -110,7 +110,7 @@
     UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(0, 0, 80, 44);
     [shareBtn setTitle:@"分享"];
-    [shareBtn setTitleColor:OneTextColor];
+    [shareBtn setTitleColor:KNavigationTitleColor];
     [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     self.navigationItem.rightBarButtonItem = rightButton;

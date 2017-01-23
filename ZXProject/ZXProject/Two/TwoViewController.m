@@ -105,7 +105,7 @@
     UIButton* phoneBookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     phoneBookBtn.frame = CGRectMake(0, 0, 80, 44);
     [phoneBookBtn setTitle:@"通讯录"];
-    [phoneBookBtn setTitleColor:OneTextColor];
+    [phoneBookBtn setTitleColor:KNavigationTitleColor];
     [phoneBookBtn addTarget:self action:@selector(phoneBookAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:phoneBookBtn];
     self.navigationItem.rightBarButtonItem = rightButton;

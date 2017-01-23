@@ -70,7 +70,7 @@
         _onetableView = [[ZXTableView alloc]init];
         _onetableView.delegate = self;
         _onetableView.dataSource = self;
-        _onetableView.separatorStyle = NO;
+        _onetableView.separatorStyle = YES;
         _onetableView.backgroundColor = [UIColor clearColor];
         
     }
@@ -84,7 +84,7 @@
         _twoTableView = [[ZXTableView alloc]init];
         _twoTableView.delegate = self;
         _twoTableView.dataSource = self;
-        _twoTableView.separatorStyle = NO;
+        _twoTableView.separatorStyle = YES;
         _twoTableView.backgroundColor = [UIColor clearColor];
         
     }
@@ -98,7 +98,7 @@
         _threetableView = [[ZXTableView alloc]init];
         _threetableView.delegate = self;
         _threetableView.dataSource = self;
-        _threetableView.separatorStyle = NO;
+        _threetableView.separatorStyle = YES;
         _threetableView.backgroundColor = [UIColor clearColor];
         
     }
@@ -112,7 +112,7 @@
         _fourTableView = [[ZXTableView alloc]init];
         _fourTableView.delegate = self;
         _fourTableView.dataSource = self;
-        _fourTableView.separatorStyle = NO;
+        _fourTableView.separatorStyle = YES;
         _fourTableView.backgroundColor = [UIColor clearColor];
         
     }

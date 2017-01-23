@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonalMainModel.h"
 
 typedef NS_ENUM(NSUInteger, PersonalMainCellMode) {
     
@@ -19,11 +20,18 @@ typedef NS_ENUM(NSUInteger, PersonalMainCellMode) {
 
 @interface PersonalMainOneTableViewCell : UITableViewCell
 
-@property (nonatomic, assign) PersonalMainCellMode infoCellMode;
+@property (nonatomic, assign) PersonalMainCellMode mainCellMode;
+@property (nonatomic, strong) PersonalMainModel *model;
+
 
 @property (nonatomic, strong) UIImageView *headerImgView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
+@property (nonatomic, strong) UIView *picView;
 
+- (void)setMainCellMode:(PersonalMainCellMode)mainCellMode model:(PersonalMainModel *)model;
+
+//计算cell高度
++ (CGFloat)caculatePersonalMainCellHeightWithTitle:(NSString *)title SubTitle:(NSString *)subTitle         PictureArrayNum:(NSInteger)arrayNum MainCellMode:(PersonalMainCellMode)mainCellMode;
 
 @end

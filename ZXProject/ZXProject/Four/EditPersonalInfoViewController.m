@@ -109,7 +109,7 @@
     //确定按钮
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(0, 0, 56, 30);
-    [confirmButton setTitleColor:OneTextColor];
+    [confirmButton setTitleColor:KNavigationTitleColor];
     confirmButton.titleLabel.font = OneFont;
     [confirmButton setTitle: @"确定" ];
     [confirmButton addTarget:self action:@selector(confirmAction:)];

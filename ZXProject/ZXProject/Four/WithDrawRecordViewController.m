@@ -1,34 +1,42 @@
 //
-//  OneModifiedUnderstandingViewController.m
+//  WithDrawRecordViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2016/12/19.
-//  Copyright © 2016年 Mr.X. All rights reserved.
+//  Created by Mr.X on 2017/1/23.
+//  Copyright © 2017年 Mr.X. All rights reserved.
 //
+
+//cell的高度   280   70
+#define WithDrawRecordCell_Height 50*WIDTH_NIT
+
 
 
 /************C************/
-#import "OneModifiedUnderstandingViewController.h"
-#import "ModifiedUnderstandingInfoViewController.h" //心得详情
-#import "PublishUnderstandingViewController.h" //发布心得
+#import "WithDrawRecordViewController.h"
+#import "RecordInfoViewController.h" //提现明细
 /************V************/
-#import "OneModifiedUnderstandingTableViewCell.h"  //改装心得
+
 /************M************/
-#import "OneModifiedUnderstandingModel.h"
 
 
-@interface OneModifiedUnderstandingViewController ()
+
+@interface WithDrawRecordViewController (){
+    
+    UILabel *cellRightLabel; //金额变动
+}
 
 @end
 
-@implementation OneModifiedUnderstandingViewController
+@implementation WithDrawRecordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //初始化数据
     [self setupData];
     //初始试图
     [self setupView];
+    
 }
 
 #pragma mark -执行数据
@@ -36,8 +44,9 @@
 -(void)setupData{
     
     
+    
+    
 }
-
 
 #pragma mark - 初加载数据
 -(void)loadNewData{
@@ -52,8 +61,9 @@
 -(void)loadMoreData{
     
     [self endRefresh];
-    
 }
+
+
 
 #pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
 
@@ -71,25 +81,16 @@
 }
 
 
-
 #pragma mark -执行视图
 #pragma mark --初始化数据视图
 -(void)setupView{
     
     //设置标题
-    self.title = @"改装心得";
+    self.title = @"提现记录";
+    
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
-    
-    //发布按钮
-    UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    publishBtn.frame = CGRectMake(0, 0, 80, 44);
-    [publishBtn setTitle:@"发布"];
-    [publishBtn setTitleColor:KNavigationTitleColor];
-    [publishBtn addTarget:self action:@selector(publishAct) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
-    self.navigationItem.rightBarButtonItem = rightButton;
     
 
 }
@@ -104,7 +105,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 4;
+    
+    return 10;
 }
 
 
@@ -119,19 +121,15 @@
     
 }
 
-
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     headerView.backgroundColor = BGColor;
-    
     return headerView;
 }
-
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     footerView.backgroundColor = BGColor;
-    
     return footerView;
 }
 
@@ -141,38 +139,52 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *cellIdentifier = [NSString stringWithFormat:@"OneModifiedUnderstandingTableViewCell%ld", (long)indexPath.row];
+    NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
     //首先根据标示去缓存池取
-    OneModifiedUnderstandingTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
     //如果缓存池没有取到则重新创建并放到缓存池中
     if(!cell){
-        cell=[[OneModifiedUnderstandingTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cellRightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+        cellRightLabel.textAlignment = NSTextAlignmentCenter;
+        cell.accessoryView  = cellRightLabel;
     }
     
+    cell.textLabel.text = @"成功";
+    cell.detailTextLabel.text = @"2017.7.7  14:20:30";
+    cellRightLabel.text = @"+15";
     return cell;
+    
+    
+    
+    
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return OneModifiedUnderstandCell_Height;
+    return WithDrawRecordCell_Height;
+    
+    
 }
+
+
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ModifiedUnderstandingInfoViewController *infoVC = [[ModifiedUnderstandingInfoViewController alloc]init];
-    [self.navigationController pushViewController:infoVC animated:YES];
+    RecordInfoViewController *recordInfoVC = [[RecordInfoViewController alloc]init];
+    [self.navigationController pushViewController:recordInfoVC animated:YES];
+    
     
 }
 
-#pragma mark -侧边栏显示
--(void)publishAct{
-    
-    NSLog(@"发布心得");
-    PublishUnderstandingViewController *publishVC = [[PublishUnderstandingViewController alloc]init];
-    [self.navigationController pushViewController:publishVC animated:YES];
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 

@@ -104,7 +104,7 @@
     UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     publishBtn.frame = CGRectMake(0, 0, 80, 44);
     [publishBtn setTitle:@"发布"];
-    [publishBtn setTitleColor:OneTextColor];
+    [publishBtn setTitleColor:KNavigationTitleColor];
     [publishBtn addTarget:self action:@selector(publishAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
