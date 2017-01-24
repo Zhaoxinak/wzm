@@ -33,7 +33,6 @@
         _seg.lineHeight = 3.f;
         // segmentedControlTitleSpacingStyle 属性设置为 LLSegmentedControlTitleSpacingStyleWidthFixed
         // 则不需要设置titleSpacing，只需要设置titleWidth即可
-        _seg.titleWidth = kScreen_Width / 4;
         _seg.defaultSelectedIndex = 0;
         [_seg segmentedControlSelectedWithBlock:^(LLSegmentedControl *segmentedControl, NSInteger selectedIndex) {
             NSLog(@"selectedIndex : %zd", selectedIndex);
@@ -52,7 +51,6 @@
 {
     if (_pageScrollView == nil) {
         _pageScrollView = [[ZXScrollView alloc] init];
-        _pageScrollView.contentSize = CGSizeMake(4 * kScreen_Width, 0);
         _pageScrollView.showsHorizontalScrollIndicator = NO;
         _pageScrollView.pagingEnabled = YES;
         _pageScrollView.delegate = self;
@@ -204,6 +202,17 @@
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+   
+    if(scrollView == self.pageScrollView) {
+        
+        self.onetableView.scrollEnabled = YES;
+        self.twoTableView.scrollEnabled = YES;
+        self.threetableView.scrollEnabled = YES;
+        self.fourTableView.scrollEnabled = YES;
+        
+    }
+    
+    
     if (scrollView == self.onetableView || scrollView == self.twoTableView || scrollView == self.threetableView || scrollView == self.fourTableView) {
         return;
     }
@@ -221,6 +230,18 @@
     } else {
         [self changeCurrentPage:0];
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if(scrollView == self.pageScrollView) {
+        
+        self.onetableView.scrollEnabled = NO;
+        self.twoTableView.scrollEnabled = NO;
+        self.threetableView.scrollEnabled = NO;
+        self.fourTableView.scrollEnabled = NO;
+    }
+    
 }
 
 

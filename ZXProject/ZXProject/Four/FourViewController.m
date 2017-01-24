@@ -18,6 +18,10 @@
 #import "FourSettingViewController.h" //设置
 #import "MaoCoinInfoTableViewController.h" //猫币明细
 #import "BalanceViewController.h"  //余额
+
+#import "CollectionViewController.h" //收藏
+#import "NotesViewController.h" //帖子
+#import "ExperienceViewController.h" //心得
 /************V************/
 #import "FourHeadView.h" //顶部视图
 #import "FourDailyManagementTableViewCell.h" //日常管理
@@ -315,6 +319,33 @@
 -(void)fourDailyManagementCellSelect2go:(NSInteger)tag{
     
     NSLog(@"跳转 %ld",(long)tag);
+    switch (tag) {
+           
+        case 0:{
+            //收藏
+            CollectionViewController *collectionVC = [[CollectionViewController alloc]init];
+            [self.navigationController pushViewController:collectionVC animated:YES];
+        }
+            break;
+            
+        case 4:{
+            //帖子
+            NotesViewController *noteVC = [[NotesViewController alloc]init];
+            [self.navigationController pushViewController:noteVC animated:YES];
+        }
+            break;
+       
+        case 5:{
+            //帖子
+            ExperienceViewController *experienceVC = [[ExperienceViewController alloc]init];
+            [self.navigationController pushViewController:experienceVC animated:YES];
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark -- 跳转个人主页

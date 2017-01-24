@@ -24,4 +24,18 @@
     [super touchesEnded:touches withEvent:event];
 }
 
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if(gestureRecognizer.state != 0) {
+        
+        return YES;
+        
+    }else {
+        
+        return NO;
+        
+    }
+}
+
+    
 @end

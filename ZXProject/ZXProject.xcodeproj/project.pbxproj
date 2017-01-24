@@ -135,6 +135,16 @@
 		9E3EA06D1E3606EE00CA1CFA /* WithDrawInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA06C1E3606EE00CA1CFA /* WithDrawInfoViewController.m */; };
 		9E3EA0701E360A0400CA1CFA /* WithDrawRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA06F1E360A0400CA1CFA /* WithDrawRecordViewController.m */; };
 		9E3EA0731E360B5E00CA1CFA /* RecordInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0721E360B5E00CA1CFA /* RecordInfoViewController.m */; };
+		9E3EA0761E36EEFC00CA1CFA /* BalanceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0751E36EEFC00CA1CFA /* BalanceInfoViewController.m */; };
+		9E3EA0791E3702CC00CA1CFA /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */; };
+		9E3EA07C1E37034D00CA1CFA /* NotesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA07B1E37034D00CA1CFA /* NotesTableViewCell.m */; };
+		9E3EA07F1E37036100CA1CFA /* NotesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA07E1E37036100CA1CFA /* NotesModel.m */; };
+		9E3EA0821E3736F600CA1CFA /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */; };
+		9E3EA0851E3737B100CA1CFA /* CollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0841E3737B100CA1CFA /* CollectionTableViewCell.m */; };
+		9E3EA0881E3737C200CA1CFA /* CollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0871E3737C200CA1CFA /* CollectionModel.m */; };
+		9E3EA08B1E37419200CA1CFA /* ExperienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA08A1E37419200CA1CFA /* ExperienceViewController.m */; };
+		9E3EA08E1E3741A400CA1CFA /* ExperienceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA08D1E3741A400CA1CFA /* ExperienceTableViewCell.m */; };
+		9E3EA0911E3741B200CA1CFA /* ExperienceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3EA0901E3741B200CA1CFA /* ExperienceModel.m */; };
 		9E3F34EE1E30615A00E7DD27 /* PublishUnderstandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */; };
 		9E3F34F11E3061C400E7DD27 /* AddUnderstandingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F01E3061C400E7DD27 /* AddUnderstandingDataModel.m */; };
 		9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F34F31E30991E00E7DD27 /* CaseInfoViewController.m */; };
@@ -427,6 +437,26 @@
 		9E3EA06F1E360A0400CA1CFA /* WithDrawRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawRecordViewController.m; sourceTree = "<group>"; };
 		9E3EA0711E360B5E00CA1CFA /* RecordInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordInfoViewController.h; sourceTree = "<group>"; };
 		9E3EA0721E360B5E00CA1CFA /* RecordInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordInfoViewController.m; sourceTree = "<group>"; };
+		9E3EA0741E36EEFC00CA1CFA /* BalanceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceInfoViewController.h; sourceTree = "<group>"; };
+		9E3EA0751E36EEFC00CA1CFA /* BalanceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceInfoViewController.m; sourceTree = "<group>"; };
+		9E3EA0771E3702CC00CA1CFA /* NotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
+		9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
+		9E3EA07A1E37034D00CA1CFA /* NotesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewCell.h; sourceTree = "<group>"; };
+		9E3EA07B1E37034D00CA1CFA /* NotesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewCell.m; sourceTree = "<group>"; };
+		9E3EA07D1E37036100CA1CFA /* NotesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesModel.h; sourceTree = "<group>"; };
+		9E3EA07E1E37036100CA1CFA /* NotesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesModel.m; sourceTree = "<group>"; };
+		9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		9E3EA0831E3737B100CA1CFA /* CollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTableViewCell.h; sourceTree = "<group>"; };
+		9E3EA0841E3737B100CA1CFA /* CollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTableViewCell.m; sourceTree = "<group>"; };
+		9E3EA0861E3737C200CA1CFA /* CollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionModel.h; sourceTree = "<group>"; };
+		9E3EA0871E3737C200CA1CFA /* CollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionModel.m; sourceTree = "<group>"; };
+		9E3EA0891E37419200CA1CFA /* ExperienceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceViewController.h; sourceTree = "<group>"; };
+		9E3EA08A1E37419200CA1CFA /* ExperienceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceViewController.m; sourceTree = "<group>"; };
+		9E3EA08C1E3741A400CA1CFA /* ExperienceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceTableViewCell.h; sourceTree = "<group>"; };
+		9E3EA08D1E3741A400CA1CFA /* ExperienceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceTableViewCell.m; sourceTree = "<group>"; };
+		9E3EA08F1E3741B200CA1CFA /* ExperienceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceModel.h; sourceTree = "<group>"; };
+		9E3EA0901E3741B200CA1CFA /* ExperienceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceModel.m; sourceTree = "<group>"; };
 		9E3F34EC1E30615A00E7DD27 /* PublishUnderstandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishUnderstandingViewController.h; sourceTree = "<group>"; };
 		9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishUnderstandingViewController.m; sourceTree = "<group>"; };
 		9E3F34EF1E3061C400E7DD27 /* AddUnderstandingDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUnderstandingDataModel.h; sourceTree = "<group>"; };
@@ -647,6 +677,12 @@
 				9E3EA0561E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m */,
 				9EA740141E25D76B002278F5 /* FourDailyManagementTableViewCell.h */,
 				9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */,
+				9E3EA07A1E37034D00CA1CFA /* NotesTableViewCell.h */,
+				9E3EA07B1E37034D00CA1CFA /* NotesTableViewCell.m */,
+				9E3EA0831E3737B100CA1CFA /* CollectionTableViewCell.h */,
+				9E3EA0841E3737B100CA1CFA /* CollectionTableViewCell.m */,
+				9E3EA08C1E3741A400CA1CFA /* ExperienceTableViewCell.h */,
+				9E3EA08D1E3741A400CA1CFA /* ExperienceTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -889,6 +925,8 @@
 			children = (
 				9E3EA0611E35F83F00CA1CFA /* BalanceViewController.h */,
 				9E3EA0621E35F83F00CA1CFA /* BalanceViewController.m */,
+				9E3EA0741E36EEFC00CA1CFA /* BalanceInfoViewController.h */,
+				9E3EA0751E36EEFC00CA1CFA /* BalanceInfoViewController.m */,
 				9E3EA0681E35FE4700CA1CFA /* ApplyWithdrawViewController.h */,
 				9E3EA0691E35FE4700CA1CFA /* ApplyWithdrawViewController.m */,
 				9E3EA06E1E360A0400CA1CFA /* WithDrawRecordViewController.h */,
@@ -1175,6 +1213,12 @@
 				9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */,
 				9E3EA05B1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.h */,
 				9E3EA05C1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.m */,
+				9E3EA0771E3702CC00CA1CFA /* NotesViewController.h */,
+				9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */,
+				9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */,
+				9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */,
+				9E3EA0891E37419200CA1CFA /* ExperienceViewController.h */,
+				9E3EA08A1E37419200CA1CFA /* ExperienceViewController.m */,
 				9E3EA0671E35FDED00CA1CFA /* 余额 */,
 				9EA7401B1E26196C002278F5 /* FeedBackViewController.h */,
 				9EA7401C1E26196C002278F5 /* FeedBackViewController.m */,
@@ -1217,6 +1261,12 @@
 				9E3EA05F1E35EF4500CA1CFA /* MaoCoinInfoModel.m */,
 				9E3EA0641E35F8AE00CA1CFA /* BalanceModel.h */,
 				9E3EA0651E35F8AE00CA1CFA /* BalanceModel.m */,
+				9E3EA07D1E37036100CA1CFA /* NotesModel.h */,
+				9E3EA07E1E37036100CA1CFA /* NotesModel.m */,
+				9E3EA0861E3737C200CA1CFA /* CollectionModel.h */,
+				9E3EA0871E3737C200CA1CFA /* CollectionModel.m */,
+				9E3EA08F1E3741B200CA1CFA /* ExperienceModel.h */,
+				9E3EA0901E3741B200CA1CFA /* ExperienceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1540,6 +1590,7 @@
 			files = (
 				9E4CED351DDEF82300259FDE /* ZXSegmentedControl.m in Sources */,
 				9EE490531E07ED2500799F8A /* OneModifiedUnderstandingModel.m in Sources */,
+				9E3EA07F1E37036100CA1CFA /* NotesModel.m in Sources */,
 				9E54584C1DDD7BF8002CA99D /* ViewController.m in Sources */,
 				9E319C2E1DFE707100E2CE45 /* OneModifiedEncyclopediaTableViewCell.m in Sources */,
 				9E2270E41E28A801001A9A67 /* AddPicturesCell.m in Sources */,
@@ -1548,6 +1599,7 @@
 				9E2270CE1E28745B001A9A67 /* OneJoinPartyViewController.m in Sources */,
 				9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */,
 				9E3EA06D1E3606EE00CA1CFA /* WithDrawInfoViewController.m in Sources */,
+				9E3EA0791E3702CC00CA1CFA /* NotesViewController.m in Sources */,
 				9E1FFD661E31E507004C6041 /* PraiseTableViewCell.m in Sources */,
 				9ECB718C1E09437900A68CD6 /* ZXShareModel.m in Sources */,
 				9EFAD6061DFAB2D6009C2324 /* NSDate+CH.m in Sources */,
@@ -1572,6 +1624,7 @@
 				9E17A7EF1E345F35008EE395 /* LLSegmentedControl.m in Sources */,
 				9EC6D5111DFFE93D00F63C11 /* OneJoinMiaoCircleModel.m in Sources */,
 				9E3F35091E30A07C00E7DD27 /* CaseInfoModel.m in Sources */,
+				9E3EA08B1E37419200CA1CFA /* ExperienceViewController.m in Sources */,
 				9E3EA05D1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.m in Sources */,
 				9EFAD6071DFAB2D6009C2324 /* NSString+Common.m in Sources */,
 				9EA740261E263262002278F5 /* PersonalInfoViewController.m in Sources */,
@@ -1597,11 +1650,13 @@
 				9E0DB3EF1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m in Sources */,
 				9E1FFD871E3218B2004C6041 /* SystemNoticeTableViewCell.m in Sources */,
 				9E1FFD8D1E321BB5004C6041 /* TwoNoticeTableViewCell.m in Sources */,
+				9E3EA0851E3737B100CA1CFA /* CollectionTableViewCell.m in Sources */,
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
 				9E5458461DDD7BF8002CA99D /* main.m in Sources */,
 				9E8EE5CB1E20F078002187DB /* FourViewController.m in Sources */,
 				9E16A5FF1DEED11E00D09DDD /* BaseTableViewController.m in Sources */,
 				9E1FFD8A1E321B8E004C6041 /* TwoNoticeModel.m in Sources */,
+				9E3EA0881E3737C200CA1CFA /* CollectionModel.m in Sources */,
 				9E17A7F01E345F35008EE395 /* UIView+LLAdd.m in Sources */,
 				9E2271021E28D59D001A9A67 /* PublishPartyViewController.m in Sources */,
 				9E8EE5E41E20FBC9002187DB /* ZXRegisterModel.m in Sources */,
@@ -1650,7 +1705,9 @@
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
 				9ECB71831E09018A00A68CD6 /* UIColor+expanded.m in Sources */,
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
+				9E3EA07C1E37034D00CA1CFA /* NotesTableViewCell.m in Sources */,
 				9E2FD4A51E2E034A00A08543 /* MiaoCircleViewController.m in Sources */,
+				9E3EA08E1E3741A400CA1CFA /* ExperienceTableViewCell.m in Sources */,
 				9E2271051E28D744001A9A67 /* AddPartyDataModel.m in Sources */,
 				9E0DB3E31E2A01F5005062E4 /* PartyDetailInfoViewController.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
@@ -1663,6 +1720,7 @@
 				9E3EA06A1E35FE4700CA1CFA /* ApplyWithdrawViewController.m in Sources */,
 				9E813CF71E10FEF2004292E7 /* OneModifiedWikiModel.m in Sources */,
 				9ECB71881E09432E00A68CD6 /* ZXShareViewController.m in Sources */,
+				9E3EA0821E3736F600CA1CFA /* CollectionViewController.m in Sources */,
 				9EFAD60A1DFAB2D6009C2324 /* UIResponder+FirstResponder.m in Sources */,
 				9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */,
 				9E2FD49D1E2CC96000A08543 /* PartyJoinedInfoTableViewCell.m in Sources */,
@@ -1671,8 +1729,10 @@
 				9E3F35031E30A04D00E7DD27 /* ModifiedWikiPayTableViewCell.m in Sources */,
 				9E8EE5B71E20A869002187DB /* ZXLoginModel.m in Sources */,
 				9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */,
+				9E3EA0911E3741B200CA1CFA /* ExperienceModel.m in Sources */,
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
+				9E3EA0761E36EEFC00CA1CFA /* BalanceInfoViewController.m in Sources */,
 				9E3F350F1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m in Sources */,
 				9E3F34FA1E309FDF00E7DD27 /* CasePayTableViewCell.m in Sources */,
 				9EA7401A1E25D845002278F5 /* FourDailyManagementModel.m in Sources */,

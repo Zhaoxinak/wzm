@@ -9,7 +9,8 @@
 
 /************C************/
 #import "BalanceViewController.h"
-#import "ApplyWithdrawViewController.h"
+#import "ApplyWithdrawViewController.h" //申请提现
+#import "BalanceInfoViewController.h" //明细
 /************V************/
 
 /************M************/
@@ -132,7 +133,8 @@
 -(void)infoAct{
     NSLog(@"明细");
     
-    
+    BalanceInfoViewController *infoVC = [[BalanceInfoViewController alloc]init];
+    [self.navigationController pushViewController:infoVC animated:YES];
 }
 
 #pragma mark -- 提现

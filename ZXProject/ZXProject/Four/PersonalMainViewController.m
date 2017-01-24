@@ -139,11 +139,13 @@
     //设置选择器
     NSArray *titleArr = [NSArray arrayWithObjects:@"资料", @"圈子", @"问题", @"心得" ,nil];
     self.seg.titleArray = titleArr;
+    self.seg.titleWidth = kScreen_Width/4;
     self.seg.frame = CGRectMake(0, kScreen_Width/2, kScreen_Width, 44);
     [self.view addSubview:self.seg];
     
     // 页面scrollView
     self.pageScrollView.frame = CGRectMake(0, self.seg.bottom, kScreen_Width, kScreen_Height-kScreen_NavHeight-self.seg.bottom-60*WIDTH_NIT);
+    self.pageScrollView.contentSize = CGSizeMake(4 * kScreen_Width, 0);
     self.pageScrollView.tag = 100;
     [self.view addSubview: self.pageScrollView];
    

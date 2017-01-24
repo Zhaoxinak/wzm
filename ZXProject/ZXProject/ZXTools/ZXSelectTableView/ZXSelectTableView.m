@@ -36,8 +36,11 @@
 @property (nonatomic, strong) UIImageView             *itemImageView;
 @property (nonatomic, strong) UILabel                 *itemTitleLabel;
 
+
 @property (nonatomic, strong) ZXSelectTableViewItem *model;
 
+- (void)setModel:(ZXSelectTableViewItem *)model width:(CGFloat)width;
+    
 @end
 
 @implementation CCNavigationBarMenuTableViewCell
@@ -56,7 +59,7 @@
     [self.contentView addSubview:self.itemImageView];
    
     
-    self.itemTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.itemImageView.right, 0, self.contentView.width-self.itemImageView.right*2, self.contentView.height)];
+    self.itemTitleLabel = [[UILabel alloc] init];
     self.itemTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.itemTitleLabel.font = TwoFont;
     self.itemTitleLabel.textColor = OneTextColor;
@@ -65,11 +68,13 @@
 }
 
 #pragma mark - setter
-- (void)setModel:(ZXSelectTableViewItem *)model {
+- (void)setModel:(ZXSelectTableViewItem *)model width:(CGFloat)width{
     self.itemImageView.image = model.image;
     self.itemTitleLabel.text = model.title;
     self.itemTitleLabel.font = model.titleFont;
     self.itemTitleLabel.textColor = model.titleColor;
+   
+    self.itemTitleLabel.frame = CGRectMake(0, 0, width, self.contentView.height);
 }
 
 @end
@@ -139,7 +144,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CCNavigationBarMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CCNavigationBarMenuTableViewCell class])];
-    cell.model = self.items[indexPath.row];
+//    cell.model = self.items[indexPath.row];
+    [cell setModel:self.items[indexPath.row] width:self.width];
     return cell;
 }
 

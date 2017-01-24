@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXScrollView : UIScrollView
+@interface ZXScrollView : UIScrollView<UIGestureRecognizerDelegate>
 
 @end
