@@ -10,6 +10,7 @@
 
 /************C************/
 #import "ModifiedWikiInfoViewController.h"
+#import "LoveToPayViewController.h" //打赏
 /************V************/
 #import "ModifiedWikiTitleTableViewCell.h" //顶部
 #import "ModifiedWikiPayTableViewCell.h" //打赏
@@ -251,6 +252,8 @@
 -(void)modifiedWikiPaySelect2go:(NSInteger)tag{
     
     NSLog(@"打赏");
+    LoveToPayViewController *payVC = [[LoveToPayViewController alloc]init];
+    [self.navigationController pushViewController:payVC animated:YES];
 }
 
 #pragma mark -打赏人的头像

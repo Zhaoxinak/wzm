@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0862771E24B4A300C5B71F /* ZXSelectTableView.m */; };
 		9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E08627C1E24E9D900C5B71F /* FourHeadView.m */; };
+		9E0D2B051E44246900226A46 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B041E44246900226A46 /* ContactsViewController.m */; };
+		9E0D2B081E44671B00226A46 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B071E44671B00226A46 /* ContactsTableViewCell.m */; };
+		9E0D2B0B1E44673900226A46 /* ContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B0A1E44673900226A46 /* ContactsModel.m */; };
+		9E0D2B0F1E446E6300226A46 /* LoveToPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B0E1E446E6300226A46 /* LoveToPayViewController.m */; };
+		9E0D2B131E44848800226A46 /* MyMiaoQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B121E44848800226A46 /* MyMiaoQuestionsViewController.m */; };
+		9E0D2B161E4484B400226A46 /* MyMiaoQuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B151E4484B400226A46 /* MyMiaoQuestionsTableViewCell.m */; };
+		9E0D2B191E4484C700226A46 /* MyMiaoQuestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B181E4484C700226A46 /* MyMiaoQuestionsModel.m */; };
+		9E0D2B1C1E448C8000226A46 /* MyPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B1B1E448C8000226A46 /* MyPartyViewController.m */; };
+		9E0D2B1F1E448CAC00226A46 /* MyPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B1E1E448CAC00226A46 /* MyPartyTableViewCell.m */; };
+		9E0D2B221E448CC700226A46 /* MyPartyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D2B211E448CC700226A46 /* MyPartyModel.m */; };
 		9E0DB3D71E29D4EA005062E4 /* pic_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0DB3D51E29D4EA005062E4 /* pic_delete@2x.png */; };
 		9E0DB3D81E29D4EA005062E4 /* pic_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0DB3D61E29D4EA005062E4 /* pic_delete@3x.png */; };
 		9E0DB3DB1E29D542005062E4 /* photo_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0DB3D91E29D542005062E4 /* photo_add@2x.png */; };
@@ -249,6 +259,26 @@
 		9E0862771E24B4A300C5B71F /* ZXSelectTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSelectTableView.m; sourceTree = "<group>"; };
 		9E08627B1E24E9D900C5B71F /* FourHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourHeadView.h; sourceTree = "<group>"; };
 		9E08627C1E24E9D900C5B71F /* FourHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourHeadView.m; sourceTree = "<group>"; };
+		9E0D2B031E44246900226A46 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		9E0D2B041E44246900226A46 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		9E0D2B061E44671B00226A46 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewCell.h; sourceTree = "<group>"; };
+		9E0D2B071E44671B00226A46 /* ContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewCell.m; sourceTree = "<group>"; };
+		9E0D2B091E44673900226A46 /* ContactsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsModel.h; sourceTree = "<group>"; };
+		9E0D2B0A1E44673900226A46 /* ContactsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsModel.m; sourceTree = "<group>"; };
+		9E0D2B0D1E446E6300226A46 /* LoveToPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveToPayViewController.h; sourceTree = "<group>"; };
+		9E0D2B0E1E446E6300226A46 /* LoveToPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveToPayViewController.m; sourceTree = "<group>"; };
+		9E0D2B111E44848800226A46 /* MyMiaoQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMiaoQuestionsViewController.h; sourceTree = "<group>"; };
+		9E0D2B121E44848800226A46 /* MyMiaoQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMiaoQuestionsViewController.m; sourceTree = "<group>"; };
+		9E0D2B141E4484B400226A46 /* MyMiaoQuestionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMiaoQuestionsTableViewCell.h; sourceTree = "<group>"; };
+		9E0D2B151E4484B400226A46 /* MyMiaoQuestionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMiaoQuestionsTableViewCell.m; sourceTree = "<group>"; };
+		9E0D2B171E4484C700226A46 /* MyMiaoQuestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMiaoQuestionsModel.h; sourceTree = "<group>"; };
+		9E0D2B181E4484C700226A46 /* MyMiaoQuestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMiaoQuestionsModel.m; sourceTree = "<group>"; };
+		9E0D2B1A1E448C8000226A46 /* MyPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPartyViewController.h; sourceTree = "<group>"; };
+		9E0D2B1B1E448C8000226A46 /* MyPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPartyViewController.m; sourceTree = "<group>"; };
+		9E0D2B1D1E448CAC00226A46 /* MyPartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPartyTableViewCell.h; sourceTree = "<group>"; };
+		9E0D2B1E1E448CAC00226A46 /* MyPartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPartyTableViewCell.m; sourceTree = "<group>"; };
+		9E0D2B201E448CC700226A46 /* MyPartyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPartyModel.h; sourceTree = "<group>"; };
+		9E0D2B211E448CC700226A46 /* MyPartyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPartyModel.m; sourceTree = "<group>"; };
 		9E0DB3D51E29D4EA005062E4 /* pic_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_delete@2x.png"; sourceTree = "<group>"; };
 		9E0DB3D61E29D4EA005062E4 /* pic_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_delete@3x.png"; sourceTree = "<group>"; };
 		9E0DB3D91E29D542005062E4 /* photo_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_add@2x.png"; sourceTree = "<group>"; };
@@ -679,12 +709,25 @@
 				9EA740151E25D76B002278F5 /* FourDailyManagementTableViewCell.m */,
 				9E3EA07A1E37034D00CA1CFA /* NotesTableViewCell.h */,
 				9E3EA07B1E37034D00CA1CFA /* NotesTableViewCell.m */,
+				9E0D2B1D1E448CAC00226A46 /* MyPartyTableViewCell.h */,
+				9E0D2B1E1E448CAC00226A46 /* MyPartyTableViewCell.m */,
+				9E0D2B141E4484B400226A46 /* MyMiaoQuestionsTableViewCell.h */,
+				9E0D2B151E4484B400226A46 /* MyMiaoQuestionsTableViewCell.m */,
 				9E3EA0831E3737B100CA1CFA /* CollectionTableViewCell.h */,
 				9E3EA0841E3737B100CA1CFA /* CollectionTableViewCell.m */,
 				9E3EA08C1E3741A400CA1CFA /* ExperienceTableViewCell.h */,
 				9E3EA08D1E3741A400CA1CFA /* ExperienceTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9E0D2B0C1E446DED00226A46 /* 打赏 */ = {
+			isa = PBXGroup;
+			children = (
+				9E0D2B0D1E446E6300226A46 /* LoveToPayViewController.h */,
+				9E0D2B0E1E446E6300226A46 /* LoveToPayViewController.m */,
+			);
+			name = "打赏";
 			sourceTree = "<group>";
 		};
 		9E17A7EA1E345F35008EE395 /* LLSegmentedControl */ = {
@@ -786,6 +829,7 @@
 		9E2270BD1E28745B001A9A67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9E0D2B0C1E446DED00226A46 /* 打赏 */,
 				9E2270D81E2874BE001A9A67 /* 改装百科 */,
 				9E2270D71E2874B5001A9A67 /* 案例展示 */,
 				9E2270D61E2874A1001A9A67 /* 改装心得 */,
@@ -942,6 +986,8 @@
 		9E3F35101E30B9DE00E7DD27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9E0D2B061E44671B00226A46 /* ContactsTableViewCell.h */,
+				9E0D2B071E44671B00226A46 /* ContactsTableViewCell.m */,
 				9E3F35181E30BA8500E7DD27 /* AllCommentsTableViewCell.h */,
 				9E3F35191E30BA8500E7DD27 /* AllCommentsTableViewCell.m */,
 				9E1FFD641E31E507004C6041 /* PraiseTableViewCell.h */,
@@ -961,6 +1007,8 @@
 		9E3F35111E30B9DE00E7DD27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E0D2B091E44673900226A46 /* ContactsModel.h */,
+				9E0D2B0A1E44673900226A46 /* ContactsModel.m */,
 				9E3F35151E30BA6300E7DD27 /* AllCommentsModel.h */,
 				9E3F35161E30BA6300E7DD27 /* AllCommentsModel.m */,
 				9E1FFD671E31E531004C6041 /* PraiseModel.h */,
@@ -1085,6 +1133,8 @@
 				9E3F35101E30B9DE00E7DD27 /* View */,
 				9E5458781DDD8408002CA99D /* TwoViewController.h */,
 				9E5458791DDD8408002CA99D /* TwoViewController.m */,
+				9E0D2B031E44246900226A46 /* ContactsViewController.h */,
+				9E0D2B041E44246900226A46 /* ContactsViewController.m */,
 				9E3F35121E30BA3200E7DD27 /* AllCommentsViewController.h */,
 				9E3F35131E30BA3200E7DD27 /* AllCommentsViewController.m */,
 				9E1FFD611E31E4D3004C6041 /* PraiseViewController.h */,
@@ -1215,6 +1265,10 @@
 				9E3EA05C1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.m */,
 				9E3EA0771E3702CC00CA1CFA /* NotesViewController.h */,
 				9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */,
+				9E0D2B1A1E448C8000226A46 /* MyPartyViewController.h */,
+				9E0D2B1B1E448C8000226A46 /* MyPartyViewController.m */,
+				9E0D2B111E44848800226A46 /* MyMiaoQuestionsViewController.h */,
+				9E0D2B121E44848800226A46 /* MyMiaoQuestionsViewController.m */,
 				9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */,
 				9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */,
 				9E3EA0891E37419200CA1CFA /* ExperienceViewController.h */,
@@ -1263,6 +1317,10 @@
 				9E3EA0651E35F8AE00CA1CFA /* BalanceModel.m */,
 				9E3EA07D1E37036100CA1CFA /* NotesModel.h */,
 				9E3EA07E1E37036100CA1CFA /* NotesModel.m */,
+				9E0D2B201E448CC700226A46 /* MyPartyModel.h */,
+				9E0D2B211E448CC700226A46 /* MyPartyModel.m */,
+				9E0D2B171E4484C700226A46 /* MyMiaoQuestionsModel.h */,
+				9E0D2B181E4484C700226A46 /* MyMiaoQuestionsModel.m */,
 				9E3EA0861E3737C200CA1CFA /* CollectionModel.h */,
 				9E3EA0871E3737C200CA1CFA /* CollectionModel.m */,
 				9E3EA08F1E3741B200CA1CFA /* ExperienceModel.h */,
@@ -1606,6 +1664,7 @@
 				9E0862781E24B4A300C5B71F /* ZXSelectTableView.m in Sources */,
 				9EA740231E2628C2002278F5 /* FourAboutUsViewController.m in Sources */,
 				9E3EA0571E34CBDE00CA1CFA /* PersonalMainOneTableViewCell.m in Sources */,
+				9E0D2B1F1E448CAC00226A46 /* MyPartyTableViewCell.m in Sources */,
 				9E813CF41E10FEDF004292E7 /* OneModifiedWikiTableViewCell.m in Sources */,
 				9E2270FB1E28CD2A001A9A67 /* UILabel+Common.m in Sources */,
 				9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */,
@@ -1632,6 +1691,7 @@
 				9E1FFD7B1E321384004C6041 /* AnswerNoticeModel.m in Sources */,
 				9E5458491DDD7BF8002CA99D /* AppDelegate.m in Sources */,
 				9E3F34F71E309F2300E7DD27 /* CaseTitleTableViewCell.m in Sources */,
+				9E0D2B161E4484B400226A46 /* MyMiaoQuestionsTableViewCell.m in Sources */,
 				9E2FD4951E2CA62300A08543 /* PartyJoinedMemberTableViewCell.m in Sources */,
 				9E08627D1E24E9D900C5B71F /* FourHeadView.m in Sources */,
 				9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */,
@@ -1643,6 +1703,7 @@
 				9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */,
 				9EA740161E25D76B002278F5 /* FourDailyManagementTableViewCell.m in Sources */,
 				9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */,
+				9E0D2B1C1E448C8000226A46 /* MyPartyViewController.m in Sources */,
 				9EFAD60B1DFAB2D6009C2324 /* UIView+Common.m in Sources */,
 				9E813CEE1E10C16C004292E7 /* OneCasesShowModel.m in Sources */,
 				9E6F17671E2F0F91005887E7 /* UnderstandingTitleTableViewCell.m in Sources */,
@@ -1650,6 +1711,7 @@
 				9E0DB3EF1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m in Sources */,
 				9E1FFD871E3218B2004C6041 /* SystemNoticeTableViewCell.m in Sources */,
 				9E1FFD8D1E321BB5004C6041 /* TwoNoticeTableViewCell.m in Sources */,
+				9E0D2B0B1E44673900226A46 /* ContactsModel.m in Sources */,
 				9E3EA0851E3737B100CA1CFA /* CollectionTableViewCell.m in Sources */,
 				9E54587E1DDD8408002CA99D /* TwoViewController.m in Sources */,
 				9E5458461DDD7BF8002CA99D /* main.m in Sources */,
@@ -1663,6 +1725,7 @@
 				9E319C331DFE74BB00E2CE45 /* HomePageModel.m in Sources */,
 				9E2270D01E28745B001A9A67 /* OneModifiedUnderstandingViewController.m in Sources */,
 				9E54588C1DDD8440002CA99D /* CustomTabBar.m in Sources */,
+				9E0D2B081E44671B00226A46 /* ContactsTableViewCell.m in Sources */,
 				9E54588A1DDD8440002CA99D /* BaseViewController.m in Sources */,
 				9E2270D11E28745B001A9A67 /* OneModifiedWikiViewController.m in Sources */,
 				9EA7401D1E26196C002278F5 /* FeedBackViewController.m in Sources */,
@@ -1674,6 +1737,7 @@
 				9E8EE5DF1E20F281002187DB /* ThreeMiaoCircleModel.m in Sources */,
 				9E1FFD6C1E31F6A5004C6041 /* RewardViewController.m in Sources */,
 				9E2270DE1E28A4CB001A9A67 /* AddPartyCellModel.m in Sources */,
+				9E0D2B191E4484C700226A46 /* MyMiaoQuestionsModel.m in Sources */,
 				9E2FD4AB1E2E212C00A08543 /* PublishMiaoCicleViewController.m in Sources */,
 				9E3F35171E30BA6300E7DD27 /* AllCommentsModel.m in Sources */,
 				9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */,
@@ -1698,8 +1762,10 @@
 				9E1FFD631E31E4D3004C6041 /* PraiseViewController.m in Sources */,
 				9EFAD6081DFAB2D6009C2324 /* UIButton+Extension.m in Sources */,
 				9E1FFD781E321359004C6041 /* AnswerNoticeViewController.m in Sources */,
+				9E0D2B221E448CC700226A46 /* MyPartyModel.m in Sources */,
 				9ECB71901E0944CC00A68CD6 /* ZXShareViewCell.m in Sources */,
 				9E1FFD6F1E31FBF8004C6041 /* SegmentedViewController.m in Sources */,
+				9E0D2B131E44848800226A46 /* MyMiaoQuestionsViewController.m in Sources */,
 				9E3F351A1E30BA8500E7DD27 /* AllCommentsTableViewCell.m in Sources */,
 				9E2270E11E28A5D5001A9A67 /* AddPictureModel.m in Sources */,
 				9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */,
@@ -1715,6 +1781,7 @@
 				9E8EE5BA1E20C11F002187DB /* ZXBindPhoneViewController.m in Sources */,
 				9E8EE5E01E20F281002187DB /* ThreeHotNoteTableViewCell.m in Sources */,
 				9E0DB3E61E2A0852005062E4 /* ZXCycleScrollView.m in Sources */,
+				9E0D2B0F1E446E6300226A46 /* LoveToPayViewController.m in Sources */,
 				9E2270E71E28AC99001A9A67 /* AddPartyTableViewCell.m in Sources */,
 				9E2FD49A1E2CC7C500A08543 /* PartyJoinedMemberViewController.m in Sources */,
 				9E3EA06A1E35FE4700CA1CFA /* ApplyWithdrawViewController.m in Sources */,
@@ -1731,6 +1798,7 @@
 				9E2FD4AE1E2E229B00A08543 /* AddNoteDataModel.m in Sources */,
 				9E3EA0911E3741B200CA1CFA /* ExperienceModel.m in Sources */,
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
+				9E0D2B051E44246900226A46 /* ContactsViewController.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
 				9E3EA0761E36EEFC00CA1CFA /* BalanceInfoViewController.m in Sources */,
 				9E3F350F1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m in Sources */,

@@ -17,14 +17,22 @@
 
 @implementation SegmentedViewController
 
-
+#pragma mark -设置segItems
+- (NSArray *)segItems
+{
+    if (_segItems == nil) {
+        _segItems = [NSArray array];
+        
+    }
+    return _segItems;
+}
 
 #pragma mark -设置seg
 - (UISegmentedControl *)seg
 {
     if (_seg == nil) {
-        _seg = [[UISegmentedControl alloc] initWithItems:@[@"", @""]];
-        _seg.frame = CGRectMake(0, 0, 150, 30);
+        _seg = [[UISegmentedControl alloc] initWithItems:_segItems];
+        _seg.frame = CGRectMake(0, 0, _segItems.count*75, 30);
         _seg.backgroundColor = [UIColor clearColor];
         _seg.tintColor = [UIColor whiteColor];
         _seg.selectedSegmentIndex = 0;

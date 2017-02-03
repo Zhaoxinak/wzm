@@ -1,33 +1,33 @@
 //
-//  RewardViewController.m
+//  MyPartyViewController.m
 //  ZXProject
 //
-//  Created by Mr.X on 2017/1/20.
+//  Created by Mr.X on 2017/2/3.
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-
 //cellheader的高度   280   70
-#define RewardCell_Header_Height 1*WIDTH_NIT
-#define RewardCell_Footer_Height 1*WIDTH_NIT
+#define MyPartyCell_Header_Height 1*WIDTH_NIT
+#define MyPartyCell_Footer_Height 1*WIDTH_NIT
 
 
 
 /************C************/
-#import "RewardViewController.h"
+#import "MyPartyViewController.h"
+#import "PublishPartyViewController.h" //发起活动
+#import "PartyJoinedMemberViewController.h" //报名清单
 /************V************/
-#import "RewardTableViewCell.h"
+#import "MyPartyTableViewCell.h"
 /************M************/
+#import "MyPartyModel.h"
 
+@interface MyPartyViewController ()<MyPartyCellDelegate>
 
-
-@interface RewardViewController ()
-
-
+@property (nonatomic ,strong) MyPartyModel *myPartyModel;
 
 @end
 
-@implementation RewardViewController
+@implementation MyPartyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,14 +69,11 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"所有评论";
+    self.title = @"";
     
     //标题segmentController
-    self.segItems = @[@"受到打赏", @"打赏他人"];
-    
-//    //标题segmentController
-//    [self.seg setTitle:@"受到打赏" forSegmentAtIndex:0];
-//    [self.seg setTitle:@"打赏他人" forSegmentAtIndex:1];
+    self.segItems = @[@"我是参与者", @"我是发起者"];
+   
     self.navigationItem.titleView = self.seg;
     
     // 页面scrollView
@@ -120,12 +117,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return RewardCell_Header_Height;
+    return MyPartyCell_Header_Height;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return RewardCell_Footer_Height;
+    return MyPartyCell_Footer_Height;
     
 }
 
@@ -151,15 +148,16 @@
     if (tableView == self.lefttableView) {
         NSString *cellIdentifier = [NSString stringWithFormat:@"lefttableViewCell%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        RewardTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        MyPartyTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[RewardTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[MyPartyTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
+            cell.delegate = self;
         }
         
-//        cell.textLabel.text = [NSString stringWithFormat:@"左边--%ld", (long)indexPath.row];
+        //        cell.textLabel.text = [NSString stringWithFormat:@"左边--%ld", (long)indexPath.row];
+        [cell setModel:self.myPartyModel setMode:JoinPartyCellMode];
         return cell;
         
         
@@ -168,15 +166,16 @@
         
         NSString *cellIdentifier = [NSString stringWithFormat:@"rightTableViewCell%ld", (long)indexPath.row];
         //首先根据标示去缓存池取
-        RewardTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+        MyPartyTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
-            cell=[[RewardTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell=[[MyPartyTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
+            cell.delegate = self;
         }
         
-//        cell.textLabel.text = [NSString stringWithFormat:@"右边--%ld", (long)indexPath.row];
+        [cell setModel:self.myPartyModel setMode:OwnerPartyCellMode];
+        //        cell.textLabel.text = [NSString stringWithFormat:@"右边--%ld", (long)indexPath.row];
         return cell;
     }
     
@@ -187,7 +186,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return RewardCell_Height;
+    return MyPartyCell_Height;
 }
 
 
@@ -213,19 +212,43 @@
 }
 
 
+#pragma mark -- 01分别为"编辑", @"参与者"
+-(void)MyPartyCellSelect2go:(NSInteger)tag{
+    
+    switch (tag) {
+        case 0:{
+            PublishPartyViewController *publishVC = [[PublishPartyViewController alloc]init];
+            [self.navigationController pushViewController:publishVC animated:YES];
+        }
+            break;
+        
+        case 1:{
+            PartyJoinedMemberViewController *memberVC = [[PartyJoinedMemberViewController alloc]init];
+            [self.navigationController pushViewController:memberVC animated:YES];
+        }
+            break;
+        
+        default:
+            break;
+    }
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

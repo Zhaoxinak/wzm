@@ -14,6 +14,7 @@
 
 /************C************/
 #import "TwoViewController.h"
+#import "ContactsViewController.h" //通讯录
 #import "AllCommentsViewController.h" //所有评论
 #import "PraiseViewController.h"  //赞
 #import "RewardViewController.h" //打赏
@@ -262,8 +263,8 @@
 #pragma mark -- 通讯录
 -(void)phoneBookAct{
     NSLog(@"通讯录");
-    
-    
+    ContactsViewController *contactsVC = [[ContactsViewController alloc]init];
+    [self.navigationController pushViewController:contactsVC animated:YES];
 }
 
 @end

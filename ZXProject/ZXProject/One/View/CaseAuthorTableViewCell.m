@@ -97,7 +97,7 @@
     
 }
 
-//点击头像
+#pragma mark -点击头像
 - (void)headTapAction:(UITapGestureRecognizer *)tap {
     if (self.userId && self.headClickBlock) {
         self.headClickBlock(self.userId);

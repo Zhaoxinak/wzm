@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Mr.X. All rights reserved.
 //
 
-#import "PersonalSegViewController.h"
+#import "BaseTableViewController.h"
 
-@interface NotesViewController : PersonalSegViewController
+@interface NotesViewController : BaseTableViewController
 
 @end

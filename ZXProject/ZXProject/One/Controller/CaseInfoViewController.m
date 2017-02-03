@@ -9,6 +9,7 @@
 
 /************C************/
 #import "CaseInfoViewController.h"
+#import "LoveToPayViewController.h" //打赏
 /************V************/
 #import "CaseTitleTableViewCell.h" //顶部
 #import "CasePayTableViewCell.h" //打赏
@@ -250,6 +251,8 @@
 -(void)casePaySelect2go:(NSInteger)tag{
     
     NSLog(@"打赏");
+    LoveToPayViewController *payVC = [[LoveToPayViewController alloc]init];
+    [self.navigationController pushViewController:payVC animated:YES];
 }
 
 #pragma mark -打赏人的头像

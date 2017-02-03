@@ -10,6 +10,7 @@
 
 /************C************/
 #import "ModifiedUnderstandingInfoViewController.h"
+#import "LoveToPayViewController.h" //打赏
 /************V************/
 #import "UnderstandingTitleTableViewCell.h" //顶部
 #import "UnderstandingPayTableViewCell.h" //打赏
@@ -252,6 +253,8 @@
 -(void)understandingPaySelect2go:(NSInteger)tag{
     
     NSLog(@"打赏");
+    LoveToPayViewController *payVC = [[LoveToPayViewController alloc]init];
+    [self.navigationController pushViewController:payVC animated:YES];
 }
 
 #pragma mark -打赏人的头像

@@ -14,6 +14,6 @@
 @property(nonatomic, retain)ZXScrollView *pageScrollView;
 @property(nonatomic, retain)ZXTableView *lefttableView;
 @property(nonatomic, retain)ZXTableView *rightTableView;
-
+@property(nonatomic, retain)NSArray *segItems;
 
 @end

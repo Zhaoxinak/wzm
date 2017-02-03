@@ -87,7 +87,7 @@
 
 
 - (void)setupNaviItem {
-    self.title = @"发起活动";
+    self.title = @"发帖";
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(0, 0, 56, 30);

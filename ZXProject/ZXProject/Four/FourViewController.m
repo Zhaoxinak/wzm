@@ -20,6 +20,8 @@
 #import "BalanceViewController.h"  //余额
 
 #import "CollectionViewController.h" //收藏
+#import "MyPartyViewController.h" //活动
+#import "MyMiaoQuestionsViewController.h" //问题
 #import "NotesViewController.h" //帖子
 #import "ExperienceViewController.h" //心得
 /************V************/
@@ -327,6 +329,20 @@
             [self.navigationController pushViewController:collectionVC animated:YES];
         }
             break;
+        
+        case 2:{
+            //收藏
+            MyPartyViewController *myPartyVC = [[MyPartyViewController alloc]init];
+            [self.navigationController pushViewController:myPartyVC animated:YES];
+        }
+            break;
+            
+        case 3:{
+            //收藏
+            MyMiaoQuestionsViewController *myMiaoQuestionsVC = [[MyMiaoQuestionsViewController alloc]init];
+            [self.navigationController pushViewController:myMiaoQuestionsVC animated:YES];
+        }
+            break;
             
         case 4:{
             //帖子
@@ -346,6 +362,7 @@
         default:
             break;
     }
+    
 }
 
 #pragma mark -- 跳转个人主页
