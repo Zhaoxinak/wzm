@@ -18,10 +18,11 @@
 #import "FourSettingViewController.h" //设置
 #import "MaoCoinInfoTableViewController.h" //猫币明细
 #import "BalanceViewController.h"  //余额
-
+#import "ContactsViewController.h" //通讯录
 #import "CollectionViewController.h" //收藏
+#import "AuthenticationViewController.h" //认证
 #import "MyPartyViewController.h" //活动
-#import "MyMiaoQuestionsViewController.h" //问题
+#import "MyMiaoQuestionsViewController.h" //喵问
 #import "NotesViewController.h" //帖子
 #import "ExperienceViewController.h" //心得
 /************V************/
@@ -311,13 +312,23 @@
             
         }
             break;
+       
+        case 3:{
+            //粉丝
+            ContactsViewController *contactsVC = [[ContactsViewController alloc]init];
+            [self.navigationController pushViewController:contactsVC animated:YES];
+            
+        }
+            break;
+            
+            
         default:
             break;
     }
    
 }
 
-#pragma mark -- 012345分别为"收藏", @"认证", @"活动", @"问题", @"帖子", @"心得"
+#pragma mark -- 012345分别为"收藏", @"认证", @"活动", @"喵问", @"帖子", @"心得"
 -(void)fourDailyManagementCellSelect2go:(NSInteger)tag{
     
     NSLog(@"跳转 %ld",(long)tag);
@@ -329,16 +340,24 @@
             [self.navigationController pushViewController:collectionVC animated:YES];
         }
             break;
-        
+            //认证
+        case 1:{
+            
+            AuthenticationViewController *authenticationVC = [[AuthenticationViewController alloc]init];
+            [self.navigationController pushViewController:authenticationVC animated:YES];
+        }
+            break;
+            
+            
         case 2:{
-            //收藏
+            //活动
             MyPartyViewController *myPartyVC = [[MyPartyViewController alloc]init];
             [self.navigationController pushViewController:myPartyVC animated:YES];
         }
             break;
             
         case 3:{
-            //收藏
+            //喵问
             MyMiaoQuestionsViewController *myMiaoQuestionsVC = [[MyMiaoQuestionsViewController alloc]init];
             [self.navigationController pushViewController:myMiaoQuestionsVC animated:YES];
         }
@@ -352,7 +371,7 @@
             break;
        
         case 5:{
-            //帖子
+            //心得
             ExperienceViewController *experienceVC = [[ExperienceViewController alloc]init];
             [self.navigationController pushViewController:experienceVC animated:YES];
         }

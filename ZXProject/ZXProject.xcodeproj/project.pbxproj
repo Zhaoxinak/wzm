@@ -239,6 +239,11 @@
 		9ECB71A91E0946E700A68CD6 /* icon_wx_friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB719D1E0946E700A68CD6 /* icon_wx_friend@2x.png */; };
 		9ECB71AA1E0946E700A68CD6 /* icon_wx_friend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB719E1E0946E700A68CD6 /* icon_wx_friend@3x.png */; };
 		9ECB71AD1E09474000A68CD6 /* ZXShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB71AC1E09474000A68CD6 /* ZXShareHelper.m */; };
+		9EE1FD9A1E45748100DE9B42 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FD991E45748100DE9B42 /* AuthenticationViewController.m */; };
+		9EE1FD9D1E457FC800DE9B42 /* PersonalAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FD9C1E457FC800DE9B42 /* PersonalAuthViewController.m */; };
+		9EE1FDA01E457FE100DE9B42 /* CompanyAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FD9F1E457FE100DE9B42 /* CompanyAuthViewController.m */; };
+		9EE1FDA61E45A9BC00DE9B42 /* AddAuthDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FDA51E45A9BC00DE9B42 /* AddAuthDataModel.m */; };
+		9EE1FDA91E45AB6F00DE9B42 /* AddAuthPicturesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FDA81E45AB6F00DE9B42 /* AddAuthPicturesCell.m */; };
 		9EE490501E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */; };
 		9EE490531E07ED2500799F8A /* OneModifiedUnderstandingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE490521E07ED2500799F8A /* OneModifiedUnderstandingModel.m */; };
 		9EFAD5F11DFAA1B9009C2324 /* OneHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFAD5F01DFAA1B9009C2324 /* OneHeadView.m */; };
@@ -643,6 +648,16 @@
 		9ECB719E1E0946E700A68CD6 /* icon_wx_friend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wx_friend@3x.png"; sourceTree = "<group>"; };
 		9ECB71AB1E09474000A68CD6 /* ZXShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShareHelper.h; sourceTree = "<group>"; };
 		9ECB71AC1E09474000A68CD6 /* ZXShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShareHelper.m; sourceTree = "<group>"; };
+		9EE1FD981E45748100DE9B42 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		9EE1FD991E45748100DE9B42 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		9EE1FD9B1E457FC800DE9B42 /* PersonalAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalAuthViewController.h; sourceTree = "<group>"; };
+		9EE1FD9C1E457FC800DE9B42 /* PersonalAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalAuthViewController.m; sourceTree = "<group>"; };
+		9EE1FD9E1E457FE100DE9B42 /* CompanyAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyAuthViewController.h; sourceTree = "<group>"; };
+		9EE1FD9F1E457FE100DE9B42 /* CompanyAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyAuthViewController.m; sourceTree = "<group>"; };
+		9EE1FDA41E45A9BC00DE9B42 /* AddAuthDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAuthDataModel.h; sourceTree = "<group>"; };
+		9EE1FDA51E45A9BC00DE9B42 /* AddAuthDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAuthDataModel.m; sourceTree = "<group>"; };
+		9EE1FDA71E45AB6F00DE9B42 /* AddAuthPicturesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAuthPicturesCell.h; sourceTree = "<group>"; };
+		9EE1FDA81E45AB6F00DE9B42 /* AddAuthPicturesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAuthPicturesCell.m; sourceTree = "<group>"; };
 		9EE4904E1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingTableViewCell.h; sourceTree = "<group>"; };
 		9EE4904F1E07ECE800799F8A /* OneModifiedUnderstandingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneModifiedUnderstandingTableViewCell.m; sourceTree = "<group>"; };
 		9EE490511E07ED2500799F8A /* OneModifiedUnderstandingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneModifiedUnderstandingModel.h; sourceTree = "<group>"; };
@@ -717,6 +732,8 @@
 				9E3EA0841E3737B100CA1CFA /* CollectionTableViewCell.m */,
 				9E3EA08C1E3741A400CA1CFA /* ExperienceTableViewCell.h */,
 				9E3EA08D1E3741A400CA1CFA /* ExperienceTableViewCell.m */,
+				9EE1FDA71E45AB6F00DE9B42 /* AddAuthPicturesCell.h */,
+				9EE1FDA81E45AB6F00DE9B42 /* AddAuthPicturesCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1263,17 +1280,18 @@
 				9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */,
 				9E3EA05B1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.h */,
 				9E3EA05C1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.m */,
-				9E3EA0771E3702CC00CA1CFA /* NotesViewController.h */,
-				9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */,
+				9E3EA0671E35FDED00CA1CFA /* 余额 */,
+				9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */,
+				9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */,
+				9EE1FD971E45740A00DE9B42 /* 认证 */,
 				9E0D2B1A1E448C8000226A46 /* MyPartyViewController.h */,
 				9E0D2B1B1E448C8000226A46 /* MyPartyViewController.m */,
 				9E0D2B111E44848800226A46 /* MyMiaoQuestionsViewController.h */,
 				9E0D2B121E44848800226A46 /* MyMiaoQuestionsViewController.m */,
-				9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */,
-				9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */,
+				9E3EA0771E3702CC00CA1CFA /* NotesViewController.h */,
+				9E3EA0781E3702CC00CA1CFA /* NotesViewController.m */,
 				9E3EA0891E37419200CA1CFA /* ExperienceViewController.h */,
 				9E3EA08A1E37419200CA1CFA /* ExperienceViewController.m */,
-				9E3EA0671E35FDED00CA1CFA /* 余额 */,
 				9EA7401B1E26196C002278F5 /* FeedBackViewController.h */,
 				9EA7401C1E26196C002278F5 /* FeedBackViewController.m */,
 				9EA7401E1E261C3F002278F5 /* FourSettingViewController.h */,
@@ -1325,6 +1343,8 @@
 				9E3EA0871E3737C200CA1CFA /* CollectionModel.m */,
 				9E3EA08F1E3741B200CA1CFA /* ExperienceModel.h */,
 				9E3EA0901E3741B200CA1CFA /* ExperienceModel.m */,
+				9EE1FDA41E45A9BC00DE9B42 /* AddAuthDataModel.h */,
+				9EE1FDA51E45A9BC00DE9B42 /* AddAuthDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1378,6 +1398,19 @@
 				9ECB719E1E0946E700A68CD6 /* icon_wx_friend@3x.png */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		9EE1FD971E45740A00DE9B42 /* 认证 */ = {
+			isa = PBXGroup;
+			children = (
+				9EE1FD981E45748100DE9B42 /* AuthenticationViewController.h */,
+				9EE1FD991E45748100DE9B42 /* AuthenticationViewController.m */,
+				9EE1FD9B1E457FC800DE9B42 /* PersonalAuthViewController.h */,
+				9EE1FD9C1E457FC800DE9B42 /* PersonalAuthViewController.m */,
+				9EE1FD9E1E457FE100DE9B42 /* CompanyAuthViewController.h */,
+				9EE1FD9F1E457FE100DE9B42 /* CompanyAuthViewController.m */,
+			);
+			name = "认证";
 			sourceTree = "<group>";
 		};
 		9EFAD5EE1DFAA114009C2324 /* View */ = {
@@ -1654,6 +1687,7 @@
 				9E2270E41E28A801001A9A67 /* AddPicturesCell.m in Sources */,
 				9E3EA0701E360A0400CA1CFA /* WithDrawRecordViewController.m in Sources */,
 				9E17A7E91E344FCB008EE395 /* PersonalSegViewController.m in Sources */,
+				9EE1FD9A1E45748100DE9B42 /* AuthenticationViewController.m in Sources */,
 				9E2270CE1E28745B001A9A67 /* OneJoinPartyViewController.m in Sources */,
 				9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */,
 				9E3EA06D1E3606EE00CA1CFA /* WithDrawInfoViewController.m in Sources */,
@@ -1669,6 +1703,7 @@
 				9E2270FB1E28CD2A001A9A67 /* UILabel+Common.m in Sources */,
 				9E813CFD1E110D2B004292E7 /* OneMiaoQuestionSquareTableViewCell.m in Sources */,
 				9E2270F61E28CA29001A9A67 /* MapViewController.m in Sources */,
+				9EE1FDA01E457FE100DE9B42 /* CompanyAuthViewController.m in Sources */,
 				9E2270CF1E28745B001A9A67 /* OneMiaoQuestionSquareViewController.m in Sources */,
 				9E1B70AC1E1C9D1100600777 /* ZXRegisterViewController.m in Sources */,
 				9E0DB3E91E2A0B1F005062E4 /* PartyDetailInfoModel.m in Sources */,
@@ -1707,6 +1742,7 @@
 				9EFAD60B1DFAB2D6009C2324 /* UIView+Common.m in Sources */,
 				9E813CEE1E10C16C004292E7 /* OneCasesShowModel.m in Sources */,
 				9E6F17671E2F0F91005887E7 /* UnderstandingTitleTableViewCell.m in Sources */,
+				9EE1FD9D1E457FC800DE9B42 /* PersonalAuthViewController.m in Sources */,
 				9EFAD60C1DFAB2D6009C2324 /* UIView+Frame.m in Sources */,
 				9E0DB3EF1E2A253B005062E4 /* PartyInfoOrganizerTableViewCell.m in Sources */,
 				9E1FFD871E3218B2004C6041 /* SystemNoticeTableViewCell.m in Sources */,
@@ -1773,8 +1809,10 @@
 				9EC6D50E1DFFE91F00F63C11 /* OneJoinMiaoCircleTableViewCell.m in Sources */,
 				9E3EA07C1E37034D00CA1CFA /* NotesTableViewCell.m in Sources */,
 				9E2FD4A51E2E034A00A08543 /* MiaoCircleViewController.m in Sources */,
+				9EE1FDA91E45AB6F00DE9B42 /* AddAuthPicturesCell.m in Sources */,
 				9E3EA08E1E3741A400CA1CFA /* ExperienceTableViewCell.m in Sources */,
 				9E2271051E28D744001A9A67 /* AddPartyDataModel.m in Sources */,
+				9EE1FDA61E45A9BC00DE9B42 /* AddAuthDataModel.m in Sources */,
 				9E0DB3E31E2A01F5005062E4 /* PartyDetailInfoViewController.m in Sources */,
 				9E54587D1DDD8408002CA99D /* ThreeViewController.m in Sources */,
 				9E3EA0661E35F8AE00CA1CFA /* BalanceModel.m in Sources */,

@@ -30,7 +30,7 @@
 -(void)setupView{
 
     NSArray *btnIamge = [NSArray arrayWithObjects:@"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2",nil];
-    NSArray *btnNames = [NSArray arrayWithObjects:@"收藏", @"认证", @"活动", @"问题", @"帖子", @"心得",nil];
+    NSArray *btnNames = [NSArray arrayWithObjects:@"收藏", @"认证", @"活动", @"喵问", @"帖子", @"心得",nil];
     
     
     //定义总列数、每个九宫格的宽高
