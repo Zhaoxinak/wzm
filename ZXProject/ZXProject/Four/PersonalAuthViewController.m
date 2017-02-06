@@ -22,14 +22,16 @@
 
 //cell数据源
 @property (nonatomic, strong) NSArray *dataArray0;
+//cell数据源
+@property (nonatomic, strong) NSArray *dataArray1;
 //修改中的model
 @property (nonatomic, strong) AddPartyCellModel *model;
 //添加数据模型
 @property (nonatomic, strong) AddAuthDataModel *dataModel;
 //上传图片数组
 @property (nonatomic, strong) NSMutableArray *picArray;
-//营业执照
-@property (nonatomic, strong) UIImage *picImage1;
+//记录点击图片的index
+@property (nonatomic, assign) NSInteger picIndex;
 
 @end
 
@@ -131,8 +133,23 @@
     phoneCell.fullScreenSeperateLine = YES;
     phoneCell.selectType = AddPartyCellTypePhone;
     
+    
+    
+    AddPictureModel *frontPic = [[AddPictureModel alloc]init];
+    frontPic.desString = @"身份证正面";
+    
+    AddPictureModel *backPic = [[AddPictureModel alloc]init];
+    backPic.desString = @"身份证背面";
+    
+    AddPictureModel *handPic = [[AddPictureModel alloc]init];
+    handPic.desString = @"手持身份证";
+    
+    AddPictureModel *companyPic = [[AddPictureModel alloc]init];
+    companyPic.desString = @"公司盖章证明";
+    
+    
     _dataArray0 = @[typeCell,exJobCell,nowJobCell,companyCell,managerCell,phoneCell];
-
+    _dataArray1 = @[frontPic,backPic,handPic,companyPic];
     
 }
 
@@ -290,11 +307,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (image) {
-       /* AddPictureModel *picModel = [[AddPictureModel alloc] init];
-        picModel.addImage = image;*/
+        AddPictureModel *picModel = _dataArray1[_picIndex];
+        picModel.addImage = image;
         [picker dismissViewControllerAnimated:YES completion:^{
-            //[_picArray addObjectsFromArray:@[picModel]];
-            _picImage1 = image;
+            
             [self.tableView reloadData];
             
             
@@ -312,18 +328,14 @@
 }
 
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didSelectAssets:(NSArray *)assets {
-    NSMutableArray *selectImage = [[NSMutableArray alloc] init];
-   
-    for (ALAsset *asset in assets) {
-        // 从asset中获得图片
-        UIImage *result = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
-        /*AddPictureModel *picModel = [[AddPictureModel alloc] init];
-        picModel.addImage = result;*/
-        [selectImage addObject:result];
-    }
+    
+    // 从asset中获得图片
+    ALAsset *asset = assets[0];
+    UIImage *result = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
+    AddPictureModel *picModel = _dataArray1[_picIndex];
+    picModel.addImage = result;
     
     [imagePickerController dismissViewControllerAnimated:YES completion:^{
-        _picImage1 = selectImage[0];
         [self.tableView reloadData];
     }];
 }
@@ -337,7 +349,7 @@
     if (section == 0) {
         return _dataArray0.count;
     }else{
-        return 1;
+        return _dataArray1.count;
     }
     
 }
@@ -380,8 +392,10 @@
             cell = [[AddAuthPicturesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddAuthPicturesCell"];
             cell.delegate = self;
         }
-        [cell setEditing:NO animated:YES];
-        [cell setPicImage:_picImage1 setTip:@"营业执照"];
+       
+        AddPictureModel *model = _dataArray1[indexPath.row];
+        [cell setPicModel:model index:indexPath.row];
+        
         return cell;
         
     }
@@ -422,6 +436,7 @@
 
 #pragma mark - PLAddPicturesCellDelegate
 - (void)addButtonClick:(UIButton *)sender inCell:(AddAuthPicturesCell *)cell {
+    _picIndex = sender.tag;
     [self selectPhotoFromSource];
     
 }
@@ -429,7 +444,9 @@
 - (void)delePicClick:(UIButton *)sender inCell:(AddAuthPicturesCell *)cell {
     
     NSLog(@"%ld",(long)sender.tag);
-    _picImage1 = nil;
+    AddPictureModel *model = _dataArray1[sender.tag-100];
+    model.addImage = nil;
+    
     [self.tableView reloadData];
     
 }

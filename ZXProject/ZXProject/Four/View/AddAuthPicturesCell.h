@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddPictureModel.h"
 
 @class AddAuthPicturesCell;
 @protocol AddAuthPicturesCellCellDelegate <NSObject>
@@ -21,7 +22,7 @@
 
 
 //cell高度
-#define AddAuthPicturesCell_Height kScreen_Width/2
+#define AddAuthPicturesCell_Height kScreen_Width/3*2
 
 @interface AddAuthPicturesCell : UITableViewCell
 {
@@ -31,8 +32,5 @@
 
 @property (nonatomic, weak) id<AddAuthPicturesCellCellDelegate> delegate;
 
-@property (nonatomic, strong) UIImage *picImage;
-@property (nonatomic, copy) NSString *tipContent;
-
-- (void)setPicImage:(UIImage *)picImage setTip:(NSString *)tipContent;
+- (void)setPicModel:(AddPictureModel *)model index:(NSInteger)index;
 @end

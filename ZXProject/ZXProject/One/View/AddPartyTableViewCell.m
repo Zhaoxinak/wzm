@@ -30,11 +30,11 @@
 
 #pragma mark - setup method
 - (void)setupViews {
-    _starImage = [[UIImageView alloc] initWithFrame:CGRectMake(13, 20, 8, 8)];
+    _starImage = [[UIImageView alloc] initWithFrame:CGRectMake(0*WIDTH_NIT, 20*WIDTH_NIT, 8*WIDTH_NIT, 8*WIDTH_NIT)];
     _starImage.image = [UIImage imageNamed:@"star_red"];
     [self.contentView addSubview:_starImage];
     
-    CGSize titleSize = [@"" getWidth:@"活动主题" andFont:[UIFont systemFontOfSize:16]];
+    CGSize titleSize = [@"" getWidth:@"这是五个字" andFont:[UIFont systemFontOfSize:16]];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_starImage.right + 3, 14, titleSize.width + 3, 20)];
     _titleLabel.textAlignment = NSTextAlignmentLeft;
     _titleLabel.font = [UIFont systemFontOfSize:16];

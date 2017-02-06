@@ -8,11 +8,9 @@
 
 #import "AddAuthPicturesCell.h"
 #import "CommonHeader.h"
-#import "AddPictureModel.h"
 
 
-
-static NSInteger kAddButtonTag = 9999;
+//static NSInteger kAddButtonTag = 9999;
 
 @interface AddAuthPicturesCell()
 
@@ -41,43 +39,53 @@ static NSInteger kAddButtonTag = 9999;
 #pragma mark - setup method
 - (void)setupViews {
     [self setupTitleLabel];
-    [self setupPictureViewWithPicture:nil];
+    [self setupPictureViewWithPicture:nil index:99999];
 }
 
 - (void)setupTitleLabel {
    
-    addPictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10*WIDTH_NIT, 0, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    addPictureLabel.font = [UIFont systemFontOfSize:14];
+    
+    //分割线
+    UIView *speLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 5*WIDTH_NIT)];
+    speLine.backgroundColor = BGColor;
+    [self.contentView addSubview:speLine];
+    
+    
+    addPictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10*WIDTH_NIT, speLine.bottom + 5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    addPictureLabel.font = [UIFont systemFontOfSize:16];
     addPictureLabel.textColor = ThreeTextColor;
     addPictureLabel.text = @"";
     [self.contentView addSubview:addPictureLabel];
     
     //分割线
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, addPictureLabel.bottom, kScreen_Width-20*WIDTH_NIT, 1)];
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, addPictureLabel.bottom+2*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 1)];
     line.backgroundColor = BGColor;
     [self.contentView addSubview:line];
 }
 
-- (void)setupPictureViewWithPicture:(UIImage *)picImage{
+- (void)setupPictureViewWithPicture:(AddPictureModel *)model index:(NSInteger)index{
 
     AddPictureModel *addModel = [[AddPictureModel alloc] init];
     
-    if (!picImage) {
+    if (!model.addImage) {
         addModel.addImage = [UIImage imageNamed:@"photo_add"];
         addModel.modelType = AddPictureTypeAddButton;
         
+    }else{
+        addModel.addImage = model.addImage;
+        addModel.modelType = AddPictureTypePicture;
     }
     
     AddPictureModel *picModel = addModel;
-    UIButton *addImageView = [self setupImageViewWithModel:picModel];
-    addImageView.center = self.center;
-    addImageView.top = addPictureLabel.bottom + 10*WIDTH_NIT;
+    UIButton *addImageView = [self setupImageViewWithModel:picModel index:index];
+    addImageView.centerX = kScreen_Width/2;
+    addImageView.top = addPictureLabel.bottom + 20*WIDTH_NIT;
     
     [self.contentView addSubview:addImageView];
 }
 
 
-- (UIButton *)setupImageViewWithModel:(AddPictureModel *)model{
+- (UIButton *)setupImageViewWithModel:(AddPictureModel *)model index:(NSInteger)index{
     
     CGFloat picWidth = kScreen_Width/3*2;
     CGFloat picHeight = kScreen_Width/9*4;
@@ -85,14 +93,16 @@ static NSInteger kAddButtonTag = 9999;
     imageView.image = model.addImage;
     
     UIButton *imageButton = [[UIButton alloc] initWithFrame:imageView.bounds];
+    imageButton.tag = index;
     [imageButton addTarget:self action:@selector(imageButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     imageView.userInteractionEnabled = NO;
     [imageButton addSubview:imageView];
     if (model.modelType == AddPictureTypeAddButton) {
-        imageButton.tag = kAddButtonTag;
+//        imageButton.tag = kAddButtonTag;
     }else {
         
         UIButton *deleBtn = [[UIButton alloc]initWithFrame:CGRectMake(imageButton.width-20, 0, 20, 20)];
+        deleBtn.tag = index+100;
         deleBtn.layer.cornerRadius = 10;
         [deleBtn setBackgroundImage:[UIImage imageNamed:@"pic_delete"] forState:UIControlStateNormal];
         [deleBtn addTarget:self action:@selector(imageDelete:) forControlEvents:UIControlEventTouchUpInside];
@@ -116,11 +126,11 @@ static NSInteger kAddButtonTag = 9999;
 
 #pragma mark - action
 - (void)imageButtonClick:(UIButton *)sender {
-    if (sender.tag == kAddButtonTag) {
+//    if (sender.tag == kAddButtonTag) {
         if ([_delegate respondsToSelector:@selector(addButtonClick:inCell:)]) {
             [_delegate addButtonClick:sender inCell:self];
         }
-    }
+//    }
 }
 
 #pragma mark - action
@@ -134,11 +144,10 @@ static NSInteger kAddButtonTag = 9999;
 
 
 #pragma  mark - setter
-- (void)setPicImage:(UIImage *)picImage setTip:(NSString *)tipContent{
+- (void)setPicModel:(AddPictureModel *)model index:(NSInteger)index{
     [self clearAllImageViews];
-    _picImage = picImage;
-    addPictureLabel.text = tipContent;
-    [self setupPictureViewWithPicture:_picImage];
+    addPictureLabel.text = model.desString;
+    [self setupPictureViewWithPicture:model index:index];
 }
 
 
