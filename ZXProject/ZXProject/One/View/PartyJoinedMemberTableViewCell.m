@@ -62,7 +62,7 @@
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
         btn.clipsToBounds = YES;
-        btn.titleLabel.font = FourFont;
+        btn.titleLabel.font = Font13;
         btn.titleColor = OneTextColor;
         btn.title = [NSString stringWithFormat:@"头像%d", index];
         [btn setImage:btnImages[index]];

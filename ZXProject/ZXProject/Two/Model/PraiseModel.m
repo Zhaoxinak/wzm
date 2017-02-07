@@ -42,7 +42,7 @@
     //标题
     NSString *comment = @"赞了这篇文章";
     if (comment.length >0) {
-        CGSize contentSize = [self sizeWithString:comment font:ThreeFont maxSize:CGSizeMake(kScreen_Width-20*WIDTH_NIT, MAXFLOAT)];
+        CGSize contentSize = [self sizeWithString:comment font:Font13 maxSize:CGSizeMake(kScreen_Width-20*WIDTH_NIT, MAXFLOAT)];
         
         self.titleNameLabelFrame = CGRectMake(10*WIDTH_NIT, CGRectGetMaxY(self.timeLabelFrame) +10*WIDTH_NIT, contentSize.width, contentSize.height);
     }else{

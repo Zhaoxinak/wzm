@@ -22,7 +22,7 @@
         self.image = image;
         self.title = title;
         self.titleColor = OneTextColor;
-        self.titleFont = TwoFont;
+        self.titleFont = Font13;
     }
     return self;
 }
@@ -61,7 +61,7 @@
     
     self.itemTitleLabel = [[UILabel alloc] init];
     self.itemTitleLabel.textAlignment = NSTextAlignmentCenter;
-    self.itemTitleLabel.font = TwoFont;
+    self.itemTitleLabel.font = Font13;
     self.itemTitleLabel.textColor = OneTextColor;
     [self.contentView addSubview:self.itemTitleLabel];
   

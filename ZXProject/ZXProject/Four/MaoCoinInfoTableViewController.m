@@ -117,7 +117,7 @@
     //猫币数量
     maoCoinNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     maoCoinNum.textColor = OneTextColor;
-    maoCoinNum.font = ThreeFont;
+    maoCoinNum.font = Font13;
     maoCoinNum.text = @"450枚";
     [maoCoinNum sizeToFit];
     maoCoinNum.centerX = headerImgView.centerX;

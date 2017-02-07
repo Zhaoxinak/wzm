@@ -44,7 +44,7 @@
     
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = ThreeTextColor;
     name.text = @"标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -53,7 +53,7 @@
     //内容
     subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT, 40*WIDTH_NIT)];
     subName.numberOfLines = 2;
-    subName.font = TwoFont;
+    subName.font = Font13;
     subName.textColor = FiveTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
@@ -62,7 +62,7 @@
     allowName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width- 80*WIDTH_NIT, 0, 70*WIDTH_NIT, 20*WIDTH_NIT)];
     allowName.backgroundColor = [UIColor orangeColor];
     allowName.textAlignment = NSTextAlignmentCenter;
-    allowName.font = TwoFont;
+    allowName.font = Font13;
     allowName.textColor = FiveTextColor;
     allowName.text = @"仅工程师";
     [self addSubview:allowName];
@@ -71,7 +71,7 @@
     //加入按钮
     joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, OneJoinMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
-    joinBtn.titleLabel.font = TwoFont;
+    joinBtn.titleLabel.font = Font13;
     [joinBtn setTitleColor:FourTextColor];
     joinBtn.layer.borderWidth = 1;
     joinBtn.layer.borderColor = (FourTextColor).CGColor;

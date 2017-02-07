@@ -106,12 +106,12 @@
     [self.view addSubview:_shareView];
     
     UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 16)];
-    shareLabel.font = TwoFont;
+    shareLabel.font = Font13;
     shareLabel.text = @"分享";
     [_shareView addSubview:shareLabel];
     
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(kScreen_Width - 50, 10, 40, 16)];
-    cancelButton.titleLabel.font = TwoFont;
+    cancelButton.titleLabel.font = Font13;
     [cancelButton setTitle:@"取消"];
     [cancelButton setTitleColor:[UIColor lightGrayColor]];
     [cancelButton addTarget:self action:@selector(hideSelf)];

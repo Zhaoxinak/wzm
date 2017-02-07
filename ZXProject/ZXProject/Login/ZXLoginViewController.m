@@ -68,7 +68,7 @@
     [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [loginBtn setTitleColor:RGBColor(255, 255, 255, 1) forState:UIControlStateNormal];
     [loginBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
-    loginBtn.titleLabel.font = TwoFont;
+    loginBtn.titleLabel.font = Font13;
     loginBtn.layer.cornerRadius = 4.0;
     loginBtn.layer.masksToBounds = YES;
     [loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
@@ -79,7 +79,7 @@
     registerBtn.frame = CGRectMake(kScreenWidth/2-120*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
     [registerBtn setTitle:@"注册账号" forState:UIControlStateNormal];
     [registerBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    registerBtn.titleLabel.font = TwoFont;
+    registerBtn.titleLabel.font = Font13;
     registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [registerBtn addTarget:self action:@selector(registerAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registerBtn];
@@ -89,7 +89,7 @@
     forgetPwBtn.frame = CGRectMake(kScreenWidth/2+20*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
     [forgetPwBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
     [forgetPwBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    forgetPwBtn.titleLabel.font = TwoFont;
+    forgetPwBtn.titleLabel.font = Font13;
     forgetPwBtn.titleLabel.textAlignment = NSTextAlignmentRight;
     [forgetPwBtn addTarget:self action:@selector(forgetPassWordAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:forgetPwBtn];

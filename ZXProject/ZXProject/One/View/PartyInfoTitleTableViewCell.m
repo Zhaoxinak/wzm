@@ -33,7 +33,7 @@
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 50*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = ThreeFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -41,7 +41,7 @@
     
     //内容
     time = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width/2-10*WIDTH_NIT, 30*WIDTH_NIT)];
-    time.font = FourFont;
+    time.font = Font13;
     time.textColor = TwoTextColor;
     time.text = @"时间时间时间时间时间时间时间时间时间";
     [self addSubview:time];
@@ -52,7 +52,7 @@
     [scanBtn setTitle:@"0"];
     [scanBtn setImage:@"scan"];
     [scanBtn setTitleColor:ThreeTextColor];
-    scanBtn.titleLabel.font = FiveFont;
+    scanBtn.titleLabel.font = Font13;
     [self addSubview:scanBtn];
     
     //赞
@@ -60,7 +60,7 @@
     [zanBtn setTitle:@"0"];
     [zanBtn setImage:@"zan"];
     [zanBtn setTitleColor:ThreeTextColor];
-    zanBtn.titleLabel.font = FiveFont;
+    zanBtn.titleLabel.font = Font13;
     [self addSubview:zanBtn];
     
     

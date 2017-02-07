@@ -35,7 +35,7 @@
    
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = ThreeFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -43,14 +43,14 @@
     
     //内容
     subName = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    subName.font = FourFont;
+    subName.font = Font13;
     subName.textColor = TwoTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
     
     //时间
     time = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, subName.bottom+5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    time.font = FourFont;
+    time.font = Font13;
     time.textColor = TwoTextColor;
     time.text = @"20分钟前";
     [self addSubview:time];

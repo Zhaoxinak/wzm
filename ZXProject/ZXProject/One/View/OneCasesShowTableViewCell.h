@@ -10,7 +10,7 @@
 #import "OneCasesShowModel.h"
 
 //cell高度
-#define OneCasesShowCell_Height kScreen_Width/3
+#define OneCasesShowCell_Height 120*WIDTH_NIT
 
 @interface OneCasesShowTableViewCell : UITableViewCell
 {
@@ -20,7 +20,8 @@
     UILabel *name; //标题
     UIButton *scanBtn; //浏览者
     UIButton *zanBtn; //赞
-    UILabel *features; //特征
+    UILabel *subName; //标签1
+    UILabel *lessName; //标签2
 }
 
 @property (nonatomic, strong) OneCasesShowModel *model; //模型

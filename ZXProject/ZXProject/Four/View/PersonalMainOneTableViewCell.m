@@ -20,12 +20,12 @@
     
     CGSize titleSize = [title boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
                                                options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{NSFontAttributeName:TwoFont}
+                                            attributes:@{NSFontAttributeName:Font13}
                                                context:nil].size;
    
     CGSize subTitleSize = [subTitle boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                      attributes:@{NSFontAttributeName:TwoFont}
+                                      attributes:@{NSFontAttributeName:Font13}
                                          context:nil].size;
     
     
@@ -95,14 +95,14 @@
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = OneTextColor;
-    _titleLabel.font = TwoFont;
+    _titleLabel.font = Font13;
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
   
     _detailLabel = [[UILabel alloc] init];
     _detailLabel.textColor = TwoTextColor;
-    _detailLabel.font = TwoFont;
+    _detailLabel.font = Font13;
     _detailLabel.numberOfLines = 0;
     [self.contentView addSubview:_detailLabel];
     

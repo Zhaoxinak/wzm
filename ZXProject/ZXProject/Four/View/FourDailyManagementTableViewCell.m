@@ -52,7 +52,7 @@
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
-        btn.titleLabel.font = ThreeFont;
+        btn.titleLabel.font = Font13;
         btn.titleColor = OneTextColor;
         btn.title = btnNames[index];
         btn.image = btnIamge[index];

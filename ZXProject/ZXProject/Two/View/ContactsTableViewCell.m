@@ -43,14 +43,14 @@
     //用户名
     userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 15*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = ThreeFont;
+    userNameLabel.font = Font13;
     userNameLabel.text = @"水冰月";
     [self addSubview:userNameLabel];
     
     //等级
     levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 15*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
     levelLabel.textColor = OneTextColor;
-    levelLabel.font = ThreeFont;
+    levelLabel.font = Font13;
     levelLabel.text = @"12";
     [self addSubview:levelLabel];
     

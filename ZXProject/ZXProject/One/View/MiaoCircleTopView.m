@@ -65,14 +65,14 @@
     
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 0*WIDTH_NIT, (kScreen_Width-avatarView.right)/3*2-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = ThreeTextColor;
     name.text = @"标题标题标题标题标题标题标题标题";
     [topView addSubview:name];
 
     //内容
     subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+0*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT, 20*WIDTH_NIT)];
-    subName.font = ThreeFont;
+    subName.font = Font13;
     subName.textColor = FiveTextColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [topView addSubview:subName];
@@ -80,14 +80,14 @@
 
     //成员数量
     memberNum = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, subName.bottom+0*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
-    memberNum.font = FourFont;
+    memberNum.font = Font13;
     memberNum.textColor = FiveTextColor;
     memberNum.text = @"成员：250w";
     [topView addSubview:memberNum];
     
     //帖子数量
     subName = [[UILabel alloc]initWithFrame:CGRectMake(memberNum.right+10*WIDTH_NIT, subName.bottom+0*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
-    subName.font = FourFont;
+    subName.font = Font13;
     subName.textColor = FiveTextColor;
     subName.text = @"帖子：23w";
     [topView addSubview:subName];
@@ -96,7 +96,7 @@
     //加入按钮
     joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(topView.width-65*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
-    joinBtn.titleLabel.font = TwoFont;
+    joinBtn.titleLabel.font = Font13;
     [joinBtn setTitleColor:FourTextColor];
     joinBtn.layer.borderWidth = 1;
     joinBtn.layer.borderColor = (FourTextColor).CGColor;

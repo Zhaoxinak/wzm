@@ -146,12 +146,26 @@ return _instance; \
  *  重要颜色
  */
 
+#define MainGoldColor          HexStringColor(@"#cba162", 1)  //#cba162
+#define MainBlackColor         HexStringColor(@"#000000", 1)  //#000000
+#define MainWhiteColor         HexStringColor(@"#ffffff", 1)  //#ffffff
+
+#define NameColor              HexStringColor(@"#1f2021", 1)  //#1f2021
+#define SubNameColor           HexStringColor(@"#222222", 1)  //#222222
+#define LessNameColor          HexStringColor(@"#585858", 1)  //#585858
+#define LightNameColor         HexStringColor(@"#777777", 1)  //#777777
+#define LittleNameColor        HexStringColor(@"#7e7e7e", 1)  //#7e7e7e
+
+#define BGColor                RGBColor(241, 241, 241, 1)
+#define KNavigationBGColor     RGBColor(0, 0, 0, 1)
+#define KNavigationTitleColor  RGBColor(255, 255, 255, 1)
+
+
+
 #define OneColor           RGBColor(40, 205, 251, 1)
 #define TwoColor           RGBColor(40, 205, 251, 1)
 #define ThreeColor         RGBColor(40, 205, 251, 1)
-#define BGColor            RGBColor(241, 241, 241, 1)
-#define KNavigationTitleColor   RGBColor(255, 255, 255, 1)
-#define KNavigationBGColor   RGBColor(0, 0, 0, 1)
+
 
 #define OneTextColor           HexStringColor(@"#000000", 1)  //#000000
 #define TwoTextColor           HexStringColor(@"#222222", 1)  //#222222
@@ -163,15 +177,19 @@ return _instance; \
 /**
  *  nav字体大小
  */
-#define KNavigationFont [UIFont systemFontOfSize:20*WIDTH_NIT]
+#define KNavigationFont [UIFont systemFontOfSize:18*WIDTH_NIT]
 /**
  *  nav字体大小
  */
-#define OneFont   [UIFont systemFontOfSize:17*WIDTH_NIT]
-#define TwoFont   [UIFont systemFontOfSize:15*WIDTH_NIT]
-#define ThreeFont [UIFont systemFontOfSize:13*WIDTH_NIT]
-#define FourFont  [UIFont systemFontOfSize:11*WIDTH_NIT]
-#define FiveFont  [UIFont systemFontOfSize:8*WIDTH_NIT]
+#define Font17   [UIFont systemFontOfSize:17*WIDTH_NIT]
+#define Font16   [UIFont systemFontOfSize:16*WIDTH_NIT]
+#define Font15   [UIFont systemFontOfSize:15*WIDTH_NIT]
+#define Font14   [UIFont systemFontOfSize:14*WIDTH_NIT]
+#define Font13   [UIFont systemFontOfSize:13*WIDTH_NIT]
+#define Font12   [UIFont systemFontOfSize:12*WIDTH_NIT]
+#define Font11   [UIFont systemFontOfSize:11*WIDTH_NIT]
+#define Font9    [UIFont systemFontOfSize:9*WIDTH_NIT]
+#define Font8    [UIFont systemFontOfSize:8*WIDTH_NIT]
 
 /**
  *  提示

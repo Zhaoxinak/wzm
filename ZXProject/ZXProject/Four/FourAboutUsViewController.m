@@ -95,7 +95,7 @@
     versionLabel.text = [NSString stringWithFormat:@"v%@\n五爪猫", app_Version];
     versionLabel.textAlignment = NSTextAlignmentCenter;
     versionLabel.numberOfLines = 2;
-    versionLabel.font = ThreeFont;
+    versionLabel.font = Font13;
     versionLabel.textColor = OneTextColor;
     [headerView addSubview:versionLabel];
     

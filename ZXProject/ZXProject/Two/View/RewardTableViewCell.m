@@ -44,7 +44,7 @@
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, 15*WIDTH_NIT, kScreen_Width-(picView.right+20*WIDTH_NIT)-60*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = ThreeFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -52,14 +52,14 @@
     
     //时间
     time = [[UILabel alloc]initWithFrame:CGRectMake(picView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(picView.right+20*WIDTH_NIT)-60*WIDTH_NIT, 20*WIDTH_NIT)];
-    time.font = FourFont;
+    time.font = Font13;
     time.textColor = TwoTextColor;
     time.text = @"时间";
     [self addSubview:time];
     
     //金钱
     money = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width-70*WIDTH_NIT, RewardCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
-    money.font = OneFont;
+    money.font = Font13;
     money.textColor = TwoTextColor;
     money.text = @"+¥15";
     [self addSubview:money];

@@ -95,14 +95,14 @@
     //金钱
     alipayLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
     alipayLabel.textColor = OneTextColor;
-    alipayLabel.font = ThreeFont;
+    alipayLabel.font = Font13;
     alipayLabel.text = @"提现到  支付宝 249227498@qq.com";
     [topView addSubview:alipayLabel];
     
     //提现金额
     UILabel *tixianLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,alipayLabel.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
     tixianLabel.textColor = OneTextColor;
-    tixianLabel.font = ThreeFont;
+    tixianLabel.font = Font13;
     tixianLabel.text = @"提现金额";
     [topView addSubview:tixianLabel];
     
@@ -117,7 +117,7 @@
     //可提现金额
     balanceLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,moneyField.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
     balanceLabel.textColor = OneTextColor;
-    balanceLabel.font = ThreeFont;
+    balanceLabel.font = Font13;
     balanceLabel.text = @"可提现金额 1212.00元";
     [topView addSubview:balanceLabel];
     
@@ -125,7 +125,7 @@
     UILabel *tipsLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,balanceLabel.bottom + 20*WIDTH_NIT, topView.width-20*WIDTH_NIT, 50*WIDTH_NIT)];
     tipsLabel.numberOfLines = 2;
     tipsLabel.textColor = OneTextColor;
-    tipsLabel.font = ThreeFont;
+    tipsLabel.font = Font13;
     tipsLabel.text = @"提示：最多一次提现2000元，最少一次提现100，一天最多发起三次体现";
     [topView addSubview:tipsLabel];
     

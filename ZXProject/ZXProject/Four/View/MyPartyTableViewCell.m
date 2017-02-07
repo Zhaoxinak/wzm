@@ -52,7 +52,7 @@
     //标题
     name = [[UILabel alloc]init];
     name.numberOfLines = 2;
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -60,7 +60,7 @@
     
     //时间
     time = [[UILabel alloc]init];
-    time.font = ThreeFont;
+    time.font = Font13;
     time.textColor = OneTextColor;
     time.text = @"时间时间";
     [self addSubview:time];
@@ -68,7 +68,7 @@
     
     //我的回复
     address = [[UILabel alloc]init];
-    address.font = ThreeFont;
+    address.font = Font13;
     address.textColor = OneTextColor;
     address.text = @"地址地址地址";
     [self addSubview:address];
@@ -76,14 +76,14 @@
     
     //参加费用
     money = [[UILabel alloc]init];
-    money.font = ThreeFont;
+    money.font = Font13;
     money.textColor = OneTextColor;
     money.text = @"180元／人";
     [self addSubview:money];
     
     //状态
     status = [[UILabel alloc]init];
-    status.font = ThreeFont;
+    status.font = Font13;
     status.textColor = OneTextColor;
     status.text = @"活动进行中";
     [self addSubview:status];

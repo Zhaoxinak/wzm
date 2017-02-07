@@ -35,7 +35,7 @@
     [self addSubview:topLine];
     
     //图片
-    picView = [[UIImageView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, (kScreen_Width-20*WIDTH_NIT)/490*270)];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(23*WIDTH_NIT, 23*WIDTH_NIT, kScreen_Width-46*WIDTH_NIT, (kScreen_Width-46*WIDTH_NIT)/658*360)];
     picView.backgroundColor = [UIColor redColor];
     [self addSubview:picView];
     
@@ -44,35 +44,54 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, OneChosenCasesCell_Height-60*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = ThreeFont;
-    name.textColor = OneTextColor;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(23*WIDTH_NIT, OneChosenCasesCell_Height-60*WIDTH_NIT, kScreen_Width-46*WIDTH_NIT, 20*WIDTH_NIT)];
+    name.font = Font13;
+    name.textColor = NameColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     
-    //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, kScreen_Width/2-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    subName.font = FourFont;
-    subName.textColor = TwoTextColor;
-    subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
+    //标签1
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(23*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
+    subName.font = Font11;
+    subName.textColor = LessNameColor;
+    subName.textAlignment = NSTextAlignmentCenter;
+    subName.layer.cornerRadius = 5;
+    subName.layer.borderWidth = 0.5;
+    subName.layer.borderColor = LessNameColor.CGColor;
+    subName.text = @"音响改装";
     [self addSubview:subName];
     
     
+    //标签2
+    lessName = [[UILabel alloc]initWithFrame:CGRectMake(subName.right + 10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
+    lessName.font = Font11;
+    lessName.textColor = LessNameColor;
+    lessName.textAlignment = NSTextAlignmentCenter;
+    lessName.layer.cornerRadius = 5;
+    lessName.layer.borderWidth = 0.5;
+    lessName.layer.borderColor = LessNameColor.CGColor;
+    lessName.text = @"奥迪Q3";
+    [self addSubview:lessName];
+    
+    
+    
     //浏览者
-    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
-    [scanBtn setTitle:@"0"];
-    [scanBtn setImage:@"scan"];
-    [scanBtn setTitleColor:ThreeTextColor];
-    scanBtn.titleLabel.font = FiveFont;
+    scanBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, OneChosenCasesCell_Height-35*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    [scanBtn setTitle:@"123.3k"];
+    [scanBtn setImage:@"眼睛"];
+    [scanBtn setTitleColor:NameColor];
+    scanBtn.titleLabel.font = Font11;
+    scanBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:scanBtn];
     
     //赞
-    zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneChosenCasesCell_Height-30*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
-    [zanBtn setTitle:@"0"];
-    [zanBtn setImage:@"zan"];
-    [zanBtn setTitleColor:ThreeTextColor];
-    zanBtn.titleLabel.font = FiveFont;
+    zanBtn = [[UIButton alloc]initWithFrame:CGRectMake(scanBtn.right+10*WIDTH_NIT, OneChosenCasesCell_Height-35*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    [zanBtn setTitle:@"123.3k"];
+    [zanBtn setImage:@"赞-"];
+    [zanBtn setTitleColor:NameColor];
+    zanBtn.titleLabel.font = Font11;
+    zanBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:zanBtn];
     
     

@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, MiaoCircleType) {
 
 
 //cell高度
-#define ThreeMiaoCircleCell_Height kScreen_Width/4
+#define ThreeMiaoCircleCell_Height 82*WIDTH_NIT
 
 @interface ThreeMiaoCircleTableViewCell : UITableViewCell{
     

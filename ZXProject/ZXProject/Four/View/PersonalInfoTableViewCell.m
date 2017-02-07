@@ -45,11 +45,11 @@
     [self.contentView addSubview:_headerImgView];
     
     _headerImgView.backgroundColor = [UIColor clearColor];
-    _headerImgView.image = [UIImage imageNamed:@"heard_img"];
+    _headerImgView.image = [UIImage imageNamed:@"touxiang02"];
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = OneTextColor;
-    _titleLabel.font = TwoFont;
+    _titleLabel.font = Font13;
     [self.contentView addSubview:_titleLabel];
     
     _arrowImgView = [[UIImageView alloc] init];
@@ -60,11 +60,11 @@
     _detailLabel.textAlignment = NSTextAlignmentRight;
     _detailLabel.textColor = TwoTextColor;
     _detailLabel.height = 18;
-    _detailLabel.font = TwoFont;
+    _detailLabel.font = Font13;
     [self.contentView addSubview:_detailLabel];
     
     _vipImageView = [UIImageView new];
-    _vipImageView.image = [UIImage imageNamed:@"icon_vip"];
+    _vipImageView.image = [UIImage imageNamed:@"V-huangse"];
     [self.contentView addSubview:_vipImageView];
     
 }

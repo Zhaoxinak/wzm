@@ -53,7 +53,7 @@
     //标题
     name = [[UILabel alloc]init];
     name.numberOfLines = 2;
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -61,7 +61,7 @@
     
     //时间
     time = [[UILabel alloc]init];
-    time.font = ThreeFont;
+    time.font = Font13;
     time.textColor = OneTextColor;
     time.text = @"时间时间";
     [self addSubview:time];
@@ -69,7 +69,7 @@
     
     //我的回复
     myReply = [[UILabel alloc]init];
-    myReply.font = ThreeFont;
+    myReply.font = Font13;
     myReply.textColor = OneTextColor;
     myReply.text = @"我的回复我的回复我的回";
     [self addSubview:myReply];

@@ -35,7 +35,7 @@
 
     alertTitle = [[UILabel alloc]init];
     alertTitle.frame = CGRectMake(20*WIDTH_NIT, 20*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    alertTitle.font = ThreeFont;
+    alertTitle.font = Font13;
     [self.view addSubview:alertTitle];
  
     
@@ -60,7 +60,7 @@
     [sureBtn setTitleColor:RGBColor(255, 255, 255, 1)];
     [sureBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
     [sureBtn addTarget:self action:@selector(confirmAction)];
-    sureBtn.titleLabel.font = TwoFont;
+    sureBtn.titleLabel.font = Font13;
     sureBtn.layer.cornerRadius = 4.0;
     sureBtn.layer.masksToBounds = YES;
     [self.view addSubview:sureBtn];

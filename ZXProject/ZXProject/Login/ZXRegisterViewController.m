@@ -101,7 +101,7 @@
     [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
     [sureBtn setTitleColor:RGBColor(255, 255, 255, 1)];
     [sureBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
-    sureBtn.titleLabel.font = TwoFont;
+    sureBtn.titleLabel.font = Font13;
     sureBtn.layer.cornerRadius = 4.0;
     sureBtn.layer.masksToBounds = YES;
     [sureBtn addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
@@ -120,7 +120,7 @@
         protocolBtn.frame = CGRectMake(20*WIDTH_NIT, inviteView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
         protocolBtn.titleLabel.numberOfLines = 1;
         protocolBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        protocolBtn.titleLabel.font = ThreeFont;
+        protocolBtn.titleLabel.font = Font13;
         [protocolBtn setAttributedTitle:str forState:UIControlStateNormal];
         [protocolBtn setTitleColor:RGBColor(58, 58, 58, 1) forState:UIControlStateNormal];
         [protocolBtn setBackgroundColor:[UIColor clearColor]];

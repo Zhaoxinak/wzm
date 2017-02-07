@@ -30,7 +30,7 @@
     
     //打赏提示
     UILabel *alertTitile = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 20*WIDTH_NIT)];
-    alertTitile.font = ThreeFont;
+    alertTitile.font = Font13;
     alertTitile.textColor = ThreeTextColor;
     alertTitile.textAlignment = NSTextAlignmentCenter;
     alertTitile.text = @"您的打赏，对我们是最大的鼓励";
@@ -50,7 +50,7 @@
     
     //打赏人数
     paynum = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, payBtn.bottom+5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    paynum.font = ThreeFont;
+    paynum.font = Font13;
     paynum.textColor = OneTextColor;
     paynum.textAlignment = NSTextAlignmentCenter;
     paynum.text = @"14人打赏过";
@@ -92,7 +92,7 @@
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
         btn.clipsToBounds = YES;
-        btn.titleLabel.font = FourFont;
+        btn.titleLabel.font = Font13;
         btn.titleColor = OneTextColor;
         btn.title = [NSString stringWithFormat:@"头像%d", index];
         [btn setImage:btnImages[index]];

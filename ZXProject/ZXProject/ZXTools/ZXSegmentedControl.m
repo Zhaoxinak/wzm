@@ -29,14 +29,14 @@
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[NSForegroundColorAttributeName] = OneColor;
-    dic[NSFontAttributeName] = TwoFont;
+    dic[NSFontAttributeName] = Font13;
     dic[NSShadowAttributeName] = [[NSShadow alloc] init];
    
     [appearance setTitleTextAttributes:dic forState:UIControlStateSelected];
     
     NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
     dic1[NSForegroundColorAttributeName] = [UIColor blackColor];
-    dic1[NSFontAttributeName] = TwoFont;
+    dic1[NSFontAttributeName] = Font13;
     dic1[NSShadowAttributeName] = [[NSShadow alloc] init];
     
     [appearance setTitleTextAttributes:dic1 forState:UIControlStateNormal];

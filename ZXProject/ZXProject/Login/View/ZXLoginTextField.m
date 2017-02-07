@@ -24,7 +24,7 @@
 - (void)setupView {
     _leftLabel = [[UILabel alloc] init];
     _leftLabel.textColor = RGBColor(128, 128, 128, 1);
-    _leftLabel.font = OneFont;
+    _leftLabel.font = Font13;
     [self addSubview:_leftLabel];
    
     _leftBtn = [[UIButton alloc] init];
@@ -34,13 +34,13 @@
     
     _inputTextField = [[UITextField alloc] init];
     _inputTextField.textColor = RGBColor(58, 58, 58, 1);
-    _inputTextField.font = OneFont;
+    _inputTextField.font = Font13;
     [self addSubview:_inputTextField];
     
     if (_type == SmsType) {
         _smsCodeBtn = [ZXCountdDownButton buttonWithType:UIButtonTypeCustom];
         [_smsCodeBtn setTitleColor:RGBColor(58, 58, 58, 1)];
-        _smsCodeBtn.titleLabel.font = OneFont;
+        _smsCodeBtn.titleLabel.font = Font13;
         [_smsCodeBtn setTitle:@"获取验证码"];
         [_smsCodeBtn addTarget:self action:@selector(smsAction)];
         [self addSubview:_smsCodeBtn];

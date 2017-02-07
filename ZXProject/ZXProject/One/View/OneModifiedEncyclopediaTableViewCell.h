@@ -11,7 +11,7 @@
 #import "HomePageModel.h"
 
 //cell高度
-#define OneModifiedCell_Height kScreen_Width/750*280
+#define OneModifiedCell_Height 158*WIDTH_NIT
 
 
 @interface OneModifiedEncyclopediaTableViewCell : UITableViewCell{

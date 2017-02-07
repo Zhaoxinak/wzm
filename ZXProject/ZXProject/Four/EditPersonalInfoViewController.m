@@ -110,7 +110,7 @@
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(0, 0, 56, 30);
     [confirmButton setTitleColor:KNavigationTitleColor];
-    confirmButton.titleLabel.font = OneFont;
+    confirmButton.titleLabel.font = Font13;
     [confirmButton setTitle: @"确定" ];
     [confirmButton addTarget:self action:@selector(confirmAction:)];
     UIBarButtonItem *confirmItem = [[UIBarButtonItem alloc] initWithCustomView:confirmButton];

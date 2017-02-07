@@ -92,7 +92,7 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"全部喵圈";
+    self.title = @"喵圈";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
     [self.view insertSubview:self.tableView atIndex:1];
@@ -153,8 +153,8 @@
     headerView.backgroundColor = BGColor;
     //cell的标题
     UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
-    cellTitle.font = TwoFont;
-    cellTitle.textColor = OneTextColor;
+    cellTitle.font = Font14;
+    cellTitle.textColor = NameColor;
     cellTitle.backgroundColor = [UIColor whiteColor];
     [headerView addSubview:cellTitle];
     
@@ -175,7 +175,8 @@
     footerView.backgroundColor = [UIColor whiteColor];
     
     UIButton *moreBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, ThreeCell_Footer_Height)];
-    [moreBtn setTitleColor:OneTextColor];
+    moreBtn.titleLabel.font = Font14;
+    [moreBtn setTitleColor:NameColor];
     [moreBtn addTarget:self action:@selector(footerMoreBtn:)];
     [footerView addSubview:moreBtn];
     

@@ -44,7 +44,7 @@
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -52,7 +52,7 @@
     
     //时间
     timeName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width/3, 20*WIDTH_NIT)];
-    timeName.font = ThreeFont;
+    timeName.font = Font13;
     timeName.textColor = ThreeTextColor;
     timeName.text = @"时间时间时间时间时间时间";
     [self addSubview:timeName];
@@ -60,7 +60,7 @@
     //活动类型
     typeName = [[UILabel alloc]initWithFrame:CGRectMake(picView.width-40*WIDTH_NIT, 0, 40*WIDTH_NIT, 20*WIDTH_NIT)];
     typeName.textAlignment = NSTextAlignmentCenter;
-    typeName.font = TwoFont;
+    typeName.font = Font13;
     typeName.textColor = TwoTextColor;
     typeName.text = @"比赛";
     [picView addSubview:typeName];

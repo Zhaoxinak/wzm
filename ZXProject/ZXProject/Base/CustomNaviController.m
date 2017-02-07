@@ -63,7 +63,7 @@
     [appearance setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     //自定义返回按钮
     
-    UIImage *backButtonImage = [[UIImage imageNamed:@"fanhui"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIImage *backButtonImage = [[UIImage imageNamed:@"返回"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [appearance setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     //    //将返回按钮的文字position设置不在屏幕上显示
     [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
@@ -85,7 +85,7 @@
         UINavigationItem *vcBtnItem= [viewController navigationItem];
         
         UIButton  *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [leftBtn setImage:[UIImage imageNamed:@"fanhui"] forState:UIControlStateNormal];
+        [leftBtn setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
         [leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         leftBtn.frame = CGRectMake(0, 0, 60, 40);
         leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);

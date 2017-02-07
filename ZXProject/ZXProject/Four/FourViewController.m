@@ -182,7 +182,7 @@
     
     if (section == 0) {
         UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
-        cellTitle.font = TwoFont;
+        cellTitle.font = Font13;
         cellTitle.textColor = OneTextColor;
         cellTitle.backgroundColor = [UIColor whiteColor];
         [headerView addSubview:cellTitle];

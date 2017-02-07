@@ -102,7 +102,7 @@
     
     
     //设置tabViewHeader
-    _oneHeadView = [[OneHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470)];
+    _oneHeadView = [[OneHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 235*WIDTH_NIT)];
     //设置tabViewHeader
     _oneHeadView.backgroundColor = BGColor;
     _oneHeadView.delegate = self;
@@ -118,6 +118,10 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    if (section == 1) {
+        return 3;
+    }
     
     return 1;
 }
@@ -139,8 +143,8 @@
     headerView.backgroundColor = BGColor;
     //cell的标题
     UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
-    cellTitle.font = TwoFont;
-    cellTitle.textColor = OneTextColor;
+    cellTitle.font = Font15;
+    cellTitle.textColor = NameColor;
     cellTitle.backgroundColor = [UIColor whiteColor];
     [headerView addSubview:cellTitle];
     //cell的按钮
@@ -148,8 +152,8 @@
     [cellMoreBtn setBackgroundColor:[UIColor whiteColor]];
     [cellMoreBtn setTitle:@"更多>>"];
     cellMoreBtn.titleLabel.textAlignment = NSTextAlignmentRight;
-    [cellMoreBtn setTitleColor:ThreeTextColor];
-    cellMoreBtn.titleLabel.font = FourFont;
+    [cellMoreBtn setTitleColor:NameColor];
+    cellMoreBtn.titleLabel.font = Font11;
     [cellMoreBtn addTarget:self action:@selector(cellMoreTap:)];
     [headerView addSubview:cellMoreBtn];
     
@@ -186,6 +190,7 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[OneModifiedEncyclopediaTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
     }
@@ -199,6 +204,7 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[OneChosenCasesTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
     }

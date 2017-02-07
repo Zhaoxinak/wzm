@@ -94,7 +94,7 @@
 -(void)BtnView{
     
     NSArray *btnNames = [NSArray arrayWithObjects:@"参与活动", @"加入喵圈", @"喵问专家", @"改装心得", @"案例展示", @"改装百科",nil];
-    NSArray *btnIamge = [NSArray arrayWithObjects:@"参与活动", @"加入喵圈", @"喵问专家", @"改装心得", @"案例展示", @"改装百科",nil];
+    NSArray *btnIamges = [NSArray arrayWithObjects:@"-参与活动", @"加入喵圈", @"喵问专家", @"改装心得", @"案例展示", @"改装百科",nil];
     
     //定义总列数、每个九宫格的宽高
     NSInteger totalColumns=3;
@@ -115,9 +115,10 @@
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
-        btn.titleLabel.font = ThreeFont;
-        btn.titleColor = OneTextColor;
+        btn.titleLabel.font = Font13;
+        btn.titleColor = MainBlackColor;
         btn.title = btnNames[index];
+        btn.image = btnIamges[index];
         [btn addTarget:self action:@selector(btnAct:)];
         [appView addSubview:btn];
         

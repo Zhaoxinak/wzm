@@ -20,7 +20,7 @@
     //标题
     NSString *comment = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
     if (comment.length >0) {
-        CGSize contentSize = [self sizeWithString:comment font:ThreeFont maxSize:CGSizeMake(kScreen_Width-30*WIDTH_NIT, MAXFLOAT)];
+        CGSize contentSize = [self sizeWithString:comment font:Font13 maxSize:CGSizeMake(kScreen_Width-30*WIDTH_NIT, MAXFLOAT)];
         
         self.titleNameLabelFrame = CGRectMake(15*WIDTH_NIT, 10*WIDTH_NIT, contentSize.width, contentSize.height);
     }else{

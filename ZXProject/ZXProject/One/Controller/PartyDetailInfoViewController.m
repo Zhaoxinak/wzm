@@ -146,7 +146,7 @@
     callHerBtn.backgroundColor = [UIColor whiteColor];
     [callHerBtn setTitle:@"和Ta聊天"];
     [callHerBtn setImage:@"猫狗2"];
-    callHerBtn.titleLabel.font = ThreeFont;
+    callHerBtn.titleLabel.font = Font13;
     callHerBtn.titleColor = OneTextColor;
     [UIButton ImageUptoLabelDown:callHerBtn margin:5*WIDTH_NIT];
     [callHerBtn addTarget:self action:@selector(callHerAct:)];
@@ -157,7 +157,7 @@
     collectBtn.backgroundColor = [UIColor whiteColor];
     [collectBtn setTitle:@"收藏"];
     [collectBtn setImage:@"猫狗2"];
-    collectBtn.titleLabel.font = ThreeFont;
+    collectBtn.titleLabel.font = Font13;
     collectBtn.titleColor = OneTextColor;
     [UIButton ImageUptoLabelDown:collectBtn margin:5*WIDTH_NIT];
     [collectBtn addTarget:self action:@selector(collectBtn:)];
@@ -168,7 +168,7 @@
     joinBtn.backgroundColor = [UIColor whiteColor];
     [joinBtn setTitle:@"我要报名"];
     [joinBtn setImage:@"猫狗2"];
-    joinBtn.titleLabel.font = ThreeFont;
+    joinBtn.titleLabel.font = Font13;
     joinBtn.titleColor = OneTextColor;
 //    [UIButton ImageUptoLabelDown:joinBtn margin:5*WIDTH_NIT];
     [joinBtn addTarget:self action:@selector(joinBtn:)];
@@ -221,7 +221,7 @@
     UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
     //cell的标题
     
-    cellTitle.font = TwoFont;
+    cellTitle.font = Font13;
     cellTitle.textColor = OneTextColor;
     cellTitle.backgroundColor = [UIColor whiteColor];
     
@@ -245,7 +245,7 @@
         [allMemberBtn setTitle:@"所有报名>"];
         allMemberBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         [allMemberBtn setTitleColor:ThreeTextColor];
-        allMemberBtn.titleLabel.font = FourFont;
+        allMemberBtn.titleLabel.font = Font13;
         [allMemberBtn addTarget:self action:@selector(allMemberAct:)];
         [headerView addSubview:allMemberBtn];
 

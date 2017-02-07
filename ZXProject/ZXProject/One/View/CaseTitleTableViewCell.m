@@ -38,14 +38,14 @@
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-10*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
-    name.font = TwoFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     //作者
     timeName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width/3*2-10*WIDTH_NIT, 20*WIDTH_NIT)];
-    timeName.font = ThreeFont;
+    timeName.font = Font13;
     timeName.textColor = OneTextColor;
     timeName.text = @"水冰月";
     [self addSubview:timeName];
@@ -53,7 +53,7 @@
     
     //时间
     timeName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width/3*2, name.bottom+5*WIDTH_NIT, kScreen_Width/3-10*WIDTH_NIT, 20*WIDTH_NIT)];
-    timeName.font = ThreeFont;
+    timeName.font = Font13;
     timeName.textColor = OneTextColor;
     timeName.text = @"时间时间";
     [self addSubview:timeName];

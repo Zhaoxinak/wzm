@@ -44,14 +44,14 @@
     //用户名
     userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = ThreeFont;
+    userNameLabel.font = Font13;
     userNameLabel.text = @"水冰月";
     [self addSubview:userNameLabel];
   
     
     //标题
     name = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom+5*WIDTH_NIT, kScreen_Width/3*2, 20*WIDTH_NIT)];
-    name.font = ThreeFont;
+    name.font = Font13;
     name.textColor = OneTextColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
@@ -59,7 +59,7 @@
     
     //时间
     timeName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width - 70*WIDTH_NIT, 5*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
-    timeName.font = FiveFont;
+    timeName.font = Font13;
     timeName.textColor = OneTextColor;
     timeName.text = @"时间时间时间";
     [self addSubview:timeName];

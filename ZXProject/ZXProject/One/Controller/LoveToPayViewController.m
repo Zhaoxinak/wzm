@@ -103,7 +103,7 @@
     self.userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.headImageView.bottom + 5*WIDTH_NIT, topView.width, 20*WIDTH_NIT)];
     self.userNameLabel.textAlignment = NSTextAlignmentCenter;
     self.userNameLabel.textColor = OneTextColor;
-    self.userNameLabel.font = ThreeFont;
+    self.userNameLabel.font = Font13;
     self.userNameLabel.text = @"水冰月";
     [topView addSubview:self.userNameLabel];
     

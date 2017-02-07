@@ -89,7 +89,7 @@
     //用户名
     userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = ThreeFont;
+    userNameLabel.font = Font13;
     userNameLabel.text = @"水冰月";
     [headBGView addSubview:userNameLabel];
     
@@ -102,7 +102,7 @@
     //等级
     levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(sexImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
     levelLabel.textColor = OneTextColor;
-    levelLabel.font = ThreeFont;
+    levelLabel.font = Font13;
     levelLabel.text = @"12";
     [headBGView addSubview:levelLabel];
     
@@ -112,7 +112,7 @@
     //电话
     phoneLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom + 5*WIDTH_NIT, 150*WIDTH_NIT, 20*WIDTH_NIT)];
     phoneLabel.textColor = OneTextColor;
-    phoneLabel.font = ThreeFont;
+    phoneLabel.font = Font13;
     phoneLabel.text = @"手机号：15683062326";
     [headBGView addSubview:phoneLabel];
     

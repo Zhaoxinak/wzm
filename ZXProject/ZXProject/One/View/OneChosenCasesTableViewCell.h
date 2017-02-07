@@ -11,7 +11,7 @@
 #import "HomePageModel.h"
 
 //cell高度
-#define OneChosenCasesCell_Height kScreen_Width/750*530
+#define OneChosenCasesCell_Height 283*WIDTH_NIT
 
 
 @interface OneChosenCasesTableViewCell : UITableViewCell{
@@ -20,7 +20,8 @@
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
     UILabel *name; //标题
-    UILabel *subName; //内容
+    UILabel *subName; //标签1
+    UILabel *lessName; //标签2
     UIButton *scanBtn; //浏览者
     UIButton *zanBtn; //赞
 }

@@ -35,7 +35,7 @@
     [self addSubview:topLine];
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, ThreeMiaoCircleCell_Height-10*WIDTH_NIT, ThreeMiaoCircleCell_Height-10*WIDTH_NIT)];
+    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
     avatarView.backgroundColor = [UIColor redColor];
     [self addSubview:avatarView];
     
@@ -43,35 +43,35 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 10*WIDTH_NIT, (kScreen_Width-avatarView.right)/3*2-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = TwoFont;
-    name.textColor = ThreeTextColor;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+20*WIDTH_NIT, 10*WIDTH_NIT, (kScreen_Width-avatarView.right)/3*2-40*WIDTH_NIT, 20*WIDTH_NIT)];
+    name.font = Font14;
+    name.textColor = NameColor;
     name.text = @"标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     //观看人数
     scanNum = [[UILabel alloc]initWithFrame:CGRectMake(name.right+10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-name.right-10*WIDTH_NIT, 20*WIDTH_NIT)];
-    scanNum.font = ThreeFont;
-    scanNum.textColor = FourTextColor;
+    scanNum.font = Font13;
+    scanNum.textColor = MainGoldColor;
     scanNum.text = @"今日：110";
     scanNum.hidden = YES;
     [self addSubview:scanNum];
     
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT, 40*WIDTH_NIT)];
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+20*WIDTH_NIT, name.bottom+2*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-90*WIDTH_NIT, 40*WIDTH_NIT)];
     subName.numberOfLines = 2;
-    subName.font = TwoFont;
-    subName.textColor = FiveTextColor;
+    subName.font = Font14;
+    subName.textColor = LightNameColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
     
     //加入按钮
-    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-65*WIDTH_NIT, ThreeMiaoCircleCell_Height/2-15*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width-75*WIDTH_NIT, ThreeMiaoCircleCell_Height/2-0*WIDTH_NIT, 70*WIDTH_NIT, 28*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
-    joinBtn.titleLabel.font = TwoFont;
-    [joinBtn setTitleColor:FourTextColor];
+    joinBtn.titleLabel.font = Font14;
+    [joinBtn setTitleColor:MainGoldColor];
     joinBtn.layer.borderWidth = 1;
-    joinBtn.layer.borderColor = (FourTextColor).CGColor;
+    joinBtn.layer.borderColor = (MainGoldColor).CGColor;
     [joinBtn addTarget:self action:@selector(joinTap:)];
     joinBtn.hidden = YES;
     [self addSubview:joinBtn];

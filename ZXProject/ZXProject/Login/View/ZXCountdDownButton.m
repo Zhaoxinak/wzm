@@ -26,7 +26,7 @@
 
 - (void)setup {
     [self setTitle:@" 获取验证码 " forState:UIControlStateNormal];
-    self.titleLabel.font = FourFont;
+    self.titleLabel.font = Font13;
     self.backgroundColor = [UIColor clearColor];
     self.layer.cornerRadius = 3.0;
     self.clipsToBounds = YES;

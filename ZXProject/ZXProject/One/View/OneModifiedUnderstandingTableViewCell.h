@@ -11,14 +11,16 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define OneModifiedUnderstandCell_Height kScreen_Width/3
+#define OneModifiedUnderstandCell_Height 121*WIDTH_NIT+10*WIDTH_NIT
 
 @interface OneModifiedUnderstandingTableViewCell : UITableViewCell
 {
     UIView *topLine; //顶部分割线
+    UIView *bottomLine; //底部部分割线
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
     UIImageView *headImageView; //头像
+    UIImageView *vipImageView;  //Vip
     UILabel *userNameLabel; //用户名
     UILabel *levelLabel; //等级
     UIImageView *sexImageView; //性别～

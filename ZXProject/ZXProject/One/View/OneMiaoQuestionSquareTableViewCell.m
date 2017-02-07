@@ -39,7 +39,7 @@
     
     self.titleNameLabel = [UILabel new];
     self.titleNameLabel.textColor = OneTextColor;
-    self.titleNameLabel.font = ThreeFont;
+    self.titleNameLabel.font = Font13;
     self.titleNameLabel.numberOfLines = 0;
     
     self.headImageView = [UIImageView new];
@@ -48,11 +48,11 @@
     
     self.userNameLabel = [UILabel new];
     self.userNameLabel.textColor = OneTextColor;
-    self.userNameLabel.font = ThreeFont;
+    self.userNameLabel.font = Font13;
     
     self.levelLabel = [UILabel new];
     self.levelLabel.textColor = OneTextColor;
-    self.levelLabel.font = ThreeFont;
+    self.levelLabel.font = Font13;
     
     self.sexImageView = [UIImageView new];
     self.sexImageView.backgroundColor = [UIColor redColor];
@@ -60,7 +60,7 @@
     
     self.timeLabel = [UILabel new];
     self.timeLabel.textColor = OneTextColor;
-    self.timeLabel.font = ThreeFont;
+    self.timeLabel.font = Font13;
     
     self.commentNum = [UIButton new];
     [self.commentNum setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
@@ -155,7 +155,7 @@
         if (picImages.count > 3 && i == 2) {
             UILabel *countLabel = [UILabel new];
             countLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
-            countLabel.font = TwoFont;
+            countLabel.font = Font13;
             countLabel.textColor = [UIColor whiteColor];
             countLabel.textAlignment = NSTextAlignmentCenter;
             countLabel.frame = CGRectMake(cellimageView.bounds.size.width - 30, cellimageView.bounds.size.height - 30, 30, 30);

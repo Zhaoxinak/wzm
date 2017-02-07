@@ -49,11 +49,11 @@
     
     self.userNameLabel = [UILabel new];
     self.userNameLabel.textColor = OneTextColor;
-    self.userNameLabel.font = ThreeFont;
+    self.userNameLabel.font = Font13;
     
     self.levelLabel = [UILabel new];
     self.levelLabel.textColor = OneTextColor;
-    self.levelLabel.font = ThreeFont;
+    self.levelLabel.font = Font13;
     
     self.sexImageView = [UIImageView new];
     self.sexImageView.backgroundColor = [UIColor redColor];
@@ -61,7 +61,7 @@
     
     self.timeLabel = [UILabel new];
     self.timeLabel.textColor = OneTextColor;
-    self.timeLabel.font = ThreeFont;
+    self.timeLabel.font = Font13;
     
     self.commentBtn = [UIButton new];
     [self.commentBtn setTitle:@"回复"];
@@ -74,7 +74,7 @@
     
     self.titleNameLabel = [UILabel new];
     self.titleNameLabel.textColor = OneTextColor;
-    self.titleNameLabel.font = ThreeFont;
+    self.titleNameLabel.font = Font13;
     self.titleNameLabel.numberOfLines = 0;
     
     self.detailView = [UIView new];

@@ -108,14 +108,14 @@
     //等级
     levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(headerImgView.right + 10*WIDTH_NIT, headerImgView.centerY-10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
     levelLabel.textColor = OneTextColor;
-    levelLabel.font = ThreeFont;
+    levelLabel.font = Font13;
     levelLabel.text = @"12";
     [topView addSubview:levelLabel];
     
     //用户名
     userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = ThreeFont;
+    userNameLabel.font = Font13;
     userNameLabel.text = @"水冰月";
     [userNameLabel sizeToFit];
     userNameLabel.centerX = headerImgView.centerX;
@@ -131,7 +131,7 @@
     //地址
     addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, topView.height-25*WIDTH_NIT, kScreen_Width - 20*WIDTH_NIT, 20*WIDTH_NIT)];
     addressLabel.textColor = OneTextColor;
-    addressLabel.font = ThreeFont;
+    addressLabel.font = Font13;
     addressLabel.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";
     [topView addSubview:addressLabel];
     

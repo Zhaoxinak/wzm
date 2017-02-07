@@ -97,7 +97,7 @@
     //金钱
     moneyNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
     moneyNum.textColor = OneTextColor;
-    moneyNum.font = ThreeFont;
+    moneyNum.font = Font13;
     moneyNum.text = @"¥ 450.11";
     [moneyNum sizeToFit];
     moneyNum.centerX = headerImgView.centerX;
