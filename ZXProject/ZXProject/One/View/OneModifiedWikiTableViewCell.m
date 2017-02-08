@@ -35,7 +35,7 @@
     [self addSubview:topLine];
     
     //图片
-    picView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width-OneModifiedWikiCell_Height, 5*WIDTH_NIT, OneModifiedWikiCell_Height-10*WIDTH_NIT, OneModifiedWikiCell_Height-10*WIDTH_NIT)];
+    picView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width-150*WIDTH_NIT, 7*WIDTH_NIT, 140*WIDTH_NIT, 100*WIDTH_NIT)];
     picView.backgroundColor = [UIColor redColor];
     [self addSubview:picView];
     
@@ -44,28 +44,27 @@
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT)];
+    name = [[UILabel alloc]initWithFrame:CGRectMake(15*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-30*WIDTH_NIT, 40*WIDTH_NIT)];
     name.numberOfLines = 2;
     name.font = Font13;
-    name.textColor = OneTextColor;
+    name.textColor = SubNameColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
-    //时间
-    time = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 20*WIDTH_NIT)];
-    time.font = Font13;
-    time.textColor = OneTextColor;
-    time.text = @"时间时间";
-    [self addSubview:time];
-    
     //内容
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 50*WIDTH_NIT)];
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(15*WIDTH_NIT, name.bottom+0*WIDTH_NIT, kScreen_Width-picView.width-30*WIDTH_NIT, 50*WIDTH_NIT)];
     subName.numberOfLines = 3;
-    subName.font = Font13;
-    subName.textColor = TwoTextColor;
+    subName.font = Font12;
+    subName.textColor = LittleNameColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [self addSubview:subName];
     
+    //时间
+    time = [[UILabel alloc]initWithFrame:CGRectMake(15*WIDTH_NIT, subName.bottom+0*WIDTH_NIT, kScreen_Width-picView.width-30*WIDTH_NIT, 20*WIDTH_NIT)];
+    time.font = Font12;
+    time.textColor = LittleNameColor;
+    time.text = @"30分钟以前";
+    [self addSubview:time];
     
     
 }

@@ -12,7 +12,7 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define PartyJoinedInfoCell_Height 50*WIDTH_NIT
+#define PartyJoinedInfoCell_Height 60*WIDTH_NIT
 
 
 @interface PartyJoinedInfoTableViewCell : UITableViewCell

@@ -10,7 +10,7 @@
 #import "RewardModel.h"
 
 //cell高度
-#define RewardCell_Height kScreen_Width/4
+#define RewardCell_Height 90*WIDTH_NIT
 
 
 @interface RewardTableViewCell : UITableViewCell
@@ -18,6 +18,7 @@
     UIView *topLine; //顶部分割线
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
+    UILabel *typeName; //活动类型
     UILabel *name; //标题
     UILabel *time; //时间
     UILabel *money; //金钱

@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = MainWhiteColor;
     
     self.title = @"登录";
     [self setupView];
@@ -44,31 +45,31 @@
     
     //返回按钮
     UIButton* backActBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backActBtn.frame = CGRectMake(0, 0, 80, 44);
-    [backActBtn setImage:@"fanhui"];
+    backActBtn.frame = CGRectMake(0, 0, 28, 42);
+    [backActBtn setImage:@"返回"];
     [backActBtn addTarget:self action:@selector(backAct)];
     UIBarButtonItem* leftButton = [[UIBarButtonItem alloc] initWithCustomView:backActBtn];
     self.navigationItem.leftBarButtonItem = leftButton;
     
     
     phoneView = [[ZXLoginTextField alloc] initWithType:NormalType];
-    phoneView.frame = CGRectMake(20*WIDTH_NIT, 100*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    phoneView.leftLabel.text = @"  手机号";
+    phoneView.frame = CGRectMake(15*WIDTH_NIT, 20*WIDTH_NIT, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
+    phoneView.leftLabel.text = @"  手机号码";
     [self.view addSubview:phoneView];
     
   
     passwordView = [[ZXLoginTextField alloc] initWithType:PwdType];
-    passwordView.frame = CGRectMake(20*WIDTH_NIT, phoneView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+    passwordView.frame = CGRectMake(15*WIDTH_NIT, phoneView.bottom, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
     passwordView.leftLabel.text = @"  密码";
     [self.view addSubview:passwordView];
 
     
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginBtn.frame = CGRectMake(20*WIDTH_NIT, passwordView.bottom+30*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+    loginBtn.frame = CGRectMake(15*WIDTH_NIT, passwordView.bottom+30*WIDTH_NIT, kScreenWidth-30*WIDTH_NIT, 44*WIDTH_NIT);
     [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-    [loginBtn setTitleColor:RGBColor(255, 255, 255, 1) forState:UIControlStateNormal];
-    [loginBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
-    loginBtn.titleLabel.font = Font13;
+    [loginBtn setTitleColor:MainWhiteColor forState:UIControlStateNormal];
+    [loginBtn setBackgroundColor:MainGoldColor];
+    loginBtn.titleLabel.font = Font18;
     loginBtn.layer.cornerRadius = 4.0;
     loginBtn.layer.masksToBounds = YES;
     [loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
@@ -76,32 +77,50 @@
  
     
     UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    registerBtn.frame = CGRectMake(kScreenWidth/2-120*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
-    [registerBtn setTitle:@"注册账号" forState:UIControlStateNormal];
-    [registerBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    registerBtn.titleLabel.font = Font13;
-    registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    registerBtn.frame = CGRectMake(kScreenWidth/2-90*WIDTH_NIT, loginBtn.bottom+10*WIDTH_NIT, 80*WIDTH_NIT, 20*WIDTH_NIT);
+    [registerBtn setTitle:@"注册新用户" forState:UIControlStateNormal];
+    [registerBtn setTitleColor:NameColor forState:UIControlStateNormal];
+    registerBtn.titleLabel.font = Font11;
+    registerBtn.titleLabel.textAlignment = NSTextAlignmentRight;
     [registerBtn addTarget:self action:@selector(registerAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registerBtn];
     
     
     UIButton *forgetPwBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    forgetPwBtn.frame = CGRectMake(kScreenWidth/2+20*WIDTH_NIT, loginBtn.bottom, 100*WIDTH_NIT, 50*WIDTH_NIT);
-    [forgetPwBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [forgetPwBtn setTitleColor:OneTextColor forState:UIControlStateNormal];
-    forgetPwBtn.titleLabel.font = Font13;
-    forgetPwBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+    forgetPwBtn.frame = CGRectMake(kScreenWidth/2+10*WIDTH_NIT, loginBtn.bottom+10*WIDTH_NIT, 80*WIDTH_NIT, 20*WIDTH_NIT);
+    [forgetPwBtn setTitle:@"忘记密码?" forState:UIControlStateNormal];
+    [forgetPwBtn setTitleColor:NameColor forState:UIControlStateNormal];
+    forgetPwBtn.titleLabel.font = Font11;
+    forgetPwBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
     [forgetPwBtn addTarget:self action:@selector(forgetPassWordAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:forgetPwBtn];
     
     
+    
+    UILabel *speedLogin = [[UILabel alloc]initWithFrame:CGRectMake(20*WIDTH_NIT, kScreen_Height-kScreen_NavHeight-120*WIDTH_NIT, kScreen_Width-40*WIDTH_NIT, 20*WIDTH_NIT)];
+    speedLogin.font = Font11;
+    speedLogin.textColor = NameColor;
+    speedLogin.textAlignment = NSTextAlignmentCenter;
+    speedLogin.text = @"——————————  快捷登录  ——————————";
+    [self.view addSubview:speedLogin];
+    
+    
+    
     UIButton *wechatLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    wechatLoginBtn.frame = CGRectMake(kScreenWidth/3-20*WIDTH_NIT, kScreenHeight-120*WIDTH_NIT, 40*WIDTH_NIT, 40*WIDTH_NIT);
-    wechatLoginBtn.backgroundColor = [UIColor redColor];
-    wechatLoginBtn.layer.cornerRadius = 20*WIDTH_NIT;
+    wechatLoginBtn.frame = CGRectMake(kScreenWidth/3-20*WIDTH_NIT, kScreen_Height-kScreen_NavHeight-80*WIDTH_NIT, 60*WIDTH_NIT, 50*WIDTH_NIT);
+    [wechatLoginBtn setImage:@"weixin"];
+    wechatLoginBtn.layer.cornerRadius = 30*WIDTH_NIT;
     wechatLoginBtn.layer.masksToBounds = YES;
     [wechatLoginBtn addTarget:self action:@selector(weChatLoginAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:wechatLoginBtn];
+    
+    UIButton *qqLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    qqLoginBtn.frame = CGRectMake(kScreenWidth/3*2-20*WIDTH_NIT, kScreen_Height-kScreen_NavHeight-80*WIDTH_NIT, 60*WIDTH_NIT, 50*WIDTH_NIT);
+    [qqLoginBtn setImage:@"weixin"];
+    qqLoginBtn.layer.cornerRadius = 30*WIDTH_NIT;
+    qqLoginBtn.layer.masksToBounds = YES;
+    [qqLoginBtn addTarget:self action:@selector(qqLoginAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:qqLoginBtn];
 
    
 }
@@ -124,7 +143,14 @@
 
 }
 
+
 - (void)weChatLoginAction {
+    
+    [self getUserInfoForPlatform:UMSocialPlatformType_WechatSession];
+}
+
+
+- (void)qqLoginAction {
     
     [self getUserInfoForPlatform:UMSocialPlatformType_WechatSession];
 }

@@ -14,7 +14,7 @@
 /************V************/
 #import "ModifiedWikiTitleTableViewCell.h" //顶部
 #import "ModifiedWikiPayTableViewCell.h" //打赏
-#import "ModifiedWikiAuthorTableViewCell.h" //作者
+//#import "ModifiedWikiAuthorTableViewCell.h" //作者
 /************M************/
 #import "ModifiedWikiInfoModel.h" //
 
@@ -94,13 +94,13 @@
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 4;
+    return 3;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (section == 3) {
+    if (section == 2) {
         return 10;
     }
     
@@ -172,31 +172,31 @@
             [cell setModel:nil];
             return cell;
             
-        }else
+//        }else
+//            
+//            if (indexPath.section == 2)
+//            {
+//                
+//                
+//                NSString *cellIdentifier = [NSString stringWithFormat:@"ModifiedWikiAuthorTableViewCell%ld", (long)indexPath.row];
+//                //首先根据标示去缓存池取
+//                ModifiedWikiAuthorTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+//                //如果缓存池没有取到则重新创建并放到缓存池中
+//                if(!cell){
+//                    cell=[[ModifiedWikiAuthorTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//                    
+//                }
+//                
+//                cell.userId = @"1";
+//                cell.headClickBlock = ^(NSString *userId){
+//                    
+//                    NSLog(@"userId--%@",userId);
+//                    
+//                };
+//                
+//                return cell;
             
-            if (indexPath.section == 2)
-            {
-                
-                
-                NSString *cellIdentifier = [NSString stringWithFormat:@"ModifiedWikiAuthorTableViewCell%ld", (long)indexPath.row];
-                //首先根据标示去缓存池取
-                ModifiedWikiAuthorTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-                //如果缓存池没有取到则重新创建并放到缓存池中
-                if(!cell){
-                    cell=[[ModifiedWikiAuthorTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                    
-                }
-                
-                cell.userId = @"1";
-                cell.headClickBlock = ^(NSString *userId){
-                    
-                    NSLog(@"userId--%@",userId);
-                    
-                };
-                
-                return cell;
-                
             }else{
                 
                 NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
@@ -233,9 +233,9 @@
         return [ModifiedWikiPayTableViewCell caculateModifiedWikiPayCellHeightWithPerson:_modifiedWikiModel];
     }
     
-    if (indexPath.section == 2) {
-        return ModifiedWikiAuthorCell_Height;
-    }
+//    if (indexPath.section == 2) {
+//        return ModifiedWikiAuthorCell_Height;
+//    }
     return 49.f;
     
     
@@ -261,7 +261,6 @@
     
     NSLog(@"打赏人的头像--%ld",(long)tag);
 }
-
 
 
 - (void)didReceiveMemoryWarning {

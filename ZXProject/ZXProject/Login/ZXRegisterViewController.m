@@ -26,7 +26,7 @@
     ZXLoginTextField *phoneView;
     ZXLoginTextField *verifyView;
     ZXLoginTextField *setPwView;
-//    ZXLoginTextField *confirmPwView;
+    ZXLoginTextField *confirmPwView;
     ZXLoginTextField *inviteView;
 }
 
@@ -45,7 +45,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = _registerType == Register ? @"注册" : @"忘记密码";
-    self.view.backgroundColor = RGBColor(238, 238, 238, 1);
+    self.view.backgroundColor = MainWhiteColor;
     [self setupView];
     
     _registerModel = [[ZXRegisterModel alloc] init];
@@ -53,16 +53,24 @@
 
 - (void)setupView {
 
+    //返回按钮
+    UIButton* backActBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backActBtn.frame = CGRectMake(0, 0, 28, 42);
+    [backActBtn setImage:@"返回"];
+    [backActBtn addTarget:self action:@selector(backAct)];
+    UIBarButtonItem* leftButton = [[UIBarButtonItem alloc] initWithCustomView:backActBtn];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
     
     phoneView = [[ZXLoginTextField alloc] initWithType:NormalType];
-    phoneView.frame = CGRectMake(20*WIDTH_NIT, 100*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    phoneView.leftLabel.text = @"  手机号";
+    phoneView.frame = CGRectMake(15*WIDTH_NIT, 20*WIDTH_NIT, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
+    phoneView.leftLabel.text = @"  手机号码";
     phoneView.inputTextField.delegate = self;
     phoneView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:phoneView];
  
     verifyView = [[ZXLoginTextField alloc] initWithType:SmsType];
-    verifyView.frame = CGRectMake(20*WIDTH_NIT, phoneView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+    verifyView.frame = CGRectMake(15*WIDTH_NIT, phoneView.bottom, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
     verifyView.leftLabel.text = @"  验证码";
     verifyView.inputTextField.delegate = self;
     [verifyView.smsCodeBtn addTarget:self action:@selector(verifyAction)];
@@ -71,25 +79,27 @@
   
     
     setPwView = [[ZXLoginTextField alloc] initWithType:PwdType];
-    setPwView.frame = CGRectMake(20*WIDTH_NIT, verifyView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    setPwView.leftLabel.text = @"  密码(最少6位)";
+    setPwView.frame = CGRectMake(15*WIDTH_NIT, verifyView.bottom, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
+    setPwView.leftLabel.text = @"  密码";
     setPwView.inputTextField.secureTextEntry = YES;
     setPwView.inputTextField.delegate = self;
     [self.view addSubview:setPwView];
   
     
-//    confirmPwView = [[ZXLoginTextField alloc] initWithType:NormalType];
-//    confirmPwView.frame = CGRectMake(20*WIDTH_NIT, setPwView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-//    confirmPwView.leftLabel.text = @"  确认密码：";
-//    confirmPwView.inputTextField.secureTextEntry = YES;
-//    confirmPwView.inputTextField.delegate = self;
-//    [self.view addSubview:confirmPwView];
+    confirmPwView = [[ZXLoginTextField alloc] initWithType:PwdType];
+    NSInteger confirmPwViewHeight = _registerType == Register ?  0 : 46*WIDTH_NIT;
+    confirmPwView.hidden = _registerType == Register;
+    confirmPwView.frame = CGRectMake(15*WIDTH_NIT, setPwView.bottom, kScreenWidth-30*WIDTH_NIT, confirmPwViewHeight);
+    confirmPwView.leftLabel.text = @"  确认密码：";
+    confirmPwView.inputTextField.secureTextEntry = YES;
+    confirmPwView.inputTextField.delegate = self;
+    [self.view addSubview:confirmPwView];
   
     
     inviteView = [[ZXLoginTextField alloc] initWithType:NormalType];
-    NSInteger inviteViewHeight = _registerType == Register ? 50*WIDTH_NIT : 0;
+    NSInteger inviteViewHeight = _registerType == Register ? 46*WIDTH_NIT : 0;
     inviteView.hidden = _registerType == ForgetPassWord;
-    inviteView.frame = CGRectMake(20*WIDTH_NIT, setPwView.bottom, kScreenWidth-40*WIDTH_NIT, inviteViewHeight);
+    inviteView.frame = CGRectMake(15*WIDTH_NIT, setPwView.bottom, kScreenWidth-30*WIDTH_NIT, inviteViewHeight);
     inviteView.leftLabel.text = @"  昵称";
     inviteView.inputTextField.delegate = self;
     [self.view addSubview:inviteView];
@@ -97,11 +107,15 @@
     
     
     UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    sureBtn.frame = CGRectMake(20*WIDTH_NIT, inviteView.bottom+50*WIDTH_NIT, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
-    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [sureBtn setTitleColor:RGBColor(255, 255, 255, 1)];
-    [sureBtn setBackgroundColor:RGBColor(58, 58, 58, 1)];
-    sureBtn.titleLabel.font = Font13;
+    NSInteger sureBtnY = _registerType == Register ? inviteView.bottom+35*WIDTH_NIT : confirmPwView.bottom+35*WIDTH_NIT;
+    
+    sureBtn.frame = CGRectMake(15*WIDTH_NIT, sureBtnY, kScreenWidth-30*WIDTH_NIT, 44*WIDTH_NIT);
+    
+    NSString *sureTitle = _registerType == Register ? @"完成注册" : @"确认";
+    [sureBtn setTitle:sureTitle forState:UIControlStateNormal];
+    [sureBtn setTitleColor:MainWhiteColor];
+    [sureBtn setBackgroundColor:MainGoldColor];
+    sureBtn.titleLabel.font = Font18;
     sureBtn.layer.cornerRadius = 4.0;
     sureBtn.layer.masksToBounds = YES;
     [sureBtn addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
@@ -110,23 +124,35 @@
 
     if (_registerType == Register) {
         
-        NSString *titleName = @"注册即代表同意《用户协议》";
+        NSString *titleName = @"点击【完成注册】代表我已阅读并同意《五爪猫用户协议》";
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:titleName];
-        [str addAttribute:NSForegroundColorAttributeName value:RGBColor(58, 58, 58, 1) range:NSMakeRange(0,titleName.length)];
-        [str addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(titleName.length-6,6)];
+        [str addAttribute:NSForegroundColorAttributeName value:NameColor range:NSMakeRange(0,titleName.length)];
+        
         
         //协议
         UIButton* protocolBtn = [[UIButton alloc]init];
-        protocolBtn.frame = CGRectMake(20*WIDTH_NIT, inviteView.bottom, kScreenWidth-40*WIDTH_NIT, 50*WIDTH_NIT);
+        protocolBtn.frame = CGRectMake(15*WIDTH_NIT, sureBtn.bottom, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
         protocolBtn.titleLabel.numberOfLines = 1;
         protocolBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        protocolBtn.titleLabel.font = Font13;
+        protocolBtn.titleLabel.font = Font11;
         [protocolBtn setAttributedTitle:str forState:UIControlStateNormal];
-        [protocolBtn setTitleColor:RGBColor(58, 58, 58, 1) forState:UIControlStateNormal];
+        [protocolBtn setTitleColor:NameColor forState:UIControlStateNormal];
         [protocolBtn setBackgroundColor:[UIColor clearColor]];
         [protocolBtn addTarget:self action:@selector(protocolAct)];
         [self.view addSubview:protocolBtn];
     
+        
+        //已有账户，立即登录
+        UIButton* havedUserBtn = [[UIButton alloc]init];
+        havedUserBtn.frame = CGRectMake(15*WIDTH_NIT, protocolBtn.bottom + 210*WIDTH_NIT, kScreenWidth-30*WIDTH_NIT, 46*WIDTH_NIT);
+        havedUserBtn.titleLabel.numberOfLines = 1;
+        havedUserBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        havedUserBtn.titleLabel.font = Font11;
+        [havedUserBtn setTitle:@"已有账户？立即登录" forState:UIControlStateNormal];
+        [havedUserBtn setTitleColor:NameColor forState:UIControlStateNormal];
+        [havedUserBtn setBackgroundColor:[UIColor clearColor]];
+        [havedUserBtn addTarget:self action:@selector(havedUserAct)];
+        [self.view addSubview:havedUserBtn];
         
     }
 }
@@ -135,6 +161,7 @@
 #pragma  mark --- 用户协议
 -(void)protocolAct{
     
+    NSLog(@"用户协议");
 //    //用户协议
 //    PLXieYiViewController *webView1 = [PLXieYiViewController new];
 //    webView1.title = @"用户协议";
@@ -145,6 +172,13 @@
     
 }
 
+#pragma  mark --- 已有账户，立即登录
+-(void)havedUserAct{
+    
+    NSLog(@"已有账户，立即登录");
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -268,6 +302,11 @@
     }
 
 }
+
+- (void)backAct {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

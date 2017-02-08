@@ -72,7 +72,7 @@
     self.title = @"所有评论";
     
     //标题segmentController
-    self.segItems = @[@"受到打赏", @"打赏他人"];
+    self.segItems = @[@"收到打赏", @"打赏他人"];
     
 //    //标题segmentController
 //    [self.seg setTitle:@"受到打赏" forSegmentAtIndex:0];

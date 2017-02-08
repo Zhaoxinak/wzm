@@ -177,10 +177,12 @@ return _instance; \
 /**
  *  nav字体大小
  */
-#define KNavigationFont [UIFont systemFontOfSize:18*WIDTH_NIT]
+#define KNavigationFont [UIFont systemFontOfSize:22*WIDTH_NIT]
 /**
  *  nav字体大小
  */
+#define Font24   [UIFont systemFontOfSize:24*WIDTH_NIT]
+#define Font18   [UIFont systemFontOfSize:18*WIDTH_NIT]
 #define Font17   [UIFont systemFontOfSize:17*WIDTH_NIT]
 #define Font16   [UIFont systemFontOfSize:16*WIDTH_NIT]
 #define Font15   [UIFont systemFontOfSize:15*WIDTH_NIT]

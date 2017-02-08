@@ -13,7 +13,7 @@
 /************V************/
 #import "CaseTitleTableViewCell.h" //顶部
 #import "CasePayTableViewCell.h" //打赏
-#import "CaseAuthorTableViewCell.h" //作者
+//#import "CaseAuthorTableViewCell.h" //作者
 /************M************/
 #import "CaseInfoModel.h" //
 
@@ -84,6 +84,14 @@
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     [self.view insertSubview:self.tableView atIndex:1];
     
+    //客服按钮
+    UIButton* serviceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    serviceBtn.frame = CGRectMake(0, 0, 38, 38);
+    [serviceBtn setImage:@"发布"];
+    [serviceBtn addTarget:self action:@selector(serviceAct) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:serviceBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     
     
 }
@@ -93,13 +101,13 @@
 #pragma mark - UITableViewDelegate，UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 4;
+    return 3;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (section == 3) {
+    if (section == 2) {
         return 10;
     }
     
@@ -171,31 +179,31 @@
             [cell setModel:nil];
             return cell;
             
-        }else
+//        }else
+//            
+//            if (indexPath.section == 2)
+//            {
+//                
+//                
+//                NSString *cellIdentifier = [NSString stringWithFormat:@"CaseAuthorTableViewCell%ld", (long)indexPath.row];
+//                //首先根据标示去缓存池取
+//                CaseAuthorTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+//                //如果缓存池没有取到则重新创建并放到缓存池中
+//                if(!cell){
+//                    cell=[[CaseAuthorTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//                    
+//                }
+//                
+//                cell.userId = @"1";
+//                cell.headClickBlock = ^(NSString *userId){
+//                    
+//                    NSLog(@"userId--%@",userId);
+//                    
+//                };
+//                
+//                return cell;
             
-            if (indexPath.section == 2)
-            {
-                
-                
-                NSString *cellIdentifier = [NSString stringWithFormat:@"CaseAuthorTableViewCell%ld", (long)indexPath.row];
-                //首先根据标示去缓存池取
-                CaseAuthorTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
-                //如果缓存池没有取到则重新创建并放到缓存池中
-                if(!cell){
-                    cell=[[CaseAuthorTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                    
-                }
-                
-                cell.userId = @"1";
-                cell.headClickBlock = ^(NSString *userId){
-                    
-                    NSLog(@"userId--%@",userId);
-                    
-                };
-                
-                return cell;
-                
             }else{
                 
                 NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
@@ -232,9 +240,9 @@
         return [CasePayTableViewCell caculateCasePayCellHeightWithPerson:_caseModel];
     }
     
-    if (indexPath.section == 2) {
-        return CaseAuthorCell_Height;
-    }
+//    if (indexPath.section == 2) {
+//        return CaseAuthorCell_Height;
+//    }
     return 49.f;
     
     
@@ -261,7 +269,12 @@
     NSLog(@"打赏人的头像--%ld",(long)tag);
 }
 
-
+#pragma mark -侧边栏显示
+-(void)serviceAct{
+    
+    NSLog(@"客服");
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

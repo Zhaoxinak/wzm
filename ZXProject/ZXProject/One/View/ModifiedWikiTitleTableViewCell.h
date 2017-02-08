@@ -11,7 +11,7 @@
 
 @interface ModifiedWikiTitleTableViewCell : UITableViewCell
 {
-    UILabel *userNameLabel; //用户名
+ 
     UILabel *name; //标题
     UILabel *timeName; //时间
     

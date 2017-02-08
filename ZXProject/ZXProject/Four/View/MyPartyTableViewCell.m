@@ -48,6 +48,16 @@
     //图片点击
     
     
+    //活动类型
+    typeName = [[UILabel alloc]init];
+    typeName.textAlignment = NSTextAlignmentCenter;
+    typeName.font = Font12;
+    typeName.textColor = MainWhiteColor;
+    typeName.text = @"比赛";
+    [picView addSubview:typeName];
+    
+    
+    
     
     //标题
     name = [[UILabel alloc]init];
@@ -60,51 +70,54 @@
     
     //时间
     time = [[UILabel alloc]init];
-    time.font = Font13;
-    time.textColor = OneTextColor;
-    time.text = @"时间时间";
+    time.font = Font12;
+    time.textColor = NameColor;
+    time.text = @"时间时间时间时间时间时间";
     [self addSubview:time];
     
     
-    //我的回复
+    //地址
     address = [[UILabel alloc]init];
-    address.font = Font13;
-    address.textColor = OneTextColor;
-    address.text = @"地址地址地址";
+    address.font = Font12;
+    address.textColor = NameColor;
+    address.text = @"地址地址地址地址地址地址地址地址地址地址地址地址";
     [self addSubview:address];
     
     
     //参加费用
     money = [[UILabel alloc]init];
-    money.font = Font13;
-    money.textColor = OneTextColor;
-    money.text = @"180元／人";
+    money.font = Font16;
+    money.textColor = MainGoldColor;
+    money.text = @"180元/人";
+    money.adjustsFontSizeToFitWidth = YES;
     [self addSubview:money];
     
     //状态
     status = [[UILabel alloc]init];
     status.font = Font13;
-    status.textColor = OneTextColor;
+    status.textColor = LessNameColor;
     status.text = @"活动进行中";
     [self addSubview:status];
     
     //编辑
     editBtn = [[UIButton alloc]init];
     editBtn.tag = 0;
-    editBtn.layer.borderWidth = 1;
-    editBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    editBtn.layer.borderWidth = 0.5;
+    editBtn.layer.borderColor = NameColor.CGColor;
+    editBtn.titleLabel.font = Font12;
     [editBtn setTitle:@"编辑"];
-    [editBtn setTitleColor:OneTextColor];
+    [editBtn setTitleColor:NameColor];
     [editBtn addTarget:self action:@selector(editAct:)];
     [self addSubview:editBtn];
     
     //参与者
     memberBtn = [[UIButton alloc]init];
     memberBtn.tag = 1;
-    memberBtn.layer.borderWidth = 1;
-    memberBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    memberBtn.layer.borderWidth = 0.5;
+    memberBtn.layer.borderColor = NameColor.CGColor;
+    memberBtn.titleLabel.font = Font12;
     [memberBtn setTitle:@"报名者"];
-    [memberBtn setTitleColor:OneTextColor];
+    [memberBtn setTitleColor:NameColor];
     [memberBtn addTarget:self action:@selector(memberAct:)];
     [self addSubview:memberBtn];
 }
@@ -119,6 +132,7 @@
     
     topLine.hidden = YES;
     picView.hidden = YES;
+    typeName.hidden = YES;
     name.hidden = YES;
     time.hidden = YES;
     address.hidden = YES;
@@ -132,6 +146,7 @@
         case JoinPartyCellMode:{
             
             picView.hidden = NO;
+            typeName.hidden = NO;
             name.hidden = NO;
             time.hidden = NO;
             address.hidden = NO;
@@ -139,18 +154,21 @@
             status.hidden = NO;
             
             
-            picView.frame = CGRectMake(kScreen_Width-MyPartyCell_Height, 5*WIDTH_NIT, MyPartyCell_Height-10*WIDTH_NIT, MyPartyCell_Height-10*WIDTH_NIT);
+            picView.frame = CGRectMake(kScreen_Width-130*WIDTH_NIT, 13*WIDTH_NIT, 115*WIDTH_NIT, 90*WIDTH_NIT);
             
-            name.frame =CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT);
+            typeName.frame =CGRectMake(picView.width-35*WIDTH_NIT, 0, 35*WIDTH_NIT, 20*WIDTH_NIT);
             
             
-            time.frame = CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            name.frame = CGRectMake(15*WIDTH_NIT, 15*WIDTH_NIT, kScreen_Width-picView.width-30*WIDTH_NIT, 40*WIDTH_NIT);
             
-            address.frame =  CGRectMake(5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
-            money.frame =  CGRectMake(address.right + 5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3-10*WIDTH_NIT, 20*WIDTH_NIT);
+            time.frame = CGRectMake(15*WIDTH_NIT, name.bottom+15*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
-            status.frame =  CGRectMake(5*WIDTH_NIT, money.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            address.frame =  CGRectMake(15*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            
+            money.frame =  CGRectMake(address.right + 0*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3-10*WIDTH_NIT, 20*WIDTH_NIT);
+            
+            status.frame =  CGRectMake(15*WIDTH_NIT, money.bottom+15*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
             
         }
@@ -160,6 +178,7 @@
         case OwnerPartyCellMode:{
             
             picView.hidden = NO;
+            typeName.hidden = NO;
             name.hidden = NO;
             time.hidden = NO;
             address.hidden = NO;
@@ -168,20 +187,22 @@
             memberBtn.hidden = NO;
             
             
-            picView.frame = CGRectMake(kScreen_Width-MyPartyCell_Height, 5*WIDTH_NIT, MyPartyCell_Height-10*WIDTH_NIT, MyPartyCell_Height-10*WIDTH_NIT);
+            picView.frame = CGRectMake(kScreen_Width-130*WIDTH_NIT, 13*WIDTH_NIT, 115*WIDTH_NIT, 90*WIDTH_NIT);
             
-            name.frame =CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT);
+            typeName.frame =CGRectMake(picView.width-35*WIDTH_NIT, 0, 35*WIDTH_NIT, 20*WIDTH_NIT);
+            
+            name.frame = CGRectMake(15*WIDTH_NIT, 15*WIDTH_NIT, kScreen_Width-picView.width-30*WIDTH_NIT, 40*WIDTH_NIT);
             
             
-            time.frame = CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            time.frame = CGRectMake(15*WIDTH_NIT, name.bottom+15*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
-            address.frame =  CGRectMake(5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            address.frame =  CGRectMake(15*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
-            money.frame =  CGRectMake(address.right + 5*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3-10*WIDTH_NIT, 20*WIDTH_NIT);
+            money.frame =  CGRectMake(address.right + 0*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3-10*WIDTH_NIT, 20*WIDTH_NIT);
             
-            editBtn.frame =  CGRectMake(20*WIDTH_NIT, money.bottom+5*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
+            editBtn.frame =  CGRectMake(20*WIDTH_NIT, money.bottom+15*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
             
-            memberBtn.frame =  CGRectMake(editBtn.right + 20*WIDTH_NIT, money.bottom+5*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
+            memberBtn.frame =  CGRectMake(editBtn.right + 20*WIDTH_NIT, money.bottom+15*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
             
         }
             

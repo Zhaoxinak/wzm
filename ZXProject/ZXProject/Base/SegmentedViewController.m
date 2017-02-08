@@ -32,7 +32,7 @@
 {
     if (_seg == nil) {
         _seg = [[UISegmentedControl alloc] initWithItems:_segItems];
-        _seg.frame = CGRectMake(0, 0, _segItems.count*75, 30);
+        _seg.frame = CGRectMake(0, 0, _segItems.count*100*WIDTH_NIT, 30*WIDTH_NIT);
         _seg.backgroundColor = [UIColor clearColor];
         _seg.tintColor = [UIColor whiteColor];
         _seg.selectedSegmentIndex = 0;

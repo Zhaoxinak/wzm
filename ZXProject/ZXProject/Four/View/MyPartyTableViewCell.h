@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, MyPartyCellMode) {
 
 
 //cell高度
-#define MyPartyCell_Height kScreen_Width/3
+#define MyPartyCell_Height 165*WIDTH_NIT
 
 
 @interface MyPartyTableViewCell : UITableViewCell
@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, MyPartyCellMode) {
     UIView *bottomLine; //底部分割线
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
+    UILabel *typeName; //类型
     UILabel *name; //标题
     UILabel *time; //时间
     UILabel *address; //地址

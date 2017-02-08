@@ -10,7 +10,7 @@
 #import "OneModifiedWikiModel.h"
 
 //cell高度
-#define OneModifiedWikiCell_Height kScreen_Width/3
+#define OneModifiedWikiCell_Height 115*WIDTH_NIT
 
 @interface OneModifiedWikiTableViewCell : UITableViewCell
 {
@@ -18,8 +18,9 @@
     UIImageView *picView; //图片
     UIButton *picBtn; //图片点击
     UILabel *name; //标题
-    UILabel *time; //时间
     UILabel *subName; //内容
+    UILabel *time; //时间
+    
 }
 
 @property (nonatomic, strong) OneModifiedWikiModel *model; //模型
