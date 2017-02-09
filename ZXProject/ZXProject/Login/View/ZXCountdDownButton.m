@@ -26,13 +26,13 @@
 
 - (void)setup {
     [self setTitle:@" 获取验证码 " forState:UIControlStateNormal];
-    self.titleLabel.font = Font13;
+    self.titleLabel.font = Font12;
     self.backgroundColor = [UIColor clearColor];
     self.layer.cornerRadius = 3.0;
     self.clipsToBounds = YES;
-    [self setTitleColor:RGBColor(128, 177, 34, 1)];
-    self.layer.borderColor = RGBColor(128, 177, 34, 1).CGColor;
-    self.layer.borderWidth = 1.0;
+    [self setTitleColor:NameColor];
+    self.layer.borderColor = NameColor.CGColor;
+    self.layer.borderWidth = 0.5;
 }
 
 - (void)timeFailBeginFrom:(NSInteger)timeCount {

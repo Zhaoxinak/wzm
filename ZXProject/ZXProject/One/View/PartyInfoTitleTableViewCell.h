@@ -10,7 +10,7 @@
 #import "PartyDetailInfoModel.h"
 
 //cell高度
-#define PartyInfoTitleCell_Height kScreen_Width/4
+#define PartyInfoTitleCell_Height 100*WIDTH_NIT
 
 
 @interface PartyInfoTitleTableViewCell : UITableViewCell{

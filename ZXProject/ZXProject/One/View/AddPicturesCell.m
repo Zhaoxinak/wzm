@@ -32,7 +32,7 @@ static NSInteger kAddButtonTag = 9999;
 #pragma mark - class method
 + (CGFloat)caculateAddPicturesCellHeightWithPictureArray:(NSArray *)array {
     NSInteger picNum = array.count;
-    CGFloat picWidth = kScreen_Width == 320 ? 90 : 96;
+    CGFloat picWidth = 64*WIDTH_NIT;
     
     CGSize tipSize = [tipContent2 boundingRectWithSize:CGSizeMake(kScreen_Width - 34, MAXFLOAT)
                                                options:NSStringDrawingUsesLineFragmentOrigin
@@ -64,8 +64,8 @@ static NSInteger kAddButtonTag = 9999;
 
 - (void)setupTitleLabel {
     _addPictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 20, 90, 16)];
-    _addPictureLabel.font = [UIFont systemFontOfSize:14];
-    _addPictureLabel.textColor = ThreeTextColor;
+    _addPictureLabel.font = Font15;
+    _addPictureLabel.textColor = NameColor;;
     _addPictureLabel.text = @"主题图片";
     [self.contentView addSubview:_addPictureLabel];
 }
@@ -81,7 +81,7 @@ static NSInteger kAddButtonTag = 9999;
                                                attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]}
                                                   context:nil].size;
     _tipLabel.left = 17;
-    _tipLabel.textColor = ThreeTextColor;
+    _tipLabel.textColor = NameColor;
     [self.contentView addSubview:_tipLabel];
 }
 
@@ -99,7 +99,7 @@ static NSInteger kAddButtonTag = 9999;
     
     
     
-    CGFloat picWidth = kScreen_Width == 320 ? 90 : 96;
+    CGFloat picWidth = 64*WIDTH_NIT;
     for (int i = 0; i < picArray.count; i++) {
         AddPictureModel *picModel = picArray[i];
         UIButton *addImageView = [self setupImageViewWithModel:picModel index:i];
@@ -117,7 +117,7 @@ static NSInteger kAddButtonTag = 9999;
 }
 
 - (UIButton *)setupImageViewWithModel:(AddPictureModel *)model index:(int)index{
-    CGFloat picWidth = kScreen_Width == 320 ? 90 : 96;
+    CGFloat picWidth = 64*WIDTH_NIT;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, picWidth, picWidth)];
     imageView.image = model.addImage;
     

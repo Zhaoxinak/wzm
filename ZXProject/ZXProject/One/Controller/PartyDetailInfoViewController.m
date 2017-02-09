@@ -25,6 +25,8 @@
 @interface PartyDetailInfoViewController ()<ZXCycleScrollViewDelegate>
 
 @property (nonatomic, strong) ZXCycleScrollView *zxCycleScrollView;
+@property (nonatomic, strong) UILabel *typeName; //活动类型
+@property (nonatomic, strong) UIButton *picsTopBtn; //顶部图片
 @property (nonatomic, strong) NSArray *partyInfoArr;
 
 @end
@@ -76,7 +78,7 @@
 - (void)refreshData {
     
  
-    _partyInfoArr = [NSArray arrayWithObjects:@{@"icon" : @"猫狗2", @"title" : @"截止时间"},@{@"icon" : @"猫狗2", @"title" : @"地址地址"},@{@"icon" : @"猫狗2", @"title" : @"已经报名5人"},@{@"icon" : @"猫狗2", @"title" : @"免费"}, nil];
+    _partyInfoArr = [NSArray arrayWithObjects:@{@"icon" : @"xingxing", @"title" : @"截止时间"},@{@"icon" : @"xingxing", @"title" : @"地址地址"},@{@"icon" : @"xingxing", @"title" : @"已经报名5人"},@{@"icon" : @"xingxing", @"title" : @"免费"}, nil];
     
     
     
@@ -124,10 +126,29 @@
     
     
     //设置tabViewHeader
-    _zxCycleScrollView = [[ZXCycleScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/750*470)];
+    _zxCycleScrollView = [[ZXCycleScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 200*WIDTH_NIT)];
     //设置tabViewHeader
     _zxCycleScrollView.backgroundColor = BGColor;
     _zxCycleScrollView.delegate = self;
+    
+    //设置活动类型
+    _typeName = [[UILabel alloc]initWithFrame:CGRectMake(_zxCycleScrollView.width-50*WIDTH_NIT, 0, 50*WIDTH_NIT, 25*WIDTH_NIT)];
+    _typeName.backgroundColor = MainGoldColor;
+    _typeName.textAlignment = NSTextAlignmentCenter;
+    _typeName.font = Font12;
+    _typeName.textColor = MainWhiteColor;
+    _typeName.text = @"活动";
+    [_zxCycleScrollView addSubview:_typeName];
+    
+    
+    //设置图片数量
+    _picsTopBtn = [[UIButton alloc]initWithFrame:CGRectMake(_zxCycleScrollView.width-70*WIDTH_NIT, _zxCycleScrollView.height-50*WIDTH_NIT, 60*WIDTH_NIT, 40*WIDTH_NIT)];
+    _picsTopBtn.titleLabel.font = Font11;
+    [_picsTopBtn setTitleColor:MainWhiteColor];
+    [_picsTopBtn setImage:@"tupian"];
+    [_picsTopBtn setTitle:@"3/5"];
+    [_zxCycleScrollView addSubview:_picsTopBtn];
+    
     self.tableView.tableHeaderView = _zxCycleScrollView;
     
     //底部按钮
@@ -279,6 +300,7 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[PartyInfoTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
     }
@@ -292,10 +314,30 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.textLabel.textColor = LessNameColor;
+            if (indexPath.row == 1) {
+                
+                UIButton *daohangBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 43*WIDTH_NIT, 20*WIDTH_NIT)];
+                [daohangBtn setTitleColor:MainGoldColor];
+                daohangBtn.titleLabel.font = Font11;
+                daohangBtn.layer.borderWidth = 0.3;
+                daohangBtn.layer.borderColor = MainGoldColor.CGColor;
+                [daohangBtn setTitle:@"导航 >"];
+                [daohangBtn addTarget:self action:@selector(daohangAct:)];
+                cell.accessoryView =daohangBtn;
+            }
+            
+            if (indexPath.row == 3) {
+                cell.textLabel.textColor = MainGoldColor;
+            }
+            
         }
         
         cell.imageView.image = [UIImage imageNamed:_partyInfoArr[indexPath.row][@"icon"]];
         cell.textLabel.text = _partyInfoArr[indexPath.row][@"title"];
+        
+       
         
         return cell;
     }
@@ -308,6 +350,7 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[PartyInfoOrganizerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
         cell.userId = @"1";
@@ -327,6 +370,7 @@
         //如果缓存池没有取到则重新创建并放到缓存池中
         if(!cell){
             cell=[[PartyJoinedMemberTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
         [cell setModel:nil];
@@ -426,6 +470,12 @@
     [[ZXShareHelper shareInstance] shareWithShareModel:[self setupShareModel]];
 }
 
+#pragma mark -- 导航
+-(void)daohangAct:(UIButton *)button{
+    
+    NSLog(@"导航");
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

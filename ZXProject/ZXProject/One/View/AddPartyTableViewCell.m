@@ -34,10 +34,11 @@
     _starImage.image = [UIImage imageNamed:@"star_red"];
     [self.contentView addSubview:_starImage];
     
-    CGSize titleSize = [@"" getWidth:@"这是五个字" andFont:[UIFont systemFontOfSize:16]];
+    CGSize titleSize = [@"" getWidth:@"这是五个字" andFont:Font15];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_starImage.right + 3, 14, titleSize.width + 3, 20)];
+    _titleLabel.textColor = NameColor;
     _titleLabel.textAlignment = NSTextAlignmentLeft;
-    _titleLabel.font = [UIFont systemFontOfSize:16];
+    _titleLabel.font = Font15;
     [self.contentView addSubview:_titleLabel];
     
     _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(_titleLabel.right - 5, 47, kScreen_Width - _titleLabel.right + 5, 1)];
@@ -45,6 +46,8 @@
     [self.contentView addSubview:_bottomLine];
     
     _detailText = [[UITextField alloc] initWithFrame:CGRectMake(_titleLabel.right, 14, kScreen_Width - _titleLabel.right - 30, 20)];
+    _detailText.textColor = NameColor;
+    _detailText.font = Font15;
     _detailText.delegate = self;
     [self.contentView addSubview:_detailText];
     

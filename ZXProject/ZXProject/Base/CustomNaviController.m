@@ -53,19 +53,23 @@
     
     
     // 设置可用状态(able)的文字属性
-    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,KNavigationFont,NSFontAttributeName,nil] forState:UIControlStateNormal];
+    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,Font16,NSFontAttributeName,nil] forState:UIControlStateNormal];
     
     
     // 设置不可用状态(disable)的文字属性
-    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,KNavigationFont,NSFontAttributeName,nil] forState:UIControlStateDisabled];
+    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,Font16,NSFontAttributeName,nil] forState:UIControlStateDisabled];
     /**自定义导航控制器返回按钮设置背景**/
     // 技巧: 为了让某个按钮的背景消失, 可以设置一张完全透明的背景图片
     [appearance setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     //自定义返回按钮
     
-    UIImage *backButtonImage = [[UIImage imageNamed:@"返回"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    [appearance setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    UIImage *backButtonImage = [[UIImage imageNamed:@""] resizableImageWithCapInsets:UIEdgeInsetsMake(0, -50, 0, 0)];
+//    [appearance setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+  
+    
     //    //将返回按钮的文字position设置不在屏幕上显示
+  
     [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)

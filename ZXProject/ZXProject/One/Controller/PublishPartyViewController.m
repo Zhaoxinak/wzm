@@ -150,7 +150,7 @@
     
     
     AddPartyCellModel *addressCell = [[AddPartyCellModel alloc] init];
-    addressCell.titleText = @"活动位置";
+    addressCell.titleText = @"详细地址";
     addressCell.placeHolderText = @"请选择详细地址";
     addressCell.showDownArrow = YES;
     addressCell.fullScreenSeperateLine = YES;
@@ -379,6 +379,7 @@
         imagePicker.allowsMultipleSelection = YES;
         imagePicker.maximumNumberOfSelection = maxNum;
         [self presentViewController:imagePicker animated:YES completion:nil];
+        
     }else{
         ALERTTK(@"提示", @"最多添加5张图片");
     }

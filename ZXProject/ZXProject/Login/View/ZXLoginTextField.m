@@ -81,7 +81,7 @@
         [_leftLabel sizeToFit];
         _leftLabel.centerY = self.height/2;
         
-        _smsCodeBtn.frame = CGRectMake(self.width-110*WIDTH_NIT, 0, 100*WIDTH_NIT, self.height);
+        _smsCodeBtn.frame = CGRectMake(self.width-90*WIDTH_NIT, 0, 80*WIDTH_NIT, self.height);
         
         _inputTextField.frame = CGRectMake(_leftLabel.right+5*WIDTH_NIT, 0*WIDTH_NIT, self.width-_leftLabel.right-_smsCodeBtn.width-10*WIDTH_NIT, 22*WIDTH_NIT);
         _inputTextField.centerY = self.height/2;
