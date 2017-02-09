@@ -302,7 +302,7 @@
             cell=[[PartyInfoTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        return cell;
+        return cell; 
     }
     
     //活动详细内容
