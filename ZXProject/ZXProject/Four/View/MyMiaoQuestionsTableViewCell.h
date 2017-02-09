@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, MyMiaoQuestionsCellMode) {
 };
 
 //cell高度
-#define MyMiaoQuestionsCell_Height kScreen_Width/4
+#define MyMiaoQuestionsCell_Height 110*WIDTH_NIT
 
 @interface MyMiaoQuestionsTableViewCell : UITableViewCell
 {

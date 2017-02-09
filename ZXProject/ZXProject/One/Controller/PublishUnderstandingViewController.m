@@ -10,6 +10,7 @@
 
 /************C************/
 #import "PublishUnderstandingViewController.h"
+#import "CarsSelectedViewController.h" //车型选择
 /************V************/
 #import "AddPartyTableViewCell.h" //cell视图
 #import "AddPicturesCell.h" //添加图片
@@ -287,7 +288,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 49.f;
+        return 50*WIDTH_NIT;
     } else
         if (indexPath.section == 2) {
             return [AddPicturesCell caculateAddPicturesCellHeightWithPictureArray:_picArray];
@@ -366,6 +367,8 @@
             {
                 _model = model;
                 
+                CarsSelectedViewController *carsVC = [[CarsSelectedViewController alloc]init];
+                [self.navigationController pushViewController:carsVC animated:YES];
                 
                 break;
             }

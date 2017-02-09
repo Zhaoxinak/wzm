@@ -7,7 +7,7 @@
 //
 
 //cellheader的高度   280   70
-#define PartyDetailInfoCell_Header_Height 10*WIDTH_NIT+35*WIDTH_NIT
+#define PartyDetailInfoCell_Header_Height 10*WIDTH_NIT+45*WIDTH_NIT
 #define PartyDetailInfoCell_Height 44*WIDTH_NIT
 
 /************C************/
@@ -111,9 +111,8 @@
     
     //分享按钮
     UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareBtn.frame = CGRectMake(0, 0, 80, 44);
-    [shareBtn setTitle:@"分享"];
-    [shareBtn setTitleColor:KNavigationTitleColor];
+    shareBtn.frame = CGRectMake(0, 0, 44, 44);
+    [shareBtn setImage:@"fenxiang"];
     [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -166,9 +165,9 @@
     UIButton *callHerBtn = [[UIButton alloc]initWithFrame: CGRectMake(0, 0, bottomView.width/7*2-1, bottomView.height)];
     callHerBtn.backgroundColor = [UIColor whiteColor];
     [callHerBtn setTitle:@"和Ta聊天"];
-    [callHerBtn setImage:@"猫狗2"];
-    callHerBtn.titleLabel.font = Font13;
-    callHerBtn.titleColor = OneTextColor;
+    [callHerBtn setImage:@"liaotian"];
+    callHerBtn.titleLabel.font = Font11;
+    callHerBtn.titleColor = LessNameColor;
     [UIButton ImageUptoLabelDown:callHerBtn margin:5*WIDTH_NIT];
     [callHerBtn addTarget:self action:@selector(callHerAct:)];
     [bottomView addSubview:callHerBtn];
@@ -177,20 +176,20 @@
     UIButton *collectBtn = [[UIButton alloc]initWithFrame: CGRectMake(callHerBtn.right+1, 0, bottomView.width/7*2-1, bottomView.height)];
     collectBtn.backgroundColor = [UIColor whiteColor];
     [collectBtn setTitle:@"收藏"];
-    [collectBtn setImage:@"猫狗2"];
-    collectBtn.titleLabel.font = Font13;
-    collectBtn.titleColor = OneTextColor;
+    [collectBtn setImage:@"shoucang"];
+    collectBtn.titleLabel.font = Font11;
+    collectBtn.titleColor = LessNameColor;
     [UIButton ImageUptoLabelDown:collectBtn margin:5*WIDTH_NIT];
     [collectBtn addTarget:self action:@selector(collectBtn:)];
     [bottomView addSubview:collectBtn];
     
     //我要报名
     UIButton *joinBtn = [[UIButton alloc]initWithFrame: CGRectMake(collectBtn.right+1, 0, bottomView.width/7*3, bottomView.height)];
-    joinBtn.backgroundColor = [UIColor whiteColor];
+    joinBtn.backgroundColor = MainGoldColor;
     [joinBtn setTitle:@"我要报名"];
-    [joinBtn setImage:@"猫狗2"];
-    joinBtn.titleLabel.font = Font13;
-    joinBtn.titleColor = OneTextColor;
+    [joinBtn setImage:@"wo"];
+    joinBtn.titleLabel.font = Font15;
+    joinBtn.titleColor = MainWhiteColor;
 //    [UIButton ImageUptoLabelDown:joinBtn margin:5*WIDTH_NIT];
     [joinBtn addTarget:self action:@selector(joinBtn:)];
     [bottomView addSubview:joinBtn];
@@ -209,7 +208,9 @@
     if (section == 1) {
       return  _partyInfoArr.count;
     }
-    
+    if (section == 5) {
+        return  10;
+    }
     
     return 1;
 }
@@ -239,11 +240,11 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
     headerView.backgroundColor = BGColor;
    
-    UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
+    UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 45*WIDTH_NIT)];
     //cell的标题
     
-    cellTitle.font = Font13;
-    cellTitle.textColor = OneTextColor;
+    cellTitle.font = Font15;
+    cellTitle.textColor = SubNameColor;
     cellTitle.backgroundColor = [UIColor whiteColor];
     
     if (section == 3 || section == 4 || section == 5) {
@@ -261,12 +262,12 @@
         cellTitle.text = @"    已报名（5）";
         
         //cell的按钮
-        UIButton * allMemberBtn = [[UIButton alloc]initWithFrame:CGRectMake(headerView.width-75*WIDTH_NIT, 10*WIDTH_NIT, 70*WIDTH_NIT, 35*WIDTH_NIT)];
+        UIButton * allMemberBtn = [[UIButton alloc]initWithFrame:CGRectMake(headerView.width-75*WIDTH_NIT, 10*WIDTH_NIT, 70*WIDTH_NIT, 45*WIDTH_NIT)];
         [allMemberBtn setBackgroundColor:[UIColor whiteColor]];
-        [allMemberBtn setTitle:@"所有报名>"];
+        [allMemberBtn setTitle:@"所有报名 >"];
         allMemberBtn.titleLabel.textAlignment = NSTextAlignmentRight;
-        [allMemberBtn setTitleColor:ThreeTextColor];
-        allMemberBtn.titleLabel.font = Font13;
+        [allMemberBtn setTitleColor:MainGoldColor];
+        allMemberBtn.titleLabel.font = Font12;
         [allMemberBtn addTarget:self action:@selector(allMemberAct:)];
         [headerView addSubview:allMemberBtn];
 
@@ -302,7 +303,7 @@
             cell=[[PartyInfoTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        return cell; 
+        return cell;
     }
     
     //活动详细内容
@@ -376,6 +377,7 @@
         [cell setModel:nil];
        
         return cell;
+    
     }
     
     
@@ -389,6 +391,8 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
 }
 

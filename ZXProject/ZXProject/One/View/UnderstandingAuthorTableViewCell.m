@@ -31,8 +31,8 @@
     
     
     //头像
-    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
-    headImageView.backgroundColor = [UIColor redColor];
+    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15*WIDTH_NIT, 30*WIDTH_NIT, 62*WIDTH_NIT, 62*WIDTH_NIT)];
+    headImageView.image = [UIImage imageNamed:@"touxiang02"];
     headImageView.clipsToBounds = YES;
     headImageView.layer.cornerRadius = headImageView.size.width / 2;
     [self addSubview:headImageView];
@@ -43,50 +43,51 @@
     [headImageView addGestureRecognizer:tap];
     
     //用户名
-    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = Font13;
+    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 15*WIDTH_NIT, 35*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
+    userNameLabel.textColor = NameColor;
+    userNameLabel.font = Font14;
     userNameLabel.text = @"水冰月";
     [self addSubview:userNameLabel];
     
     //等级
-    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
-    levelLabel.textColor = OneTextColor;
+    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(userNameLabel.right + 2*WIDTH_NIT, 35*WIDTH_NIT, 30*WIDTH_NIT, 18*WIDTH_NIT)];
+    levelLabel.layer.borderWidth = 0.4;
+    levelLabel.layer.borderColor = MainGoldColor.CGColor;
+    levelLabel.textColor = MainGoldColor;
     levelLabel.font = Font13;
-    levelLabel.text = @"12";
+    levelLabel.text = @"Lv15";
     [self addSubview:levelLabel];
     
-    //性别
-    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(levelLabel.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT)];
-    sexImageView.backgroundColor = [UIColor redColor];
+    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(levelLabel.right + 5*WIDTH_NIT, 37*WIDTH_NIT, 15*WIDTH_NIT, 15*WIDTH_NIT)];
+    sexImageView.image = [UIImage imageNamed:@"nan"];
     [self addSubview:sexImageView];
     
     //地址
-    address = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom+5*WIDTH_NIT, kScreen_Width-headImageView.right-5*WIDTH_NIT, 50*WIDTH_NIT)];
+    address = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 15*WIDTH_NIT, userNameLabel.bottom+2*WIDTH_NIT, kScreen_Width-headImageView.right-30*WIDTH_NIT, 30*WIDTH_NIT)];
     address.numberOfLines = 2;
-    address.font = Font13;
-    address.textColor = OneTextColor;
+    address.font = Font12;
+    address.textColor = LightNameColor;
     address.text = @"地址地址地址地址地址地址地址地址地址地址地址地址";
     [self addSubview:address];
     
     //简介
-    intro = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, address.bottom+5*WIDTH_NIT, kScreen_Width-headImageView.right-5*WIDTH_NIT, 70*WIDTH_NIT)];
+    intro = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 15*WIDTH_NIT, address.bottom+2*WIDTH_NIT, kScreen_Width-headImageView.right-30*WIDTH_NIT, 50*WIDTH_NIT)];
     intro.numberOfLines = 3;
-    intro.font = Font13;
-    intro.textColor = OneTextColor;
+    intro.font = Font12;
+    intro.textColor = LightNameColor;
     intro.text = @"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介";
     [self addSubview:intro];
     
+    
     //关注
-    followBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width - 50*WIDTH_NIT, 5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
-    followBtn.layer.borderWidth = 1;
-    followBtn.layer.borderColor = [UIColor orangeColor].CGColor;
-    followBtn.titleLabel.font = Font13;
-    [followBtn setTitleColor:OneTextColor];
-    [followBtn setTitle:@"关注"];
+    followBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width - 70*WIDTH_NIT, 20*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    followBtn.layer.cornerRadius = 5;
+    followBtn.layer.borderWidth = 0.5;
+    followBtn.layer.borderColor = MainGoldColor.CGColor;
+    followBtn.titleLabel.font = Font12;
+    [followBtn setTitleColor:MainGoldColor];
+    [followBtn setTitle:@"+ 关注"];
     [self addSubview:followBtn];
-    
-    
 }
 
 #pragma mark --- 对接数据

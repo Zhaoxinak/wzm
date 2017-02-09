@@ -12,7 +12,7 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define UnderstandingAuthorCell_Height kScreen_Width/2
+#define UnderstandingAuthorCell_Height 152*WIDTH_NIT
 
 
 @interface UnderstandingAuthorTableViewCell : UITableViewCell{

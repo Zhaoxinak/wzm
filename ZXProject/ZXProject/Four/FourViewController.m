@@ -8,7 +8,7 @@
 
 //cellheader的高度   280   70
 #define FourCell_Header_Height 10*WIDTH_NIT+35*WIDTH_NIT
-#define FourCell_Height 50*WIDTH_NIT
+#define FourCell_Height 45*WIDTH_NIT
 
 /************C************/
 #import "FourViewController.h"
@@ -65,8 +65,7 @@
 #pragma mark --初始化数据
 -(void)setupData{
     
-    //设置tabViewHeader
-    _fourHeadView = [[FourHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/3)];
+    
     
     _listFunctionArr = [NSArray arrayWithObjects:@[],
                   @[@{@"icon" : @"", @"title" : @"猫币商城"},
@@ -119,9 +118,11 @@
     self.title = @"喵窝";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
     //设置tabViewHeader
+    _fourHeadView = [[FourHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 160*WIDTH_NIT)];
     _fourHeadView.backgroundColor = BGColor;
     _fourHeadView.delegate = self;
     _fourHeadView.userId = @"1";
@@ -182,8 +183,8 @@
     
     if (section == 0) {
         UILabel *cellTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 35*WIDTH_NIT)];
-        cellTitle.font = Font13;
-        cellTitle.textColor = OneTextColor;
+        cellTitle.font = Font14;
+        cellTitle.textColor = NameColor;
         cellTitle.backgroundColor = [UIColor whiteColor];
         [headerView addSubview:cellTitle];
         cellTitle.text = @"    日常管理";
@@ -232,6 +233,8 @@
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.font = Font14;
+            cell.textLabel.textColor = NameColor;
         }
         
         cell.textLabel.text =  _listFunctionArr[indexPath.section][indexPath.row][@"title"];

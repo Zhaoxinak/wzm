@@ -10,7 +10,7 @@
 #import "PartyDetailInfoModel.h"
 
 //cell高度
-#define PartyJoinedMemberCell_Height kScreen_Width/4
+#define PartyJoinedMemberCell_Height 90*WIDTH_NIT
 
 @protocol PartyJoinedMemberCellDelegate <NSObject>
 

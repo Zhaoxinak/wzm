@@ -29,9 +29,9 @@
 -(void)setupView{
     
     //打赏提示
-    UILabel *alertTitile = [[UILabel alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, kScreen_Width, 20*WIDTH_NIT)];
-    alertTitile.font = Font13;
-    alertTitile.textColor = ThreeTextColor;
+    UILabel *alertTitile = [[UILabel alloc]initWithFrame:CGRectMake(0, 26*WIDTH_NIT, kScreen_Width, 20*WIDTH_NIT)];
+    alertTitile.font = Font14;
+    alertTitile.textColor = LessNameColor;
     alertTitile.textAlignment = NSTextAlignmentCenter;
     alertTitile.text = @"您的打赏，对我们是最大的鼓励";
     [self addSubview:alertTitile];
@@ -39,21 +39,22 @@
     
     
     //打赏按钮
-    payBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2-30*WIDTH_NIT, alertTitile.bottom+10*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
-    [payBtn setBackgroundColor:OneColor];
+    payBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2-58*WIDTH_NIT, alertTitile.bottom+20*WIDTH_NIT, 115*WIDTH_NIT, 35*WIDTH_NIT)];
+    [payBtn setBackgroundColor:MainGoldColor];
     [payBtn setTitleColor:[UIColor whiteColor]];
+    payBtn.titleLabel.font = Font15;
     [payBtn setTitle:@"打赏"];
     [payBtn addTarget:self action:@selector(payAct:)];
     [self addSubview:payBtn];
     
-
+    
     
     //打赏人数
-    paynum = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, payBtn.bottom+5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    paynum.font = Font13;
-    paynum.textColor = OneTextColor;
+    paynum = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, payBtn.bottom+25*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    paynum.font = Font14;
+    paynum.textColor = LessNameColor;
     paynum.textAlignment = NSTextAlignmentCenter;
-    paynum.text = @"14人打赏过";
+    paynum.text = @"18人打赏过";
     [self addSubview:paynum];
     
     
@@ -68,32 +69,31 @@
     
     
     NSArray *btnNames= [NSArray arrayWithObjects:@"", nil];
-    NSArray *btnImages = [NSArray arrayWithObjects:@"我的火喵2", @"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",nil];
-    
-    
+    NSArray *btnImages = [NSArray arrayWithObjects:@"wo", @"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",nil];
     
     //定义总列数、每个九宫格的宽高
     NSInteger totalColumns=7;
-    CGFloat appW=kScreen_Width/7;
-    CGFloat appH=kScreen_Width/7;
-    
+    CGFloat appW=44*WIDTH_NIT;
+    CGFloat appH=44*WIDTH_NIT;
+    CGFloat marinW = (kScreen_Width-totalColumns*appW)/(totalColumns+1);
     //根据arr1中数据数量来初始化并加载一个一个的UIVIew
     for (int index=0; index<15; index++) {
         //计算这个app在几行几列
         int row=index/totalColumns;
         int col=index%totalColumns;
+        
         //创建UIView
         UIView *appView=[[UIView alloc]init];
         //根据一些计算，确定不同UIView的位置
-        appView.frame=CGRectMake(col*+appW, paynum.bottom +row*appH, appW, appH);
+        appView.frame=CGRectMake(marinW + col*(marinW+appW), paynum.bottom+15*WIDTH_NIT +row*appH, appW, appH);
         appView.backgroundColor= [UIColor whiteColor];
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
         btn.clipsToBounds = YES;
-        btn.titleLabel.font = Font13;
-        btn.titleColor = OneTextColor;
+        btn.titleLabel.font = Font8;
+        btn.titleColor = NameColor;
         btn.title = [NSString stringWithFormat:@"头像%d", index];
         [btn setImage:btnImages[index]];
         [UIButton ImageUptoLabelDown:btn margin:1*WIDTH_NIT];
@@ -104,6 +104,7 @@
         
         [self addSubview:appView];
     }
+
 
     
     
@@ -144,8 +145,8 @@
 + (CGFloat)caculateUnderstandingPayCellHeightWithPerson:(UnderstandingInfoModel *)model{
     
     NSInteger picNum = 15;
-    CGFloat picWidth = kScreen_Width/7;
-    return MAX (((picNum / 7 + 1) * (picWidth + 15) + 70), kScreen_Width/3);
+    CGFloat picWidth = 34*WIDTH_NIT;
+    return MAX (((picNum / 7 + 1) * (picWidth + 15) + 160*WIDTH_NIT), 240*WIDTH_NIT);
     
 }
 

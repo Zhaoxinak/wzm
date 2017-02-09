@@ -22,7 +22,7 @@
 
 
 //cell高度
-#define AddAuthPicturesCell_Height kScreen_Width/3*2
+#define AddAuthPicturesCell_Height 230*WIDTH_NIT
 
 @interface AddAuthPicturesCell : UITableViewCell
 {

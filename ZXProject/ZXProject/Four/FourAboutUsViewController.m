@@ -7,7 +7,7 @@
 //
 
 //cell的高度
-#define FourAboutUsCell_Height 50*WIDTH_NIT
+#define FourAboutUsCell_Height 45*WIDTH_NIT
 
 
 #import "FourAboutUsViewController.h"
@@ -72,16 +72,16 @@
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
     self.tableView.scrollEnabled = NO;
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
     //顶部app图标版本信息
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/2)];
-    headerView.backgroundColor = [UIColor whiteColor];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 205*WIDTH_NIT)];
+    headerView.backgroundColor = BGColor;
     
-    UIImageView *headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake(headerView.width/2-40*WIDTH_NIT, 40*WIDTH_NIT, 80*WIDTH_NIT, 80*WIDTH_NIT)];
+    UIImageView *headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake(headerView.width/2-40*WIDTH_NIT, 35*WIDTH_NIT, 80*WIDTH_NIT, 80*WIDTH_NIT)];
     headerImgView.layer.cornerRadius = 8;
-    headerImgView.backgroundColor = [UIColor redColor];
-    headerImgView.image = [UIImage imageNamed:@"app_icon"];
+    headerImgView.image = [UIImage imageNamed:@"矢量智能对象"];
     headerImgView.clipsToBounds = YES;
     [headerView addSubview:headerImgView];
   
@@ -91,12 +91,12 @@
     // app版本
     NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     
-    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, headerImgView.bottom+10*WIDTH_NIT, headerView.width, 50*WIDTH_NIT)];
-    versionLabel.text = [NSString stringWithFormat:@"v%@\n五爪猫", app_Version];
+    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, headerImgView.bottom+5*WIDTH_NIT, headerView.width, 50*WIDTH_NIT)];
+    versionLabel.text = [NSString stringWithFormat:@"五爪猫\nV%@", app_Version];
     versionLabel.textAlignment = NSTextAlignmentCenter;
     versionLabel.numberOfLines = 2;
-    versionLabel.font = Font13;
-    versionLabel.textColor = OneTextColor;
+    versionLabel.font = Font18;
+    versionLabel.textColor = NameColor;
     [headerView addSubview:versionLabel];
     
     
@@ -157,6 +157,10 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = Font15;
+        cell.detailTextLabel.font = Font15;
+        cell.textLabel.textColor = NameColor;
+        cell.detailTextLabel.textColor = NameColor;
     }
     
     cell.textLabel.text =  cellTitle;

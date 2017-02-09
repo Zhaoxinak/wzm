@@ -10,7 +10,7 @@
 #import "OneJoinPartyModel.h"
 
 //cell高度
-#define OneJoinPartyCell_Height kScreen_Width/3
+#define OneJoinPartyCell_Height 120*WIDTH_NIT
 
 @interface OneJoinPartyTableViewCell : UITableViewCell
 {

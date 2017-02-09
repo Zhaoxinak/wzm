@@ -51,9 +51,9 @@
     [self.contentView addSubview:speLine];
     
     
-    addPictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10*WIDTH_NIT, speLine.bottom + 5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    addPictureLabel.font = [UIFont systemFontOfSize:16];
-    addPictureLabel.textColor = ThreeTextColor;
+    addPictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10*WIDTH_NIT, speLine.bottom + 5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 28*WIDTH_NIT)];
+    addPictureLabel.font = Font14;
+    addPictureLabel.textColor = SubNameColor;
     addPictureLabel.text = @"";
     [self.contentView addSubview:addPictureLabel];
     
@@ -79,7 +79,7 @@
     AddPictureModel *picModel = addModel;
     UIButton *addImageView = [self setupImageViewWithModel:picModel index:index];
     addImageView.centerX = kScreen_Width/2;
-    addImageView.top = addPictureLabel.bottom + 20*WIDTH_NIT;
+    addImageView.top = addPictureLabel.bottom + 17*WIDTH_NIT;
     
     [self.contentView addSubview:addImageView];
 }
@@ -87,8 +87,8 @@
 
 - (UIButton *)setupImageViewWithModel:(AddPictureModel *)model index:(NSInteger)index{
     
-    CGFloat picWidth = kScreen_Width/3*2;
-    CGFloat picHeight = kScreen_Width/9*4;
+    CGFloat picWidth = 250*WIDTH_NIT;
+    CGFloat picHeight = 150*WIDTH_NIT;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, picWidth, picHeight)];
     imageView.image = model.addImage;
     

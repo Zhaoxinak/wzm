@@ -319,6 +319,7 @@
 		9EA740291E2638D4002278F5 /* PersonalInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA740281E2638D4002278F5 /* PersonalInfoTableViewCell.m */; };
 		9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */; };
 		9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */; };
+		9EB14C591E4C4CD50049B39B /* CarsSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14C581E4C4CD50049B39B /* CarsSelectedViewController.m */; };
 		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
 		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
 		9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */; };
@@ -820,6 +821,8 @@
 		9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonalInfoViewController.m; sourceTree = "<group>"; };
 		9EA7402D1E263D5C002278F5 /* ZXUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUserInfoModel.h; sourceTree = "<group>"; };
 		9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserInfoModel.m; sourceTree = "<group>"; };
+		9EB14C571E4C4CD50049B39B /* CarsSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsSelectedViewController.h; sourceTree = "<group>"; };
+		9EB14C581E4C4CD50049B39B /* CarsSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsSelectedViewController.m; sourceTree = "<group>"; };
 		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D5001DFFDC0600F63C11 /* OneJoinPartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyTableViewCell.h; sourceTree = "<group>"; };
@@ -1041,6 +1044,8 @@
 				9E6F17631E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.m */,
 				9E3F34EC1E30615A00E7DD27 /* PublishUnderstandingViewController.h */,
 				9E3F34ED1E30615A00E7DD27 /* PublishUnderstandingViewController.m */,
+				9EB14C571E4C4CD50049B39B /* CarsSelectedViewController.h */,
+				9EB14C581E4C4CD50049B39B /* CarsSelectedViewController.m */,
 			);
 			name = "改装心得";
 			sourceTree = "<group>";
@@ -2246,6 +2251,7 @@
 				9E8EE5C61E20C89C002187DB /* ZXCountdDownButton.m in Sources */,
 				9E0D2B051E44246900226A46 /* ContactsViewController.m in Sources */,
 				9E4CED271DDEEF2600259FDE /* NetworkHelper.m in Sources */,
+				9EB14C591E4C4CD50049B39B /* CarsSelectedViewController.m in Sources */,
 				9E3EA0761E36EEFC00CA1CFA /* BalanceInfoViewController.m in Sources */,
 				9E3F350F1E30A73500E7DD27 /* ModifiedWikiInfoViewController.m in Sources */,
 				9E3F34FA1E309FDF00E7DD27 /* CasePayTableViewCell.m in Sources */,

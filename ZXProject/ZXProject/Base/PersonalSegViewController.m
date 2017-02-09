@@ -24,13 +24,14 @@
         _seg.backgroundColor = [UIColor whiteColor];
         _seg.segmentedControlLineStyle = LLSegmentedControlStyleUnderline;
         _seg.segmentedControlTitleSpacingStyle = LLSegmentedControlTitleSpacingStyleWidthFixed;
-        _seg.lineWidthEqualToTextWidth = YES;
-        _seg.textColor = OneTextColor;
-        _seg.selectedTextColor = TwoTextColor;
-        _seg.font = [UIFont systemFontOfSize:14];
-        _seg.selectedFont = [UIFont boldSystemFontOfSize:14];
-        _seg.lineColor = TwoTextColor;
-        _seg.lineHeight = 3.f;
+        _seg.lineWidthEqualToTextWidth = NO;
+        _seg.textColor = NameColor;
+        _seg.selectedTextColor = NameColor;
+        _seg.font = Font17;
+        _seg.selectedFont = Font17;
+        _seg.lineColor = MainGoldColor;
+        _seg.lineHeight = 2*WIDTH_NIT;
+        
         // segmentedControlTitleSpacingStyle 属性设置为 LLSegmentedControlTitleSpacingStyleWidthFixed
         // 则不需要设置titleSpacing，只需要设置titleWidth即可
         _seg.defaultSelectedIndex = 0;

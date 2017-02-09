@@ -7,7 +7,7 @@
 //
 
 //cell的高度
-#define AuthenticationCell_Height 50*WIDTH_NIT
+#define AuthenticationCell_Height 45*WIDTH_NIT
 
 
 /************C************/
@@ -133,6 +133,8 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = Font15;
+        cell.textLabel.textColor = NameColor;
     }
     
     cell.textLabel.text =  cellTitle;

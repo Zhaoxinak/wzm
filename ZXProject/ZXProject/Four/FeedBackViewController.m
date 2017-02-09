@@ -24,46 +24,55 @@
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = MainWhiteColor;
+    
     self.title = @"意见反馈";
  
     
-    UIView *titleView=[[UIView alloc] initWithFrame:CGRectMake(10,10+10+120, kScreen_Width-20,50)];
-    titleView.backgroundColor=[UIColor whiteColor];
+    UIView *titleView=[[UIView alloc] initWithFrame:CGRectMake(10*WIDTH_NIT,150*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT,45*WIDTH_NIT)];
+    titleView.layer.borderWidth = 1;
+    titleView.layer.cornerRadius = 5;
+    titleView.layer.borderColor = LessNameColor.CGColor;
+    titleView.backgroundColor = MainWhiteColor;
     [self.view addSubview:titleView];
     
-    titleInput=[[UITextField alloc] initWithFrame:CGRectMake(20,0,kScreen_Width-40,50)];
+    titleInput=[[UITextField alloc] initWithFrame:CGRectMake(20*WIDTH_NIT,0,kScreen_Width-40*WIDTH_NIT,45*WIDTH_NIT)];
+    titleInput.textColor = NameColor;
     titleInput.delegate=self;
-    titleInput.placeholder=@"邮箱/QQ/电话";
-    titleInput.font=[UIFont systemFontOfSize:14.0];
+    titleInput.placeholder=@"您的手机号／邮箱／QQ号码";
+    titleInput.font=Font12;
     titleInput.returnKeyType=UIReturnKeyDone;
     [titleView addSubview:titleInput];
     
     
-    UIView *maskView=[[UIView alloc] initWithFrame:CGRectMake(10,10, kScreen_Width-20, 120)];
-    maskView.backgroundColor=[UIColor whiteColor];
+    UIView *maskView=[[UIView alloc] initWithFrame:CGRectMake(10*WIDTH_NIT,15*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 120*WIDTH_NIT)];
+    maskView.layer.borderWidth = 1;
+    maskView.layer.cornerRadius = 5;
+    maskView.layer.borderColor = LessNameColor.CGColor;
+    maskView.backgroundColor = MainWhiteColor;
     [self.view addSubview:maskView];
     
-    contentView=[[UITextView alloc] initWithFrame:CGRectMake(20,20, kScreen_Width-40, 100)];
-    contentView.backgroundColor=[UIColor whiteColor];
-    contentView.layer.borderColor=[UIColor colorWithRed:80.0/255.0 green:80.0/255.0 blue:80.0/255.0 alpha:1.0].CGColor;
+    contentView=[[UITextView alloc] initWithFrame:CGRectMake(20*WIDTH_NIT,20*WIDTH_NIT, kScreen_Width-40*WIDTH_NIT, 100*WIDTH_NIT)];
+    contentView.backgroundColor=MainWhiteColor;
+    contentView.textColor = NameColor;
     contentView.returnKeyType=UIReturnKeyDone;
     contentView.delegate=self;
     [self.view addSubview:contentView];
     
-    defaultlab=[[UILabel alloc] initWithFrame:CGRectMake(20,25, kScreen_Width-40, 60)];
-    defaultlab.text=@"请在这里填写您的建议或意见";
-    defaultlab.numberOfLines = 3;
-    defaultlab.font=[UIFont systemFontOfSize:14.0];
-    defaultlab.textColor=ThreeTextColor;
+    defaultlab=[[UILabel alloc] initWithFrame:CGRectMake(20*WIDTH_NIT,25*WIDTH_NIT, kScreen_Width-40*WIDTH_NIT, 20*WIDTH_NIT)];
+    defaultlab.text=@"请给出您宝贵的意见，我们将不断为您改进。";
+    defaultlab.numberOfLines = 1;
+    defaultlab.font=Font12;
+    defaultlab.textColor=LittleNameColor;
     [self.view addSubview:defaultlab];
     
     //提交按钮
-    UIButton *submitBut=[[UIButton alloc] initWithFrame:CGRectMake(10,titleView.frame.origin.y+titleView.frame.size.height+20,self.view.frame.size.width-20, 40)];
-    submitBut.backgroundColor=OneTextColor;
+    UIButton *submitBut=[[UIButton alloc] initWithFrame:CGRectMake(10*WIDTH_NIT, 250*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 40*WIDTH_NIT)];
+    submitBut.backgroundColor=MainGoldColor;
+    [submitBut setTitleColor:MainWhiteColor];
     [submitBut setTitle:@"提交" forState:UIControlStateNormal];
     submitBut.layer.cornerRadius=5;
     submitBut.layer.masksToBounds=YES;
-    [submitBut setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [submitBut addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitBut];
     

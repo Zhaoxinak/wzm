@@ -67,6 +67,12 @@
     [self insertSubview:miaoBGView atIndex:1];
     
     
+    //箭头
+    UIImageView *arrView = [[UIImageView alloc]initWithFrame:CGRectMake(self.width - 40*WIDTH_NIT, 0, 14*WIDTH_NIT, 26*WIDTH_NIT)];
+    arrView.centerY = headBGView.height/2;
+    arrView.image = [UIImage imageNamed:@"箭头02"];
+    [headBGView addSubview:arrView];
+    
 }
 
 
@@ -74,8 +80,8 @@
 -(void)setupheadView{
 
     //头像
-    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, headBGView.height-10*WIDTH_NIT, headBGView.height-10*WIDTH_NIT)];
-    headImageView.backgroundColor = [UIColor redColor];
+    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15*WIDTH_NIT, 10*WIDTH_NIT, 62*WIDTH_NIT, 62*WIDTH_NIT)];
+    headImageView.image = [UIImage imageNamed:@"touxiang02"];
     headImageView.clipsToBounds = YES;
     headImageView.layer.cornerRadius = headImageView.size.width / 2;
     [headBGView addSubview:headImageView];
@@ -87,32 +93,32 @@
     
 
     //用户名
-    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    userNameLabel.textColor = OneTextColor;
+    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 15*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
+    userNameLabel.textColor = SubNameColor;
     userNameLabel.font = Font13;
     userNameLabel.text = @"水冰月";
-    [headBGView addSubview:userNameLabel];
+    [self addSubview:userNameLabel];
     
     //性别
-    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT)];
-    sexImageView.backgroundColor = [UIColor redColor];
-    [headBGView addSubview:sexImageView];
-    
+    sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.right + 5*WIDTH_NIT, 17*WIDTH_NIT, 15*WIDTH_NIT, 15*WIDTH_NIT)];
+    sexImageView.image = [UIImage imageNamed:@"nan"];
+    [self addSubview:sexImageView];
     
     //等级
-    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(sexImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
-    levelLabel.textColor = OneTextColor;
+    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(sexImageView.right + 2*WIDTH_NIT, 15*WIDTH_NIT, 30*WIDTH_NIT, 18*WIDTH_NIT)];
+    levelLabel.layer.borderWidth = 0.4;
+    levelLabel.layer.borderColor = MainGoldColor.CGColor;
+    levelLabel.textColor = MainGoldColor;
     levelLabel.font = Font13;
-    levelLabel.text = @"12";
-    [headBGView addSubview:levelLabel];
-    
+    levelLabel.text = @"Lv15";
+    [self addSubview:levelLabel];
     
     
     
     //电话
     phoneLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom + 5*WIDTH_NIT, 150*WIDTH_NIT, 20*WIDTH_NIT)];
-    phoneLabel.textColor = OneTextColor;
-    phoneLabel.font = Font13;
+    phoneLabel.textColor = LightNameColor;
+    phoneLabel.font = Font12;
     phoneLabel.text = @"手机号：15683062326";
     [headBGView addSubview:phoneLabel];
     
@@ -129,29 +135,38 @@
     miaobBtn.tag = 1;
     miaobBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     miaobBtn.titleLabel.numberOfLines = 0;
-    [miaobBtn setTitleColor:OneTextColor];
+    [miaobBtn setTitleColor:LightNameColor];
     [miaobBtn setTitle:@"0\n喵币"];
     [miaobBtn addTarget:self action:@selector(buttonAct:)];
     [miaoBGView addSubview:miaobBtn];
     
+    
+    //分割线
+    UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(miaobBtn.right-1, 10*WIDTH_NIT, 1, miaoBGView.height-20*WIDTH_NIT)];
+    line1.backgroundColor = BGColor;
+    [miaoBGView addSubview:line1];
     
     //余额
     yueBtn = [[UIButton alloc]initWithFrame:CGRectMake(miaobBtn.right, 0, miaoBGView.width/3, miaoBGView.height)];
     yueBtn.tag = 2;
     yueBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     yueBtn.titleLabel.numberOfLines = 0;
-    [yueBtn setTitleColor:OneTextColor];
+    [yueBtn setTitleColor:LightNameColor];
     [yueBtn setTitle:@"0\n余额"];
     [yueBtn addTarget:self action:@selector(buttonAct:)];
     [miaoBGView addSubview:yueBtn];
     
+    //分割线
+    UIView *line2 = [[UIView alloc]initWithFrame:CGRectMake(yueBtn.right-1, 10*WIDTH_NIT, 1, miaoBGView.height-20*WIDTH_NIT)];
+    line2.backgroundColor = BGColor;
+    [miaoBGView addSubview:line2];
     
     //喵友
     miaoyBtn = [[UIButton alloc]initWithFrame:CGRectMake(yueBtn.right, 0, miaoBGView.width/3, miaoBGView.height)];
     miaoyBtn.tag = 3;
     miaoyBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     miaoyBtn.titleLabel.numberOfLines = 0;
-    [miaoyBtn setTitleColor:OneTextColor];
+    [miaoyBtn setTitleColor:LightNameColor];
     [miaoyBtn setTitle:@"0\n喵友"];
     [miaoyBtn addTarget:self action:@selector(buttonAct:)];
     [miaoBGView addSubview:miaoyBtn];

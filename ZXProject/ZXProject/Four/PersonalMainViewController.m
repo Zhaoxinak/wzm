@@ -140,6 +140,7 @@
     NSArray *titleArr = [NSArray arrayWithObjects:@"资料", @"圈子", @"问题", @"心得" ,nil];
     self.seg.titleArray = titleArr;
     self.seg.titleWidth = kScreen_Width/4;
+    self.seg.lineWidth = kScreen_Width/4;
     self.seg.frame = CGRectMake(0, kScreen_Width/2, kScreen_Width, 44);
     [self.view addSubview:self.seg];
     

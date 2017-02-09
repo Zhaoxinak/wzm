@@ -29,7 +29,7 @@
 
 -(void)setupView{
 
-    NSArray *btnIamge = [NSArray arrayWithObjects:@"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2", @"猫狗2",nil];
+    NSArray *btnIamge = [NSArray arrayWithObjects:@"星", @"认证", @"-参与活动", @"喵问专家", @"帖子", @"改装心得",nil];
     NSArray *btnNames = [NSArray arrayWithObjects:@"收藏", @"认证", @"活动", @"喵问", @"帖子", @"心得",nil];
     
     
@@ -49,11 +49,13 @@
         appView.frame=CGRectMake(col*+appW, row*appH, appW, appH);
         appView.backgroundColor= [UIColor whiteColor];
         
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0.5*WIDTH_NIT, 0.5*WIDTH_NIT, appView.width-0.5*WIDTH_NIT, appView.height-0.5*WIDTH_NIT)];
+        btn.layer.borderWidth = 0.4;
+        btn.layer.borderColor = LessNameColor.CGColor;
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
-        btn.titleLabel.font = Font13;
-        btn.titleColor = OneTextColor;
+        btn.titleLabel.font = Font15;
+        btn.titleColor = NameColor;
         btn.title = btnNames[index];
         btn.image = btnIamge[index];
         [UIButton ImageUptoLabelDown:btn margin:20*WIDTH_NIT];

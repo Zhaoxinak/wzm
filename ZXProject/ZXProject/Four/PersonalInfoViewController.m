@@ -194,9 +194,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 || indexPath.section == 2) {
-        return 100;
+        return 80*WIDTH_NIT;
     } else {
-        return 50;
+        return 55*WIDTH_NIT;
     }
 }
 
@@ -216,7 +216,7 @@
     NSString *tempStr = _listFunctionArr[indexPath.section][indexPath.row][@"title"];
     if ([tempStr isEqualToString:@"头像"]) {
         infoCell.infoCellMode = HeaderCellMode;
-        [infoCell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_userInfoModel.picture] placeholderImage: [UIImage imageNamed:@"heard_img"]];
+        [infoCell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_userInfoModel.picture] placeholderImage: [UIImage imageNamed:@"touxiang02"]];
         
     }else
         

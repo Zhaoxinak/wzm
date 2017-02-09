@@ -30,28 +30,31 @@
 
 #pragma mark - setup method
 - (void)setupViews {
+    
+    self.height = 50*WIDTH_NIT;
+    
     _starImage = [[UIImageView alloc] initWithFrame:CGRectMake(0*WIDTH_NIT, 20*WIDTH_NIT, 8*WIDTH_NIT, 8*WIDTH_NIT)];
     _starImage.image = [UIImage imageNamed:@"star_red"];
     [self.contentView addSubview:_starImage];
     
     CGSize titleSize = [@"" getWidth:@"这是五个字" andFont:Font15];
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_starImage.right + 3, 14, titleSize.width + 3, 20)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_starImage.right + 3*WIDTH_NIT, self.height/2-10*WIDTH_NIT, titleSize.width + 3*WIDTH_NIT, 20*WIDTH_NIT)];
     _titleLabel.textColor = NameColor;
     _titleLabel.textAlignment = NSTextAlignmentLeft;
     _titleLabel.font = Font15;
     [self.contentView addSubview:_titleLabel];
     
-    _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(_titleLabel.right - 5, 47, kScreen_Width - _titleLabel.right + 5, 1)];
+    _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(_titleLabel.right - 5*WIDTH_NIT, self.height - 1*WIDTH_NIT, kScreen_Width - _titleLabel.right + 5*WIDTH_NIT, 1*WIDTH_NIT)];
     _bottomLine.backgroundColor = BGColor;
     [self.contentView addSubview:_bottomLine];
     
-    _detailText = [[UITextField alloc] initWithFrame:CGRectMake(_titleLabel.right, 14, kScreen_Width - _titleLabel.right - 30, 20)];
+    _detailText = [[UITextField alloc] initWithFrame:CGRectMake(_titleLabel.right, self.height/2-10*WIDTH_NIT, kScreen_Width - _titleLabel.right - 30*WIDTH_NIT, 20*WIDTH_NIT)];
     _detailText.textColor = NameColor;
     _detailText.font = Font15;
     _detailText.delegate = self;
     [self.contentView addSubview:_detailText];
     
-    _downArrow = [[UIImageView alloc] initWithFrame:CGRectMake(_detailText.right , 0, 30, 48)];
+    _downArrow = [[UIImageView alloc] initWithFrame:CGRectMake(_detailText.right , 0, 30*WIDTH_NIT, 48*WIDTH_NIT)];
     _downArrow.image = [UIImage imageNamed:@"icon_DisclosureIndicator"];
     [self.contentView addSubview:_downArrow];
 }

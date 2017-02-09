@@ -53,24 +53,24 @@
     //标题
     name = [[UILabel alloc]init];
     name.numberOfLines = 2;
-    name.font = Font13;
-    name.textColor = OneTextColor;
+    name.font = Font12;
+    name.textColor = NameColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     
     //时间
     time = [[UILabel alloc]init];
-    time.font = Font13;
-    time.textColor = OneTextColor;
+    time.font = Font12;
+    time.textColor = NameColor;
     time.text = @"时间时间";
     [self addSubview:time];
     
     
     //我的回复
     myReply = [[UILabel alloc]init];
-    myReply.font = Font13;
-    myReply.textColor = OneTextColor;
+    myReply.font = Font12;
+    myReply.textColor = NameColor;
     myReply.text = @"我的回复我的回复我的回";
     [self addSubview:myReply];
     
@@ -99,12 +99,12 @@
             name.hidden = NO;
             time.hidden = NO;
             
-            picView.frame = CGRectMake(kScreen_Width-MyMiaoQuestionsCell_Height, 5*WIDTH_NIT, MyMiaoQuestionsCell_Height-10*WIDTH_NIT, MyMiaoQuestionsCell_Height-10*WIDTH_NIT);
+            picView.frame = CGRectMake(kScreen_Width-130*WIDTH_NIT, 10*WIDTH_NIT, 120*WIDTH_NIT, 90*WIDTH_NIT);
             
-            name.frame =CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT);
+            name.frame =CGRectMake(10*WIDTH_NIT, 15*WIDTH_NIT, kScreen_Width-picView.width-20*WIDTH_NIT, 40*WIDTH_NIT);
             
          
-            time.frame = CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            time.frame = CGRectMake(10*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-10*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
         }
             
@@ -118,13 +118,14 @@
             topLine.hidden = NO;
             
             
-            myReply.frame = CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width/3*2-10*WIDTH_NIT, 20*WIDTH_NIT);
+            myReply.frame = CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width/3*2-10*WIDTH_NIT, 20*WIDTH_NIT);
             
-            time.frame = CGRectMake(myReply.right + 5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width/3-10*WIDTH_NIT, 20*WIDTH_NIT);
+            time.frame = CGRectMake(myReply.right + 5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width/3-20*WIDTH_NIT, 20*WIDTH_NIT);
+            time.textAlignment = NSTextAlignmentRight;
             
             topLine.frame = CGRectMake(0, myReply.bottom, kScreen_Width, 1*WIDTH_NIT);
             
-            name.frame =CGRectMake(10*WIDTH_NIT, topLine.bottom+5*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 40*WIDTH_NIT);
+            name.frame =CGRectMake(15*WIDTH_NIT, topLine.bottom+5*WIDTH_NIT, kScreen_Width-30*WIDTH_NIT, 40*WIDTH_NIT);
          
         }
             

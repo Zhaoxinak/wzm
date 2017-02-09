@@ -43,7 +43,7 @@
 #pragma mark --初始化数据
 -(void)setupData{
     
-     _partyCostPayArr = [NSArray arrayWithObjects:@{@"icon" : @"猫狗2", @"title" : @"微信支付"},@{@"icon" : @"猫狗2", @"title" : @"支付宝支付"},@{@"icon" : @"猫狗2", @"title" : @"余额支付"}, nil];
+     _partyCostPayArr = [NSArray arrayWithObjects:@{@"icon" : @"微信支付", @"title" : @"微信支付"},@{@"icon" : @"支付宝支付", @"title" : @"支付宝支付"},@{@"icon" : @"支付宝支付", @"title" : @"余额支付"}, nil];
     
 }
 
@@ -76,11 +76,21 @@
     self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
+    //支付剩余时间
+    UILabel *lastTime = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 32*WIDTH_NIT)];
+    lastTime.backgroundColor = MainGoldColor;
+    lastTime.textColor = MainWhiteColor;
+    lastTime.font = Font12;
+    lastTime.textAlignment = NSTextAlignmentCenter;
+    lastTime.text = @"剩余支付时间 29:29";
+    self.tableView.tableHeaderView = lastTime;
+    
     
     //支付按钮
-    _payBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, kScreen_Height/3*2, kScreen_Width-20*WIDTH_NIT, 40*WIDTH_NIT)];
+    _payBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 410*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 42*WIDTH_NIT)];
+    _payBtn.layer.cornerRadius = 5;
     [_payBtn setTitle:@"前往支付"];
-    [_payBtn setBackgroundColor:[UIColor redColor]];
+    [_payBtn setBackgroundColor:MainGoldColor];
     [_payBtn addTarget:self action:@selector(payAct:)];
     [self.view addSubview:_payBtn];
 }

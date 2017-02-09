@@ -12,7 +12,7 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define PartyInfoOrganizerCell_Height kScreen_Width/2
+#define PartyInfoOrganizerCell_Height 152*WIDTH_NIT
 
 @interface PartyInfoOrganizerTableViewCell : UITableViewCell{
     

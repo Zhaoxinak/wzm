@@ -48,8 +48,8 @@
     _headerImgView.image = [UIImage imageNamed:@"touxiang02"];
     
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.textColor = OneTextColor;
-    _titleLabel.font = Font13;
+    _titleLabel.textColor = NameColor;
+    _titleLabel.font = Font14;
     [self.contentView addSubview:_titleLabel];
     
     _arrowImgView = [[UIImageView alloc] init];
@@ -58,8 +58,8 @@
     
     _detailLabel = [[UILabel alloc] init];
     _detailLabel.textAlignment = NSTextAlignmentRight;
-    _detailLabel.textColor = TwoTextColor;
-    _detailLabel.height = 18;
+    _detailLabel.textColor = LightNameColor;
+    _detailLabel.height = 20*WIDTH_NIT;
     _detailLabel.font = Font13;
     [self.contentView addSubview:_detailLabel];
     
@@ -98,11 +98,11 @@
         case HeaderCellMode:
         {
             
-            _headerImgView.left = kScreen_Width -100;
-            _headerImgView.top = 15;
-            _headerImgView.width = 60;
-            _headerImgView.height = 60;
-            _headerImgView.layer.cornerRadius = 30;
+            _headerImgView.left = kScreen_Width -100*WIDTH_NIT;
+            _headerImgView.top = 10*WIDTH_NIT;
+            _headerImgView.width = 62*WIDTH_NIT;
+            _headerImgView.height = 62*WIDTH_NIT;
+            _headerImgView.layer.cornerRadius = 31*WIDTH_NIT;
             _headerImgView.layer.masksToBounds = YES;
             _headerImgView.hidden = NO;
             

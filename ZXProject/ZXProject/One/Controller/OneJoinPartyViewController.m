@@ -85,11 +85,11 @@
     
     //设置标题
 //    self.navigationItem.title = @"活动";
-    
+   
     UIButton *titleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100*WIDTH_NIT, 50*WIDTH_NIT)];
     titleBtn.titleLabel.font = KNavigationFont;
-    [titleBtn setTitle:@"活动" ];
-    [titleBtn setImage:@"))"];
+    [titleBtn setTitle:@"活动 V"];
+    [titleBtn setImage:@"V"];
     [titleBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -titleBtn.imageView.size.width, 0, titleBtn.imageView.size.width)];
     [titleBtn setImageEdgeInsets:UIEdgeInsetsMake(0, titleBtn.titleLabel.bounds.size.width, 0, -titleBtn.titleLabel.bounds.size.width)];
     [titleBtn setTitleColor:KNavigationTitleColor];
@@ -103,9 +103,8 @@
     
     //发布按钮
     UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    publishBtn.frame = CGRectMake(0, 0, 80, 44);
-    [publishBtn setTitle:@"发布"];
-    [publishBtn setTitleColor:KNavigationTitleColor];
+    publishBtn.frame = CGRectMake(0, 0, 44, 44);
+    [publishBtn setImage:@"发布"];
     [publishBtn addTarget:self action:@selector(publishAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = rightButton;

@@ -45,7 +45,7 @@
 #pragma mark --初始化数据
 -(void)setupData{
     
-    _partyCostPayArr = [NSArray arrayWithObjects:@{@"icon" : @"猫狗2", @"title" : @"微信支付"},@{@"icon" : @"猫狗2", @"title" : @"支付宝支付"},@{@"icon" : @"猫狗2", @"title" : @"余额支付"}, nil];
+    _partyCostPayArr = [NSArray arrayWithObjects:@{@"icon" : @"微信支付", @"title" : @"微信支付"},@{@"icon" : @"支付宝支付", @"title" : @"支付宝支付"},@{@"icon" : @"支付宝支付", @"title" : @"余额支付"}, nil];
     
 }
 
@@ -81,14 +81,14 @@
     
     
     //顶部头像和金额选择
-    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height/3*2)];
+    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 430*WIDTH_NIT)];
     topView.backgroundColor = [UIColor whiteColor];
     
     
     //头像
-    self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
+    self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10*WIDTH_NIT, 84*WIDTH_NIT, 84*WIDTH_NIT)];
     self.headImageView.centerX = topView.centerX;
-    self.headImageView.backgroundColor = [UIColor redColor];
+    self.headImageView.image = [UIImage imageNamed:@"touxiang02"];
     self.headImageView.clipsToBounds = YES;
     self.headImageView.layer.cornerRadius = self.headImageView.size.width / 2;
     [topView addSubview:self.headImageView];
@@ -100,15 +100,15 @@
     
     
     //用户名
-    self.userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.headImageView.bottom + 5*WIDTH_NIT, topView.width, 20*WIDTH_NIT)];
+    self.userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.headImageView.bottom + 10*WIDTH_NIT, topView.width, 20*WIDTH_NIT)];
     self.userNameLabel.textAlignment = NSTextAlignmentCenter;
-    self.userNameLabel.textColor = OneTextColor;
-    self.userNameLabel.font = Font13;
+    self.userNameLabel.textColor = NameColor;
+    self.userNameLabel.font = Font15;
     self.userNameLabel.text = @"水冰月";
     [topView addSubview:self.userNameLabel];
     
     //分割
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.userNameLabel.bottom + 20*WIDTH_NIT, topView.width, 10*WIDTH_NIT)];
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.userNameLabel.bottom + 20*WIDTH_NIT, topView.width, 15*WIDTH_NIT)];
     line.backgroundColor = BGColor;
     [topView addSubview:line];
     
@@ -133,14 +133,14 @@
         
         //创建按钮
         _moneyBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        _moneyBtn.frame= CGRectMake(appviewx, appviewy+line.bottom+10*WIDTH_NIT, btnw, btnh);
+        _moneyBtn.frame= CGRectMake(appviewx, appviewy+line.bottom+15*WIDTH_NIT, btnw, btnh);
        // _moneyBtn.titleLabel.font=[UIFont systemFontOfSize:15.0];
         _moneyBtn.layer.cornerRadius = 5*WIDTH_NIT;
         _moneyBtn.layer.borderWidth = 0.5;
-        _moneyBtn.layer.borderColor = [UIColor blackColor].CGColor;
+        _moneyBtn.layer.borderColor = MainGoldColor.CGColor;
         [_moneyBtn.layer setMasksToBounds:YES];
-        [_moneyBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
-        [_moneyBtn setTitleColor:[UIColor redColor]forState:UIControlStateSelected];
+        [_moneyBtn setTitleColor:MainGoldColor forState:UIControlStateNormal];
+        [_moneyBtn setTitleColor:MainBlackColor forState:UIControlStateSelected];
         
         [_moneyBtn setTitle:[moneyArray objectAtIndex:i] forState:UIControlStateNormal];
         [_moneyBtn addTarget:self action:@selector(moneyPress:) forControlEvents:UIControlEventTouchUpInside];
@@ -151,15 +151,18 @@
     
     //填写金额
     self.moneyField = [[ZXLoginTextField alloc] initWithType:NormalType];
-    self.moneyField.frame = CGRectMake(20*WIDTH_NIT, _moneyBtn.bottom + 40*WIDTH_NIT, topView.width-40*WIDTH_NIT, 50*WIDTH_NIT);
+    self.moneyField.frame = CGRectMake(10*WIDTH_NIT, _moneyBtn.bottom + 20*WIDTH_NIT, topView.width-20*WIDTH_NIT, 44*WIDTH_NIT);
+    self.moneyField.layer.cornerRadius = 5;
     self.moneyField.leftLabel.text = @"";
-    UILabel *yuan = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 40*WIDTH_NIT, 50*WIDTH_NIT)];
+    UILabel *yuan = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 40*WIDTH_NIT, 44*WIDTH_NIT)];
     yuan.textAlignment = NSTextAlignmentCenter;
+    yuan.textColor = MainGoldColor;
+    yuan.font = Font15;
     yuan.text = @"元";
     self.moneyField.inputTextField.rightViewMode = UITextFieldViewModeAlways;
     self.moneyField.inputTextField.rightView = yuan;
     self.moneyField.inputTextField.keyboardType = UIKeyboardTypeDecimalPad;
-    self.moneyField.inputTextField.layer.cornerRadius = 5;
+    
     self.moneyField.inputTextField.delegate = self;
     [topView addSubview:self.moneyField];
     
@@ -189,7 +192,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return 80*WIDTH_NIT;
+    return 125*WIDTH_NIT;
     
 }
 
@@ -210,9 +213,10 @@
     footerView.backgroundColor = BGColor;
     
     //支付按钮
-    _payBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 20*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 40*WIDTH_NIT)];
+    _payBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 60*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 42*WIDTH_NIT)];
+    _payBtn.layer.cornerRadius = 5;
     [_payBtn setTitle:@"打赏"];
-    [_payBtn setBackgroundColor:[UIColor redColor]];
+    [_payBtn setBackgroundColor:MainGoldColor];
     [_payBtn addTarget:self action:@selector(payAct:)];
     [footerView addSubview:_payBtn];
     
@@ -266,12 +270,12 @@
 {
     if(button!=_moneyBtn){
         _moneyBtn.selected=NO;
-        _moneyBtn.layer.borderColor = [UIColor blackColor].CGColor;
+        _moneyBtn.layer.borderColor = MainGoldColor.CGColor;
         _moneyBtn=button;
         
     }
     _moneyBtn.selected=YES;
-    _moneyBtn.layer.borderColor = [UIColor redColor].CGColor;
+    _moneyBtn.layer.borderColor = MainBlackColor.CGColor;
     self.moneyField.inputTextField.text = [_moneyBtn.title substringWithRange:NSMakeRange(0, [_moneyBtn.title length] - 1)];
 }
 

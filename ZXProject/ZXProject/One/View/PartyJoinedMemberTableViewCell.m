@@ -38,32 +38,33 @@
     
     
     NSArray *btnNames= [NSArray arrayWithObjects:@"", nil];
-    NSArray *btnImages = [NSArray arrayWithObjects:@"我的火喵2", @"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",@"我的火喵2",nil];
+    NSArray *btnImages = [NSArray arrayWithObjects:@"wo", @"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",@"wo",nil];
     
     
     
     //定义总列数、每个九宫格的宽高
     NSInteger totalColumns=7;
-    CGFloat appW=kScreen_Width/7;
-    CGFloat appH=PartyJoinedMemberCell_Height;
-    
+    CGFloat appW=44*WIDTH_NIT;
+    CGFloat appH=44*WIDTH_NIT;
+    CGFloat marinW = (kScreen_Width-totalColumns*appW)/(totalColumns+1);
     //根据arr1中数据数量来初始化并加载一个一个的UIVIew
     for (int index=0; index<7; index++) {
         //计算这个app在几行几列
         int row=index/totalColumns;
         int col=index%totalColumns;
+        
         //创建UIView
         UIView *appView=[[UIView alloc]init];
         //根据一些计算，确定不同UIView的位置
-        appView.frame=CGRectMake(col*+appW, row*appH, appW, appH);
+        appView.frame=CGRectMake(marinW + col*(marinW+appW), 10*WIDTH_NIT + row*appH, appW, appH);
         appView.backgroundColor= [UIColor whiteColor];
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, appView.width-10*WIDTH_NIT, appView.height-10*WIDTH_NIT)];
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];
         btn.clipsToBounds = YES;
-        btn.titleLabel.font = Font13;
-        btn.titleColor = OneTextColor;
+        btn.titleLabel.font = Font8;
+        btn.titleColor = NameColor;
         btn.title = [NSString stringWithFormat:@"头像%d", index];
         [btn setImage:btnImages[index]];
         [UIButton ImageUptoLabelDown:btn margin:1*WIDTH_NIT];
