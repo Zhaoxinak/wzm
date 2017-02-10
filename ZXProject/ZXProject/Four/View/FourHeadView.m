@@ -136,7 +136,7 @@
     miaobBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     miaobBtn.titleLabel.numberOfLines = 0;
     [miaobBtn setTitleColor:LightNameColor];
-    [miaobBtn setTitle:@"0\n喵币"];
+    [miaobBtn setTitle:@"0\n猫币"];
     [miaobBtn addTarget:self action:@selector(buttonAct:)];
     [miaoBGView addSubview:miaobBtn];
     

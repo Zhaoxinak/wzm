@@ -35,7 +35,7 @@
     [self addSubview:topLine];
     
     //底部分割线
-    bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, NotesCell_Height-5*WIDTH_NIT, kScreen_Width, 5*WIDTH_NIT)];
+    bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, NotesCell_Height-10*WIDTH_NIT, kScreen_Width, 10*WIDTH_NIT)];
     bottomLine.backgroundColor = BGColor;
     [self addSubview:bottomLine];
     
@@ -52,38 +52,38 @@
     //标题
     name = [[UILabel alloc]init];
     name.numberOfLines = 2;
-    name.font = Font13;
-    name.textColor = OneTextColor;
+    name.font = Font12;
+    name.textColor = NameColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     //内容
     subName = [[UILabel alloc]init];
-    subName.font = Font13;
-    subName.textColor = TwoTextColor;
+    subName.font = Font12;
+    subName.textColor = NameColor;
     subName.text = @"音响改装吧";
     [self addSubview:subName];
     
     
     //时间
     time = [[UILabel alloc]init];
-    time.font = Font13;
-    time.textColor = OneTextColor;
+    time.font = Font12;
+    time.textColor = NameColor;
     time.text = @"时间时间";
     [self addSubview:time];
     
     
     //我的回复
     myReply = [[UILabel alloc]init];
-    myReply.font = Font13;
-    myReply.textColor = OneTextColor;
+    myReply.font = Font12;
+    myReply.textColor = NameColor;
     myReply.text = @"我的回复我的回复我的回";
     [self addSubview:myReply];
     
     
     //评论数
     commentBtn = [[UIButton alloc]init];
-    [commentBtn setTitleColor:OneTextColor];
+    [commentBtn setTitleColor:NameColor];
     [commentBtn setImage:@"猫狗2"];
     [commentBtn setTitle:@"11"];
     
@@ -116,13 +116,13 @@
             subName.hidden = NO;
             time.hidden = NO;
             
-            picView.frame = CGRectMake(kScreen_Width-NotesCell_Height, 5*WIDTH_NIT, NotesCell_Height-10*WIDTH_NIT, NotesCell_Height-10*WIDTH_NIT);
+            picView.frame = CGRectMake(kScreen_Width-130*WIDTH_NIT, 10*WIDTH_NIT, 120*WIDTH_NIT, 90*WIDTH_NIT);
            
-            name.frame =CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, kScreen_Width-picView.width-15*WIDTH_NIT, 40*WIDTH_NIT);
+            name.frame =CGRectMake(10*WIDTH_NIT, 20*WIDTH_NIT, kScreen_Width-picView.width-20*WIDTH_NIT, 40*WIDTH_NIT);
             
-            subName.frame = CGRectMake(5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3, 20*WIDTH_NIT);
+            subName.frame = CGRectMake(10*WIDTH_NIT, name.bottom+20*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3, 20*WIDTH_NIT);
             
-            time.frame = CGRectMake(subName.right + 5*WIDTH_NIT, name.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
+            time.frame = CGRectMake(subName.right + 5*WIDTH_NIT, name.bottom+20*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
         }
             

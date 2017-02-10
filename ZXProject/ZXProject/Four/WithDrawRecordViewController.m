@@ -90,6 +90,7 @@
     
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
 
@@ -147,8 +148,15 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cellRightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+        cellRightLabel.font = Font24;
+        cellRightLabel.textColor = MainGoldColor;
         cellRightLabel.textAlignment = NSTextAlignmentCenter;
         cell.accessoryView  = cellRightLabel;
+        
+        cell.textLabel.font = Font15;
+        cell.detailTextLabel.font = Font12;
+        cell.textLabel.textColor = LessNameColor;
+        cell.detailTextLabel.textColor = LessNameColor;
     }
     
     cell.textLabel.text = @"成功";

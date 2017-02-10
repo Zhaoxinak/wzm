@@ -28,7 +28,17 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIButton *commentBtn;
 @property (nonatomic, strong) UILabel *titleNameLabel;
+
+/******************************************/
 @property (nonatomic, strong) UIView *detailView;
+@property (nonatomic, strong) UIImageView *headImageView2;
+@property (nonatomic, strong) UILabel *userNameLabel2;
+@property (nonatomic, strong) UILabel *levelLabel2;
+@property (nonatomic, strong) UIImageView *sexImageView2;
+@property (nonatomic, strong) UILabel *titleNameLabel2;
+/******************************************/
+
+@property (nonatomic, strong) UIView *line;
 
 @property(nonatomic, assign) id<AnswerNoticeCellDelegate> delegate;
 @property (nonatomic, strong) AnswerNoticeFrameModel *frameModel;

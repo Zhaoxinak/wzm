@@ -133,7 +133,10 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.detailTextLabel.numberOfLines = 0;
-        
+        cell.textLabel.font = Font15;
+        cell.detailTextLabel.font = Font12;
+        cell.textLabel.textColor = NameColor;
+        cell.detailTextLabel.textColor = LessNameColor;
     }
     
     cell.textLabel.text =  cellTitle;

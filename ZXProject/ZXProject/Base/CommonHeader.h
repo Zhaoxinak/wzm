@@ -181,6 +181,8 @@ return _instance; \
 /**
  *  nav字体大小
  */
+
+#define Font(size)   [UIFont systemFontOfSize:size*WIDTH_NIT]
 #define Font24   [UIFont systemFontOfSize:24*WIDTH_NIT]
 #define Font18   [UIFont systemFontOfSize:18*WIDTH_NIT]
 #define Font17   [UIFont systemFontOfSize:17*WIDTH_NIT]

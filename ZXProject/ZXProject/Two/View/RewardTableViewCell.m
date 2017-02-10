@@ -43,6 +43,7 @@
     //活动类型
     typeName = [[UILabel alloc]initWithFrame:CGRectMake(0*WIDTH_NIT, 0, 35*WIDTH_NIT, 20*WIDTH_NIT)];
     typeName.textAlignment = NSTextAlignmentCenter;
+    typeName.backgroundColor = MainGoldColor;
     typeName.font = Font12;
     typeName.textColor = MainWhiteColor;
     typeName.text = @"案例";

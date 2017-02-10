@@ -1,0 +1,282 @@
+//
+//  ChargeMiaoCoinViewController.m
+//  ZXProject
+//
+//  Created by Mr.X on 2017/2/10.
+//  Copyright © 2017年 Mr.X. All rights reserved.
+//
+
+
+/************C************/
+#import "ChargeMiaoCoinViewController.h"
+/************V************/
+#import "ZXLoginTextField.h"
+/************M************/
+
+@interface ChargeMiaoCoinViewController ()<UITextFieldDelegate>
+
+@property (nonatomic, strong) NSArray *partyCostPayArr;  //打赏方式
+@property (nonatomic, strong) UIButton *payBtn; //打赏按钮
+@property (nonatomic, strong) UIButton *moneyBtn; //金额选择
+@property (nonatomic, strong) ZXLoginTextField *moneyField; //金额填写
+
+@end
+
+@implementation ChargeMiaoCoinViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupData];
+    
+    [self setupView];
+}
+
+#pragma mark - 刷新系统
+-(void)setRefresh{
+}
+-(void)setHeaderRefresh{
+}
+
+
+#pragma mark -执行数据
+#pragma mark --初始化数据
+-(void)setupData{
+    
+    _partyCostPayArr = [NSArray arrayWithObjects:@{@"icon" : @"微信支付", @"title" : @"微信支付"},@{@"icon" : @"支付宝支付", @"title" : @"支付宝支付"},@{@"icon" : @"支付宝支付", @"title" : @"余额支付"}, nil];
+    
+}
+
+#pragma mark当网络请求开始或结束时，下面两个方法将会被调到。
+
+-(void)ZXsuccessData:(id)data byRequestId:(NSInteger)requestId{
+    
+}
+
+
+- (void)handleData:(id _Nullable)data byRequestId:(NSInteger)requestId{
+    
+    
+}
+
+- (void)handleError:(id _Nullable)error byRequestId:(NSInteger)requestId{
+    
+}
+
+#pragma mark -执行视图
+#pragma mark --初始化数据视图
+-(void)setupView{
+    
+    //设置标题
+    self.title = @"猫币充值";
+    
+    
+    //设置tableView
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
+    [self.view insertSubview:self.tableView atIndex:1];
+    
+    
+    
+    //金额选择
+    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 220*WIDTH_NIT)];
+    topView.backgroundColor = [UIColor whiteColor];
+    
+    
+    //金额选择
+    //三列 九宫格
+    NSInteger totalloc=3;
+    CGFloat btnw=100*WIDTH_NIT;
+    CGFloat btnh=46*WIDTH_NIT;
+    
+    CGFloat margin=(self.view.frame.size.width-totalloc*btnw)/(totalloc+1);
+    int count=6;
+    for (NSInteger i=0; i<count; i++) {
+        NSInteger row=i/totalloc;//行号
+        //1/3=0,2/3=0,3/3=1;
+        NSInteger loc=i%totalloc;//列号
+        
+        CGFloat appviewx=margin+(margin+btnw)*loc;
+        CGFloat appviewy=margin+(margin+btnh)*row;
+        
+        NSArray *moneyArray = [NSArray arrayWithObjects:@"1元",@"2元",@"5元", @"10元",@"20元",@"50元",nil];
+        
+        //创建按钮
+        _moneyBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        _moneyBtn.frame= CGRectMake(appviewx, appviewy+15*WIDTH_NIT, btnw, btnh);
+        // _moneyBtn.titleLabel.font=[UIFont systemFontOfSize:15.0];
+        _moneyBtn.layer.cornerRadius = 5*WIDTH_NIT;
+        _moneyBtn.layer.borderWidth = 0.5;
+        _moneyBtn.layer.borderColor = MainGoldColor.CGColor;
+        [_moneyBtn.layer setMasksToBounds:YES];
+        [_moneyBtn setTitleColor:MainGoldColor forState:UIControlStateNormal];
+        [_moneyBtn setTitleColor:MainBlackColor forState:UIControlStateSelected];
+        
+        [_moneyBtn setTitle:[moneyArray objectAtIndex:i] forState:UIControlStateNormal];
+        [_moneyBtn addTarget:self action:@selector(moneyPress:) forControlEvents:UIControlEventTouchUpInside];
+        [topView addSubview:_moneyBtn];
+        
+        
+    }
+    
+    //填写金额
+    self.moneyField = [[ZXLoginTextField alloc] initWithType:NormalType];
+    self.moneyField.frame = CGRectMake(10*WIDTH_NIT, _moneyBtn.bottom + 20*WIDTH_NIT, topView.width-20*WIDTH_NIT, 44*WIDTH_NIT);
+    self.moneyField.layer.cornerRadius = 5;
+    self.moneyField.leftLabel.text = @"";
+    UILabel *yuan = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 40*WIDTH_NIT, 44*WIDTH_NIT)];
+    yuan.textAlignment = NSTextAlignmentCenter;
+    yuan.textColor = MainGoldColor;
+    yuan.font = Font15;
+    yuan.text = @"元";
+    self.moneyField.inputTextField.rightViewMode = UITextFieldViewModeAlways;
+    self.moneyField.inputTextField.rightView = yuan;
+    self.moneyField.inputTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    self.moneyField.inputTextField.placeholder = @"输入要充值的金额，1RMB = 100MB";
+    self.moneyField.inputTextField.delegate = self;
+    [topView addSubview:self.moneyField];
+    
+    
+    
+    self.tableView.tableHeaderView = topView;
+}
+
+
+#pragma mark - UITableViewDelegate，UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return _partyCostPayArr.count;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    
+    return 1;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    return 125*WIDTH_NIT;
+    
+}
+
+
+
+
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
+    headerView.backgroundColor = BGColor;
+    return headerView;
+}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0.5)];
+    footerView.backgroundColor = BGColor;
+    
+    //支付按钮
+    _payBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 60*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 42*WIDTH_NIT)];
+    _payBtn.layer.cornerRadius = 5;
+    [_payBtn setTitle:@"确认"];
+    [_payBtn setBackgroundColor:MainGoldColor];
+    _payBtn.titleColor = MainWhiteColor;
+    [_payBtn addTarget:self action:@selector(payAct:)];
+    [footerView addSubview:_payBtn];
+    
+    return footerView;
+}
+
+
+
+#pragma mark - UITableView展示
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString *cellIdentifier = [NSString stringWithFormat:@"cell%ld", (long)indexPath.row];
+    //首先根据标示去缓存池取
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];;
+    //如果缓存池没有取到则重新创建并放到缓存池中
+    if(!cell){
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    
+    cell.imageView.image = [UIImage imageNamed:_partyCostPayArr[indexPath.row][@"icon"]];
+    cell.textLabel.text = _partyCostPayArr[indexPath.row][@"title"];
+    return cell;
+    
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 50*WIDTH_NIT;
+}
+
+
+
+#pragma mark -执行功能
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+}
+
+#pragma mark -点击头像
+- (void)headTapAction:(UITapGestureRecognizer *)tap {
+    
+    NSLog(@"点击头像");
+}
+
+#pragma mark -金额选择
+- (void)moneyPress:(UIButton*)button
+{
+    if(button!=_moneyBtn){
+        _moneyBtn.selected=NO;
+        _moneyBtn.layer.borderColor = MainGoldColor.CGColor;
+        _moneyBtn=button;
+        
+    }
+    _moneyBtn.selected=YES;
+    _moneyBtn.layer.borderColor = MainBlackColor.CGColor;
+    self.moneyField.inputTextField.text = [_moneyBtn.title substringWithRange:NSMakeRange(0, [_moneyBtn.title length] - 1)];
+}
+
+
+#pragma mark -支付功能
+-(void)payAct:(UIButton *)button{
+    NSLog(@"打赏");
+    
+}
+
+
+
+#pragma mark -textfield 代理
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    if (_moneyBtn.selected == YES) {
+        
+        _moneyBtn.selected=NO;
+        _moneyBtn.layer.borderColor = [UIColor blackColor].CGColor;
+        self.moneyField.inputTextField.text = @"";
+    }
+    
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+@end

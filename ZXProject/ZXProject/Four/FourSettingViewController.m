@@ -7,7 +7,7 @@
 //
 
 //cell的高度
-#define FourSettingCell_Height 50*WIDTH_NIT
+#define FourSettingCell_Height 40*WIDTH_NIT
 
 /************C************/
 #import "FourSettingViewController.h"
@@ -45,7 +45,7 @@
 -(void)setupData{
     
     _listFunctionArr = [NSArray arrayWithObjects:
-                        @{@"icon" : @"", @"title" : @"隐私设置", @"subTitle" : @"允许非好友发起私聊"},
+                        @{@"icon" : @"", @"title" : @"隐私设置", @"subTitle" : @"允许非好友发起私聊  "},
                         @{@"icon" : @"", @"title" : @"关于我们", @"subTitle" : @""},
                         nil];
 }
@@ -77,14 +77,17 @@
     self.title = @"设置";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     self.tableView.scrollEnabled = NO;
     [self.view insertSubview:self.tableView atIndex:1];
     
   
     //退出登录
-    UIButton *exitBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 200*WIDTH_NIT, kScreen_Width, FourSettingCell_Height)];
-    exitBtn.backgroundColor = [UIColor whiteColor];
-    exitBtn.titleColor = OneTextColor;
+    UIButton *exitBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 200*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 44*WIDTH_NIT)];
+    exitBtn.layer.cornerRadius = 5;
+    exitBtn.backgroundColor = MainGoldColor;
+    exitBtn.titleColor = MainWhiteColor;
+    exitBtn.titleLabel.font = Font18;
     exitBtn.title = @"退出登录";
     [exitBtn addTarget:self action:@selector(exitAct:)];
     [self.view insertSubview:exitBtn atIndex:2];
@@ -145,6 +148,11 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = Font15;
+        cell.detailTextLabel.font = Font15;
+        cell.textLabel.textColor = NameColor;
+        cell.detailTextLabel.textColor = LessNameColor;
+        
         if ([cellTitle isEqualToString:@"隐私设置"]) {
             //add a switch
             UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];

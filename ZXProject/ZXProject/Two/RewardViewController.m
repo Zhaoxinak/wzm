@@ -69,7 +69,8 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"所有评论";
+    self.title = @"";
+    
     
     //标题segmentController
     self.segItems = @[@"收到打赏", @"打赏他人"];

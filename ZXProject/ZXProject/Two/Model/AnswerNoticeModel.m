@@ -20,23 +20,23 @@
     
     
     //头像
-    self.headImageViewFrame = CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT);
+    self.headImageViewFrame = CGRectMake(10*WIDTH_NIT, 20*WIDTH_NIT, 40*WIDTH_NIT, 40*WIDTH_NIT);
     
     //用户名
-    self.userNameLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 10*WIDTH_NIT, 10*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
+    self.userNameLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 5*WIDTH_NIT, 30*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
     
     //等级
-    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 10*WIDTH_NIT, 10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT);
+    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 2*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT, 18*WIDTH_NIT);
     
     //性别
-    self.sexImageViewFrame = CGRectMake(CGRectGetMaxX(self.levelLabelFrame) + 10*WIDTH_NIT, 10*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT);
+    self.sexImageViewFrame = CGRectMake(CGRectGetMaxX(self.levelLabelFrame) + 5*WIDTH_NIT, 32*WIDTH_NIT, 15*WIDTH_NIT, 15*WIDTH_NIT);
     
     
     //时间
-    self.timeLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.userNameLabelFrame) + 10*WIDTH_NIT, kScreen_Width/2, 20*WIDTH_NIT);
+    self.timeLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 5*WIDTH_NIT, CGRectGetMaxY(self.userNameLabelFrame) + 2*WIDTH_NIT, kScreen_Width/2, 20*WIDTH_NIT);
     
     //回复
-    self.commentBtnFrame = CGRectMake(kScreen_Width/3*2, 10*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
+    self.commentBtnFrame = CGRectMake(kScreen_Width-62*WIDTH_NIT, 20*WIDTH_NIT, 52*WIDTH_NIT, 26*WIDTH_NIT);
     
     
     //标题

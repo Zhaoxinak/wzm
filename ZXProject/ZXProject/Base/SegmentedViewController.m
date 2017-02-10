@@ -33,8 +33,13 @@
     if (_seg == nil) {
         _seg = [[UISegmentedControl alloc] initWithItems:_segItems];
         _seg.frame = CGRectMake(0, 0, _segItems.count*100*WIDTH_NIT, 30*WIDTH_NIT);
-        _seg.backgroundColor = [UIColor clearColor];
-        _seg.tintColor = [UIColor whiteColor];
+        _seg.backgroundColor = MainWhiteColor;
+        _seg.tintColor = MainGoldColor;
+        _seg.layer.borderColor = MainWhiteColor.CGColor;
+        _seg.layer.borderWidth = 0.4;
+        _seg.layer.cornerRadius = 5;
+        _seg.clipsToBounds = YES;
+
         _seg.selectedSegmentIndex = 0;
          [_seg addTarget:self action:@selector(viewChangeAction:) forControlEvents:UIControlEventValueChanged];
         

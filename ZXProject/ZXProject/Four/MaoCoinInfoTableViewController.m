@@ -7,10 +7,11 @@
 //
 
 //cell的高度   280   70
-#define MaoCoinInfoCell_Height 50*WIDTH_NIT
+#define MaoCoinInfoCell_Height 60*WIDTH_NIT
 
 /************C************/
 #import "MaoCoinInfoTableViewController.h"
+#import "ChargeMiaoCoinViewController.h" //充值
 /************V************/
 
 /************M************/
@@ -90,6 +91,7 @@
     
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
     
@@ -104,20 +106,20 @@
 
     
     //设置顶部
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/2)];
-    topView.backgroundColor = [UIColor redColor];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width,260*WIDTH_NIT)];
+    topView.backgroundColor = [UIColor whiteColor];
   
     //头像
-    headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.width/2-30*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
-    headerImgView.backgroundColor = [UIColor yellowColor];
+    headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.width/2-45*WIDTH_NIT, 35*WIDTH_NIT, 90*WIDTH_NIT, 90*WIDTH_NIT)];
+    headerImgView.image = [UIImage imageNamed:@"猫币icon"];
     [topView addSubview:headerImgView];
     
    
     
     //猫币数量
-    maoCoinNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    maoCoinNum.textColor = OneTextColor;
-    maoCoinNum.font = Font13;
+    maoCoinNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 25*WIDTH_NIT, 100*WIDTH_NIT, 30*WIDTH_NIT)];
+    maoCoinNum.textColor = NameColor;
+    maoCoinNum.font = Font(40);
     maoCoinNum.text = @"450枚";
     [maoCoinNum sizeToFit];
     maoCoinNum.centerX = headerImgView.centerX;
@@ -131,6 +133,8 @@
     //余额明细
     UILabel *infoLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, topView.height-30*WIDTH_NIT, topView.width, 30*WIDTH_NIT)];
     infoLabel.textAlignment = NSTextAlignmentCenter;
+    infoLabel.textColor = NameColor;
+    infoLabel.font = Font(17);
     infoLabel.text = @"余额明细";
     [topView addSubview:infoLabel];
     
@@ -189,8 +193,15 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cellRightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+        cellRightLabel.font = Font24;
+        cellRightLabel.textColor = MainGoldColor;
         cellRightLabel.textAlignment = NSTextAlignmentCenter;
         cell.accessoryView  = cellRightLabel;
+        
+        cell.textLabel.font = Font15;
+        cell.detailTextLabel.font = Font12;
+        cell.textLabel.textColor = LessNameColor;
+        cell.detailTextLabel.textColor = LessNameColor;
     }
     
     cell.textLabel.text = @"今日首次登入";
@@ -222,7 +233,8 @@
 #pragma mark -- 充值
 -(void)chargeAct{
     NSLog(@"充值");
-    
+    ChargeMiaoCoinViewController *chargeVC = [[ChargeMiaoCoinViewController alloc]init];
+    [self.navigationController pushViewController:chargeVC animated:YES];
     
 }
 

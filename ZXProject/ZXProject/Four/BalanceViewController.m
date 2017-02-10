@@ -69,7 +69,7 @@
 -(void)setupView{
     
     //设置标题
-    self.title = @"猫币明细";
+    self.title = @"余额";
     
    
     //明细
@@ -83,21 +83,21 @@
     
     
     //设置顶部
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width)];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 320*WIDTH_NIT)];
     topView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:topView];
     
     
     //头像
-    headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.width/2-30*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
-    headerImgView.backgroundColor = [UIColor yellowColor];
+    headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.width/2-45*WIDTH_NIT, 25*WIDTH_NIT, 90*WIDTH_NIT, 90*WIDTH_NIT)];
+    headerImgView.image = [UIImage imageNamed:@"余额"];
     [topView addSubview:headerImgView];
     
     
     //金钱
-    moneyNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    moneyNum.textColor = OneTextColor;
-    moneyNum.font = Font13;
+    moneyNum = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 15*WIDTH_NIT, 100*WIDTH_NIT, 30*WIDTH_NIT)];
+    moneyNum.textColor = NameColor;
+    moneyNum.font = Font(30);
     moneyNum.text = @"¥ 450.11";
     [moneyNum sizeToFit];
     moneyNum.centerX = headerImgView.centerX;
@@ -108,23 +108,33 @@
     //金钱状态
     moneyStatus = [[UILabel alloc]initWithFrame:CGRectMake(0, moneyNum.bottom + 5*WIDTH_NIT, topView.width, 20*WIDTH_NIT)];
     moneyStatus.textAlignment = NSTextAlignmentCenter;
+    moneyStatus.textColor = MainGoldColor;
+    moneyStatus.font = Font(15);
     moneyStatus.text = @"(冻结)";
     [topView addSubview:moneyStatus];
     
     //提现
-    withDrawBtn = [[UIButton alloc]initWithFrame:CGRectMake(20*WIDTH_NIT, moneyStatus.bottom + 10*WIDTH_NIT, topView.width-40*WIDTH_NIT, 30*WIDTH_NIT)];
-    withDrawBtn.backgroundColor = [UIColor blackColor];
-    [withDrawBtn setTitle:@"提现"];
-    [withDrawBtn addTarget:self action:@selector(withDrawAct:)];
+    withDrawBtn=[[UIButton alloc] initWithFrame:CGRectMake(20*WIDTH_NIT, moneyStatus.bottom + 15*WIDTH_NIT, topView.width-40*WIDTH_NIT, 40*WIDTH_NIT)];
+    withDrawBtn.titleLabel.font = Font(20);
+    withDrawBtn.backgroundColor=MainBlackColor;
+    [withDrawBtn setTitleColor:MainWhiteColor];
+    [withDrawBtn setTitle:@"提现" forState:UIControlStateNormal];
+    withDrawBtn.layer.cornerRadius=5;
+    withDrawBtn.layer.masksToBounds=YES;
+    [withDrawBtn addTarget:self action:@selector(withDrawAct:) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:withDrawBtn];
     
+ 
     //兑换猫币
-    exchageMaoCoinBtn = [[UIButton alloc]initWithFrame:CGRectMake(20*WIDTH_NIT, withDrawBtn.bottom + 10*WIDTH_NIT, topView.width-40*WIDTH_NIT, 30*WIDTH_NIT)];
-    exchageMaoCoinBtn.backgroundColor = [UIColor blackColor];
-    [exchageMaoCoinBtn setTitle:@"兑换猫币"];
-    [exchageMaoCoinBtn addTarget:self action:@selector(exchageMaoCoinAct:)];
+    exchageMaoCoinBtn=[[UIButton alloc] initWithFrame:CGRectMake(20*WIDTH_NIT, withDrawBtn.bottom + 10*WIDTH_NIT, topView.width-40*WIDTH_NIT, 40*WIDTH_NIT)];
+    exchageMaoCoinBtn.titleLabel.font = Font(20);
+    exchageMaoCoinBtn.backgroundColor=MainGoldColor;
+    [exchageMaoCoinBtn setTitleColor:MainWhiteColor];
+    [exchageMaoCoinBtn setTitle:@"兑换猫币" forState:UIControlStateNormal];
+    exchageMaoCoinBtn.layer.cornerRadius=5;
+    exchageMaoCoinBtn.layer.masksToBounds=YES;
+    [exchageMaoCoinBtn addTarget:self action:@selector(exchageMaoCoinAct:) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:exchageMaoCoinBtn];
-   
 }
 
 

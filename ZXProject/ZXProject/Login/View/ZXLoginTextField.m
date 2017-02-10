@@ -64,15 +64,15 @@
 //    view.tag = 1000;
 //    [self addSubview:view];
     
+    self.layer.borderWidth = 0.5;
+    self.layer.borderColor = LittleNameColor.CGColor;
+    
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
 //    self.height = 46.0*WIDTH_NIT;
-
-    self.layer.borderWidth = 0.5;
-    self.layer.borderColor = LittleNameColor.CGColor;
 
     
     

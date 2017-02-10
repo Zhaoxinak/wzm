@@ -18,7 +18,7 @@
 @end
 
 //cell高度
-#define OneJoinMiaoCircleCell_Height kScreen_Width/4
+#define OneJoinMiaoCircleCell_Height 80*WIDTH_NIT
 
 @interface OneJoinMiaoCircleTableViewCell : UITableViewCell{
     

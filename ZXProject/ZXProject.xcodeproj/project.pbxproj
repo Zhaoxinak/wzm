@@ -320,6 +320,7 @@
 		9EA7402C1E263C5E002278F5 /* EditPersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */; };
 		9EA7402F1E263D5C002278F5 /* ZXUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */; };
 		9EB14C591E4C4CD50049B39B /* CarsSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14C581E4C4CD50049B39B /* CarsSelectedViewController.m */; };
+		9EB14C5C1E4D8E330049B39B /* ChargeMiaoCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14C5B1E4D8E330049B39B /* ChargeMiaoCoinViewController.m */; };
 		9EC6D4FC1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */; };
 		9EC6D5021DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5011DFFDC0600F63C11 /* OneJoinPartyTableViewCell.m */; };
 		9EC6D5051DFFDC6E00F63C11 /* OneJoinPartyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6D5041DFFDC6E00F63C11 /* OneJoinPartyModel.m */; };
@@ -823,6 +824,8 @@
 		9EA7402E1E263D5C002278F5 /* ZXUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserInfoModel.m; sourceTree = "<group>"; };
 		9EB14C571E4C4CD50049B39B /* CarsSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsSelectedViewController.h; sourceTree = "<group>"; };
 		9EB14C581E4C4CD50049B39B /* CarsSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsSelectedViewController.m; sourceTree = "<group>"; };
+		9EB14C5A1E4D8E330049B39B /* ChargeMiaoCoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeMiaoCoinViewController.h; sourceTree = "<group>"; };
+		9EB14C5B1E4D8E330049B39B /* ChargeMiaoCoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeMiaoCoinViewController.m; sourceTree = "<group>"; };
 		9EC6D4FA1DFFC96200F63C11 /* OneChosenCasesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneChosenCasesTableViewCell.h; sourceTree = "<group>"; };
 		9EC6D4FB1DFFC96200F63C11 /* OneChosenCasesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneChosenCasesTableViewCell.m; sourceTree = "<group>"; };
 		9EC6D5001DFFDC0600F63C11 /* OneJoinPartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneJoinPartyTableViewCell.h; sourceTree = "<group>"; };
@@ -1591,6 +1594,8 @@
 				9EA7402B1E263C5E002278F5 /* EditPersonalInfoViewController.m */,
 				9E3EA05B1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.h */,
 				9E3EA05C1E35EE2500CA1CFA /* MaoCoinInfoTableViewController.m */,
+				9EB14C5A1E4D8E330049B39B /* ChargeMiaoCoinViewController.h */,
+				9EB14C5B1E4D8E330049B39B /* ChargeMiaoCoinViewController.m */,
 				9E3EA0671E35FDED00CA1CFA /* 余额 */,
 				9E3EA0801E3736F600CA1CFA /* CollectionViewController.h */,
 				9E3EA0811E3736F600CA1CFA /* CollectionViewController.m */,
@@ -2145,6 +2150,7 @@
 				9E3F34F41E30991E00E7DD27 /* CaseInfoViewController.m in Sources */,
 				9E6F17641E2F0D56005887E7 /* ModifiedUnderstandingInfoViewController.m in Sources */,
 				9E2270CC1E28745B001A9A67 /* OneCasesShowViewController.m in Sources */,
+				9EB14C5C1E4D8E330049B39B /* ChargeMiaoCoinViewController.m in Sources */,
 				9E813CFA1E110B9A004292E7 /* OneMiaoQuestionSquareModel.m in Sources */,
 				9E1FFD721E320A53004C6041 /* RewardModel.m in Sources */,
 				9E813CEB1E10C157004292E7 /* OneCasesShowTableViewCell.m in Sources */,

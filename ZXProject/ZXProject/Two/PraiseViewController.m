@@ -171,7 +171,7 @@
     //            PraiseFrameModel *frameModel = _hotNoteMArr[indexPath.row];
     //            return frameModel.cellHeight;
     
-    return kScreen_Width/3*2;
+    return 220*WIDTH_NIT;
 }
 
 #pragma mark -执行功能

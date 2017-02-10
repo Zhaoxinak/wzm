@@ -38,8 +38,12 @@
     if (_seg == nil) {
         _seg = [[UISegmentedControl alloc] initWithItems:_segItems];
         _seg.frame = CGRectMake(0, 0, _segItems.count*100*WIDTH_NIT, 30*WIDTH_NIT);
-        _seg.backgroundColor = [UIColor blackColor];
-        _seg.tintColor = [UIColor whiteColor];
+        _seg.backgroundColor = MainWhiteColor;
+        _seg.tintColor = MainGoldColor;
+        _seg.layer.borderColor = MainWhiteColor.CGColor;
+        _seg.layer.borderWidth = 0.4;
+        _seg.layer.cornerRadius = 5;
+        _seg.clipsToBounds = YES;
         _seg.selectedSegmentIndex = 0;
         [_seg addTarget:self action:@selector(viewChangeAction:) forControlEvents:UIControlEventValueChanged];
         
@@ -114,13 +118,13 @@
     [self.view insertSubview:self.tableView atIndex:1];
     
     //顶部选择器背景
-    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/4)];
+    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 70*WIDTH_NIT)];
 
     
     //标题segmentController
     self.segItems = @[@"好友", @"关注", @"粉丝"];
-    self.seg.frame = CGRectMake(0, 0, self.segItems.count*100*WIDTH_NIT, 30*WIDTH_NIT);
-    self.seg.center = headView.center;
+    self.seg.frame = CGRectMake(0, 20*WIDTH_NIT, self.segItems.count*100*WIDTH_NIT, 30*WIDTH_NIT);
+    self.seg.centerX = headView.centerX;
     [headView addSubview:self.seg];
     
     self.tableView.tableHeaderView = headView;

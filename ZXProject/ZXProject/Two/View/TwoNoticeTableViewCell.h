@@ -12,7 +12,7 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define TwoNoticeCell_Height kScreen_Width/4
+#define TwoNoticeCell_Height 60*WIDTH_NIT
 
 
 @interface TwoNoticeTableViewCell : UITableViewCell

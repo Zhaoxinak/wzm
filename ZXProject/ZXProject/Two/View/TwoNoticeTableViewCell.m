@@ -30,8 +30,8 @@
     
     
     //头像
-    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT)];
-    headImageView.backgroundColor = [UIColor redColor];
+    headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, 40*WIDTH_NIT, 40*WIDTH_NIT)];
+    headImageView.image = [UIImage imageNamed:@"touxiang02"];
     headImageView.clipsToBounds = YES;
     headImageView.layer.cornerRadius = headImageView.size.width / 2;
     [self addSubview:headImageView];
@@ -42,26 +42,27 @@
     [headImageView addGestureRecognizer:tap];
     
     //用户名
-    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = Font13;
+    userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, 10*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
+    userNameLabel.textColor = NameColor;
+    userNameLabel.font = Font15;
     userNameLabel.text = @"水冰月";
     [self addSubview:userNameLabel];
   
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom+5*WIDTH_NIT, kScreen_Width/3*2, 20*WIDTH_NIT)];
-    name.font = Font13;
-    name.textColor = OneTextColor;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(headImageView.right + 10*WIDTH_NIT, userNameLabel.bottom+1*WIDTH_NIT, kScreen_Width/3*2, 20*WIDTH_NIT)];
+    name.font = Font15;
+    name.textColor = LittleNameColor;
     name.text = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
     [self addSubview:name];
     
     
     //时间
-    timeName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width - 70*WIDTH_NIT, 5*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
-    timeName.font = Font13;
-    timeName.textColor = OneTextColor;
-    timeName.text = @"时间时间时间";
+    timeName = [[UILabel alloc]initWithFrame:CGRectMake(kScreen_Width - 70*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT)];
+    timeName.textAlignment = NSTextAlignmentRight;
+    timeName.font = Font11;
+    timeName.textColor = LittleNameColor;
+    timeName.text = @"17:00";
     [self addSubview:timeName];
     
 }

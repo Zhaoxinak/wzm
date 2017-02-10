@@ -26,6 +26,7 @@
     UIButton *joinBtn; //加入按钮
     UILabel *memberNum; //成员数量
     UILabel *noteNum; //帖子数量
+    UILabel * contentLabel; //公告
     
 }
 

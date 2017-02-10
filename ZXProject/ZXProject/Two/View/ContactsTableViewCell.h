@@ -12,7 +12,7 @@
 typedef void (^UserHeadClickBlock)(NSString *userId);
 
 //cell高度
-#define ContactsCell_Height 50*WIDTH_NIT
+#define ContactsCell_Height 40*WIDTH_NIT
 
 @protocol ContactsCellDelegate <NSObject>
 #pragma mark -- 实现按钮按钮点击

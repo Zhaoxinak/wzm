@@ -10,7 +10,7 @@
 #import "CollectionModel.h"
 
 //cell高度
-#define CollectionCell_Height kScreen_Width/4
+#define CollectionCell_Height 90*WIDTH_NIT
 
 
 @interface CollectionTableViewCell : UITableViewCell

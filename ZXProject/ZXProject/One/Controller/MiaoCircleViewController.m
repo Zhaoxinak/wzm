@@ -87,7 +87,7 @@
     UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     publishBtn.frame = CGRectMake(0, 0, 80, 44);
     [publishBtn setTitle:@"发帖"];
-    [publishBtn setTitleColor:KNavigationTitleColor];
+    [publishBtn setTitleColor:MainGoldColor];
     [publishBtn addTarget:self action:@selector(publishAct:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -100,7 +100,7 @@
     
     
     //顶部加入
-    MiaoCircleTopView *miaoTopView = [[MiaoCircleTopView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/2)];
+    MiaoCircleTopView *miaoTopView = [[MiaoCircleTopView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 230*WIDTH_NIT)];
     miaoTopView.delegate = self;
     self.tableView.tableHeaderView = miaoTopView;
     
@@ -166,6 +166,7 @@
     WEAK_SELF;
     cell.headClickBlock = ^(NSString *userId) {
         STRONG_SELF;
+        NSLog(@"头像---%@",userId);
         
     };
     
@@ -186,7 +187,7 @@
 //    ThreeHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
 //    return frameModel.cellHeight;
     
-    return kScreen_Width/4;
+    return kScreen_Width/3;
 }
 
 

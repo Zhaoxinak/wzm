@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, NotesCellMode) {
 
 
 //cell高度
-#define NotesCell_Height kScreen_Width/3
+#define NotesCell_Height 130*WIDTH_NIT
 
 @interface NotesTableViewCell : UITableViewCell
 {

@@ -40,12 +40,12 @@
 -(void)setupTopBottomView{
     
     //加入图
-    topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/3)];
+    topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, 80*WIDTH_NIT)];
     topView.backgroundColor = [UIColor whiteColor];
     [self insertSubview:topView atIndex:1];
     
     //公告图
-    downView = [[UIView alloc]initWithFrame:CGRectMake(0, topView.bottom, self.width, self.height/3*2)];
+    downView = [[UIView alloc]initWithFrame:CGRectMake(0, topView.bottom, self.width, 150*WIDTH_NIT)];
     downView.backgroundColor = [UIColor whiteColor];
     [self insertSubview:downView atIndex:1];
     
@@ -56,50 +56,51 @@
 -(void)topView{
     
     //图片
-    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(5*WIDTH_NIT, 5*WIDTH_NIT, topView.height-10*WIDTH_NIT, topView.height-10*WIDTH_NIT)];
-    avatarView.backgroundColor = [UIColor redColor];
+    avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, 50*WIDTH_NIT, 50*WIDTH_NIT)];
+    avatarView.image = [UIImage imageNamed:@"touxiang02"];
     [topView addSubview:avatarView];
     
     //图片点击
     
     
     //标题
-    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 0*WIDTH_NIT, (kScreen_Width-avatarView.right)/3*2-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    name.font = Font13;
-    name.textColor = ThreeTextColor;
+    name = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, 15*WIDTH_NIT, (kScreen_Width-avatarView.right)/3*2-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    name.font = Font15;
+    name.textColor = NameColor;
     name.text = @"标题标题标题标题标题标题标题标题";
     [topView addSubview:name];
 
     //内容
     subName = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, name.bottom+0*WIDTH_NIT, kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT, 20*WIDTH_NIT)];
-    subName.font = Font13;
-    subName.textColor = FiveTextColor;
+    subName.font = Font12;
+    subName.textColor = LightNameColor;
     subName.text = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
     [topView addSubview:subName];
     
 
     //成员数量
-    memberNum = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, subName.bottom+0*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
-    memberNum.font = Font13;
-    memberNum.textColor = FiveTextColor;
+    memberNum = [[UILabel alloc]initWithFrame:CGRectMake(avatarView.right+10*WIDTH_NIT, subName.bottom+5*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
+    memberNum.font = Font12;
+    memberNum.textColor = NameColor;
     memberNum.text = @"成员：250w";
     [topView addSubview:memberNum];
     
     //帖子数量
-    subName = [[UILabel alloc]initWithFrame:CGRectMake(memberNum.right+10*WIDTH_NIT, subName.bottom+0*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
-    subName.font = Font13;
-    subName.textColor = FiveTextColor;
+    subName = [[UILabel alloc]initWithFrame:CGRectMake(memberNum.right+10*WIDTH_NIT, subName.bottom+5*WIDTH_NIT, (kScreen_Width-(avatarView.right+20*WIDTH_NIT)-70*WIDTH_NIT)/2, 20*WIDTH_NIT)];
+    subName.font = Font12;
+    subName.textColor = NameColor;
     subName.text = @"帖子：23w";
     [topView addSubview:subName];
     
     
     //加入按钮
-    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(topView.width-65*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 30*WIDTH_NIT)];
+    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(topView.width-65*WIDTH_NIT, 10*WIDTH_NIT, 80*WIDTH_NIT, 25*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
-    joinBtn.titleLabel.font = Font13;
-    [joinBtn setTitleColor:FourTextColor];
-    joinBtn.layer.borderWidth = 1;
-    joinBtn.layer.borderColor = (FourTextColor).CGColor;
+    joinBtn.titleLabel.font = Font15;
+    [joinBtn setTitleColor:MainGoldColor];
+    joinBtn.layer.borderWidth = 0.4;
+    joinBtn.layer.borderColor = MainGoldColor.CGColor;
+    joinBtn.layer.cornerRadius = 5;
     [joinBtn addTarget:self action:@selector(joinTap:)];
     [topView addSubview:joinBtn];
 }
@@ -107,14 +108,23 @@
 #pragma mark --- 公告图
 -(void)downView{
     
+    //分割线
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, downView.width, 1)];
+    line.backgroundColor = BGColor;
+    [downView addSubview:line];
+    
     //公告
-    UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 0, downView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 5*WIDTH_NIT, downView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
+    titleLabel.font = Font14;
+    titleLabel.textColor = NameColor;
     titleLabel.text = @"圈子公告";
     [downView addSubview:titleLabel];
     
     
     //公告详情
-    UILabel * contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, titleLabel.bottom, downView.width-20*WIDTH_NIT, downView.height-20*WIDTH_NIT)];
+    contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, titleLabel.bottom, downView.width-20*WIDTH_NIT, downView.height-30*WIDTH_NIT)];
+    contentLabel.font = Font14;
+    contentLabel.textColor = NameColor;
     contentLabel.numberOfLines = 4;
     contentLabel.text = @"圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容圈子公告内容";
     [downView addSubview:contentLabel];
@@ -145,7 +155,6 @@
     }
     
 }
-
 
 
 @end

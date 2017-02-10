@@ -101,11 +101,13 @@
     // onetableView
     UIView *view1 = (UIView *)[self.view viewWithTag:10000];
     self.onetableView.frame = CGRectMake(0, 0, kScreen_Width, view1.height);
+    self.onetableView.separatorStyle = NO;
     [view1 addSubview:self.onetableView];
     
     // twoTableView
     UIView *view2 = (UIView *)[self.view viewWithTag:10001];
     self.twoTableView.frame = CGRectMake(0, 0, kScreen_Width, view2.height);
+    self.twoTableView.separatorStyle = NO;
     [view2 addSubview:self.twoTableView];
     
     

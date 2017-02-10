@@ -10,7 +10,7 @@
 #import "SystemNoticeModel.h"
 
 //cell高度
-#define SystemNoticeCell_Height kScreen_Width/4
+#define SystemNoticeCell_Height 100*WIDTH_NIT
 
 @interface SystemNoticeTableViewCell : UITableViewCell
 {

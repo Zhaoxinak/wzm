@@ -85,61 +85,70 @@
     
     
     //设置顶部
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, kScreen_Width)];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, 10*WIDTH_NIT, kScreen_Width-20*WIDTH_NIT, 220*WIDTH_NIT)];
     topView.backgroundColor = [UIColor whiteColor];
+    topView.layer.cornerRadius = 5;
     [self.view addSubview:topView];
     
 
     
     
     //金钱
-    alipayLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    alipayLabel.textColor = OneTextColor;
-    alipayLabel.font = Font13;
+    alipayLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,0*WIDTH_NIT, topView.width-20*WIDTH_NIT, 38*WIDTH_NIT)];
+    alipayLabel.textColor = MainGoldColor;
+    alipayLabel.font = Font15;
     alipayLabel.text = @"提现到  支付宝 249227498@qq.com";
     [topView addSubview:alipayLabel];
     
     //提现金额
-    UILabel *tixianLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,alipayLabel.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    tixianLabel.textColor = OneTextColor;
-    tixianLabel.font = Font13;
+    UILabel *tixianLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,alipayLabel.bottom + 0*WIDTH_NIT, topView.width-20*WIDTH_NIT, 30*WIDTH_NIT)];
+    tixianLabel.textColor = NameColor;
+    tixianLabel.font = Font15;
     tixianLabel.text = @"提现金额";
     [topView addSubview:tixianLabel];
     
     //提现金额
     moneyField = [[ZXLoginTextField alloc] initWithType:NormalType];
-    moneyField.frame = CGRectMake(10*WIDTH_NIT, tixianLabel.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 50*WIDTH_NIT);
+    moneyField.frame = CGRectMake(10*WIDTH_NIT, tixianLabel.bottom + 0*WIDTH_NIT, topView.width-20*WIDTH_NIT, 50*WIDTH_NIT);
+    moneyField.layer.borderWidth = 0;
+    moneyField.layer.borderColor = [UIColor clearColor].CGColor;
     moneyField.inputTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    moneyField.leftLabel.font = Font24;
     moneyField.leftLabel.text = @"¥";
     [topView addSubview:moneyField];
     
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, moneyField.bottom + 1*WIDTH_NIT, topView.width-20*WIDTH_NIT, 1*WIDTH_NIT)];
+    line.backgroundColor = BGColor;
+    [topView addSubview:line];
     
     //可提现金额
     balanceLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,moneyField.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 20*WIDTH_NIT)];
-    balanceLabel.textColor = OneTextColor;
-    balanceLabel.font = Font13;
+    balanceLabel.textColor = NameColor;
+    balanceLabel.font = Font12;
     balanceLabel.text = @"可提现金额 1212.00元";
     [topView addSubview:balanceLabel];
     
     //提示
-    UILabel *tipsLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,balanceLabel.bottom + 20*WIDTH_NIT, topView.width-20*WIDTH_NIT, 50*WIDTH_NIT)];
+    UILabel *tipsLabel =  [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT,balanceLabel.bottom + 10*WIDTH_NIT, topView.width-20*WIDTH_NIT, 40*WIDTH_NIT)];
     tipsLabel.numberOfLines = 2;
-    tipsLabel.textColor = OneTextColor;
-    tipsLabel.font = Font13;
+    tipsLabel.textColor = NameColor;
+    tipsLabel.font = Font12;
     tipsLabel.text = @"提示：最多一次提现2000元，最少一次提现100，一天最多发起三次体现";
     [topView addSubview:tipsLabel];
     
-    
+  
     //提现
-    withDrawBtn = [[UIButton alloc]initWithFrame:CGRectMake(20*WIDTH_NIT, topView.bottom + 30*WIDTH_NIT, topView.width-40*WIDTH_NIT, 30*WIDTH_NIT)];
-    withDrawBtn.backgroundColor = [UIColor blackColor];
-    [withDrawBtn setTitle:@"提现"];
-    [withDrawBtn addTarget:self action:@selector(withDrawAct:)];
+    withDrawBtn=[[UIButton alloc] initWithFrame:CGRectMake(20*WIDTH_NIT, topView.bottom + 30*WIDTH_NIT, kScreen_Width-40*WIDTH_NIT, 40*WIDTH_NIT)];
+    withDrawBtn.titleLabel.font = Font(20);
+    withDrawBtn.backgroundColor=MainGoldColor;
+    [withDrawBtn setTitleColor:MainWhiteColor];
+    [withDrawBtn setTitle:@"提现" forState:UIControlStateNormal];
+    withDrawBtn.layer.cornerRadius=5;
+    withDrawBtn.layer.masksToBounds=YES;
+    [withDrawBtn addTarget:self action:@selector(withDrawAct:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:withDrawBtn];
     
-  
-    
-    
+   
     
 }
 

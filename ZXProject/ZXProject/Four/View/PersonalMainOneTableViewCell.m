@@ -16,24 +16,43 @@
     
     NSInteger picNum = arrayNum;
     CGFloat picHeight = 0;
+    CGSize titleSize = CGSizeZero;
+    CGSize subTitleSize = CGSizeZero;
     
-    
-    CGSize titleSize = [title boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
+    if (arrayNum == 0) {
+        
+        titleSize = [title boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
+                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                     attributes:@{NSFontAttributeName:Font12}
+                                        context:nil].size;
+        
+        subTitleSize = [subTitle boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
+                                              options:NSStringDrawingUsesLineFragmentOrigin
+                                           attributes:@{NSFontAttributeName:Font12}
+                                              context:nil].size;
+        
+    }else{
+       
+        titleSize = [title boundingRectWithSize:CGSizeMake(kScreen_Width - 100*WIDTH_NIT, MAXFLOAT)
                                                options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{NSFontAttributeName:Font13}
+                                            attributes:@{NSFontAttributeName:Font12}
                                                context:nil].size;
+        
+        subTitleSize = [subTitle boundingRectWithSize:CGSizeMake(kScreen_Width - 100*WIDTH_NIT, MAXFLOAT)
+                                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSFontAttributeName:Font12}
+                                                     context:nil].size;
+    }
+    
    
-    CGSize subTitleSize = [subTitle boundingRectWithSize:CGSizeMake(kScreen_Width - 20*WIDTH_NIT, MAXFLOAT)
-                                         options:NSStringDrawingUsesLineFragmentOrigin
-                                      attributes:@{NSFontAttributeName:Font13}
-                                         context:nil].size;
     
     
     switch (mainCellMode) {
        
         case UsualCellMode:{
             
-            picHeight = (kScreen_Width-20*WIDTH_NIT)/5;
+           
+            picHeight = 60*WIDTH_NIT;
             CGFloat height = titleSize.height + subTitleSize.height + 30*WIDTH_NIT;
             
             return MAX(height, 80*WIDTH_NIT);
@@ -54,7 +73,7 @@
             
         case ModifiedCarsCellMode:{
             
-            picHeight = (kScreen_Width-80*WIDTH_NIT)/3/2;
+            picHeight = (kScreen_Width-80*WIDTH_NIT)/3/3;
             CGFloat height = ((picNum / 4 + 1) * (picHeight + 20*WIDTH_NIT) + 50*WIDTH_NIT + titleSize.height);
             
             return MAX(height, 80*WIDTH_NIT);
@@ -94,21 +113,21 @@
 //    _headerImgView.image = [UIImage imageNamed:@"heard_img"];
     
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.textColor = OneTextColor;
-    _titleLabel.font = Font13;
+    _titleLabel.textColor = NameColor;
+    _titleLabel.font = Font12;
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
   
     _detailLabel = [[UILabel alloc] init];
-    _detailLabel.textColor = TwoTextColor;
-    _detailLabel.font = Font13;
+    _detailLabel.textColor = NameColor;
+    _detailLabel.font = Font12;
     _detailLabel.numberOfLines = 0;
     [self.contentView addSubview:_detailLabel];
     
     
     _picView = [[UIView alloc]init];
-    _picView.backgroundColor = [UIColor redColor];
+    _picView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:_picView];
     
   
@@ -244,7 +263,7 @@
             
             //图片数量
             NSInteger picNum = 3;
-            CGFloat picHeight = (kScreen_Width-80*WIDTH_NIT)/3/2;
+            CGFloat picHeight = (kScreen_Width-80*WIDTH_NIT)/3/3;
             
             [_picView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(@(10*WIDTH_NIT));
@@ -260,9 +279,9 @@
                 if (i % 3 == 0) {
                     addImageView.left = 10*WIDTH_NIT;
                 }else if (i % 3 == 1) {
-                    addImageView.left = 30*WIDTH_NIT+picHeight*2;
+                    addImageView.left = 30*WIDTH_NIT+picHeight*3;
                 }else {
-                    addImageView.left = 50*WIDTH_NIT+picHeight*4;
+                    addImageView.left = 50*WIDTH_NIT+picHeight*6;
                 }
                 
                 addImageView.top = 10*WIDTH_NIT + (i / 3) * (picHeight +  20*WIDTH_NIT);
@@ -284,9 +303,11 @@
     CGFloat picHeight = (kScreen_Width-20*WIDTH_NIT)/5;
    
     UIButton *imageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, picHeight, picHeight)];
-    imageButton.backgroundColor = [UIColor yellowColor];
+    imageButton.backgroundColor = [UIColor clearColor];
+    imageButton.titleLabel.font = Font13;
+    [imageButton setTitleColor:NameColor];
     [imageButton setTitle:@"本田"];
-    [imageButton setImage:@"猫狗2"];
+    [imageButton setImage:@"个人主页加V"];
     [UIButton ImageUptoLabelDown:imageButton margin:5*WIDTH_NIT];
     
     
@@ -296,10 +317,13 @@
 
 
 - (UIButton *)setupButtonWithModel:(PersonalMainModel *)model index:(int)index{
-    CGFloat picHeight = (kScreen_Width-80*WIDTH_NIT)/3/2;
+    CGFloat picHeight = (kScreen_Width-80*WIDTH_NIT)/3/3;
     
-    UIButton *imageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, picHeight*2, picHeight)];
-    imageButton.backgroundColor = [UIColor yellowColor];
+    UIButton *imageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, picHeight*3, picHeight)];
+    imageButton.backgroundColor = [UIColor clearColor];
+    imageButton.layer.borderWidth = 0.4;
+    imageButton.layer.borderColor = MainGoldColor.CGColor;
+    [imageButton setTitleColor:NameColor];
     [imageButton setTitle:@"本田"];
   
     return imageButton;

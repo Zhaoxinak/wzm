@@ -10,7 +10,7 @@
 #import "ExperienceModel.h"
 
 //cell高度
-#define ExperienceCell_Height kScreen_Width/4
+#define ExperienceCell_Height 90*WIDTH_NIT
 
 
 @interface ExperienceTableViewCell : UITableViewCell

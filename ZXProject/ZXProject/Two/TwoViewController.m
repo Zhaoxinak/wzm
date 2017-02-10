@@ -7,7 +7,7 @@
 //
 
 //cell的高度
-#define TwoCell_Height 50*WIDTH_NIT
+#define TwoCell_Height 40*WIDTH_NIT
 //cellheader的高度   280   70
 #define TwoCell_Header_Height 1*WIDTH_NIT
 #define TwoCell_Footer_Height 1*WIDTH_NIT
@@ -46,11 +46,11 @@
 -(void)setupData{
     
     _listFunctionArr = [NSArray arrayWithObjects:
-                        @{@"icon" : @"猫狗2", @"title" : @"评   论", @"subTitle" : @""},
-                        @{@"icon" : @"猫狗2", @"title" : @"点   赞", @"subTitle" : @""},
-                        @{@"icon" : @"猫狗2", @"title" : @"打   赏", @"subTitle" : @""},
-                        @{@"icon" : @"猫狗2", @"title" : @"问答通知", @"subTitle" : @""},
-                        @{@"icon" : @"猫狗2", @"title" : @"系统通知", @"subTitle" : @""},
+                        @{@"icon" : @"赞-拷贝", @"title" : @"评   论", @"subTitle" : @""},
+                        @{@"icon" : @"赞-拷贝", @"title" : @"点   赞", @"subTitle" : @""},
+                        @{@"icon" : @"赞-拷贝", @"title" : @"打   赏", @"subTitle" : @""},
+                        @{@"icon" : @"赞-拷贝", @"title" : @"问答通知", @"subTitle" : @""},
+                        @{@"icon" : @"赞-拷贝", @"title" : @"系统通知", @"subTitle" : @""},
                         nil];
 
     
@@ -100,12 +100,14 @@
     self.title = @"消息";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-kScreen_tabBarHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
     
     //通讯录按钮
     UIButton* phoneBookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    phoneBookBtn.frame = CGRectMake(0, 0, 80, 44);
-    [phoneBookBtn setTitle:@"通讯录"];
+    phoneBookBtn.frame = CGRectMake(0, 0, 44, 44);
+    phoneBookBtn.titleLabel.font = Font24;
+    [phoneBookBtn setTitle:@"+"];
     [phoneBookBtn setTitleColor:KNavigationTitleColor];
     [phoneBookBtn addTarget:self action:@selector(phoneBookAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:phoneBookBtn];
@@ -174,6 +176,8 @@
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            
         }
         
         cell.imageView.image = [UIImage imageNamed:cellIcon];

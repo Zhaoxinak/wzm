@@ -18,7 +18,7 @@
 
 @interface PersonalMainViewController ()
 {
-    UIButton *headerImgView; //头像
+    UIImageView *headerImgView; //头像
     UIImageView *vipImageView; //vip
     UILabel *userNameLabel; //用户名
     UILabel *levelLabel; //等级
@@ -88,34 +88,36 @@
     self.title = @"个人主页";
     
     //设置顶部
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width/2)];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 185*WIDTH_NIT)];
     topView.backgroundColor = [UIColor redColor];
     [self.view addSubview:topView];
     
     
     //头像
-    headerImgView = [[UIButton alloc]initWithFrame:CGRectMake(topView.width/2-30*WIDTH_NIT, 10*WIDTH_NIT, 60*WIDTH_NIT, 60*WIDTH_NIT)];
-    headerImgView.backgroundColor = [UIColor yellowColor];
+    headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.width/2-42*WIDTH_NIT, 15*WIDTH_NIT, 84*WIDTH_NIT, 84*WIDTH_NIT)];
+    headerImgView.image = [UIImage imageNamed:@"touxiang02"];
     headerImgView.layer.cornerRadius = headerImgView.width/2;
     [topView addSubview:headerImgView];
     
     //Vip标志
     vipImageView = [UIImageView new];
-    vipImageView.frame = CGRectMake(CGRectGetMaxX(headerImgView.frame)-13*WIDTH_NIT-5*WIDTH_NIT, CGRectGetMaxY(headerImgView.frame)-13*WIDTH_NIT, 13*WIDTH_NIT, 13*WIDTH_NIT);
-    vipImageView.image = [UIImage imageNamed:@"icon_vip"];
+    vipImageView.frame = CGRectMake(CGRectGetMaxX(headerImgView.frame)-18*WIDTH_NIT-5*WIDTH_NIT, CGRectGetMaxY(headerImgView.frame)-18*WIDTH_NIT, 18*WIDTH_NIT, 18*WIDTH_NIT);
+    vipImageView.image = [UIImage imageNamed:@"V-huangse"];
     [topView addSubview:vipImageView];
     
     //等级
-    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(headerImgView.right + 10*WIDTH_NIT, headerImgView.centerY-10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT)];
-    levelLabel.textColor = OneTextColor;
-    levelLabel.font = Font13;
-    levelLabel.text = @"12";
+    levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(headerImgView.right + 10*WIDTH_NIT, headerImgView.centerY-10*WIDTH_NIT, 32*WIDTH_NIT, 20*WIDTH_NIT)];
+    levelLabel.layer.borderWidth = 0.4;
+    levelLabel.layer.borderColor = MainGoldColor.CGColor;
+    levelLabel.textColor = MainGoldColor;
+    levelLabel.font = Font12;
+    levelLabel.text = @"Lv15";
     [topView addSubview:levelLabel];
     
     //用户名
     userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,headerImgView.bottom + 5*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT)];
-    userNameLabel.textColor = OneTextColor;
-    userNameLabel.font = Font13;
+    userNameLabel.textColor = MainWhiteColor;
+    userNameLabel.font = Font15;
     userNameLabel.text = @"水冰月";
     [userNameLabel sizeToFit];
     userNameLabel.centerX = headerImgView.centerX;
@@ -124,13 +126,13 @@
     //性别
     sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.right + 10*WIDTH_NIT, 0, 20*WIDTH_NIT, 20*WIDTH_NIT)];
     sexImageView.centerY = userNameLabel.centerY;
-    sexImageView.backgroundColor = [UIColor yellowColor];
+    sexImageView.image = [UIImage imageNamed:@"nan"];
     [topView addSubview:sexImageView];
     
     
     //地址
     addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(10*WIDTH_NIT, topView.height-25*WIDTH_NIT, kScreen_Width - 20*WIDTH_NIT, 20*WIDTH_NIT)];
-    addressLabel.textColor = OneTextColor;
+    addressLabel.textColor = LittleNameColor;
     addressLabel.font = Font13;
     addressLabel.text = @"地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址";
     [topView addSubview:addressLabel];
@@ -140,12 +142,14 @@
     NSArray *titleArr = [NSArray arrayWithObjects:@"资料", @"圈子", @"问题", @"心得" ,nil];
     self.seg.titleArray = titleArr;
     self.seg.titleWidth = kScreen_Width/4;
+    self.seg.font = Font12;
+    self.seg.selectedFont = Font12;
     self.seg.lineWidth = kScreen_Width/4;
-    self.seg.frame = CGRectMake(0, kScreen_Width/2, kScreen_Width, 44);
+    self.seg.frame = CGRectMake(0, topView.bottom, kScreen_Width, 40*WIDTH_NIT);
     [self.view addSubview:self.seg];
     
     // 页面scrollView
-    self.pageScrollView.frame = CGRectMake(0, self.seg.bottom, kScreen_Width, kScreen_Height-kScreen_NavHeight-self.seg.bottom-60*WIDTH_NIT);
+    self.pageScrollView.frame = CGRectMake(0, self.seg.bottom, kScreen_Width, kScreen_Height-kScreen_NavHeight-self.seg.bottom-50*WIDTH_NIT);
     self.pageScrollView.contentSize = CGSizeMake(4 * kScreen_Width, 0);
     self.pageScrollView.tag = 100;
     [self.view addSubview: self.pageScrollView];
@@ -183,16 +187,18 @@
     
     
     //私聊
-    pmBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.pageScrollView.bottom, kScreen_Width/2, 60*WIDTH_NIT)];
-    [pmBtn setImage:@"猫狗2"];
+    pmBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.pageScrollView.bottom, kScreen_Width/2, 50*WIDTH_NIT)];
+    [pmBtn setTitleColor:NameColor];
+    [pmBtn setImage:@"私聊"];
     [pmBtn setTitle:@"私聊"];
     [pmBtn addTarget:self action:@selector(pmAct:)];
     [self.view addSubview:pmBtn];
     
     
     //关注
-    followBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, self.pageScrollView.bottom, kScreen_Width/2, 60*WIDTH_NIT)];
-    [followBtn setImage:@"猫狗2"];
+    followBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreen_Width/2, self.pageScrollView.bottom, kScreen_Width/2, 50*WIDTH_NIT)];
+    [followBtn setTitleColor:NameColor];
+    [followBtn setImage:@"关注"];
     [followBtn setTitle:@"关注"];
     [followBtn addTarget:self action:@selector(followAct:)];
     [self.view addSubview:followBtn];
@@ -378,21 +384,21 @@
                 
         }else{
          
-            return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:title SubTitle:subTitle PictureArrayNum:0 MainCellMode:UsualCellMode];
+            return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:title SubTitle:subTitle PictureArrayNum:1 MainCellMode:UsualCellMode];
         }
    
     }else
     //圈子
     if (tableView == self.twoTableView) {
-        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"圈子名称1" SubTitle:@"成员：2351" PictureArrayNum:0 MainCellMode:UsualCellMode];
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"圈子名称1" SubTitle:@"成员：2351" PictureArrayNum:1 MainCellMode:UsualCellMode];
     }else
     //问题
     if (tableView == self.threetableView) {
-        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容" PictureArrayNum:0 MainCellMode:UsualCellMode];
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容" PictureArrayNum:1 MainCellMode:UsualCellMode];
     }else
     //心得
     {
-        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容" PictureArrayNum:0 MainCellMode:UsualCellMode];
+        return [PersonalMainOneTableViewCell caculatePersonalMainCellHeightWithTitle:@"标题标题标题标题标题标题标题标题标题标题标题标题" SubTitle:@"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容" PictureArrayNum:1 MainCellMode:UsualCellMode];
     }
     
    
