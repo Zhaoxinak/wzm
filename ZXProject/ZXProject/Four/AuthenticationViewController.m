@@ -76,6 +76,7 @@
     self.title = @"我要认证";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     self.tableView.scrollEnabled = NO;
     [self.view insertSubview:self.tableView atIndex:1];
     

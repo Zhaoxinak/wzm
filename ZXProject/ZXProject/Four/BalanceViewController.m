@@ -74,7 +74,7 @@
    
     //明细
     UIButton* infoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    infoBtn.frame = CGRectMake(0, 0, 80, 44);
+    infoBtn.frame = CGRectMake(0, 0, 44, 44);
     [infoBtn setTitle:@"明细"];
     [infoBtn setTitleColor:KNavigationTitleColor];
     [infoBtn addTarget:self action:@selector(infoAct) forControlEvents:UIControlEventTouchUpInside];

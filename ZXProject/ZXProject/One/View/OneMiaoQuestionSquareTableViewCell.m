@@ -37,39 +37,51 @@
 
 - (void)initSubViews {
     
+
     self.titleNameLabel = [UILabel new];
-    self.titleNameLabel.textColor = OneTextColor;
-    self.titleNameLabel.font = Font13;
+    self.titleNameLabel.textColor = NameColor;
+    self.titleNameLabel.font = Font14;
     self.titleNameLabel.numberOfLines = 0;
+    
+    self.subNameLabel = [UILabel new];
+    self.subNameLabel.textColor = NameColor;
+    self.subNameLabel.font = Font14;
+    self.subNameLabel.numberOfLines = 0;
+    
     
     self.headImageView = [UIImageView new];
     self.headImageView.clipsToBounds = YES;
-    self.headImageView.backgroundColor = [UIColor redColor];
+    
     
     self.userNameLabel = [UILabel new];
-    self.userNameLabel.textColor = OneTextColor;
+    self.userNameLabel.textColor = SubNameColor;
     self.userNameLabel.font = Font13;
     
     self.levelLabel = [UILabel new];
-    self.levelLabel.textColor = OneTextColor;
+    self.levelLabel.textAlignment = NSTextAlignmentCenter;
+    self.levelLabel.layer.borderWidth = 0.6;
+    self.levelLabel.layer.borderColor = MainGoldColor.CGColor;
+    self.levelLabel.textColor = MainGoldColor;
     self.levelLabel.font = Font13;
     
+    
     self.sexImageView = [UIImageView new];
-    self.sexImageView.backgroundColor = [UIColor redColor];
     
     
     self.timeLabel = [UILabel new];
-    self.timeLabel.textColor = OneTextColor;
-    self.timeLabel.font = Font13;
+    self.timeLabel.textColor = LessNameColor;
+    self.timeLabel.font = Font12;
     
     self.commentNum = [UIButton new];
-    [self.commentNum setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
-    [self.commentNum setTitleColor:OneTextColor];
+    self.commentNum.titleLabel.font = Font12;
+    [self.commentNum setImage:[UIImage imageNamed:@"duihua"] forState:UIControlStateNormal];
+    [self.commentNum setTitleColor:NameColor];
     
     
     self.commentBtn = [UIButton new];
-    [self.commentBtn setImage:[UIImage imageNamed:@"list_icon_speech"] forState:UIControlStateNormal];
-    [self.commentBtn setTitleColor:OneTextColor];
+    self.commentBtn.titleLabel.font = Font12;
+    [self.commentBtn setImage:[UIImage imageNamed:@"huida"] forState:UIControlStateNormal];
+    [self.commentBtn setTitleColor:NameColor];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapAction:)];
     self.headImageView.userInteractionEnabled = YES;
@@ -77,6 +89,7 @@
     
     
     [self.contentView addSubview:self.titleNameLabel];
+    [self.contentView addSubview:self.subNameLabel];
     [self.contentView addSubview:self.headImageView];
     [self.contentView addSubview:self.userNameLabel];
     [self.contentView addSubview:self.levelLabel];
@@ -84,6 +97,7 @@
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.commentNum];
     [self.contentView addSubview:self.commentBtn];
+
 }
 
 - (void)headTapAction:(UITapGestureRecognizer *)tap {
@@ -103,16 +117,22 @@
     
     self.titleNameLabel.text = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
     
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
+    self.subNameLabel.text = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
+    
+    //    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@"touxiang02"] placeholderImage:[UIImage imageNamed:@""]];
+    self.headImageView.image = [UIImage imageNamed:@"touxiang02"];
+    
     self.userId = @"111";
     
     self.userNameLabel.text = @"水冰月";
     
-    self.levelLabel.text = @"12";
+    self.levelLabel.text = @"Lv15";
     
-    [self.sexImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
+    //    [self.sexImageView sd_setImageWithURL:[NSURL URLWithString:@"nan"] placeholderImage:[UIImage imageNamed:@""]];
+    self.sexImageView.image = [UIImage imageNamed:@"nan"];
     
-    self.timeLabel.text = [self TimeStamp:@""];
+    //    self.timeLabel.text = [self TimeStamp:@""];
+    self.timeLabel.text = @"10分钟前";
     
     [self.commentNum setTitle:@"11"];
     
@@ -148,7 +168,6 @@
         
         
         
-        
         [self.contentView addSubview:cellimageView];
         [self.imageArray addObject:cellimageView];
         
@@ -168,6 +187,7 @@
     
     
     self.titleNameLabel.frame = _frameModel.titleNameLabelFrame;
+    self.subNameLabel.frame = _frameModel.subNameLabelFrame;
     self.headImageView.frame = _frameModel.headImageViewFrame;
     self.userNameLabel.frame = _frameModel.userNameLabelFrame;
     self.levelLabel.frame = _frameModel.levelLabelFrame;
@@ -177,6 +197,7 @@
     self.commentBtn.frame = _frameModel.commentBtnFrame;
     
     self.headImageView.layer.cornerRadius = _frameModel.headImageViewFrame.size.width / 2;
+
     
     
 }

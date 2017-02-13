@@ -51,7 +51,8 @@
     self.userNameLabel.font = Font13;
     
     self.levelLabel = [UILabel new];
-    self.levelLabel.layer.borderWidth = 0.4;
+    self.levelLabel.textAlignment = NSTextAlignmentCenter;
+    self.levelLabel.layer.borderWidth = 0.6;
     self.levelLabel.layer.borderColor = MainGoldColor.CGColor;
     self.levelLabel.textColor = MainGoldColor;
     self.levelLabel.font = Font13;

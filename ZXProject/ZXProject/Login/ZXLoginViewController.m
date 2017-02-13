@@ -116,7 +116,7 @@
     
     UIButton *qqLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     qqLoginBtn.frame = CGRectMake(kScreenWidth/3*2-20*WIDTH_NIT, kScreen_Height-kScreen_NavHeight-80*WIDTH_NIT, 60*WIDTH_NIT, 50*WIDTH_NIT);
-    [qqLoginBtn setImage:@"weixin"];
+    [qqLoginBtn setImage:@"QQkuaijie"];
     qqLoginBtn.layer.cornerRadius = 30*WIDTH_NIT;
     qqLoginBtn.layer.masksToBounds = YES;
     [qqLoginBtn addTarget:self action:@selector(qqLoginAction) forControlEvents:UIControlEventTouchUpInside];

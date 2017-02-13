@@ -22,6 +22,7 @@ typedef void (^UserHeadClickBlock)(NSString *userId);
 @property (nonatomic, assign) NSInteger showIndex;
 
 @property (nonatomic, strong) UILabel *titleNameLabel;
+@property (nonatomic, strong) UILabel *subNameLabel;
 @property (nonatomic, strong) NSMutableArray *imageArray;
 @property (nonatomic, strong) UIImageView *headImageView;
 @property (nonatomic, strong) UILabel *userNameLabel;

@@ -97,7 +97,7 @@
     
     //充值
     UIButton* chargeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    chargeBtn.frame = CGRectMake(0, 0, 80, 44);
+    chargeBtn.frame = CGRectMake(0, 0, 44, 44);
     [chargeBtn setTitle:@"充值"];
     [chargeBtn setTitleColor:KNavigationTitleColor];
     [chargeBtn addTarget:self action:@selector(chargeAct) forControlEvents:UIControlEventTouchUpInside];

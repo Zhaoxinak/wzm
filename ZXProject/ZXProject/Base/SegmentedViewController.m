@@ -36,7 +36,7 @@
         _seg.backgroundColor = MainWhiteColor;
         _seg.tintColor = MainGoldColor;
         _seg.layer.borderColor = MainWhiteColor.CGColor;
-        _seg.layer.borderWidth = 0.4;
+        _seg.layer.borderWidth = 0.6;
         _seg.layer.cornerRadius = 5;
         _seg.clipsToBounds = YES;
 

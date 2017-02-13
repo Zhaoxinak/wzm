@@ -95,7 +95,7 @@
     //状态
     status = [[UILabel alloc]init];
     status.font = Font13;
-    status.textColor = LessNameColor;
+    status.textColor = RGBColor(122, 186, 58, 1);
     status.text = @"活动进行中";
     [self addSubview:status];
     
@@ -103,10 +103,11 @@
     editBtn = [[UIButton alloc]init];
     editBtn.tag = 0;
     editBtn.layer.borderWidth = 0.5;
-    editBtn.layer.borderColor = NameColor.CGColor;
+    editBtn.layer.borderColor = RGBColor(125, 129, 225, 1).CGColor;
+    editBtn.layer.cornerRadius = 3;
     editBtn.titleLabel.font = Font12;
     [editBtn setTitle:@"编辑"];
-    [editBtn setTitleColor:NameColor];
+    [editBtn setTitleColor:RGBColor(125, 129, 225, 1)];
     [editBtn addTarget:self action:@selector(editAct:)];
     [self addSubview:editBtn];
     
@@ -114,12 +115,14 @@
     memberBtn = [[UIButton alloc]init];
     memberBtn.tag = 1;
     memberBtn.layer.borderWidth = 0.5;
-    memberBtn.layer.borderColor = NameColor.CGColor;
+    memberBtn.layer.borderColor = RGBColor(122, 186, 58, 1).CGColor;
+    memberBtn.layer.cornerRadius = 3;
     memberBtn.titleLabel.font = Font12;
-    [memberBtn setTitle:@"报名者"];
-    [memberBtn setTitleColor:NameColor];
+    [memberBtn setTitle:@"报名清单"];
+    [memberBtn setTitleColor:RGBColor(122, 186, 58, 1)];
     [memberBtn addTarget:self action:@selector(memberAct:)];
     [self addSubview:memberBtn];
+    
 }
 
 
@@ -183,6 +186,7 @@
             time.hidden = NO;
             address.hidden = NO;
             money.hidden = NO;
+            status.hidden = NO;
             editBtn.hidden = NO;
             memberBtn.hidden = NO;
             
@@ -200,9 +204,12 @@
             
             money.frame =  CGRectMake(address.right + 0*WIDTH_NIT, time.bottom+5*WIDTH_NIT, (kScreen_Width-picView.width-15*WIDTH_NIT)/3-10*WIDTH_NIT, 20*WIDTH_NIT);
             
-            editBtn.frame =  CGRectMake(20*WIDTH_NIT, money.bottom+15*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
+            status.frame =  CGRectMake(15*WIDTH_NIT, money.bottom+15*WIDTH_NIT, (kScreen_Width-picView.width-30*WIDTH_NIT)/3*2-5*WIDTH_NIT, 20*WIDTH_NIT);
             
-            memberBtn.frame =  CGRectMake(editBtn.right + 20*WIDTH_NIT, money.bottom+15*WIDTH_NIT, 60*WIDTH_NIT, 20*WIDTH_NIT);
+            
+            editBtn.frame =  CGRectMake(kScreen_Width/2 + 10*WIDTH_NIT, money.bottom+7*WIDTH_NIT, 72*WIDTH_NIT, 28*WIDTH_NIT);
+            
+            memberBtn.frame =  CGRectMake(editBtn.right + 10*WIDTH_NIT, money.bottom+7*WIDTH_NIT, 72*WIDTH_NIT, 28*WIDTH_NIT);
             
         }
             

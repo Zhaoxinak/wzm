@@ -78,7 +78,7 @@
     
     //分享按钮
     UIButton* shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareBtn.frame = CGRectMake(0, 0, 80, 44);
+    shareBtn.frame = CGRectMake(0, 0, 44, 44);
     [shareBtn setTitle:@"导出"];
     [shareBtn setTitleColor:KNavigationTitleColor];
     [shareBtn addTarget:self action:@selector(shareAct:) forControlEvents:UIControlEventTouchUpInside];

@@ -15,10 +15,11 @@
 #import "ModifiedWikiTitleTableViewCell.h" //顶部
 #import "ModifiedWikiPayTableViewCell.h" //打赏
 //#import "ModifiedWikiAuthorTableViewCell.h" //作者
+#import "MoreFunctionView.h" //底部功能按键
 /************M************/
 #import "ModifiedWikiInfoModel.h" //
 
-@interface ModifiedWikiInfoViewController ()<ModifiedWikiPayDelegate>
+@interface ModifiedWikiInfoViewController ()<ModifiedWikiPayDelegate,MoreFunctionViewDelegate>
 
 @property(nonatomic, strong)ModifiedWikiInfoModel *modifiedWikiModel;
 
@@ -82,10 +83,14 @@
     //设置标题
     self.title = @"百科详情";
     //设置tableView
-    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-45*WIDTH_NIT);
     [self.view insertSubview:self.tableView atIndex:1];
     
+    //底部功能按键
     
+    MoreFunctionView *mfView =[[MoreFunctionView alloc]initWithFrame:CGRectMake(0, kScreen_Height-kScreen_NavHeight-45*WIDTH_NIT, kScreen_Width, 45*WIDTH_NIT)];
+    mfView.delegate = self;
+    [self.view addSubview:mfView];
     
 }
 
@@ -262,6 +267,40 @@
     NSLog(@"打赏人的头像--%ld",(long)tag);
 }
 
+#pragma mark -- 实现按钮 0为点赞 1为收藏 2为分享 3评论
+
+-(void)moreFunctionViewSelect2go:(NSInteger)tag{
+    
+    switch (tag) {
+        case 0:
+        {
+            NSLog(@"点赞");
+        }
+            break;
+            
+        case 1:
+        {
+            NSLog(@"收藏");
+        }
+            break;
+            
+        case 2:
+        {
+            NSLog(@"分享");
+        }
+            break;
+            
+        case 3:
+        {
+            NSLog(@"评论");
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

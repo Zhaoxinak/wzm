@@ -135,7 +135,7 @@
     
     //主页
     UIButton* personalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    personalBtn.frame = CGRectMake(0, 0, 80, 44);
+    personalBtn.frame = CGRectMake(0, 0, 44, 44);
     [personalBtn setTitle:@"主页"];
     [personalBtn setTitleColor:KNavigationTitleColor];
     [personalBtn addTarget:self action:@selector(personalAct) forControlEvents:UIControlEventTouchUpInside];

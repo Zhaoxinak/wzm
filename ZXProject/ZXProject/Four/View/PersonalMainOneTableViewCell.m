@@ -321,7 +321,7 @@
     
     UIButton *imageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, picHeight*3, picHeight)];
     imageButton.backgroundColor = [UIColor clearColor];
-    imageButton.layer.borderWidth = 0.4;
+    imageButton.layer.borderWidth = 0.6;
     imageButton.layer.borderColor = MainGoldColor.CGColor;
     [imageButton setTitleColor:NameColor];
     [imageButton setTitle:@"本田"];

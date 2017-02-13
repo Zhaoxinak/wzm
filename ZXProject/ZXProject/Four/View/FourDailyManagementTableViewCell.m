@@ -50,7 +50,7 @@
         appView.backgroundColor= [UIColor whiteColor];
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0.5*WIDTH_NIT, 0.5*WIDTH_NIT, appView.width-0.5*WIDTH_NIT, appView.height-0.5*WIDTH_NIT)];
-        btn.layer.borderWidth = 0.4;
+        btn.layer.borderWidth = 0.6;
         btn.layer.borderColor = LessNameColor.CGColor;
         btn.tag = index;
         btn.backgroundColor = [UIColor whiteColor];

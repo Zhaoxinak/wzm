@@ -9,6 +9,8 @@
 
 /************C************/
 #import "OneMiaoQuestionSquareViewController.h"
+#import "PublishQuestionViewController.h" //发布问题
+#import "MiaoQuestionInfoViewController.h" //问题详情
 /************V************/
 #import "OneMiaoQuestionSquareTableViewCell.h"  //喵问广场
 /************M************/
@@ -78,7 +80,17 @@
     self.title = @"你问我答";
     //设置tableView
     self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.separatorStyle = YES;
     [self.view insertSubview:self.tableView atIndex:1];
+    
+    //发布问题
+    UIButton* askBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    askBtn.frame = CGRectMake(0, 0, 44, 44);
+    askBtn.titleLabel.font = Font24;
+    [askBtn setImage:@"问答"];
+    [askBtn addTarget:self action:@selector(askAct:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:askBtn];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
 }
 
@@ -148,15 +160,27 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return kScreen_Width/3;
+    //        ThreeHotNoteFrameModel *frameModel = _hotNoteMArr[indexPath.row];
+    //        return frameModel.cellHeight;
+    return kScreen_Width/2;
 }
 
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
+    MiaoQuestionInfoViewController *questionVC = [[MiaoQuestionInfoViewController alloc]init];
+    [self.navigationController pushViewController:questionVC animated:YES];
     
 }
 
+#pragma mark -发起问题
+-(void)askAct:(UIButton *)button{
+    
+    NSLog(@"发起问题");
+    PublishQuestionViewController *publishVC = [[PublishQuestionViewController alloc]init];
+    [self.navigationController pushViewController:publishVC animated:YES];
+    
+}
 
 @end

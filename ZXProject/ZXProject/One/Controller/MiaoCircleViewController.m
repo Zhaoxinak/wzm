@@ -10,6 +10,7 @@
 /************C************/
 #import "MiaoCircleViewController.h"
 #import "PublishMiaoCicleViewController.h" //发帖
+#import "MiaoCircleInfoViewController.h" //帖子详情
 /************V************/
 #import "ThreeHotNoteTableViewCell.h" //热帖推荐
 #import "MiaoCircleTopView.h" //圈内顶部 加入／公告
@@ -85,7 +86,7 @@
     
     //发布按钮
     UIButton* publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    publishBtn.frame = CGRectMake(0, 0, 80, 44);
+    publishBtn.frame = CGRectMake(0, 0, 44, 44);
     [publishBtn setTitle:@"发帖"];
     [publishBtn setTitleColor:MainGoldColor];
     [publishBtn addTarget:self action:@selector(publishAct:) forControlEvents:UIControlEventTouchUpInside];
@@ -195,6 +196,9 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSLog(@"帖子详情");
+    MiaoCircleInfoViewController *miaoCircleInfoVC = [[MiaoCircleInfoViewController alloc]init];
+    [self.navigationController pushViewController:miaoCircleInfoVC animated:YES];
     
     
 }

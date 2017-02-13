@@ -94,11 +94,11 @@
     
     
     //加入按钮
-    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(topView.width-65*WIDTH_NIT, 10*WIDTH_NIT, 80*WIDTH_NIT, 25*WIDTH_NIT)];
+    joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(topView.width-85*WIDTH_NIT, 10*WIDTH_NIT, 80*WIDTH_NIT, 25*WIDTH_NIT)];
     [joinBtn setTitle:@"+加入"];
     joinBtn.titleLabel.font = Font15;
     [joinBtn setTitleColor:MainGoldColor];
-    joinBtn.layer.borderWidth = 0.4;
+    joinBtn.layer.borderWidth = 0.6;
     joinBtn.layer.borderColor = MainGoldColor.CGColor;
     joinBtn.layer.cornerRadius = 5;
     [joinBtn addTarget:self action:@selector(joinTap:)];

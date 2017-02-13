@@ -72,7 +72,7 @@
     self.title = @"";
     
     //标题segmentController
-    self.segItems = @[@"我是参与者", @"我是发起者"];
+    self.segItems = @[ @"我是发起者", @"我是参与者"];
    
     self.navigationItem.titleView = self.seg;
     
@@ -157,7 +157,7 @@
         }
         
         //        cell.textLabel.text = [NSString stringWithFormat:@"左边--%ld", (long)indexPath.row];
-        [cell setModel:self.myPartyModel setMode:JoinPartyCellMode];
+        [cell setModel:self.myPartyModel setMode:OwnerPartyCellMode];
         return cell;
         
         
@@ -174,7 +174,7 @@
             cell.delegate = self;
         }
         
-        [cell setModel:self.myPartyModel setMode:OwnerPartyCellMode];
+        [cell setModel:self.myPartyModel setMode:JoinPartyCellMode];
         //        cell.textLabel.text = [NSString stringWithFormat:@"右边--%ld", (long)indexPath.row];
         return cell;
     }

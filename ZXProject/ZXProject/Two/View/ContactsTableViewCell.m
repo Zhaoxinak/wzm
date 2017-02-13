@@ -49,7 +49,8 @@
     
     //等级
     levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(userNameLabel.right + 2*WIDTH_NIT, 10*WIDTH_NIT, 30*WIDTH_NIT, 18*WIDTH_NIT)];
-    levelLabel.layer.borderWidth = 0.4;
+    levelLabel.textAlignment = NSTextAlignmentCenter;
+    levelLabel.layer.borderWidth = 0.6;
     levelLabel.layer.borderColor = MainGoldColor.CGColor;
     levelLabel.textColor = MainGoldColor;
     levelLabel.font = Font13;
@@ -67,7 +68,7 @@
     [actButton setTitle:@"私聊"];
     [actButton setTitleColor:MainGoldColor];
     actButton.layer.cornerRadius = 5;
-    actButton.layer.borderWidth = 0.4;
+    actButton.layer.borderWidth = 0.6;
     actButton.layer.borderColor = MainGoldColor.CGColor;
     [actButton addTarget:self action:@selector(buttonAct:)];
     [self addSubview:actButton];

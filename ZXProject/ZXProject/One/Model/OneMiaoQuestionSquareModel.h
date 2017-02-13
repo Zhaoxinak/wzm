@@ -20,6 +20,7 @@
 
 @interface OneMiaoQuestionSquareFrameModel : NSObject
 @property (nonatomic, assign) CGRect titleNameLabelFrame;  //标题
+@property (nonatomic, assign) CGRect subNameLabelFrame;  //内容
 @property (nonatomic, assign) CGRect imageArrayFrame;  //图组
 @property (nonatomic, assign) CGRect headImageViewFrame; //头像
 @property (nonatomic, assign) CGRect userNameLabelFrame; //用户名

@@ -107,7 +107,8 @@
     
     //等级
     levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(headerImgView.right + 10*WIDTH_NIT, headerImgView.centerY-10*WIDTH_NIT, 32*WIDTH_NIT, 20*WIDTH_NIT)];
-    levelLabel.layer.borderWidth = 0.4;
+    levelLabel.textAlignment = NSTextAlignmentCenter;
+    levelLabel.layer.borderWidth = 0.6;
     levelLabel.layer.borderColor = MainGoldColor.CGColor;
     levelLabel.textColor = MainGoldColor;
     levelLabel.font = Font12;

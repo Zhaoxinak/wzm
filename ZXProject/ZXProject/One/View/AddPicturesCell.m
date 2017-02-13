@@ -92,7 +92,7 @@ static NSInteger kAddButtonTag = 9999;
         
     }else{
         AddPictureModel *addModel = [[AddPictureModel alloc] init];
-        addModel.addImage = [UIImage imageNamed:@"photo_add"];
+        addModel.addImage = [UIImage imageNamed:@"kongbai"];
         addModel.modelType = AddPictureTypeAddButton;
         [picArray addObject:addModel];
     }

@@ -46,11 +46,11 @@
 -(void)setupData{
     
     _listFunctionArr = [NSArray arrayWithObjects:
-                        @{@"icon" : @"赞-拷贝", @"title" : @"评   论", @"subTitle" : @""},
-                        @{@"icon" : @"赞-拷贝", @"title" : @"点   赞", @"subTitle" : @""},
-                        @{@"icon" : @"赞-拷贝", @"title" : @"打   赏", @"subTitle" : @""},
-                        @{@"icon" : @"赞-拷贝", @"title" : @"问答通知", @"subTitle" : @""},
-                        @{@"icon" : @"赞-拷贝", @"title" : @"系统通知", @"subTitle" : @""},
+                        @{@"icon" : @"评论", @"title" : @"评   论", @"subTitle" : @""},
+                        @{@"icon" : @"赞-有笑脸", @"title" : @"点   赞", @"subTitle" : @""},
+                        @{@"icon" : @"打赏", @"title" : @"打   赏", @"subTitle" : @""},
+                        @{@"icon" : @"问答-", @"title" : @"问答通知", @"subTitle" : @""},
+                        @{@"icon" : @"通知", @"title" : @"系统通知", @"subTitle" : @""},
                         nil];
 
     
@@ -106,9 +106,7 @@
     //通讯录按钮
     UIButton* phoneBookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     phoneBookBtn.frame = CGRectMake(0, 0, 44, 44);
-    phoneBookBtn.titleLabel.font = Font24;
-    [phoneBookBtn setTitle:@"+"];
-    [phoneBookBtn setTitleColor:KNavigationTitleColor];
+    [phoneBookBtn setImage:@"通讯录"];
     [phoneBookBtn addTarget:self action:@selector(phoneBookAct) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithCustomView:phoneBookBtn];
     self.navigationItem.rightBarButtonItem = rightButton;

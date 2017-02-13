@@ -15,11 +15,12 @@
 #import "UnderstandingTitleTableViewCell.h" //顶部
 #import "UnderstandingPayTableViewCell.h" //打赏
 #import "UnderstandingAuthorTableViewCell.h" //作者
+#import "MoreFunctionView.h" //底部功能按键
 /************M************/
 #import "UnderstandingInfoModel.h" //
 
 
-@interface ModifiedUnderstandingInfoViewController ()<UnderstandingPayDelegate>
+@interface ModifiedUnderstandingInfoViewController ()<UnderstandingPayDelegate,MoreFunctionViewDelegate>
 
 @property(nonatomic, strong)UnderstandingInfoModel *understandModel;
 
@@ -83,10 +84,14 @@
     //设置标题
     self.title = @"心得详情";
     //设置tableView
-    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight);
+    self.tableView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height-kScreen_NavHeight-45*WIDTH_NIT);
     [self.view insertSubview:self.tableView atIndex:1];
     
-
+    //底部功能按键
+    
+    MoreFunctionView *mfView =[[MoreFunctionView alloc]initWithFrame:CGRectMake(0, kScreen_Height-kScreen_NavHeight-45*WIDTH_NIT, kScreen_Width, 45*WIDTH_NIT)];
+    mfView.delegate = self;
+    [self.view addSubview:mfView];
     
 }
 
@@ -264,6 +269,40 @@
 }
 
 
+#pragma mark -- 实现按钮 0为点赞 1为收藏 2为分享 3评论
+
+-(void)moreFunctionViewSelect2go:(NSInteger)tag{
+    
+    switch (tag) {
+        case 0:
+        {
+            NSLog(@"点赞");
+        }
+            break;
+            
+        case 1:
+        {
+            NSLog(@"收藏");
+        }
+            break;
+            
+        case 2:
+        {
+            NSLog(@"分享");
+        }
+            break;
+            
+        case 3:
+        {
+            NSLog(@"评论");
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -91,8 +91,8 @@
     
     UIButton *titleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100*WIDTH_NIT, 50*WIDTH_NIT)];
     titleBtn.titleLabel.font = KNavigationFont;
-    [titleBtn setTitle:@"全部明细 V"];
-    [titleBtn setImage:@"))"];
+    [titleBtn setTitle:@"全部明细"];
+    [titleBtn setImage:@"活动下拉箭头"];
     [titleBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -titleBtn.imageView.size.width, 0, titleBtn.imageView.size.width)];
     [titleBtn setImageEdgeInsets:UIEdgeInsetsMake(0, titleBtn.titleLabel.bounds.size.width, 0, -titleBtn.titleLabel.bounds.size.width)];
     [titleBtn setTitleColor:KNavigationTitleColor];

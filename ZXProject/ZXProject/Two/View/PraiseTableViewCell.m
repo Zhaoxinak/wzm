@@ -52,7 +52,7 @@
     
     self.levelLabel = [UILabel new];
     self.levelLabel.textAlignment = NSTextAlignmentCenter;
-    self.levelLabel.layer.borderWidth = 0.4;
+    self.levelLabel.layer.borderWidth = 0.6;
     self.levelLabel.layer.borderColor = MainGoldColor.CGColor;
     self.levelLabel.textColor = MainGoldColor;
     self.levelLabel.font = Font11;
@@ -64,7 +64,7 @@
     self.timeLabel.font = Font12;
     
     self.commentBtn = [UIButton new];
-    self.commentBtn.layer.borderWidth = 0.4;
+    self.commentBtn.layer.borderWidth = 0.6;
     self.commentBtn.layer.borderColor = MainGoldColor.CGColor;
     self.commentBtn.layer.cornerRadius = 2;
     self.commentBtn.titleLabel.font = Font13;
@@ -95,7 +95,7 @@
     
     self.levelLabel2 = [UILabel new];
     self.levelLabel2.textAlignment = NSTextAlignmentCenter;
-    self.levelLabel2.layer.borderWidth = 0.4;
+    self.levelLabel2.layer.borderWidth = 0.6;
     self.levelLabel2.layer.borderColor = MainGoldColor.CGColor;
     self.levelLabel2.textColor = MainGoldColor;
     self.levelLabel2.font = Font11;

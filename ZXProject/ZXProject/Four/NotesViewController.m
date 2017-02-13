@@ -14,6 +14,7 @@
 
 /************C************/
 #import "NotesViewController.h"
+#import "MiaoCircleInfoViewController.h" //帖子详情
 /************V************/
 #import "NotesTableViewCell.h"
 /************M************/
@@ -158,7 +159,9 @@
 #pragma mark -执行功能
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-  
+    NSLog(@"帖子详情");
+    MiaoCircleInfoViewController *miaoCircleInfoVC = [[MiaoCircleInfoViewController alloc]init];
+    [self.navigationController pushViewController:miaoCircleInfoVC animated:YES];
     
 }
 

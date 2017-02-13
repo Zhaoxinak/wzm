@@ -60,8 +60,8 @@
 - (void)setUpChildController {
     
     // 添加子控制器
-    [self addChildVC:[[OneViewController alloc] init] titleName:@"首页" imageName:@"shouye" selectedImageName:@"shouye" tag:1];
-    [self addChildVC:[[TwoViewController alloc] init] titleName:@"消息" imageName:@"消息" selectedImageName:@"消息" tag:2];
+    [self addChildVC:[[OneViewController alloc] init] titleName:@"首页" imageName:@"shouye-" selectedImageName:@"shouye" tag:1];
+    [self addChildVC:[[TwoViewController alloc] init] titleName:@"消息" imageName:@"消息" selectedImageName:@"xiaoxigaoliang" tag:2];
     [self addChildVC:[[ThreeViewController alloc] init] titleName:@"喵圈" imageName:@"miaoquan" selectedImageName:@"喵圈点击状态" tag:3];
     [self addChildVC:[[FourViewController alloc] init] titleName:@"喵窝" imageName:@"miaowo" selectedImageName:@"喵窝点击状态" tag:4];
     

@@ -17,47 +17,63 @@
 - (void)setModel:(OneMiaoQuestionSquareModel *)model {
     _model = model;
     
+    //头像
+    self.headImageViewFrame = CGRectMake(15*WIDTH_NIT, 10*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT);
+    
+    //用户名
+    self.userNameLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 5*WIDTH_NIT, 12*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
+    
+    //等级
+    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 2*WIDTH_NIT, 12*WIDTH_NIT, 30*WIDTH_NIT, 18*WIDTH_NIT);
+    
+    //性别
+    self.sexImageViewFrame = CGRectMake(CGRectGetMaxX(self.levelLabelFrame) + 5*WIDTH_NIT, 12*WIDTH_NIT, 15*WIDTH_NIT, 15*WIDTH_NIT);
+    
+    
     //标题
-    NSString *comment = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
-    if (comment.length >0) {
-        CGSize contentSize = [self sizeWithString:comment font:Font13 maxSize:CGSizeMake(kScreen_Width-30*WIDTH_NIT, MAXFLOAT)];
+    NSString *title = @"阿斯顿发送到发送到发送到发送到发抖上发呆发呆舒服的沙发多少发多少发多少分";
+    if (title.length >0) {
+        CGSize contentSize = [self sizeWithString:title font:Font14 maxSize:CGSizeMake(kScreen_Width-55*WIDTH_NIT, MAXFLOAT)];
         
-        self.titleNameLabelFrame = CGRectMake(15*WIDTH_NIT, 10*WIDTH_NIT, contentSize.width, contentSize.height);
+        self.titleNameLabelFrame = CGRectMake(50*WIDTH_NIT, CGRectGetMaxY(self.headImageViewFrame) + 5*WIDTH_NIT, contentSize.width, contentSize.height);
     }else{
-        self.titleNameLabelFrame = CGRectMake(15*WIDTH_NIT, 10*WIDTH_NIT, 0, 0);
+        self.titleNameLabelFrame = CGRectMake(50*WIDTH_NIT, CGRectGetMaxY(self.headImageViewFrame) + 5*WIDTH_NIT, 0, 0);
     }
+    
+    //内容
+    NSString *comment = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
+    if (comment.length >0) {
+        CGSize contentSize = [self sizeWithString:comment font:Font14 maxSize:CGSizeMake(kScreen_Width-55*WIDTH_NIT, MAXFLOAT)];
+        
+        self.subNameLabelFrame = CGRectMake(45*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 5*WIDTH_NIT, contentSize.width, contentSize.height);
+    }else{
+        self.subNameLabelFrame = CGRectMake(45*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 5*WIDTH_NIT, 0, 0);
+    }
+    
     
     //图组
     if ([_model.pics[@"picCount"] integerValue] > 0) {
-        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 100*WIDTH_NIT);
+        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.subNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 100*WIDTH_NIT);
     } else {
-        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.titleNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 0);
+        self.imageArrayFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.subNameLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 0);
     }
     
+    
     //时间
-    self.timeLabelFrame = CGRectMake(kScreen_Width/3*2, CGRectGetMaxY(self.imageArrayFrame) + 10*WIDTH_NIT, kScreen_Width/3, 20*WIDTH_NIT);
-    
-    
-    //头像
-    self.headImageViewFrame = CGRectMake(15*WIDTH_NIT, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, 30*WIDTH_NIT, 30*WIDTH_NIT);
-    
-    //用户名
-    self.userNameLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, 100*WIDTH_NIT, 20*WIDTH_NIT);
-    
-    //等级
-    self.levelLabelFrame = CGRectMake(CGRectGetMaxX(self.userNameLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, 40*WIDTH_NIT, 20*WIDTH_NIT);
-    
-    //性别
-    self.sexImageViewFrame = CGRectMake(CGRectGetMaxX(self.levelLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, 20*WIDTH_NIT, 20*WIDTH_NIT);
+    self.timeLabelFrame = CGRectMake(CGRectGetMaxX(self.headImageViewFrame) + 0*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 5*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
     
     //评论数
-    self.commentNumFrame = CGRectMake(kScreen_Width/3*2, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
+    self.commentNumFrame = CGRectMake(CGRectGetMaxX(self.timeLabelFrame) + 10*WIDTH_NIT, CGRectGetMaxY(self.imageArrayFrame) + 5*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
+    
     
     //评论
-    self.commentBtnFrame = CGRectMake(kScreen_Width/6*5, CGRectGetMaxY(self.timeLabelFrame) + 10*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
+    self.commentBtnFrame = CGRectMake(kScreen_Width/6*5, CGRectGetMaxY(self.imageArrayFrame) + 5*WIDTH_NIT, kScreen_Width/6, 20*WIDTH_NIT);
     
     //总高度
     self.cellHeight = CGRectGetMaxY(self.commentBtnFrame) + 20*WIDTH_NIT;
+    
+    
+  
 }
 
 /*  计算文本的高

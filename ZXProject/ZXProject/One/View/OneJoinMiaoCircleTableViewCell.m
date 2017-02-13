@@ -52,7 +52,7 @@
     //能加入的种类
     allowName = [[UILabel alloc]initWithFrame:CGRectMake(name.right +5*WIDTH_NIT, 11*WIDTH_NIT, 55*WIDTH_NIT, 18*WIDTH_NIT)];
     allowName.backgroundColor = [UIColor clearColor];
-    allowName.layer.borderWidth = 0.4;
+    allowName.layer.borderWidth = 0.6;
     allowName.layer.borderColor = MainGoldColor.CGColor;
     allowName.layer.cornerRadius = 2;
     allowName.textAlignment = NSTextAlignmentCenter;
@@ -78,7 +78,7 @@
     [joinBtn setTitle:@"+加入"];
     joinBtn.titleLabel.font = Font12;
     [joinBtn setTitleColor:MainGoldColor];
-    joinBtn.layer.borderWidth = 0.4;
+    joinBtn.layer.borderWidth = 0.6;
     joinBtn.layer.borderColor = MainGoldColor.CGColor;
     [joinBtn addTarget:self action:@selector(joinAct:)];
     [self addSubview:joinBtn];
